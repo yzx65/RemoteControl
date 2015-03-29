@@ -518,14 +518,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_3">
                   <item>
-                   <widget class="QLabel" name="label_11">
+                   <widget class="QLabel" name="label_001">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_12">
+                   <widget class="QLabel" name="label_001_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -536,14 +536,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_4">
                   <item>
-                   <widget class="QLabel" name="label_13">
+                   <widget class="QLabel" name="label_002">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_14">
+                   <widget class="QLabel" name="label_002_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -554,14 +554,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_5">
                   <item>
-                   <widget class="QLabel" name="label_15">
+                   <widget class="QLabel" name="label_003">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_16">
+                   <widget class="QLabel" name="label_003_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -572,14 +572,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_6">
                   <item>
-                   <widget class="QLabel" name="label_17">
+                   <widget class="QLabel" name="label_004">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_18">
+                   <widget class="QLabel" name="label_004_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -590,14 +590,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_7">
                   <item>
-                   <widget class="QLabel" name="label_19">
+                   <widget class="QLabel" name="label_005">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_20">
+                   <widget class="QLabel" name="label_005_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -625,14 +625,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                   <item>
-                   <widget class="QLabel" name="label_21">
+                   <widget class="QLabel" name="label_006">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_22">
+                   <widget class="QLabel" name="label_006_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -643,14 +643,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_9">
                   <item>
-                   <widget class="QLabel" name="label_23">
+                   <widget class="QLabel" name="label_007">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_24">
+                   <widget class="QLabel" name="label_007_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -661,14 +661,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_10">
                   <item>
-                   <widget class="QLabel" name="label_25">
+                   <widget class="QLabel" name="label_008">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_26">
+                   <widget class="QLabel" name="label_008_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -679,14 +679,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_11">
                   <item>
-                   <widget class="QLabel" name="label_27">
+                   <widget class="QLabel" name="label_009">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_28">
+                   <widget class="QLabel" name="label_009_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -697,14 +697,14 @@ background-color:white;
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_12">
                   <item>
-                   <widget class="QLabel" name="label_29">
+                   <widget class="QLabel" name="label_010">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_30">
+                   <widget class="QLabel" name="label_010_content">
                     <property name="text">
                      <string>TextLabel</string>
                     </property>
@@ -742,7 +742,7 @@ background-color:white;
 	min-height:30px;
 	padding-left:10px;
 	border:1px solid #cccccc;
-	border-bottom-width:0px;
+	border-bottom-width:1px;
 	border-left-width:0px;
 }</string>
              </property>
@@ -758,6 +758,9 @@ background-color:white;
                <width>16777215</width>
                <height>300</height>
               </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -1370,10 +1373,6 @@ QFrame#tbPluginStatus{
      </widget>
     </item>
    </layout>
-   <zorder>splitter_3</zorder>
-   <zorder>label_4</zorder>
-   <zorder>tbBasicInfo</zorder>
-   <zorder>edtLog</zorder>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="movable">
