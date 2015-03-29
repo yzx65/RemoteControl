@@ -1,0 +1,47 @@
+#include "aliasdlg.h"
+
+// ////////////////////////////////////////////////////////////////////////////////
+// 构造函数
+//
+AliasDlg::AliasDlg(QWidget *parent, int targetId)
+	: QDialog(parent)
+{
+	ui.setupUi(this);
+
+	this->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+	ui.edtTargetId->setText(QString("%1").arg(targetId));
+
+	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnOk()));
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// 析构函数
+//
+AliasDlg::~AliasDlg()
+{
+
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @public 获取别名
+//
+QString AliasDlg::GetTargetAlias()
+{
+	return ui.edtTargetAlias->text();
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @public 设置别名
+//
+void AliasDlg::SetTargetAlias(QString alias)
+{
+	ui.edtTargetAlias->setText(alias);
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @private slot 确定
+//
+void AliasDlg::OnOk()
+{
+	this->accept();
+}
