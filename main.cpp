@@ -83,8 +83,11 @@ int main(int argc, char *argv[])
 	a.setWindowIcon(QIcon(QPixmap(":/image/icon.png")));
 
 	MainDlg w;
+	w.resize(900, 500);
 	CenterWindow(w);
 	w.show();
+
+	w.StartAction();
 	return a.exec();
 
 	return 1;

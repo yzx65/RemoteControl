@@ -22,9 +22,9 @@
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
 #include <QtGui/QSpacerItem>
-#include <QtGui/QSplitter>
 #include <QtGui/QStatusBar>
 #include <QtGui/QTableWidget>
+#include <QtGui/QTextEdit>
 #include <QtGui/QToolBar>
 #include <QtGui/QTreeWidget>
 #include <QtGui/QVBoxLayout>
@@ -57,13 +57,63 @@ public:
     QAction *actFavorite;
     QAction *actQueryDaemonAddress;
     QWidget *centralWidget;
-    QVBoxLayout *verticalLayout_5;
-    QSplitter *splitter_3;
-    QSplitter *topSplitter;
-    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout_6;
+    QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout_3;
+    QLabel *label_8;
     QTreeWidget *trTarget;
-    QFrame *frame;
+    QVBoxLayout *verticalLayout_4;
+    QFrame *frame_target_info;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_4;
+    QTableWidget *tbBasicInfo;
+    QFrame *logFrame;
+    QVBoxLayout *verticalLayout;
+    QLabel *label_9;
+    QFrame *basic_info;
+    QHBoxLayout *horizontalLayout_13;
+    QSpacerItem *horizontalSpacer_6;
+    QLabel *label_10;
+    QSpacerItem *horizontalSpacer_7;
+    QVBoxLayout *verticalLayout_7;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_11;
+    QLabel *label_12;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *label_13;
+    QLabel *label_14;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_15;
+    QLabel *label_16;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *label_17;
+    QLabel *label_18;
+    QHBoxLayout *horizontalLayout_7;
+    QLabel *label_19;
+    QLabel *label_20;
+    QSpacerItem *horizontalSpacer_8;
+    QVBoxLayout *verticalLayout_8;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *label_21;
+    QLabel *label_22;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *label_23;
+    QLabel *label_24;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_25;
+    QLabel *label_26;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_27;
+    QLabel *label_28;
+    QHBoxLayout *horizontalLayout_12;
+    QLabel *label_29;
+    QLabel *label_30;
+    QSpacerItem *horizontalSpacer_9;
+    QLabel *label_7;
+    QTextEdit *edtLog;
+    QFrame *pluginStatus;
+    QVBoxLayout *verticalLayout_5;
+    QFrame *displayMode;
     QHBoxLayout *horizontalLayout;
     QLabel *label_3;
     QSpacerItem *horizontalSpacer_4;
@@ -78,19 +128,8 @@ public:
     QLabel *label;
     QComboBox *cmbCategory;
     QSpacerItem *horizontalSpacer;
-    QSplitter *splitter;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_4;
-    QTableWidget *tbBasicInfo;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_2;
     QLabel *label_6;
     QTableWidget *tbPluginStatus;
-    QWidget *layoutWidget3;
-    QVBoxLayout *verticalLayout_4;
-    QLabel *label_7;
-    QTableWidget *tbLog;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
@@ -103,7 +142,7 @@ public:
     {
         if (MainDlgClass->objectName().isEmpty())
             MainDlgClass->setObjectName(QString::fromUtf8("MainDlgClass"));
-        MainDlgClass->resize(1375, 700);
+        MainDlgClass->resize(1375, 830);
         MainDlgClass->setStyleSheet(QString::fromUtf8(""));
         actStart = new QAction(MainDlgClass);
         actStart->setObjectName(QString::fromUtf8("actStart"));
@@ -211,29 +250,35 @@ public:
         centralWidget = new QWidget(MainDlgClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         centralWidget->setStyleSheet(QString::fromUtf8(""));
-        verticalLayout_5 = new QVBoxLayout(centralWidget);
-        verticalLayout_5->setSpacing(0);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 1, 0, 0);
-        splitter_3 = new QSplitter(centralWidget);
-        splitter_3->setObjectName(QString::fromUtf8("splitter_3"));
-        splitter_3->setStyleSheet(QString::fromUtf8(""));
-        splitter_3->setOrientation(Qt::Vertical);
-        splitter_3->setHandleWidth(5);
-        topSplitter = new QSplitter(splitter_3);
-        topSplitter->setObjectName(QString::fromUtf8("topSplitter"));
-        topSplitter->setOrientation(Qt::Horizontal);
-        topSplitter->setHandleWidth(5);
-        layoutWidget = new QWidget(topSplitter);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget);
+        verticalLayout_6 = new QVBoxLayout(centralWidget);
+        verticalLayout_6->setSpacing(0);
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(0);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(0);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        trTarget = new QTreeWidget(layoutWidget);
+        label_8 = new QLabel(centralWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	background-color:rgb(247,249,255);;\n"
+"	color:black;\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	border:1px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
+"}"));
+
+        verticalLayout_3->addWidget(label_8);
+
+        trTarget = new QTreeWidget(centralWidget);
         trTarget->setObjectName(QString::fromUtf8("trTarget"));
+        trTarget->setMaximumSize(QSize(200, 16777215));
         trTarget->setStyleSheet(QString::fromUtf8("/* QHeaderView::section {\n"
 "	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(172, 197, 224, 255), stop:1 rgba(200, 230, 255, 225));\n"
 "    padding-left: 4px;\n"
@@ -331,6 +376,7 @@ public:
         trTarget->setEditTriggers(QAbstractItemView::NoEditTriggers);
         trTarget->setIconSize(QSize(24, 24));
         trTarget->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+        trTarget->setIndentation(0);
         trTarget->setSortingEnabled(true);
         trTarget->header()->setCascadingSectionResizes(true);
         trTarget->header()->setDefaultSectionSize(50);
@@ -339,219 +385,19 @@ public:
 
         verticalLayout_3->addWidget(trTarget);
 
-        frame = new QFrame(layoutWidget);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setStyleSheet(QString::fromUtf8("QWidget\n"
-"{\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"}\n"
-"\n"
-"QFrame#frame\n"
-"{\n"
-"	border:1px solid #cccccc;\n"
-"	background-color:rgb(247,249,255);\n"
-"	color:black;\n"
-"}"));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        horizontalLayout = new QHBoxLayout(frame);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(-1, 5, -1, 5);
-        label_3 = new QLabel(frame);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setMinimumSize(QSize(0, 25));
-        label_3->setMaximumSize(QSize(16777215, 25));
-        label_3->setStyleSheet(QString::fromUtf8(""));
 
-        horizontalLayout->addWidget(label_3);
+        horizontalLayout_2->addLayout(verticalLayout_3);
 
-        horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_4);
-
-        lbTargetCount = new QLabel(frame);
-        lbTargetCount->setObjectName(QString::fromUtf8("lbTargetCount"));
-        lbTargetCount->setMinimumSize(QSize(50, 25));
-        lbTargetCount->setMaximumSize(QSize(16777215, 25));
-        lbTargetCount->setStyleSheet(QString::fromUtf8(""));
-
-        horizontalLayout->addWidget(lbTargetCount);
-
-        label_5 = new QLabel(frame);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setMinimumSize(QSize(0, 25));
-        label_5->setMaximumSize(QSize(16777215, 25));
-        label_5->setStyleSheet(QString::fromUtf8(""));
-
-        horizontalLayout->addWidget(label_5);
-
-        horizontalSpacer_5 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_5);
-
-        lbOnlineTargetCount = new QLabel(frame);
-        lbOnlineTargetCount->setObjectName(QString::fromUtf8("lbOnlineTargetCount"));
-        lbOnlineTargetCount->setMinimumSize(QSize(50, 25));
-        lbOnlineTargetCount->setMaximumSize(QSize(16777215, 25));
-        lbOnlineTargetCount->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-"	color:red;\n"
-"}"));
-
-        horizontalLayout->addWidget(lbOnlineTargetCount);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_3);
-
-        label_2 = new QLabel(frame);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setMinimumSize(QSize(0, 25));
-        label_2->setMaximumSize(QSize(16777215, 25));
-        label_2->setStyleSheet(QString::fromUtf8(""));
-
-        horizontalLayout->addWidget(label_2);
-
-        cmbDisplayMode = new QComboBox(frame);
-        QIcon icon19;
-        icon19.addFile(QString::fromUtf8(":/image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
-        cmbDisplayMode->addItem(icon19, QString());
-        cmbDisplayMode->addItem(icon19, QString());
-        cmbDisplayMode->addItem(icon19, QString());
-        QIcon icon20;
-        icon20.addFile(QString::fromUtf8(":/image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
-        cmbDisplayMode->addItem(icon20, QString());
-        cmbDisplayMode->setObjectName(QString::fromUtf8("cmbDisplayMode"));
-        cmbDisplayMode->setMinimumSize(QSize(150, 25));
-        cmbDisplayMode->setMaximumSize(QSize(16777215, 25));
-        cmbDisplayMode->setStyleSheet(QString::fromUtf8("QComboBox\n"
-"{\n"
-"	background-color:rgb(247,249,255);;\n"
-"	border:0px solid rgb(46,52,52);\n"
-"	color:black;\n"
-"}\n"
-"\n"
-"QComboBox:hover\n"
-"{\n"
-"	background-color:#cccccc;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"	background-color:#cccccc;\n"
-"}\n"
-"\n"
-" QComboBox::drop-down {\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"	 border:0px solid rgb(46,52,52);\n"
-" }\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"	height:8px;\n"
-"	width:8px;\n"
-"	image: url(:/image/arrow.png);\n"
-" }\n"
-"\n"
-" QComboBox QAbstractItemView\n"
-"{\n"
-"	border:1px solid #eef0ff;\n"
-"}"));
-        cmbDisplayMode->setIconSize(QSize(20, 20));
-        cmbDisplayMode->setFrame(true);
-
-        horizontalLayout->addWidget(cmbDisplayMode);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        label = new QLabel(frame);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setMinimumSize(QSize(0, 25));
-        label->setMaximumSize(QSize(16777215, 25));
-        label->setStyleSheet(QString::fromUtf8(""));
-
-        horizontalLayout->addWidget(label);
-
-        cmbCategory = new QComboBox(frame);
-        QIcon icon21;
-        icon21.addFile(QString::fromUtf8(":/image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
-        cmbCategory->addItem(icon21, QString());
-        QIcon icon22;
-        icon22.addFile(QString::fromUtf8(":/image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
-        cmbCategory->addItem(icon22, QString());
-        QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/image/home.png"), QSize(), QIcon::Normal, QIcon::Off);
-        cmbCategory->addItem(icon23, QString());
-        cmbCategory->setObjectName(QString::fromUtf8("cmbCategory"));
-        cmbCategory->setMinimumSize(QSize(150, 25));
-        cmbCategory->setMaximumSize(QSize(16777215, 25));
-        cmbCategory->setStyleSheet(QString::fromUtf8("QComboBox\n"
-"{\n"
-"	background-color:rgb(247,249,255);\n"
-"	border:0px solid rgb(46,52,52);\n"
-"	color:black;\n"
-"}\n"
-"\n"
-"QComboBox:hover\n"
-"{\n"
-"	background-color:#cccccc;\n"
-"}\n"
-"\n"
-"QComboBox:on\n"
-"{\n"
-"	background-color:#cccccc;\n"
-"}\n"
-"\n"
-" QComboBox::drop-down {\n"
-"     subcontrol-origin: padding;\n"
-"     subcontrol-position: top right;\n"
-"     width: 15px;\n"
-"\n"
-"	 border:0px solid rgb(46,52,52);\n"
-" }\n"
-"\n"
-"QComboBox::down-arrow {\n"
-"	height:8px;\n"
-"	width:8px;\n"
-"	image: url(:/image/arrow.png);\n"
-" }\n"
-"\n"
-" QComboBox QAbstractItemView\n"
-"{\n"
-"	border:1px solid #eef0ff;\n"
-"}"));
-        cmbCategory->setIconSize(QSize(20, 20));
-
-        horizontalLayout->addWidget(cmbCategory);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
-
-
-        verticalLayout_3->addWidget(frame);
-
-        topSplitter->addWidget(layoutWidget);
-        splitter = new QSplitter(topSplitter);
-        splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setMinimumSize(QSize(263, 0));
-        splitter->setMaximumSize(QSize(16777215, 16777215));
-        splitter->setOrientation(Qt::Vertical);
-        splitter->setHandleWidth(1);
-        layoutWidget1 = new QWidget(splitter);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        verticalLayout = new QVBoxLayout(layoutWidget1);
-        verticalLayout->setSpacing(0);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(layoutWidget1);
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        frame_target_info = new QFrame(centralWidget);
+        frame_target_info->setObjectName(QString::fromUtf8("frame_target_info"));
+        verticalLayout_2 = new QVBoxLayout(frame_target_info);
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        label_4 = new QLabel(frame_target_info);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setMinimumSize(QSize(263, 31));
         label_4->setMaximumSize(QSize(263, 16777215));
@@ -567,9 +413,9 @@ public:
 "	border-bottom-width:0px;\n"
 "}"));
 
-        verticalLayout->addWidget(label_4);
+        verticalLayout_2->addWidget(label_4);
 
-        tbBasicInfo = new QTableWidget(layoutWidget1);
+        tbBasicInfo = new QTableWidget(frame_target_info);
         if (tbBasicInfo->columnCount() < 2)
             tbBasicInfo->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -634,17 +480,485 @@ public:
         tbBasicInfo->verticalHeader()->setDefaultSectionSize(25);
         tbBasicInfo->verticalHeader()->setHighlightSections(false);
 
-        verticalLayout->addWidget(tbBasicInfo);
+        verticalLayout_2->addWidget(tbBasicInfo);
 
-        splitter->addWidget(layoutWidget1);
-        layoutWidget2 = new QWidget(splitter);
-        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_2->setSpacing(0);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(layoutWidget2);
+
+        verticalLayout_4->addWidget(frame_target_info);
+
+        logFrame = new QFrame(centralWidget);
+        logFrame->setObjectName(QString::fromUtf8("logFrame"));
+        verticalLayout = new QVBoxLayout(logFrame);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        label_9 = new QLabel(logFrame);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	background-color:rgb(247,249,255);;\n"
+"	color:black;\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	border:1px solid #cccccc;\n"
+"	border-left-width:0px;\n"
+"}"));
+
+        verticalLayout->addWidget(label_9);
+
+        basic_info = new QFrame(logFrame);
+        basic_info->setObjectName(QString::fromUtf8("basic_info"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(basic_info->sizePolicy().hasHeightForWidth());
+        basic_info->setSizePolicy(sizePolicy);
+        basic_info->setMinimumSize(QSize(0, 300));
+        basic_info->setStyleSheet(QString::fromUtf8("QFrame#basic_info\n"
+"{\n"
+"background-color:white;\n"
+"}"));
+        basic_info->setFrameShape(QFrame::StyledPanel);
+        basic_info->setFrameShadow(QFrame::Raised);
+        horizontalLayout_13 = new QHBoxLayout(basic_info);
+        horizontalLayout_13->setSpacing(6);
+        horizontalLayout_13->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
+        horizontalSpacer_6 = new QSpacerItem(82, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_6);
+
+        label_10 = new QLabel(basic_info);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+
+        horizontalLayout_13->addWidget(label_10);
+
+        horizontalSpacer_7 = new QSpacerItem(81, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_7);
+
+        verticalLayout_7 = new QVBoxLayout();
+        verticalLayout_7->setSpacing(6);
+        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label_11 = new QLabel(basic_info);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+
+        horizontalLayout_3->addWidget(label_11);
+
+        label_12 = new QLabel(basic_info);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+
+        horizontalLayout_3->addWidget(label_12);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        label_13 = new QLabel(basic_info);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+
+        horizontalLayout_4->addWidget(label_13);
+
+        label_14 = new QLabel(basic_info);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+
+        horizontalLayout_4->addWidget(label_14);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_4);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        label_15 = new QLabel(basic_info);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+
+        horizontalLayout_5->addWidget(label_15);
+
+        label_16 = new QLabel(basic_info);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+
+        horizontalLayout_5->addWidget(label_16);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_5);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        label_17 = new QLabel(basic_info);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+
+        horizontalLayout_6->addWidget(label_17);
+
+        label_18 = new QLabel(basic_info);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+
+        horizontalLayout_6->addWidget(label_18);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        label_19 = new QLabel(basic_info);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+
+        horizontalLayout_7->addWidget(label_19);
+
+        label_20 = new QLabel(basic_info);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+
+        horizontalLayout_7->addWidget(label_20);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_7);
+
+
+        horizontalLayout_13->addLayout(verticalLayout_7);
+
+        horizontalSpacer_8 = new QSpacerItem(82, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_8);
+
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setSpacing(6);
+        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        label_21 = new QLabel(basic_info);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+
+        horizontalLayout_8->addWidget(label_21);
+
+        label_22 = new QLabel(basic_info);
+        label_22->setObjectName(QString::fromUtf8("label_22"));
+
+        horizontalLayout_8->addWidget(label_22);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_8);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        label_23 = new QLabel(basic_info);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+
+        horizontalLayout_9->addWidget(label_23);
+
+        label_24 = new QLabel(basic_info);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+
+        horizontalLayout_9->addWidget(label_24);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_9);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        label_25 = new QLabel(basic_info);
+        label_25->setObjectName(QString::fromUtf8("label_25"));
+
+        horizontalLayout_10->addWidget(label_25);
+
+        label_26 = new QLabel(basic_info);
+        label_26->setObjectName(QString::fromUtf8("label_26"));
+
+        horizontalLayout_10->addWidget(label_26);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_10);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(6);
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        label_27 = new QLabel(basic_info);
+        label_27->setObjectName(QString::fromUtf8("label_27"));
+
+        horizontalLayout_11->addWidget(label_27);
+
+        label_28 = new QLabel(basic_info);
+        label_28->setObjectName(QString::fromUtf8("label_28"));
+
+        horizontalLayout_11->addWidget(label_28);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_11);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setSpacing(6);
+        horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
+        label_29 = new QLabel(basic_info);
+        label_29->setObjectName(QString::fromUtf8("label_29"));
+
+        horizontalLayout_12->addWidget(label_29);
+
+        label_30 = new QLabel(basic_info);
+        label_30->setObjectName(QString::fromUtf8("label_30"));
+
+        horizontalLayout_12->addWidget(label_30);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_12);
+
+
+        horizontalLayout_13->addLayout(verticalLayout_8);
+
+        horizontalSpacer_9 = new QSpacerItem(81, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_13->addItem(horizontalSpacer_9);
+
+
+        verticalLayout->addWidget(basic_info);
+
+        label_7 = new QLabel(logFrame);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	background-color:rgb(247,249,255);;\n"
+"	color:black;\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	border:1px solid #cccccc;\n"
+"	border-bottom-width:0px;\n"
+"	border-left-width:0px;\n"
+"}"));
+
+        verticalLayout->addWidget(label_7);
+
+        edtLog = new QTextEdit(logFrame);
+        edtLog->setObjectName(QString::fromUtf8("edtLog"));
+        edtLog->setMaximumSize(QSize(16777215, 300));
+        edtLog->setReadOnly(true);
+
+        verticalLayout->addWidget(edtLog);
+
+
+        verticalLayout_4->addWidget(logFrame);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_4);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_2);
+
+        pluginStatus = new QFrame(centralWidget);
+        pluginStatus->setObjectName(QString::fromUtf8("pluginStatus"));
+        verticalLayout_5 = new QVBoxLayout(pluginStatus);
+        verticalLayout_5->setSpacing(0);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        displayMode = new QFrame(pluginStatus);
+        displayMode->setObjectName(QString::fromUtf8("displayMode"));
+        displayMode->setStyleSheet(QString::fromUtf8("QWidget\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"}\n"
+"\n"
+"QFrame#frame\n"
+"{\n"
+"	border:1px solid #cccccc;\n"
+"	background-color:rgb(247,249,255);\n"
+"	color:black;\n"
+"}"));
+        displayMode->setFrameShape(QFrame::StyledPanel);
+        displayMode->setFrameShadow(QFrame::Raised);
+        horizontalLayout = new QHBoxLayout(displayMode);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, 5, -1, 5);
+        label_3 = new QLabel(displayMode);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setMinimumSize(QSize(0, 25));
+        label_3->setMaximumSize(QSize(16777215, 25));
+        label_3->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(label_3);
+
+        horizontalSpacer_4 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_4);
+
+        lbTargetCount = new QLabel(displayMode);
+        lbTargetCount->setObjectName(QString::fromUtf8("lbTargetCount"));
+        lbTargetCount->setMinimumSize(QSize(50, 25));
+        lbTargetCount->setMaximumSize(QSize(16777215, 25));
+        lbTargetCount->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(lbTargetCount);
+
+        label_5 = new QLabel(displayMode);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setMinimumSize(QSize(0, 25));
+        label_5->setMaximumSize(QSize(16777215, 25));
+        label_5->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(label_5);
+
+        horizontalSpacer_5 = new QSpacerItem(10, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_5);
+
+        lbOnlineTargetCount = new QLabel(displayMode);
+        lbOnlineTargetCount->setObjectName(QString::fromUtf8("lbOnlineTargetCount"));
+        lbOnlineTargetCount->setMinimumSize(QSize(50, 25));
+        lbOnlineTargetCount->setMaximumSize(QSize(16777215, 25));
+        lbOnlineTargetCount->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{\n"
+"	color:red;\n"
+"}"));
+
+        horizontalLayout->addWidget(lbOnlineTargetCount);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_3);
+
+        label_2 = new QLabel(displayMode);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMinimumSize(QSize(0, 25));
+        label_2->setMaximumSize(QSize(16777215, 25));
+        label_2->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(label_2);
+
+        cmbDisplayMode = new QComboBox(displayMode);
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        cmbDisplayMode->addItem(icon19, QString());
+        cmbDisplayMode->addItem(icon19, QString());
+        cmbDisplayMode->addItem(icon19, QString());
+        QIcon icon20;
+        icon20.addFile(QString::fromUtf8(":/image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
+        cmbDisplayMode->addItem(icon20, QString());
+        cmbDisplayMode->setObjectName(QString::fromUtf8("cmbDisplayMode"));
+        cmbDisplayMode->setMinimumSize(QSize(150, 25));
+        cmbDisplayMode->setMaximumSize(QSize(16777215, 25));
+        cmbDisplayMode->setStyleSheet(QString::fromUtf8("QComboBox\n"
+"{\n"
+"	background-color:rgb(247,249,255);;\n"
+"	border:0px solid rgb(46,52,52);\n"
+"	color:black;\n"
+"}\n"
+"\n"
+"QComboBox:hover\n"
+"{\n"
+"	background-color:#cccccc;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"	background-color:#cccccc;\n"
+"}\n"
+"\n"
+" QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"	 border:0px solid rgb(46,52,52);\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"	height:8px;\n"
+"	width:8px;\n"
+"	image: url(:/image/arrow.png);\n"
+" }\n"
+"\n"
+" QComboBox QAbstractItemView\n"
+"{\n"
+"	border:1px solid #eef0ff;\n"
+"}"));
+        cmbDisplayMode->setIconSize(QSize(20, 20));
+        cmbDisplayMode->setFrame(true);
+
+        horizontalLayout->addWidget(cmbDisplayMode);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+        label = new QLabel(displayMode);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setMinimumSize(QSize(0, 25));
+        label->setMaximumSize(QSize(16777215, 25));
+        label->setStyleSheet(QString::fromUtf8(""));
+
+        horizontalLayout->addWidget(label);
+
+        cmbCategory = new QComboBox(displayMode);
+        QIcon icon21;
+        icon21.addFile(QString::fromUtf8(":/image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
+        cmbCategory->addItem(icon21, QString());
+        QIcon icon22;
+        icon22.addFile(QString::fromUtf8(":/image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        cmbCategory->addItem(icon22, QString());
+        QIcon icon23;
+        icon23.addFile(QString::fromUtf8(":/image/home.png"), QSize(), QIcon::Normal, QIcon::Off);
+        cmbCategory->addItem(icon23, QString());
+        cmbCategory->setObjectName(QString::fromUtf8("cmbCategory"));
+        cmbCategory->setMinimumSize(QSize(150, 25));
+        cmbCategory->setMaximumSize(QSize(16777215, 25));
+        cmbCategory->setStyleSheet(QString::fromUtf8("QComboBox\n"
+"{\n"
+"	background-color:rgb(247,249,255);\n"
+"	border:0px solid rgb(46,52,52);\n"
+"	color:black;\n"
+"}\n"
+"\n"
+"QComboBox:hover\n"
+"{\n"
+"	background-color:#cccccc;\n"
+"}\n"
+"\n"
+"QComboBox:on\n"
+"{\n"
+"	background-color:#cccccc;\n"
+"}\n"
+"\n"
+" QComboBox::drop-down {\n"
+"     subcontrol-origin: padding;\n"
+"     subcontrol-position: top right;\n"
+"     width: 15px;\n"
+"\n"
+"	 border:0px solid rgb(46,52,52);\n"
+" }\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"	height:8px;\n"
+"	width:8px;\n"
+"	image: url(:/image/arrow.png);\n"
+" }\n"
+"\n"
+" QComboBox QAbstractItemView\n"
+"{\n"
+"	border:1px solid #eef0ff;\n"
+"}"));
+        cmbCategory->setIconSize(QSize(20, 20));
+
+        horizontalLayout->addWidget(cmbCategory);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+
+        verticalLayout_5->addWidget(displayMode);
+
+        label_6 = new QLabel(pluginStatus);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setMinimumSize(QSize(263, 31));
         label_6->setMaximumSize(QSize(263, 16777215));
@@ -660,9 +974,9 @@ public:
 "	border-bottom-width:0px;\n"
 "}"));
 
-        verticalLayout_2->addWidget(label_6);
+        verticalLayout_5->addWidget(label_6);
 
-        tbPluginStatus = new QTableWidget(layoutWidget2);
+        tbPluginStatus = new QTableWidget(pluginStatus);
         if (tbPluginStatus->columnCount() < 4)
             tbPluginStatus->setColumnCount(4);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
@@ -734,68 +1048,15 @@ public:
         tbPluginStatus->verticalHeader()->setDefaultSectionSize(25);
         tbPluginStatus->verticalHeader()->setHighlightSections(false);
 
-        verticalLayout_2->addWidget(tbPluginStatus);
+        verticalLayout_5->addWidget(tbPluginStatus);
 
-        splitter->addWidget(layoutWidget2);
-        topSplitter->addWidget(splitter);
-        splitter_3->addWidget(topSplitter);
-        layoutWidget3 = new QWidget(splitter_3);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        verticalLayout_4 = new QVBoxLayout(layoutWidget3);
-        verticalLayout_4->setSpacing(0);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(layoutWidget3);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"	font-size:13px;\n"
-"	background-color:rgb(247,249,255);;\n"
-"	color:black;\n"
-"	min-height:30px;\n"
-"	padding-left:10px;\n"
-"	border:1px solid #cccccc;\n"
-"	border-bottom-width:0px;\n"
-"}"));
 
-        verticalLayout_4->addWidget(label_7);
-
-        tbLog = new QTableWidget(layoutWidget3);
-        if (tbLog->columnCount() < 2)
-            tbLog->setColumnCount(2);
-        QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
-        tbLog->setHorizontalHeaderItem(0, __qtablewidgetitem16);
-        QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
-        tbLog->setHorizontalHeaderItem(1, __qtablewidgetitem17);
-        tbLog->setObjectName(QString::fromUtf8("tbLog"));
-        tbLog->setStyleSheet(QString::fromUtf8(" QHeaderView::section {\n"
-"	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(200, 220, 255, 225));\n"
-"    padding-left: 4px;\n"
-"	border:none;\n"
-"	border-right: 1px solid rgb(200, 200, 200);\n"
-"	border-bottom: 1px solid rgb(200, 200, 200);\n"
-"	height:25px;\n"
-" }"));
-        tbLog->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        tbLog->setSelectionMode(QAbstractItemView::SingleSelection);
-        tbLog->setSelectionBehavior(QAbstractItemView::SelectRows);
-        tbLog->setSortingEnabled(true);
-        tbLog->horizontalHeader()->setVisible(false);
-        tbLog->horizontalHeader()->setHighlightSections(false);
-        tbLog->horizontalHeader()->setStretchLastSection(true);
-        tbLog->verticalHeader()->setVisible(false);
-        tbLog->verticalHeader()->setDefaultSectionSize(25);
-        tbLog->verticalHeader()->setHighlightSections(false);
-
-        verticalLayout_4->addWidget(tbLog);
-
-        splitter_3->addWidget(layoutWidget3);
-
-        verticalLayout_5->addWidget(splitter_3);
+        verticalLayout_6->addWidget(pluginStatus);
 
         MainDlgClass->setCentralWidget(centralWidget);
+        label_4->raise();
+        tbBasicInfo->raise();
+        edtLog->raise();
         mainToolBar = new QToolBar(MainDlgClass);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         mainToolBar->setMovable(false);
@@ -926,6 +1187,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         actQueryDaemonAddress->setToolTip(QApplication::translate("MainDlgClass", "\346\237\245\350\257\242\344\270\255\350\275\254\345\233\236\350\277\236\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
+        label_8->setText(QApplication::translate("MainDlgClass", "\347\233\256\346\240\207\345\210\227\350\241\250", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = trTarget->headerItem();
         ___qtreewidgetitem->setText(11, QApplication::translate("MainDlgClass", "_", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(10, QApplication::translate("MainDlgClass", "\350\257\255\350\250\200\347\211\210\346\234\254", 0, QApplication::UnicodeUTF8));
@@ -939,6 +1201,44 @@ public:
         ___qtreewidgetitem->setText(2, QApplication::translate("MainDlgClass", "\347\212\266\346\200\201", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(1, QApplication::translate("MainDlgClass", "\347\233\256\346\240\207\345\210\253\345\220\215", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(0, QApplication::translate("MainDlgClass", "\347\233\256\346\240\207ID", 0, QApplication::UnicodeUTF8));
+        label_4->setText(QApplication::translate("MainDlgClass", "\347\233\256\346\240\207\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem = tbBasicInfo->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainDlgClass", "\351\241\271\347\233\256", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem1 = tbBasicInfo->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainDlgClass", "\345\206\205\345\256\271", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem2 = tbBasicInfo->verticalHeaderItem(0);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem3 = tbBasicInfo->verticalHeaderItem(1);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainDlgClass", "New Row", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem4 = tbBasicInfo->verticalHeaderItem(2);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem5 = tbBasicInfo->verticalHeaderItem(3);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
+        QTableWidgetItem *___qtablewidgetitem6 = tbBasicInfo->verticalHeaderItem(4);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
+        label_9->setText(QApplication::translate("MainDlgClass", "\350\257\246\347\273\206\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        label_10->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_14->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_15->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_16->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_17->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_18->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_19->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_20->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_21->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_22->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_23->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_24->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_25->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_26->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_27->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_28->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_29->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_30->setText(QApplication::translate("MainDlgClass", "TextLabel", 0, QApplication::UnicodeUTF8));
+        label_7->setText(QApplication::translate("MainDlgClass", "\350\277\220\350\241\214\350\256\260\345\275\225", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("MainDlgClass", "\347\233\256\346\240\207\346\200\273\346\225\260 : ", 0, QApplication::UnicodeUTF8));
         lbTargetCount->setText(QApplication::translate("MainDlgClass", "0", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("MainDlgClass", "\345\234\250\347\272\277\347\233\256\346\240\207\346\225\260 : ", 0, QApplication::UnicodeUTF8));
@@ -954,21 +1254,6 @@ public:
         cmbCategory->setItemText(1, QApplication::translate("MainDlgClass", "\346\214\211\345\271\263\345\217\260\345\210\206\347\273\204", 0, QApplication::UnicodeUTF8));
         cmbCategory->setItemText(2, QApplication::translate("MainDlgClass", "\346\214\211\346\211\200\345\234\250\345\234\260\345\210\206\347\273\204", 0, QApplication::UnicodeUTF8));
 
-        label_4->setText(QApplication::translate("MainDlgClass", "\345\237\272\346\234\254\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem = tbBasicInfo->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainDlgClass", "\351\241\271\347\233\256", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem1 = tbBasicInfo->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainDlgClass", "\345\206\205\345\256\271", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem2 = tbBasicInfo->verticalHeaderItem(0);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem3 = tbBasicInfo->verticalHeaderItem(1);
-        ___qtablewidgetitem3->setText(QApplication::translate("MainDlgClass", "New Row", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem4 = tbBasicInfo->verticalHeaderItem(2);
-        ___qtablewidgetitem4->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem5 = tbBasicInfo->verticalHeaderItem(3);
-        ___qtablewidgetitem5->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem6 = tbBasicInfo->verticalHeaderItem(4);
-        ___qtablewidgetitem6->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
         label_6->setText(QApplication::translate("MainDlgClass", "\346\217\222\344\273\266\347\212\266\346\200\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem7 = tbPluginStatus->horizontalHeaderItem(0);
         ___qtablewidgetitem7->setText(QApplication::translate("MainDlgClass", "  ID", 0, QApplication::UnicodeUTF8));
@@ -988,11 +1273,6 @@ public:
         ___qtablewidgetitem14->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem15 = tbPluginStatus->verticalHeaderItem(4);
         ___qtablewidgetitem15->setText(QApplication::translate("MainDlgClass", "\346\226\260\345\273\272\350\241\214", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("MainDlgClass", "\346\227\245\345\277\227", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem16 = tbLog->horizontalHeaderItem(0);
-        ___qtablewidgetitem16->setText(QApplication::translate("MainDlgClass", "\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem17 = tbLog->horizontalHeaderItem(1);
-        ___qtablewidgetitem17->setText(QApplication::translate("MainDlgClass", "\345\206\205\345\256\271", 0, QApplication::UnicodeUTF8));
         menu_F->setTitle(QApplication::translate("MainDlgClass", "\345\274\200\345\247\213 (F)", 0, QApplication::UnicodeUTF8));
         menu_T->setTitle(QApplication::translate("MainDlgClass", "\347\233\256\346\240\207 (T)", 0, QApplication::UnicodeUTF8));
         menu_S->setTitle(QApplication::translate("MainDlgClass", "\351\205\215\347\275\256 (S)", 0, QApplication::UnicodeUTF8));
