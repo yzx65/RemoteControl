@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'targetdlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Tue Mar 31 11:25:11 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -140,31 +141,27 @@ public:
         horizontalLayout_71->setObjectName(QString::fromUtf8("horizontalLayout_71"));
         trMissionStatus = new QTreeWidget(widget);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8(":/image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8(":/image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(trMissionStatus);
         __qtreewidgetitem->setIcon(0, icon);
-        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(__qtreewidgetitem);
+        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(trMissionStatus);
         __qtreewidgetitem1->setIcon(0, icon1);
-        QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem(__qtreewidgetitem);
+        QTreeWidgetItem *__qtreewidgetitem2 = new QTreeWidgetItem(trMissionStatus);
         __qtreewidgetitem2->setIcon(0, icon2);
-        QTreeWidgetItem *__qtreewidgetitem3 = new QTreeWidgetItem(__qtreewidgetitem);
+        QTreeWidgetItem *__qtreewidgetitem3 = new QTreeWidgetItem(trMissionStatus);
         __qtreewidgetitem3->setIcon(0, icon3);
-        QTreeWidgetItem *__qtreewidgetitem4 = new QTreeWidgetItem(__qtreewidgetitem);
-        __qtreewidgetitem4->setIcon(0, icon4);
-        QTreeWidgetItem *__qtreewidgetitem5 = new QTreeWidgetItem(__qtreewidgetitem);
-        __qtreewidgetitem5->setIcon(0, icon1);
-        QTreeWidgetItem *__qtreewidgetitem6 = new QTreeWidgetItem(__qtreewidgetitem);
-        __qtreewidgetitem6->setIcon(0, icon5);
+        QTreeWidgetItem *__qtreewidgetitem4 = new QTreeWidgetItem(trMissionStatus);
+        __qtreewidgetitem4->setIcon(0, icon);
+        QTreeWidgetItem *__qtreewidgetitem5 = new QTreeWidgetItem(trMissionStatus);
+        __qtreewidgetitem5->setIcon(0, icon4);
         trMissionStatus->setObjectName(QString::fromUtf8("trMissionStatus"));
         trMissionStatus->setMinimumSize(QSize(200, 0));
         trMissionStatus->setMaximumSize(QSize(200, 16777215));
@@ -275,9 +272,9 @@ public:
 "{\n"
 "	background-color:transparent;\n"
 "}"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/continue.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnContinue->setIcon(icon6);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/image/continue.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnContinue->setIcon(icon5);
         btnContinue->setIconSize(QSize(16, 16));
         btnContinue->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnContinue->setAutoRaise(true);
@@ -310,9 +307,9 @@ public:
 "{\n"
 "	background-color:transparent;\n"
 "}"));
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnPause->setIcon(icon7);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/image/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnPause->setIcon(icon6);
         btnPause->setIconSize(QSize(16, 16));
         btnPause->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnPause->setAutoRaise(true);
@@ -345,9 +342,9 @@ public:
 "{\n"
 "	background-color:transparent;\n"
 "}"));
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnCancel->setIcon(icon8);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/image/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnCancel->setIcon(icon7);
         btnCancel->setIconSize(QSize(16, 16));
         btnCancel->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnCancel->setAutoRaise(true);
@@ -1135,9 +1132,9 @@ public:
 
         horizontalLayout_71->addWidget(frame_7);
 
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/FORWARD 2.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(widget, icon9, QString());
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/image/FORWARD 2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(widget, icon8, QString());
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
         horizontalLayout_16 = new QHBoxLayout(tab);
@@ -1151,9 +1148,9 @@ public:
 
         horizontalLayout_16->addWidget(frmFileCtrl);
 
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/image/EMPTY BLANK.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab, icon10, QString());
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/image/EMPTY BLANK.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab, icon9, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QString::fromUtf8("tab_8"));
         tab_8->setStyleSheet(QString::fromUtf8("QWidget\n"
@@ -1182,9 +1179,9 @@ public:
 
         horizontalLayout_28->addWidget(frmRemoteCmd);
 
-        QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/image/cmd.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_8, icon11, QString());
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/image/cmd.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_8, icon10, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
         horizontalLayout_19 = new QHBoxLayout(tab_5);
@@ -1198,9 +1195,9 @@ public:
 
         horizontalLayout_19->addWidget(frmAdvanceMonitor);
 
-        QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/image/MINIMIZE.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_5, icon12, QString());
+        QIcon icon11;
+        icon11.addFile(QString::fromUtf8(":/image/MINIMIZE.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_5, icon11, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         horizontalLayout_78 = new QHBoxLayout(tab_2);
@@ -1214,9 +1211,9 @@ public:
 
         horizontalLayout_78->addWidget(frmUserAction);
 
-        QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/image/CURSOR.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_2, icon13, QString());
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8(":/image/CURSOR.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_2, icon12, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
         tab_3->setStyleSheet(QString::fromUtf8("QWidget#tab_3\n"
@@ -1235,9 +1232,9 @@ public:
 
         horizontalLayout_223->addWidget(frmCapture);
 
-        QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/image/camera.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_3, icon14, QString());
+        QIcon icon13;
+        icon13.addFile(QString::fromUtf8(":/image/camera.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_3, icon13, QString());
         tab_9 = new QWidget();
         tab_9->setObjectName(QString::fromUtf8("tab_9"));
         horizontalLayout_20 = new QHBoxLayout(tab_9);
@@ -1256,9 +1253,9 @@ public:
 
         horizontalLayout_20->addWidget(frmMultiMedia);
 
-        QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/image/VIDEO CAMERA.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_9, icon15, QString());
+        QIcon icon14;
+        icon14.addFile(QString::fromUtf8(":/image/VIDEO CAMERA.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_9, icon14, QString());
         tab_11 = new QWidget();
         tab_11->setObjectName(QString::fromUtf8("tab_11"));
         horizontalLayout_34 = new QHBoxLayout(tab_11);
@@ -1277,9 +1274,9 @@ public:
 
         horizontalLayout_34->addWidget(frmAppInfo);
 
-        QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/image/CHAT.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_11, icon16, QString());
+        QIcon icon15;
+        icon15.addFile(QString::fromUtf8(":/image/CHAT.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_11, icon15, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
         verticalLayout_20 = new QVBoxLayout(tab_7);
@@ -1293,9 +1290,9 @@ public:
 
         verticalLayout_20->addWidget(frmMapInfo);
 
-        QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/image/map.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_7, icon17, QString());
+        QIcon icon16;
+        icon16.addFile(QString::fromUtf8(":/image/map.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_7, icon16, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName(QString::fromUtf8("tab_10"));
         horizontalLayout_33 = new QHBoxLayout(tab_10);
@@ -1320,9 +1317,9 @@ public:
 
         horizontalLayout_33->addLayout(verticalLayout_28);
 
-        QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/image/SETTINGS.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_10, icon18, QString());
+        QIcon icon17;
+        icon17.addFile(QString::fromUtf8(":/image/SETTINGS.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_10, icon17, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
         horizontalLayout_23 = new QHBoxLayout(tab_4);
@@ -1336,9 +1333,9 @@ public:
 
         horizontalLayout_23->addWidget(frmLog);
 
-        QIcon icon19;
-        icon19.addFile(QString::fromUtf8(":/image/STATISTICS.png"), QSize(), QIcon::Normal, QIcon::Off);
-        tabMain->addTab(tab_4, icon19, QString());
+        QIcon icon18;
+        icon18.addFile(QString::fromUtf8(":/image/STATISTICS.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabMain->addTab(tab_4, icon18, QString());
 
         verticalLayout->addWidget(tabMain);
 
@@ -1418,19 +1415,17 @@ public:
         const bool __sortingEnabled = trMissionStatus->isSortingEnabled();
         trMissionStatus->setSortingEnabled(false);
         QTreeWidgetItem *___qtreewidgetitem1 = trMissionStatus->topLevelItem(0);
-        ___qtreewidgetitem1->setText(0, QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\274\240\350\276\223\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem2 = ___qtreewidgetitem1->child(0);
-        ___qtreewidgetitem2->setText(0, QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\270\212\344\274\240", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem3 = ___qtreewidgetitem1->child(1);
-        ___qtreewidgetitem3->setText(0, QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\270\213\350\275\275", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem4 = ___qtreewidgetitem1->child(2);
-        ___qtreewidgetitem4->setText(0, QApplication::translate("TargetDlg", "\347\233\256\345\275\225\344\270\213\350\275\275", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem5 = ___qtreewidgetitem1->child(3);
-        ___qtreewidgetitem5->setText(0, QApplication::translate("TargetDlg", "\345\244\232\345\261\202\347\233\256\345\275\225\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem6 = ___qtreewidgetitem1->child(4);
-        ___qtreewidgetitem6->setText(0, QApplication::translate("TargetDlg", "\346\217\222\344\273\266\345\215\207\347\272\247\344\270\212\344\274\240", 0, QApplication::UnicodeUTF8));
-        QTreeWidgetItem *___qtreewidgetitem7 = ___qtreewidgetitem1->child(5);
-        ___qtreewidgetitem7->setText(0, QApplication::translate("TargetDlg", "\346\217\222\344\273\266\346\225\260\346\215\256\345\233\236\344\274\240", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\270\212\344\274\240", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem2 = trMissionStatus->topLevelItem(1);
+        ___qtreewidgetitem2->setText(0, QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\270\213\350\275\275", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem3 = trMissionStatus->topLevelItem(2);
+        ___qtreewidgetitem3->setText(0, QApplication::translate("TargetDlg", "\347\233\256\345\275\225\344\270\213\350\275\275", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem4 = trMissionStatus->topLevelItem(3);
+        ___qtreewidgetitem4->setText(0, QApplication::translate("TargetDlg", "\345\244\232\345\261\202\347\233\256\345\275\225\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem5 = trMissionStatus->topLevelItem(4);
+        ___qtreewidgetitem5->setText(0, QApplication::translate("TargetDlg", "\346\217\222\344\273\266\345\215\207\347\272\247\344\270\212\344\274\240", 0, QApplication::UnicodeUTF8));
+        QTreeWidgetItem *___qtreewidgetitem6 = trMissionStatus->topLevelItem(5);
+        ___qtreewidgetitem6->setText(0, QApplication::translate("TargetDlg", "\346\217\222\344\273\266\346\225\260\346\215\256\345\233\236\344\274\240", 0, QApplication::UnicodeUTF8));
         trMissionStatus->setSortingEnabled(__sortingEnabled);
 
         lbMissionStatus->setText(QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\274\240\350\276\223\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));

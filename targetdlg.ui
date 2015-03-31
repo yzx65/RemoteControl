@@ -134,66 +134,57 @@ QTreeWidget::item {
          </column>
          <item>
           <property name="text">
-           <string>文件传输指令</string>
+           <string>文件上传</string>
           </property>
           <property name="icon">
            <iconset resource="maindlg.qrc">
-            <normaloff>:/image/allfile.png</normaloff>:/image/allfile.png</iconset>
+            <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
           </property>
-          <item>
-           <property name="text">
-            <string>文件上传</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>文件下载</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/downfile.png</normaloff>:/image/downfile.png</iconset>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>目录下载</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/dirdown.png</normaloff>:/image/dirdown.png</iconset>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>多层目录信息</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/dirfilelist.png</normaloff>:/image/dirfilelist.png</iconset>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>插件升级上传</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>插件数据回传</string>
-           </property>
-           <property name="icon">
-            <iconset resource="maindlg.qrc">
-             <normaloff>:/image/up.png</normaloff>:/image/up.png</iconset>
-           </property>
-          </item>
+         </item>
+         <item>
+          <property name="text">
+           <string>文件下载</string>
+          </property>
+          <property name="icon">
+           <iconset resource="maindlg.qrc">
+            <normaloff>:/image/downfile.png</normaloff>:/image/downfile.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>目录下载</string>
+          </property>
+          <property name="icon">
+           <iconset resource="maindlg.qrc">
+            <normaloff>:/image/dirdown.png</normaloff>:/image/dirdown.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>多层目录信息</string>
+          </property>
+          <property name="icon">
+           <iconset resource="maindlg.qrc">
+            <normaloff>:/image/dirfilelist.png</normaloff>:/image/dirfilelist.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>插件升级上传</string>
+          </property>
+          <property name="icon">
+           <iconset resource="maindlg.qrc">
+            <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>插件数据回传</string>
+          </property>
+          <property name="icon">
+           <iconset resource="maindlg.qrc">
+            <normaloff>:/image/up.png</normaloff>:/image/up.png</iconset>
+          </property>
          </item>
         </widget>
        </item>

