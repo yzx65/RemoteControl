@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'useractiondlg.ui'
 **
-** Created: Tue Mar 31 10:16:11 2015
+** Created: Tue Mar 31 14:12:14 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -36,7 +36,7 @@ public:
     QTreeWidget *trUserAction;
     QFrame *frame_10;
     QVBoxLayout *verticalLayout_15;
-    QFrame *ssss;
+    QFrame *title;
     QHBoxLayout *horizontalLayout_21;
     QLabel *lbUserAction;
     QToolButton *btnRefreshData;
@@ -205,18 +205,18 @@ public:
         verticalLayout_15->setSpacing(0);
         verticalLayout_15->setContentsMargins(0, 0, 0, 0);
         verticalLayout_15->setObjectName(QString::fromUtf8("verticalLayout_15"));
-        ssss = new QFrame(frame_10);
-        ssss->setObjectName(QString::fromUtf8("ssss"));
-        ssss->setStyleSheet(QString::fromUtf8("QFrame\n"
+        title = new QFrame(frame_10);
+        title->setObjectName(QString::fromUtf8("title"));
+        title->setStyleSheet(QString::fromUtf8("QFrame\n"
 "{	\n"
 "	background-color: #dddddd;\n"
 "}"));
-        horizontalLayout_21 = new QHBoxLayout(ssss);
+        horizontalLayout_21 = new QHBoxLayout(title);
         horizontalLayout_21->setSpacing(0);
         horizontalLayout_21->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_21->setObjectName(QString::fromUtf8("horizontalLayout_21"));
         horizontalLayout_21->setContentsMargins(0, 0, 6, 0);
-        lbUserAction = new QLabel(ssss);
+        lbUserAction = new QLabel(title);
         lbUserAction->setObjectName(QString::fromUtf8("lbUserAction"));
         lbUserAction->setMinimumSize(QSize(0, 35));
         lbUserAction->setStyleSheet(QString::fromUtf8("QLabel\n"
@@ -228,7 +228,7 @@ public:
 
         horizontalLayout_21->addWidget(lbUserAction);
 
-        btnRefreshData = new QToolButton(ssss);
+        btnRefreshData = new QToolButton(title);
         btnRefreshData->setObjectName(QString::fromUtf8("btnRefreshData"));
         btnRefreshData->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
@@ -243,7 +243,7 @@ public:
         horizontalLayout_21->addWidget(btnRefreshData);
 
 
-        verticalLayout_15->addWidget(ssss);
+        verticalLayout_15->addWidget(title);
 
         stkUserAction = new QStackedWidget(frame_10);
         stkUserAction->setObjectName(QString::fromUtf8("stkUserAction"));
@@ -371,8 +371,8 @@ public:
         edtKeyboardRecordDetail->setMaximumSize(QSize(16777215, 120));
         edtKeyboardRecordDetail->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
-"	border:1px solid #cccccc;\n"
-"	border-left-width:0px;\n"
+"	border:0px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
 "}"));
         edtKeyboardRecordDetail->setReadOnly(true);
 
@@ -483,7 +483,7 @@ public:
         edtPasswordDetail->setMaximumSize(QSize(16777215, 120));
         edtPasswordDetail->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "	border-left-width:0px;\n"
 "}"));
         edtPasswordDetail->setReadOnly(true);
@@ -596,7 +596,7 @@ public:
         edtClipboardDataDetail->setMaximumSize(QSize(16777215, 120));
         edtClipboardDataDetail->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "	border-left-width:0px;\n"
 "}"));
         edtClipboardDataDetail->setReadOnly(true);
@@ -890,8 +890,8 @@ public:
         edtMessageInfoDetail->setMaximumSize(QSize(16777215, 120));
         edtMessageInfoDetail->setStyleSheet(QString::fromUtf8("QTextEdit\n"
 "{\n"
-"	border:1px solid #cccccc;\n"
-"	border-left-width:0px;\n"
+"	border:0px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
 "}"));
         edtMessageInfoDetail->setReadOnly(true);
 

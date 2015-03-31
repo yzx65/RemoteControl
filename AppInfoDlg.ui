@@ -686,17 +686,8 @@ p, li { white-space: pre-wrap; }
 }</string>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="leftMargin">
-          <number>6</number>
-         </property>
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="rightMargin">
-          <number>6</number>
-         </property>
-         <property name="bottomMargin">
-          <number>6</number>
+         <property name="margin">
+          <number>9</number>
          </property>
          <item>
           <widget class="QFrame" name="frame">
@@ -843,6 +834,9 @@ QTabBar::tab:selected {
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <property name="leftMargin">
               <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
              </property>
              <property name="rightMargin">
               <number>0</number>
@@ -1072,7 +1066,7 @@ QFrame#trQQFriends{
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <layout class="QHBoxLayout" name="horizontalLayout_4">
                  <item>
                   <widget class="QTreeWidget" name="trQQTroops">

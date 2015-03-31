@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maindlg.ui'
 **
-** Created: Tue Mar 31 10:16:12 2015
+** Created: Tue Mar 31 15:21:46 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -273,6 +273,7 @@ public:
 "	padding-left:10px;\n"
 "	border:1px solid #cccccc;\n"
 "	border-bottom-width:1px;\n"
+"	border-top-width:0px;\n"
 "}"));
 
         verticalLayout_3->addWidget(label_8);
@@ -400,7 +401,7 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label_4 = new QLabel(frame_target_info);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setMinimumSize(QSize(263, 31));
+        label_4->setMinimumSize(QSize(263, 30));
         label_4->setMaximumSize(QSize(263, 16777215));
         label_4->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
@@ -412,6 +413,7 @@ public:
 "	padding-left:10px;\n"
 "	border:1px solid #cccccc;\n"
 "	border-bottom-width:0px;\n"
+"	border-top-width:0px;\n"
 "}"));
 
         verticalLayout_2->addWidget(label_4);
@@ -468,6 +470,7 @@ public:
 " QHeaderView::up-arrow {\n"
 "     image:none;\n"
 "}"));
+        tbBasicInfo->setFrameShape(QFrame::NoFrame);
         tbBasicInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tbBasicInfo->setSelectionMode(QAbstractItemView::SingleSelection);
         tbBasicInfo->setSelectionBehavior(QAbstractItemView::SelectRows);

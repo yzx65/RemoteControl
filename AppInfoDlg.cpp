@@ -76,6 +76,8 @@ AppInfoDlg::AppInfoDlg(QWidget *parent, int system, std::wstring dataPath) :
 	workHost->start();
 
 	Reload();
+
+	ui->toolbar->hide();
 }
 
 AppInfoDlg::~AppInfoDlg()

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'filectrldlg.ui'
 **
-** Created: Tue Mar 31 10:16:12 2015
+** Created: Tue Mar 31 14:59:56 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -45,11 +45,10 @@ public:
     QStackedWidget *stkFileCtrl;
     QWidget *page;
     QVBoxLayout *verticalLayout_2;
+    QFrame *frame;
     QHBoxLayout *horizontalLayout;
-    QLabel *label_2;
     QComboBox *cmbAddress;
     QToolButton *btnGoto;
-    QSpacerItem *horizontalSpacer_2;
     QToolButton *btnFavorite;
     QToolButton *btnUp;
     QToolButton *btnRefresh;
@@ -59,6 +58,7 @@ public:
     QToolButton *btnMonitor;
     QToolButton *btnSearch;
     QTableWidget *tbFileList;
+    QFrame *frame_download_bar;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_4;
     QPushButton *btnUpload;
@@ -67,7 +67,7 @@ public:
     QPushButton *btnGetDirList;
     QWidget *page_2;
     QVBoxLayout *verticalLayout_11;
-    QFrame *frame;
+    QFrame *frame1;
     QHBoxLayout *horizontalLayout_5;
     QLineEdit *edtSearchPath;
     QPushButton *btnStartSearch;
@@ -92,7 +92,6 @@ public:
     QCheckBox *chkRar;
     QCheckBox *chkOtherExt;
     QLineEdit *edtFileType;
-    QLabel *label_7;
     QSpacerItem *horizontalSpacer_7;
     QHBoxLayout *horizontalLayout_12;
     QVBoxLayout *verticalLayout_7;
@@ -102,13 +101,16 @@ public:
     QRadioButton *rdSmall;
     QRadioButton *rdMiddle;
     QRadioButton *rdLarge;
+    QSpacerItem *horizontalSpacer_5;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer;
     QRadioButton *rdSetFileSizeArrange;
     QLineEdit *edtFileSizeFrom;
     QLabel *label_6;
     QLabel *label_8;
     QLineEdit *edtFileSizeTo;
     QLabel *label_13;
-    QSpacerItem *horizontalSpacer_5;
+    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_13;
     QCheckBox *chkFileTime;
     QLabel *label_9;
@@ -127,7 +129,7 @@ public:
     {
         if (FileCtrlDlg->objectName().isEmpty())
             FileCtrlDlg->setObjectName(QString::fromUtf8("FileCtrlDlg"));
-        FileCtrlDlg->resize(1080, 547);
+        FileCtrlDlg->resize(890, 554);
         horizontalLayout_3 = new QHBoxLayout(FileCtrlDlg);
         horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -213,6 +215,7 @@ public:
 
         frame_3 = new QFrame(FileCtrlDlg);
         frame_3->setObjectName(QString::fromUtf8("frame_3"));
+        frame_3->setMaximumSize(QSize(9999, 16777215));
         frame_3->setFrameShape(QFrame::NoFrame);
         frame_3->setFrameShadow(QFrame::Plain);
         verticalLayout_3 = new QVBoxLayout(frame_3);
@@ -247,31 +250,31 @@ public:
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         verticalLayout_2 = new QVBoxLayout(page);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label_2 = new QLabel(page);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setStyleSheet(QString::fromUtf8("QWidget\n"
+        frame = new QFrame(page);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setStyleSheet(QString::fromUtf8("QFrame\n"
 "{\n"
-"	font-family:\"Microsoft Yahei\";\n"
+"	border:0px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
 "}"));
-
-        horizontalLayout->addWidget(label_2);
-
-        cmbAddress = new QComboBox(page);
+        horizontalLayout = new QHBoxLayout(frame);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(10, 5, -1, 5);
+        cmbAddress = new QComboBox(frame);
         cmbAddress->setObjectName(QString::fromUtf8("cmbAddress"));
-        cmbAddress->setMinimumSize(QSize(500, 24));
-        cmbAddress->setMaximumSize(QSize(200, 16777215));
+        cmbAddress->setMinimumSize(QSize(20, 24));
+        cmbAddress->setMaximumSize(QSize(9999, 16777215));
         cmbAddress->setStyleSheet(QString::fromUtf8(""));
         cmbAddress->setEditable(true);
 
         horizontalLayout->addWidget(cmbAddress);
 
-        btnGoto = new QToolButton(page);
+        btnGoto = new QToolButton(frame);
         btnGoto->setObjectName(QString::fromUtf8("btnGoto"));
         btnGoto->setMinimumSize(QSize(60, 24));
         btnGoto->setStyleSheet(QString::fromUtf8("QToolButton\n"
@@ -298,13 +301,9 @@ public:
 
         horizontalLayout->addWidget(btnGoto);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        btnFavorite = new QToolButton(page);
+        btnFavorite = new QToolButton(frame);
         btnFavorite->setObjectName(QString::fromUtf8("btnFavorite"));
-        btnFavorite->setMinimumSize(QSize(24, 24));
+        btnFavorite->setMinimumSize(QSize(30, 30));
         btnFavorite->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -333,9 +332,9 @@ public:
 
         horizontalLayout->addWidget(btnFavorite);
 
-        btnUp = new QToolButton(page);
+        btnUp = new QToolButton(frame);
         btnUp->setObjectName(QString::fromUtf8("btnUp"));
-        btnUp->setMinimumSize(QSize(24, 24));
+        btnUp->setMinimumSize(QSize(30, 30));
         btnUp->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -364,9 +363,9 @@ public:
 
         horizontalLayout->addWidget(btnUp);
 
-        btnRefresh = new QToolButton(page);
+        btnRefresh = new QToolButton(frame);
         btnRefresh->setObjectName(QString::fromUtf8("btnRefresh"));
-        btnRefresh->setMinimumSize(QSize(24, 24));
+        btnRefresh->setMinimumSize(QSize(30, 30));
         btnRefresh->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -395,10 +394,10 @@ public:
 
         horizontalLayout->addWidget(btnRefresh);
 
-        btnDelete = new QToolButton(page);
+        btnDelete = new QToolButton(frame);
         btnDelete->setObjectName(QString::fromUtf8("btnDelete"));
         btnDelete->setEnabled(false);
-        btnDelete->setMinimumSize(QSize(24, 24));
+        btnDelete->setMinimumSize(QSize(30, 30));
         btnDelete->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -427,9 +426,9 @@ public:
 
         horizontalLayout->addWidget(btnDelete);
 
-        btnRun = new QToolButton(page);
+        btnRun = new QToolButton(frame);
         btnRun->setObjectName(QString::fromUtf8("btnRun"));
-        btnRun->setMinimumSize(QSize(24, 24));
+        btnRun->setMinimumSize(QSize(30, 30));
         btnRun->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -458,9 +457,9 @@ public:
 
         horizontalLayout->addWidget(btnRun);
 
-        btnAnalysis = new QToolButton(page);
+        btnAnalysis = new QToolButton(frame);
         btnAnalysis->setObjectName(QString::fromUtf8("btnAnalysis"));
-        btnAnalysis->setMinimumSize(QSize(24, 24));
+        btnAnalysis->setMinimumSize(QSize(30, 30));
         btnAnalysis->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -489,8 +488,9 @@ public:
 
         horizontalLayout->addWidget(btnAnalysis);
 
-        btnMonitor = new QToolButton(page);
+        btnMonitor = new QToolButton(frame);
         btnMonitor->setObjectName(QString::fromUtf8("btnMonitor"));
+        btnMonitor->setMinimumSize(QSize(30, 30));
         btnMonitor->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -519,9 +519,9 @@ public:
 
         horizontalLayout->addWidget(btnMonitor);
 
-        btnSearch = new QToolButton(page);
+        btnSearch = new QToolButton(frame);
         btnSearch->setObjectName(QString::fromUtf8("btnSearch"));
-        btnSearch->setMinimumSize(QSize(27, 27));
+        btnSearch->setMinimumSize(QSize(30, 30));
         btnSearch->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	border:none;\n"
@@ -551,7 +551,7 @@ public:
         horizontalLayout->addWidget(btnSearch);
 
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        verticalLayout_2->addWidget(frame);
 
         tbFileList = new QTableWidget(page);
         if (tbFileList->columnCount() < 6)
@@ -592,7 +592,8 @@ public:
 "}\n"
 "\n"
 "QFrame#tbFileList{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
+"	border-top-width:0px;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -605,10 +606,10 @@ public:
 "\n"
 " QScrollBar:vertical {\n"
 "     border: 0px solid grey;\n"
-"     background: transparent;\n"
+"     background: transparent"
+                        ";\n"
 "     width: 10px;\n"
-""
-                        " }\n"
+" }\n"
 " QScrollBar::handle:vertical {\n"
 "     background: #cccccc;;\n"
 "     min-height: 100px;\n"
@@ -641,14 +642,18 @@ public:
 
         verticalLayout_2->addWidget(tbFileList);
 
-        horizontalLayout_2 = new QHBoxLayout();
+        frame_download_bar = new QFrame(page);
+        frame_download_bar->setObjectName(QString::fromUtf8("frame_download_bar"));
+        frame_download_bar->setMinimumSize(QSize(0, 0));
+        horizontalLayout_2 = new QHBoxLayout(frame_download_bar);
         horizontalLayout_2->setSpacing(15);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_4);
 
-        btnUpload = new QPushButton(page);
+        btnUpload = new QPushButton(frame_download_bar);
         btnUpload->setObjectName(QString::fromUtf8("btnUpload"));
         btnUpload->setMinimumSize(QSize(70, 30));
         btnUpload->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -678,7 +683,7 @@ public:
 
         horizontalLayout_2->addWidget(btnUpload);
 
-        btnDownload = new QPushButton(page);
+        btnDownload = new QPushButton(frame_download_bar);
         btnDownload->setObjectName(QString::fromUtf8("btnDownload"));
         btnDownload->setEnabled(false);
         btnDownload->setMinimumSize(QSize(70, 30));
@@ -709,7 +714,7 @@ public:
 
         horizontalLayout_2->addWidget(btnDownload);
 
-        btnDownloadDir = new QPushButton(page);
+        btnDownloadDir = new QPushButton(frame_download_bar);
         btnDownloadDir->setObjectName(QString::fromUtf8("btnDownloadDir"));
         btnDownloadDir->setMinimumSize(QSize(100, 30));
         btnDownloadDir->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -739,7 +744,7 @@ public:
 
         horizontalLayout_2->addWidget(btnDownloadDir);
 
-        btnGetDirList = new QPushButton(page);
+        btnGetDirList = new QPushButton(frame_download_bar);
         btnGetDirList->setObjectName(QString::fromUtf8("btnGetDirList"));
         btnGetDirList->setMinimumSize(QSize(100, 30));
         btnGetDirList->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -770,7 +775,7 @@ public:
         horizontalLayout_2->addWidget(btnGetDirList);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_2);
+        verticalLayout_2->addWidget(frame_download_bar);
 
         stkFileCtrl->addWidget(page);
         page_2 = new QWidget();
@@ -779,14 +784,14 @@ public:
         verticalLayout_11->setSpacing(6);
         verticalLayout_11->setContentsMargins(11, 11, 11, 11);
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
-        frame = new QFrame(page_2);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        horizontalLayout_5 = new QHBoxLayout(frame);
+        frame1 = new QFrame(page_2);
+        frame1->setObjectName(QString::fromUtf8("frame1"));
+        horizontalLayout_5 = new QHBoxLayout(frame1);
         horizontalLayout_5->setSpacing(15);
         horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(-1, -1, 0, -1);
-        edtSearchPath = new QLineEdit(frame);
+        edtSearchPath = new QLineEdit(frame1);
         edtSearchPath->setObjectName(QString::fromUtf8("edtSearchPath"));
         edtSearchPath->setMinimumSize(QSize(0, 30));
         edtSearchPath->setStyleSheet(QString::fromUtf8("QLineEdit\n"
@@ -796,7 +801,7 @@ public:
 
         horizontalLayout_5->addWidget(edtSearchPath);
 
-        btnStartSearch = new QPushButton(frame);
+        btnStartSearch = new QPushButton(frame1);
         btnStartSearch->setObjectName(QString::fromUtf8("btnStartSearch"));
         btnStartSearch->setMinimumSize(QSize(80, 30));
         btnStartSearch->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -824,7 +829,7 @@ public:
         horizontalLayout_5->addWidget(btnStartSearch);
 
 
-        verticalLayout_11->addWidget(frame);
+        verticalLayout_11->addWidget(frame1);
 
         horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setSpacing(6);
@@ -848,6 +853,7 @@ public:
         chkFileName = new QCheckBox(frame_2);
         chkFileName->setObjectName(QString::fromUtf8("chkFileName"));
         chkFileName->setMinimumSize(QSize(120, 0));
+        chkFileName->setMaximumSize(QSize(120, 16777215));
 
         horizontalLayout_6->addWidget(chkFileName);
 
@@ -872,6 +878,7 @@ public:
         chkFileType = new QCheckBox(frame_2);
         chkFileType->setObjectName(QString::fromUtf8("chkFileType"));
         chkFileType->setMinimumSize(QSize(120, 0));
+        chkFileType->setMaximumSize(QSize(120, 16777215));
 
         verticalLayout_5->addWidget(chkFileType);
 
@@ -924,16 +931,6 @@ public:
 
         horizontalLayout_7->addWidget(edtFileType);
 
-        label_7 = new QLabel(frame_2);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
-        label_7->setSizePolicy(sizePolicy);
-
-        horizontalLayout_7->addWidget(label_7);
-
         horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_7->addItem(horizontalSpacer_7);
@@ -956,6 +953,7 @@ public:
         chkFileSize = new QCheckBox(frame_2);
         chkFileSize->setObjectName(QString::fromUtf8("chkFileSize"));
         chkFileSize->setMinimumSize(QSize(120, 0));
+        chkFileSize->setMaximumSize(QSize(120, 16777215));
 
         verticalLayout_7->addWidget(chkFileSize);
 
@@ -984,38 +982,6 @@ public:
 
         horizontalLayout_10->addWidget(rdLarge);
 
-        rdSetFileSizeArrange = new QRadioButton(frame_2);
-        rdSetFileSizeArrange->setObjectName(QString::fromUtf8("rdSetFileSizeArrange"));
-
-        horizontalLayout_10->addWidget(rdSetFileSizeArrange);
-
-        edtFileSizeFrom = new QLineEdit(frame_2);
-        edtFileSizeFrom->setObjectName(QString::fromUtf8("edtFileSizeFrom"));
-        edtFileSizeFrom->setMaximumSize(QSize(50, 16777215));
-
-        horizontalLayout_10->addWidget(edtFileSizeFrom);
-
-        label_6 = new QLabel(frame_2);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        horizontalLayout_10->addWidget(label_6);
-
-        label_8 = new QLabel(frame_2);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        horizontalLayout_10->addWidget(label_8);
-
-        edtFileSizeTo = new QLineEdit(frame_2);
-        edtFileSizeTo->setObjectName(QString::fromUtf8("edtFileSizeTo"));
-        edtFileSizeTo->setMaximumSize(QSize(50, 16777215));
-
-        horizontalLayout_10->addWidget(edtFileSizeTo);
-
-        label_13 = new QLabel(frame_2);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-
-        horizontalLayout_10->addWidget(label_13);
-
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_10->addItem(horizontalSpacer_5);
@@ -1029,12 +995,59 @@ public:
 
         verticalLayout_9->addLayout(horizontalLayout_12);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(0);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer = new QSpacerItem(135, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer);
+
+        rdSetFileSizeArrange = new QRadioButton(frame_2);
+        rdSetFileSizeArrange->setObjectName(QString::fromUtf8("rdSetFileSizeArrange"));
+
+        horizontalLayout_4->addWidget(rdSetFileSizeArrange);
+
+        edtFileSizeFrom = new QLineEdit(frame_2);
+        edtFileSizeFrom->setObjectName(QString::fromUtf8("edtFileSizeFrom"));
+        edtFileSizeFrom->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout_4->addWidget(edtFileSizeFrom);
+
+        label_6 = new QLabel(frame_2);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+
+        horizontalLayout_4->addWidget(label_6);
+
+        label_8 = new QLabel(frame_2);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        horizontalLayout_4->addWidget(label_8);
+
+        edtFileSizeTo = new QLineEdit(frame_2);
+        edtFileSizeTo->setObjectName(QString::fromUtf8("edtFileSizeTo"));
+        edtFileSizeTo->setMaximumSize(QSize(50, 16777215));
+
+        horizontalLayout_4->addWidget(edtFileSizeTo);
+
+        label_13 = new QLabel(frame_2);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+
+        horizontalLayout_4->addWidget(label_13);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_9->addLayout(horizontalLayout_4);
+
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setSpacing(6);
         horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
         chkFileTime = new QCheckBox(frame_2);
         chkFileTime->setObjectName(QString::fromUtf8("chkFileTime"));
         chkFileTime->setMinimumSize(QSize(120, 0));
+        chkFileTime->setMaximumSize(QSize(120, 16777215));
 
         horizontalLayout_13->addWidget(chkFileTime);
 
@@ -1254,7 +1267,6 @@ public:
         trFileCtrl->setSortingEnabled(__sortingEnabled);
 
         lbFileCtrl->setText(QApplication::translate("FileCtrlDlg", "\346\226\207\344\273\266\346\265\217\350\247\210", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("FileCtrlDlg", "\345\234\260\345\235\200\357\274\232", 0, QApplication::UnicodeUTF8));
         btnGoto->setText(QApplication::translate("FileCtrlDlg", "\350\275\254\345\210\260", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         btnFavorite->setToolTip(QApplication::translate("FileCtrlDlg", "\346\267\273\345\212\240\345\210\260\346\224\266\350\227\217\345\244\271", 0, QApplication::UnicodeUTF8));
@@ -1319,17 +1331,16 @@ public:
         chkOtherExt->setText(QApplication::translate("FileCtrlDlg", "\345\205\266\344\273\226", 0, QApplication::UnicodeUTF8));
         edtFileType->setText(QString());
         edtFileType->setPlaceholderText(QApplication::translate("FileCtrlDlg", ".img;.plist;", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("FileCtrlDlg", "(\344\273\245 ; \351\227\264\351\232\224,\344\270\215\345\220\253 * \345\217\267)", 0, QApplication::UnicodeUTF8));
         chkFileSize->setText(QApplication::translate("FileCtrlDlg", "\346\226\207\344\273\266\345\244\247\345\260\217", 0, QApplication::UnicodeUTF8));
         rdSmall->setText(QApplication::translate("FileCtrlDlg", "\345\260\217\357\274\210\345\260\217\344\272\216100k\357\274\211", 0, QApplication::UnicodeUTF8));
         rdMiddle->setText(QApplication::translate("FileCtrlDlg", "\344\270\255\357\274\210\345\260\217\344\272\2161M\357\274\211", 0, QApplication::UnicodeUTF8));
         rdLarge->setText(QApplication::translate("FileCtrlDlg", "\345\244\247\357\274\210\345\244\247\344\272\2161M\357\274\211", 0, QApplication::UnicodeUTF8));
-        rdSetFileSizeArrange->setText(QApplication::translate("FileCtrlDlg", "\346\214\207\345\256\232\345\244\247\345\260\217\350\214\203\345\233\264", 0, QApplication::UnicodeUTF8));
+        rdSetFileSizeArrange->setText(QApplication::translate("FileCtrlDlg", "\346\214\207\345\256\232\345\244\247\345\260\217\350\214\203\345\233\264   ", 0, QApplication::UnicodeUTF8));
         edtFileSizeFrom->setText(QApplication::translate("FileCtrlDlg", "0", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("FileCtrlDlg", "KB", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("FileCtrlDlg", "\342\200\224\342\200\224", 0, QApplication::UnicodeUTF8));
+        label_6->setText(QApplication::translate("FileCtrlDlg", " KB ", 0, QApplication::UnicodeUTF8));
+        label_8->setText(QApplication::translate("FileCtrlDlg", " -  ", 0, QApplication::UnicodeUTF8));
         edtFileSizeTo->setText(QApplication::translate("FileCtrlDlg", "100", 0, QApplication::UnicodeUTF8));
-        label_13->setText(QApplication::translate("FileCtrlDlg", "KB", 0, QApplication::UnicodeUTF8));
+        label_13->setText(QApplication::translate("FileCtrlDlg", " KB ", 0, QApplication::UnicodeUTF8));
         chkFileTime->setText(QApplication::translate("FileCtrlDlg", "\344\277\256\346\224\271\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
         label_9->setText(QApplication::translate("FileCtrlDlg", "\344\273\216", 0, QApplication::UnicodeUTF8));
         dateFrom->setDisplayFormat(QApplication::translate("FileCtrlDlg", "yyyy-MM-dd", 0, QApplication::UnicodeUTF8));

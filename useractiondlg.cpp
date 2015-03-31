@@ -15,10 +15,10 @@ UserActionDlg::UserActionDlg(QWidget *parent, Target* tar)
 	ui.setupUi(this);
 
 	// 检测用
-	if ( SYSTEM_ANDROID == GetSystemType(this->m_tar->dwOsBuildNumber) )
-	{
-		ui.trUserAction->topLevelItem(1)->setHidden(true);
-	}
+	//if ( SYSTEM_ANDROID == GetSystemType(this->m_tar->dwOsBuildNumber) )
+	//{
+	//	ui.trUserAction->topLevelItem(1)->setHidden(true);
+	//}
 
 	InitWidgetAppearance();
 	InitConnection();
@@ -29,6 +29,13 @@ UserActionDlg::UserActionDlg(QWidget *parent, Target* tar)
 
 	// 用户文件操作类型
 	strcpy(opType, "全部操作");
+
+	ui.title->hide();
+	ui.label_3->hide();
+	ui.label_4->hide();
+	ui.label_5->hide();
+	ui.label_11->hide();
+
 }
 
 UserActionDlg::~UserActionDlg()

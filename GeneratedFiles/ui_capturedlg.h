@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'capturedlg.ui'
 **
-** Created: Tue Mar 31 10:16:13 2015
+** Created: Tue Mar 31 15:29:23 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -36,7 +36,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QFrame *frame_63;
     QVBoxLayout *verticalLayout_2;
-    QFrame *frame;
+    QFrame *frame_setting;
     QVBoxLayout *verticalLayout;
     QFrame *frame_2;
     QHBoxLayout *horizontalLayout_4;
@@ -66,27 +66,28 @@ public:
     {
         if (CaptureDlg->objectName().isEmpty())
             CaptureDlg->setObjectName(QString::fromUtf8("CaptureDlg"));
-        CaptureDlg->resize(1069, 579);
+        CaptureDlg->resize(952, 579);
         horizontalLayout = new QHBoxLayout(CaptureDlg);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         frame_63 = new QFrame(CaptureDlg);
         frame_63->setObjectName(QString::fromUtf8("frame_63"));
-        frame_63->setMaximumSize(QSize(250, 16777215));
+        frame_63->setMaximumSize(QSize(200, 16777215));
         verticalLayout_2 = new QVBoxLayout(frame_63);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        frame = new QFrame(frame_63);
-        frame->setObjectName(QString::fromUtf8("frame"));
+        frame_setting = new QFrame(frame_63);
+        frame_setting->setObjectName(QString::fromUtf8("frame_setting"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy);
-        frame->setMinimumSize(QSize(0, 40));
-        frame->setStyleSheet(QString::fromUtf8("QFrame\n"
+        sizePolicy.setHeightForWidth(frame_setting->sizePolicy().hasHeightForWidth());
+        frame_setting->setSizePolicy(sizePolicy);
+        frame_setting->setMinimumSize(QSize(0, 40));
+        frame_setting->setMaximumSize(QSize(200, 16777215));
+        frame_setting->setStyleSheet(QString::fromUtf8("QFrame\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
 "}\n"
@@ -97,14 +98,14 @@ public:
 "	border:0px solid #cccccc;\n"
 "	border-right-width:1px;\n"
 "}"));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        verticalLayout = new QVBoxLayout(frame);
+        frame_setting->setFrameShape(QFrame::StyledPanel);
+        frame_setting->setFrameShadow(QFrame::Raised);
+        verticalLayout = new QVBoxLayout(frame_setting);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, -1, -1, -1);
-        frame_2 = new QFrame(frame);
+        frame_2 = new QFrame(frame_setting);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
@@ -159,7 +160,7 @@ public:
 
         verticalLayout->addWidget(frame_2);
 
-        frm1 = new QFrame(frame);
+        frm1 = new QFrame(frame_setting);
         frm1->setObjectName(QString::fromUtf8("frm1"));
         horizontalLayout_3 = new QHBoxLayout(frm1);
         horizontalLayout_3->setSpacing(0);
@@ -186,7 +187,7 @@ public:
 
         verticalLayout->addWidget(frm1);
 
-        frm2 = new QFrame(frame);
+        frm2 = new QFrame(frame_setting);
         frm2->setObjectName(QString::fromUtf8("frm2"));
         horizontalLayout_2 = new QHBoxLayout(frm2);
         horizontalLayout_2->setSpacing(0);
@@ -214,18 +215,23 @@ public:
         verticalLayout->addWidget(frm2);
 
 
-        verticalLayout_2->addWidget(frame);
+        verticalLayout_2->addWidget(frame_setting);
 
         trScreenshot = new QTreeWidget(frame_63);
         new QTreeWidgetItem(trScreenshot);
         trScreenshot->setObjectName(QString::fromUtf8("trScreenshot"));
-        trScreenshot->setStyleSheet(QString::fromUtf8("QFrame#trScreenshot\n"
-"{\n"
+        trScreenshot->setMinimumSize(QSize(200, 0));
+        trScreenshot->setMaximumSize(QSize(200, 16777215));
+        trScreenshot->setStyleSheet(QString::fromUtf8(" QWidget\n"
+" {\n"
 "	border:0px solid #cccccc;\n"
-"	border-top-width:1px;\n"
 "	border-right-width:1px;\n"
-"}"));
+"	border-bottom-width:1px;\n"
+"	border-left-width:1px;\n"
+"	background-color:rgb(240,240,240);\n"
+" }"));
         trScreenshot->setFrameShape(QFrame::NoFrame);
+        trScreenshot->setAlternatingRowColors(true);
         trScreenshot->setIconSize(QSize(24, 24));
         trScreenshot->setIndentation(20);
         trScreenshot->setRootIsDecorated(true);
@@ -241,7 +247,8 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tbScreenshot->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tbScreenshot->setObjectName(QString::fromUtf8("tbScreenshot"));
-        tbScreenshot->setMinimumSize(QSize(270, 0));
+        tbScreenshot->setMinimumSize(QSize(200, 0));
+        tbScreenshot->setMaximumSize(QSize(200, 16777215));
         tbScreenshot->setStyleSheet(QString::fromUtf8("\n"
 "QHeaderView::section {\n"
 "	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);\n"
@@ -402,7 +409,7 @@ public:
         const bool __sortingEnabled = trScreenshot->isSortingEnabled();
         trScreenshot->setSortingEnabled(false);
         QTreeWidgetItem *___qtreewidgetitem1 = trScreenshot->topLevelItem(0);
-        ___qtreewidgetitem1->setText(0, QApplication::translate("CaptureDlg", "\346\234\254\345\234\260\345\261\217\345\271\225\346\225\260\346\215\256\347\233\256\345\275\225", 0, QApplication::UnicodeUTF8));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("CaptureDlg", "\346\240\271\347\233\256\345\275\225", 0, QApplication::UnicodeUTF8));
         trScreenshot->setSortingEnabled(__sortingEnabled);
 
         QTableWidgetItem *___qtablewidgetitem = tbScreenshot->horizontalHeaderItem(0);

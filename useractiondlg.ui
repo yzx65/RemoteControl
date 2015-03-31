@@ -274,7 +274,7 @@ QTreeWidget::item {
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="ssss">
+       <widget class="QFrame" name="title">
         <property name="styleSheet">
          <string notr="true">QFrame
 {	
@@ -534,8 +534,8 @@ QFrame#tbUserFileAction{
             <property name="styleSheet">
              <string notr="true">QTextEdit
 {
-	border:1px solid #cccccc;
-	border-left-width:0px;
+	border:0px solid #cccccc;
+	border-bottom-width:1px;
 }</string>
             </property>
             <property name="readOnly">
@@ -698,7 +698,7 @@ QFrame#tbPasswordRecord{
             <property name="styleSheet">
              <string notr="true">QTextEdit
 {
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 	border-left-width:0px;
 }</string>
             </property>
@@ -865,7 +865,7 @@ QFrame#tbClipboardData{
             <property name="styleSheet">
              <string notr="true">QTextEdit
 {
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 	border-left-width:0px;
 }</string>
             </property>
@@ -1284,8 +1284,8 @@ QFrame#tbMessageInfo{
             <property name="styleSheet">
              <string notr="true">QTextEdit
 {
-	border:1px solid #cccccc;
-	border-left-width:0px;
+	border:0px solid #cccccc;
+	border-bottom-width:1px;
 }</string>
             </property>
             <property name="readOnly">

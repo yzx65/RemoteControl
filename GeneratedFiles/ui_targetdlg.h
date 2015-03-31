@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'targetdlg.ui'
 **
-** Created: Tue Mar 31 11:25:11 2015
+** Created: Tue Mar 31 13:55:04 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -20,7 +20,6 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QSpacerItem>
-#include <QtGui/QSplitter>
 #include <QtGui/QStackedWidget>
 #include <QtGui/QTabWidget>
 #include <QtGui/QTableWidget>
@@ -41,13 +40,13 @@ public:
     QTreeWidget *trMissionStatus;
     QFrame *frame_7;
     QVBoxLayout *verticalLayout_37;
-    QLabel *lbMissionStatus;
     QFrame *toolbar;
     QHBoxLayout *horizontalLayout_60;
     QToolButton *btnContinue;
     QToolButton *btnPause;
     QToolButton *btnCancel;
     QSpacerItem *horizontalSpacer_27;
+    QLabel *lbMissionStatus;
     QStackedWidget *stkMissionStatus;
     QWidget *page_11;
     QVBoxLayout *verticalLayout_40;
@@ -56,19 +55,12 @@ public:
     QVBoxLayout *verticalLayout_41;
     QTableWidget *tbDownloadFileList;
     QWidget *page_13;
-    QVBoxLayout *verticalLayout_43;
-    QSplitter *splitter_5;
-    QWidget *layoutWidget_8;
-    QVBoxLayout *verticalLayout_38;
-    QHBoxLayout *horizontalLayout_64;
+    QVBoxLayout *verticalLayout_4;
+    QVBoxLayout *verticalLayout_3;
     QLabel *label_38;
-    QLabel *label_39;
     QTableWidget *tbDirCommand;
-    QWidget *layoutWidget_9;
-    QVBoxLayout *verticalLayout_42;
-    QHBoxLayout *horizontalLayout_65;
+    QVBoxLayout *verticalLayout_2;
     QLabel *label_40;
-    QLabel *label_41;
     QTableWidget *tbFileCommand;
     QWidget *page_14;
     QVBoxLayout *verticalLayout_39;
@@ -220,21 +212,6 @@ public:
         verticalLayout_37->setSpacing(0);
         verticalLayout_37->setContentsMargins(0, 0, 0, 0);
         verticalLayout_37->setObjectName(QString::fromUtf8("verticalLayout_37"));
-        lbMissionStatus = new QLabel(frame_7);
-        lbMissionStatus->setObjectName(QString::fromUtf8("lbMissionStatus"));
-        lbMissionStatus->setMinimumSize(QSize(0, 35));
-        lbMissionStatus->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{	\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"	background-color: #dddddd;\n"
-"	color:#333333;\n"
-"	padding-left:20px;\n"
-"}"));
-        lbMissionStatus->setFrameShape(QFrame::NoFrame);
-        lbMissionStatus->setFrameShadow(QFrame::Plain);
-
-        verticalLayout_37->addWidget(lbMissionStatus);
-
         toolbar = new QFrame(frame_7);
         toolbar->setObjectName(QString::fromUtf8("toolbar"));
         toolbar->setStyleSheet(QString::fromUtf8("QFrame#toolbar\n"
@@ -244,12 +221,13 @@ public:
 "}"));
         horizontalLayout_60 = new QHBoxLayout(toolbar);
         horizontalLayout_60->setSpacing(10);
-        horizontalLayout_60->setContentsMargins(9, 9, 9, 9);
+        horizontalLayout_60->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_60->setObjectName(QString::fromUtf8("horizontalLayout_60"));
+        horizontalLayout_60->setContentsMargins(9, 5, 9, 5);
         btnContinue = new QToolButton(toolbar);
         btnContinue->setObjectName(QString::fromUtf8("btnContinue"));
         btnContinue->setEnabled(true);
-        btnContinue->setMinimumSize(QSize(80, 30));
+        btnContinue->setMinimumSize(QSize(30, 30));
         btnContinue->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	padding-left:5px;\n"
@@ -284,7 +262,7 @@ public:
         btnPause = new QToolButton(toolbar);
         btnPause->setObjectName(QString::fromUtf8("btnPause"));
         btnPause->setEnabled(true);
-        btnPause->setMinimumSize(QSize(80, 30));
+        btnPause->setMinimumSize(QSize(30, 30));
         btnPause->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	padding-left:5px;\n"
@@ -319,7 +297,7 @@ public:
         btnCancel = new QToolButton(toolbar);
         btnCancel->setObjectName(QString::fromUtf8("btnCancel"));
         btnCancel->setEnabled(true);
-        btnCancel->setMinimumSize(QSize(80, 30));
+        btnCancel->setMinimumSize(QSize(30, 30));
         btnCancel->setStyleSheet(QString::fromUtf8("QToolButton\n"
 "{\n"
 "	padding-left:5px;\n"
@@ -358,6 +336,21 @@ public:
 
         verticalLayout_37->addWidget(toolbar);
 
+        lbMissionStatus = new QLabel(frame_7);
+        lbMissionStatus->setObjectName(QString::fromUtf8("lbMissionStatus"));
+        lbMissionStatus->setMinimumSize(QSize(0, 35));
+        lbMissionStatus->setStyleSheet(QString::fromUtf8("QLabel\n"
+"{	\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"	background-color: #dddddd;\n"
+"	color:#333333;\n"
+"	padding-left:20px;\n"
+"}"));
+        lbMissionStatus->setFrameShape(QFrame::NoFrame);
+        lbMissionStatus->setFrameShadow(QFrame::Plain);
+
+        verticalLayout_37->addWidget(lbMissionStatus);
+
         stkMissionStatus = new QStackedWidget(frame_7);
         stkMissionStatus->setObjectName(QString::fromUtf8("stkMissionStatus"));
         stkMissionStatus->setStyleSheet(QString::fromUtf8("QWidget#stkMissionStatus\n"
@@ -369,8 +362,8 @@ public:
         page_11 = new QWidget();
         page_11->setObjectName(QString::fromUtf8("page_11"));
         verticalLayout_40 = new QVBoxLayout(page_11);
-        verticalLayout_40->setSpacing(9);
-        verticalLayout_40->setContentsMargins(9, 9, 9, 9);
+        verticalLayout_40->setSpacing(0);
+        verticalLayout_40->setContentsMargins(0, 0, 0, 0);
         verticalLayout_40->setObjectName(QString::fromUtf8("verticalLayout_40"));
         tbUploadFileList = new QTableWidget(page_11);
         if (tbUploadFileList->columnCount() < 9)
@@ -417,7 +410,7 @@ public:
 "}\n"
 "\n"
 "QFrame#tbUploadFileList{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -449,6 +442,7 @@ public:
 "	border:none;\n"
 "	background:transparent;\n"
 " }"));
+        tbUploadFileList->setFrameShape(QFrame::NoFrame);
         tbUploadFileList->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tbUploadFileList->setSelectionBehavior(QAbstractItemView::SelectRows);
         tbUploadFileList->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
@@ -470,8 +464,8 @@ public:
         page_12 = new QWidget();
         page_12->setObjectName(QString::fromUtf8("page_12"));
         verticalLayout_41 = new QVBoxLayout(page_12);
-        verticalLayout_41->setSpacing(9);
-        verticalLayout_41->setContentsMargins(9, 9, 9, 9);
+        verticalLayout_41->setSpacing(0);
+        verticalLayout_41->setContentsMargins(0, 0, 0, 0);
         verticalLayout_41->setObjectName(QString::fromUtf8("verticalLayout_41"));
         tbDownloadFileList = new QTableWidget(page_12);
         if (tbDownloadFileList->columnCount() < 8)
@@ -516,7 +510,7 @@ public:
 "}\n"
 "\n"
 "QFrame#tbDownloadFileList{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -569,43 +563,35 @@ public:
         stkMissionStatus->addWidget(page_12);
         page_13 = new QWidget();
         page_13->setObjectName(QString::fromUtf8("page_13"));
-        verticalLayout_43 = new QVBoxLayout(page_13);
-        verticalLayout_43->setSpacing(9);
-        verticalLayout_43->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_43->setObjectName(QString::fromUtf8("verticalLayout_43"));
-        verticalLayout_43->setContentsMargins(9, 0, 9, 9);
-        splitter_5 = new QSplitter(page_13);
-        splitter_5->setObjectName(QString::fromUtf8("splitter_5"));
-        splitter_5->setOrientation(Qt::Vertical);
-        layoutWidget_8 = new QWidget(splitter_5);
-        layoutWidget_8->setObjectName(QString::fromUtf8("layoutWidget_8"));
-        verticalLayout_38 = new QVBoxLayout(layoutWidget_8);
-        verticalLayout_38->setSpacing(1);
-        verticalLayout_38->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_38->setObjectName(QString::fromUtf8("verticalLayout_38"));
-        verticalLayout_38->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_64 = new QHBoxLayout();
-        horizontalLayout_64->setSpacing(6);
-        horizontalLayout_64->setObjectName(QString::fromUtf8("horizontalLayout_64"));
-        horizontalLayout_64->setContentsMargins(-1, 5, -1, 5);
-        label_38 = new QLabel(layoutWidget_8);
+        verticalLayout_4 = new QVBoxLayout(page_13);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setSpacing(0);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        label_38 = new QLabel(page_13);
         label_38->setObjectName(QString::fromUtf8("label_38"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_38->sizePolicy().hasHeightForWidth());
+        label_38->setSizePolicy(sizePolicy);
         label_38->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	background-color:rgb(247,249,255);;\n"
+"	color:black;\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	border:1px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
 "}"));
 
-        horizontalLayout_64->addWidget(label_38);
+        verticalLayout_3->addWidget(label_38);
 
-        label_39 = new QLabel(layoutWidget_8);
-        label_39->setObjectName(QString::fromUtf8("label_39"));
-
-        horizontalLayout_64->addWidget(label_39);
-
-
-        verticalLayout_38->addLayout(horizontalLayout_64);
-
-        tbDirCommand = new QTableWidget(layoutWidget_8);
+        tbDirCommand = new QTableWidget(page_13);
         if (tbDirCommand->columnCount() < 10)
             tbDirCommand->setColumnCount(10);
         QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
@@ -652,6 +638,7 @@ public:
 "\n"
 "QFrame#tbDirCommand{\n"
 "	border:1px solid #cccccc;\n"
+"	border-top-width:0px;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -666,8 +653,8 @@ public:
 "     background: transparent;\n"
 "     width: 10px;\n"
 " }\n"
-" QScrollBar::handle:ver"
-                        "tical {\n"
+""
+                        " QScrollBar::handle:vertical {\n"
 "     background: #cccccc;;\n"
 "     min-height: 100px;\n"
 " }\n"
@@ -683,6 +670,7 @@ public:
 "	border:none;\n"
 "	background:transparent;\n"
 " }"));
+        tbDirCommand->setFrameShape(QFrame::NoFrame);
         tbDirCommand->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tbDirCommand->setSelectionMode(QAbstractItemView::SingleSelection);
         tbDirCommand->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -698,38 +686,34 @@ public:
         tbDirCommand->verticalHeader()->setDefaultSectionSize(20);
         tbDirCommand->verticalHeader()->setMinimumSectionSize(20);
 
-        verticalLayout_38->addWidget(tbDirCommand);
+        verticalLayout_3->addWidget(tbDirCommand);
 
-        splitter_5->addWidget(layoutWidget_8);
-        layoutWidget_9 = new QWidget(splitter_5);
-        layoutWidget_9->setObjectName(QString::fromUtf8("layoutWidget_9"));
-        verticalLayout_42 = new QVBoxLayout(layoutWidget_9);
-        verticalLayout_42->setSpacing(1);
-        verticalLayout_42->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_42->setObjectName(QString::fromUtf8("verticalLayout_42"));
-        verticalLayout_42->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_65 = new QHBoxLayout();
-        horizontalLayout_65->setSpacing(6);
-        horizontalLayout_65->setObjectName(QString::fromUtf8("horizontalLayout_65"));
-        horizontalLayout_65->setContentsMargins(-1, 5, -1, 5);
-        label_40 = new QLabel(layoutWidget_9);
+
+        verticalLayout_4->addLayout(verticalLayout_3);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        label_40 = new QLabel(page_13);
         label_40->setObjectName(QString::fromUtf8("label_40"));
+        sizePolicy.setHeightForWidth(label_40->sizePolicy().hasHeightForWidth());
+        label_40->setSizePolicy(sizePolicy);
         label_40->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	background-color:rgb(247,249,255);;\n"
+"	color:black;\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	border:1px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
+"	border-left-width:1px;\n"
 "}"));
 
-        horizontalLayout_65->addWidget(label_40);
+        verticalLayout_2->addWidget(label_40);
 
-        label_41 = new QLabel(layoutWidget_9);
-        label_41->setObjectName(QString::fromUtf8("label_41"));
-
-        horizontalLayout_65->addWidget(label_41);
-
-
-        verticalLayout_42->addLayout(horizontalLayout_65);
-
-        tbFileCommand = new QTableWidget(layoutWidget_9);
+        tbFileCommand = new QTableWidget(page_13);
         if (tbFileCommand->columnCount() < 8)
             tbFileCommand->setColumnCount(8);
         QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
@@ -772,6 +756,7 @@ public:
 "\n"
 "QFrame#tbFileCommand{\n"
 "	border:1px solid #cccccc;\n"
+"	border-top-width:0px;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -785,9 +770,9 @@ public:
 "     border: 0px solid grey;\n"
 "     background: transparent;\n"
 "     width: 10px;\n"
-" }\n"
-" QScrollBar::handle:ve"
-                        "rtical {\n"
+" }"
+                        "\n"
+" QScrollBar::handle:vertical {\n"
 "     background: #cccccc;;\n"
 "     min-height: 100px;\n"
 " }\n"
@@ -803,6 +788,7 @@ public:
 "	border:none;\n"
 "	background:transparent;\n"
 " }"));
+        tbFileCommand->setFrameShape(QFrame::NoFrame);
         tbFileCommand->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tbFileCommand->setSelectionMode(QAbstractItemView::SingleSelection);
         tbFileCommand->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -819,20 +805,18 @@ public:
         tbFileCommand->verticalHeader()->setHighlightSections(false);
         tbFileCommand->verticalHeader()->setMinimumSectionSize(20);
 
-        verticalLayout_42->addWidget(tbFileCommand);
+        verticalLayout_2->addWidget(tbFileCommand);
 
-        splitter_5->addWidget(layoutWidget_9);
 
-        verticalLayout_43->addWidget(splitter_5);
+        verticalLayout_4->addLayout(verticalLayout_2);
 
         stkMissionStatus->addWidget(page_13);
         page_14 = new QWidget();
         page_14->setObjectName(QString::fromUtf8("page_14"));
         verticalLayout_39 = new QVBoxLayout(page_14);
-        verticalLayout_39->setSpacing(9);
-        verticalLayout_39->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_39->setSpacing(0);
+        verticalLayout_39->setContentsMargins(0, 0, 0, 0);
         verticalLayout_39->setObjectName(QString::fromUtf8("verticalLayout_39"));
-        verticalLayout_39->setContentsMargins(-1, 9, -1, -1);
         tbDirInfoList = new QTableWidget(page_14);
         if (tbDirInfoList->columnCount() < 8)
             tbDirInfoList->setColumnCount(8);
@@ -875,7 +859,7 @@ public:
 "}\n"
 "\n"
 "QFrame#tbDirInfoList{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -929,8 +913,8 @@ public:
         page_17 = new QWidget();
         page_17->setObjectName(QString::fromUtf8("page_17"));
         verticalLayout_30 = new QVBoxLayout(page_17);
-        verticalLayout_30->setSpacing(9);
-        verticalLayout_30->setContentsMargins(9, 9, 9, 9);
+        verticalLayout_30->setSpacing(0);
+        verticalLayout_30->setContentsMargins(0, 0, 0, 0);
         verticalLayout_30->setObjectName(QString::fromUtf8("verticalLayout_30"));
         tbUploadPluginList = new QTableWidget(page_17);
         if (tbUploadPluginList->columnCount() < 7)
@@ -972,7 +956,7 @@ public:
 "}\n"
 "\n"
 "QFrame#tbUploadPluginList{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -1026,10 +1010,9 @@ public:
         page_10 = new QWidget();
         page_10->setObjectName(QString::fromUtf8("page_10"));
         verticalLayout_10 = new QVBoxLayout(page_10);
-        verticalLayout_10->setSpacing(6);
-        verticalLayout_10->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_10->setSpacing(0);
+        verticalLayout_10->setContentsMargins(0, 0, 0, 0);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
-        verticalLayout_10->setContentsMargins(-1, 9, -1, -1);
         tbPluginData = new QTableWidget(page_10);
         if (tbPluginData->columnCount() < 9)
             tbPluginData->setColumnCount(9);
@@ -1074,7 +1057,7 @@ public:
 "}\n"
 "\n"
 "QFrame#tbPluginData{\n"
-"	border:1px solid #cccccc;\n"
+"	border:0px solid #cccccc;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -1341,11 +1324,11 @@ public:
 
         frame_4 = new QFrame(TargetDlg);
         frame_4->setObjectName(QString::fromUtf8("frame_4"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(frame_4->sizePolicy().hasHeightForWidth());
-        frame_4->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(frame_4->sizePolicy().hasHeightForWidth());
+        frame_4->setSizePolicy(sizePolicy1);
         frame_4->setStyleSheet(QString::fromUtf8("QFrame#frame_4\n"
 "{\n"
 "	background-color:rgb(240,240,240);\n"
@@ -1428,13 +1411,13 @@ public:
         ___qtreewidgetitem6->setText(0, QApplication::translate("TargetDlg", "\346\217\222\344\273\266\346\225\260\346\215\256\345\233\236\344\274\240", 0, QApplication::UnicodeUTF8));
         trMissionStatus->setSortingEnabled(__sortingEnabled);
 
-        lbMissionStatus->setText(QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\274\240\350\276\223\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
-        btnContinue->setText(QApplication::translate("TargetDlg", "  \347\273\247\347\273\255", 0, QApplication::UnicodeUTF8));
-        btnPause->setText(QApplication::translate("TargetDlg", "  \346\232\202\345\201\234", 0, QApplication::UnicodeUTF8));
+        btnContinue->setText(QString());
+        btnPause->setText(QString());
 #ifndef QT_NO_TOOLTIP
         btnCancel->setToolTip(QApplication::translate("TargetDlg", "\345\217\226\346\266\210\345\271\266\345\210\240\351\231\244\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
-        btnCancel->setText(QApplication::translate("TargetDlg", "  \345\217\226\346\266\210", 0, QApplication::UnicodeUTF8));
+        btnCancel->setText(QString());
+        lbMissionStatus->setText(QApplication::translate("TargetDlg", "\346\226\207\344\273\266\344\274\240\350\276\223\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tbUploadFileList->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("TargetDlg", "\347\212\266\346\200\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tbUploadFileList->horizontalHeaderItem(1);
@@ -1469,8 +1452,7 @@ public:
         ___qtablewidgetitem15->setText(QApplication::translate("TargetDlg", "\345\267\262\345\256\214\346\210\220", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem16 = tbDownloadFileList->horizontalHeaderItem(7);
         ___qtablewidgetitem16->setText(QApplication::translate("TargetDlg", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
-        label_38->setText(QApplication::translate("TargetDlg", " \347\233\256\345\275\225\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
-        label_39->setText(QString());
+        label_38->setText(QApplication::translate("TargetDlg", "\347\233\256\345\275\225", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem17 = tbDirCommand->horizontalHeaderItem(0);
         ___qtablewidgetitem17->setText(QApplication::translate("TargetDlg", "\347\212\266\346\200\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem18 = tbDirCommand->horizontalHeaderItem(1);
@@ -1491,8 +1473,7 @@ public:
         ___qtablewidgetitem25->setText(QApplication::translate("TargetDlg", "\345\207\272\351\224\231", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem26 = tbDirCommand->horizontalHeaderItem(9);
         ___qtablewidgetitem26->setText(QApplication::translate("TargetDlg", "\345\244\207\346\263\250", 0, QApplication::UnicodeUTF8));
-        label_40->setText(QApplication::translate("TargetDlg", " \345\214\205\345\220\253\347\232\204\346\226\207\344\273\266\346\214\207\344\273\244", 0, QApplication::UnicodeUTF8));
-        label_41->setText(QString());
+        label_40->setText(QApplication::translate("TargetDlg", "\347\233\256\345\275\225\344\270\255\347\232\204\346\226\207\344\273\266", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem27 = tbFileCommand->horizontalHeaderItem(0);
         ___qtablewidgetitem27->setText(QApplication::translate("TargetDlg", "\347\212\266\346\200\201", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem28 = tbFileCommand->horizontalHeaderItem(1);

@@ -1,7 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'maindlg.h'
 **
-** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.6)
+** Created: Tue Mar 31 13:00:18 2015
+**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -10,7 +11,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'maindlg.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
-#error "This file was generated using the moc from 4.8.6. It"
+#error "This file was generated using the moc from 4.8.4. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -30,31 +31,31 @@ static const uint qt_meta_data_MainDlg[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-       9,    8,    8,    8, 0x08,
-      23,    8,    8,    8, 0x08,
-      36,    8,    8,    8, 0x08,
-      58,    8,    8,    8, 0x08,
-      71,    8,    8,    8, 0x08,
-      86,    8,    8,    8, 0x08,
-     101,    8,    8,    8, 0x08,
-     115,    8,    8,    8, 0x08,
-     132,    8,    8,    8, 0x08,
-     148,    8,    8,    8, 0x08,
-     168,    8,    8,    8, 0x08,
-     182,    8,    8,    8, 0x08,
-     203,    8,    8,    8, 0x08,
-     224,    8,    8,    8, 0x08,
-     246,    8,    8,    8, 0x08,
-     273,    8,    8,    8, 0x08,
-     286,    8,    8,    8, 0x08,
-     312,  300,    8,    8, 0x08,
-     345,  300,    8,    8, 0x08,
-     394,  388,    8,    8, 0x08,
-     437,  431,    8,    8, 0x08,
-     475,  431,    8,    8, 0x08,
-     516,    8,    8,    8, 0x08,
-     532,    8,    8,    8, 0x08,
-     555,  548,    8,    8, 0x08,
+       9,    8,    8,    8, 0x0a,
+      23,    8,    8,    8, 0x0a,
+      36,    8,    8,    8, 0x0a,
+      58,    8,    8,    8, 0x0a,
+      71,    8,    8,    8, 0x0a,
+      86,    8,    8,    8, 0x0a,
+     101,    8,    8,    8, 0x0a,
+     115,    8,    8,    8, 0x0a,
+     132,    8,    8,    8, 0x0a,
+     148,    8,    8,    8, 0x0a,
+     168,    8,    8,    8, 0x0a,
+     182,    8,    8,    8, 0x0a,
+     203,    8,    8,    8, 0x0a,
+     224,    8,    8,    8, 0x0a,
+     246,    8,    8,    8, 0x0a,
+     273,    8,    8,    8, 0x0a,
+     286,    8,    8,    8, 0x0a,
+     312,  300,    8,    8, 0x0a,
+     345,  300,    8,    8, 0x0a,
+     394,  388,    8,    8, 0x0a,
+     437,  431,    8,    8, 0x0a,
+     475,  431,    8,    8, 0x0a,
+     516,    8,    8,    8, 0x0a,
+     532,    8,    8,    8, 0x0a,
+     555,  548,    8,    8, 0x0a,
      607,    8,    8,    8, 0x0a,
      647,  626,    8,    8, 0x0a,
 

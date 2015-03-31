@@ -41,7 +41,7 @@ void MapInfoDlg::InitWidgetAppearance()
 {
 	// µØÍ¼
 	NoFocusStyle* nofocusStyle = new NoFocusStyle(this);
-	ui.spltMap->setStretchFactor(1, 1);
+	//ui.spltMap->setStretchFactor(1, 1);
 	QHBoxLayout* layout = new QHBoxLayout(ui.mapContainer);
 	m_webBrowser = new QAxWidget(ui.mapContainer);
 	layout->addWidget(m_webBrowser);

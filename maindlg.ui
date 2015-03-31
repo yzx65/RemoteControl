@@ -50,6 +50,7 @@
 	padding-left:10px;
 	border:1px solid #cccccc;
 	border-bottom-width:1px;
+	border-top-width:0px;
 }</string>
           </property>
           <property name="text">
@@ -275,7 +276,7 @@ QFrame#trTarget{
              <property name="minimumSize">
               <size>
                <width>263</width>
-               <height>31</height>
+               <height>30</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -295,6 +296,7 @@ QFrame#trTarget{
 	padding-left:10px;
 	border:1px solid #cccccc;
 	border-bottom-width:0px;
+	border-top-width:0px;
 }</string>
              </property>
              <property name="text">
@@ -347,6 +349,9 @@ QFrame#tbBasicInfo{
  QHeaderView::up-arrow {
      image:none;
 }</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
              </property>
              <property name="editTriggers">
               <set>QAbstractItemView::NoEditTriggers</set>

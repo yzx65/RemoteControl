@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>547</height>
+    <width>890</width>
+    <height>554</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -135,6 +135,12 @@ QTreeWidget::item {
    </item>
    <item>
     <widget class="QFrame" name="frame_3">
+     <property name="maximumSize">
+      <size>
+       <width>9999</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
@@ -189,53 +195,63 @@ QWidget
         </property>
         <widget class="QWidget" name="page">
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QLabel" name="label_2">
-              <property name="styleSheet">
-               <string notr="true">QWidget
+           <widget class="QFrame" name="frame">
+            <property name="styleSheet">
+             <string notr="true">QFrame
 {
-	font-family:&quot;Microsoft Yahei&quot;;
+	border:0px solid #cccccc;
+	border-bottom-width:1px;
 }</string>
-              </property>
-              <property name="text">
-               <string>地址：</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="cmbAddress">
-              <property name="minimumSize">
-               <size>
-                <width>500</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>200</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="editable">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnGoto">
-              <property name="minimumSize">
-               <size>
-                <width>60</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="leftMargin">
+              <number>10</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <widget class="QComboBox" name="cmbAddress">
+               <property name="minimumSize">
+                <size>
+                 <width>20</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>9999</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="editable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnGoto">
+               <property name="minimumSize">
+                <size>
+                 <width>60</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	font-family:&quot;Microsoft Yahei&quot;;
 	border:1px solid #bbbbbb;
@@ -256,38 +272,25 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>转到</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnFavorite">
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>添加到收藏夹</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>转到</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnFavorite">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>添加到收藏夹</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -307,38 +310,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/star.png</normaloff>:/image/star.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnUp">
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>向上</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/star.png</normaloff>:/image/star.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnUp">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>向上</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -358,38 +361,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/up.png</normaloff>:/image/up.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnRefresh">
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>刷新</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/up.png</normaloff>:/image/up.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnRefresh">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>刷新</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -409,41 +412,41 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnDelete">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>删除</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnDelete">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>删除</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -463,38 +466,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnRun">
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>运行</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnRun">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>运行</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -514,38 +517,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/run.png</normaloff>:/image/run.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnAnalysis">
-              <property name="minimumSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>智能分析</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/run.png</normaloff>:/image/run.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnAnalysis">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>智能分析</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -565,32 +568,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/analysis.png</normaloff>:/image/analysis.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnMonitor">
-              <property name="toolTip">
-               <string>添加监视</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/analysis.png</normaloff>:/image/analysis.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnMonitor">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>添加监视</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -610,38 +619,38 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>...</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/monitor.png</normaloff>:/image/monitor.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnSearch">
-              <property name="minimumSize">
-               <size>
-                <width>27</width>
-                <height>27</height>
-               </size>
-              </property>
-              <property name="toolTip">
-               <string>搜索文件</string>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QToolButton
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/monitor.png</normaloff>:/image/monitor.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="btnSearch">
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>搜索文件</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QToolButton
 {
 	border:none;
 	background-color:transparent;
@@ -661,26 +670,27 @@ QToolButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/search.png</normaloff>:/image/search.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>24</width>
-                <height>24</height>
-               </size>
-              </property>
-              <property name="autoRaise">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-           </layout>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/search.png</normaloff>:/image/search.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="autoRaise">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
           <item>
            <widget class="QTableWidget" name="tbFileList">
@@ -708,7 +718,8 @@ QTableWidget:item
 }
 
 QFrame#tbFileList{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
+	border-top-width:0px;
 }
 
  QHeaderView::down-arrow {
@@ -813,33 +824,40 @@ QFrame#tbFileList{
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <property name="spacing">
-             <number>15</number>
+           <widget class="QFrame" name="frame_download_bar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
             </property>
-            <item>
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnUpload">
-              <property name="minimumSize">
-               <size>
-                <width>70</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>15</number>
+             </property>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnUpload">
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
 {
 	font-family:&quot;Microsoft Yahei&quot;;
 	border:1px solid #bbbbbb;
@@ -860,29 +878,29 @@ QPushButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>上传</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnDownload">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>70</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton
+               </property>
+               <property name="text">
+                <string>上传</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnDownload">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>70</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
 {
 	font-family:&quot;Microsoft Yahei&quot;;
 	border:1px solid #bbbbbb;
@@ -903,26 +921,26 @@ QPushButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>下载</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/downfile.png</normaloff>:/image/downfile.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnDownloadDir">
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton
+               </property>
+               <property name="text">
+                <string>下载</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/downfile.png</normaloff>:/image/downfile.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnDownloadDir">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
 {
 	font-family:&quot;Microsoft Yahei&quot;;
 	border:1px solid #bbbbbb;
@@ -943,26 +961,26 @@ QPushButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>目录下载</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/dirdown.png</normaloff>:/image/dirdown.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnGetDirList">
-              <property name="minimumSize">
-               <size>
-                <width>100</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton
+               </property>
+               <property name="text">
+                <string>目录下载</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/dirdown.png</normaloff>:/image/dirdown.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnGetDirList">
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton
 {
 	font-family:&quot;Microsoft Yahei&quot;;
 	border:1px solid #bbbbbb;
@@ -983,17 +1001,18 @@ QPushButton:disabled
 {
 	background-color:transparent;
 }</string>
-              </property>
-              <property name="text">
-               <string>目录获取</string>
-              </property>
-              <property name="icon">
-               <iconset resource="maindlg.qrc">
-                <normaloff>:/image/dirfilelist.png</normaloff>:/image/dirfilelist.png</iconset>
-              </property>
-             </widget>
-            </item>
-           </layout>
+               </property>
+               <property name="text">
+                <string>目录获取</string>
+               </property>
+               <property name="icon">
+                <iconset resource="maindlg.qrc">
+                 <normaloff>:/image/dirfilelist.png</normaloff>:/image/dirfilelist.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -1100,6 +1119,12 @@ QPushButton:disabled
                      <height>0</height>
                     </size>
                    </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <property name="text">
                     <string>文件名称</string>
                    </property>
@@ -1140,6 +1165,12 @@ QPushButton:disabled
                       <size>
                        <width>120</width>
                        <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>16777215</height>
                       </size>
                      </property>
                      <property name="text">
@@ -1219,19 +1250,6 @@ QPushButton:disabled
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="label_7">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="text">
-                        <string>(以 ; 间隔,不含 * 号)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
                       <spacer name="horizontalSpacer_7">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
@@ -1260,6 +1278,12 @@ QPushButton:disabled
                       <size>
                        <width>120</width>
                        <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>120</width>
+                       <height>16777215</height>
                       </size>
                      </property>
                      <property name="text">
@@ -1301,60 +1325,6 @@ QPushButton:disabled
                       </widget>
                      </item>
                      <item>
-                      <widget class="QRadioButton" name="rdSetFileSizeArrange">
-                       <property name="text">
-                        <string>指定大小范围</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="edtFileSizeFrom">
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>0</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_6">
-                       <property name="text">
-                        <string>KB</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_8">
-                       <property name="text">
-                        <string>——</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="edtFileSizeTo">
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>100</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_13">
-                       <property name="text">
-                        <string>KB</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
                       <spacer name="horizontalSpacer_5">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
@@ -1374,6 +1344,96 @@ QPushButton:disabled
                 </layout>
                </item>
                <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>135</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="rdSetFileSizeArrange">
+                   <property name="text">
+                    <string>指定大小范围   </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtFileSizeFrom">
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string> KB </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string> -  </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="edtFileSizeTo">
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>100</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_13">
+                   <property name="text">
+                    <string> KB </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_13">
                  <item>
                   <widget class="QCheckBox" name="chkFileTime">
@@ -1381,6 +1441,12 @@ QPushButton:disabled
                     <size>
                      <width>120</width>
                      <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>16777215</height>
                     </size>
                    </property>
                    <property name="text">

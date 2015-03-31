@@ -31,6 +31,15 @@ FileCtrlDlg::FileCtrlDlg(QWidget *parent, Target* tar)
 	// Éó²éÓÃ
 	//ui.btnSearch->hide();
 	//ui.btnMonitor->hide();
+
+	ui.lbFileCtrl->hide();
+	ui.frame_download_bar->hide();
+	ui.btnGoto->hide();
+	ui.btnFavorite->hide();
+	ui.btnDelete->hide();
+	ui.btnRun->hide();
+	ui.btnAnalysis->hide();
+	ui.btnMonitor->hide();
 }
 
 FileCtrlDlg::~FileCtrlDlg()

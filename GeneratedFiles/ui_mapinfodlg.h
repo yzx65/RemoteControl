@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapinfodlg.ui'
 **
-** Created: Tue Mar 31 10:16:12 2015
+** Created: Tue Mar 31 15:11:22 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -17,11 +17,9 @@
 #include <QtGui/QFrame>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
+#include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
-#include <QtGui/QSplitter>
 #include <QtGui/QTableWidget>
-#include <QtGui/QToolButton>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
 
@@ -32,24 +30,27 @@ class Ui_MapInfoDlg
 public:
     QHBoxLayout *horizontalLayout;
     QFrame *map;
-    QHBoxLayout *horizontalLayout_11;
-    QSplitter *spltMap;
-    QTableWidget *tbLocationHistory;
-    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout_21;
-    QFrame *frame_getlocation;
-    QHBoxLayout *horizontalLayout_8;
-    QLabel *label_15;
-    QLabel *label_14;
-    QSpacerItem *horizontalSpacer_12;
-    QToolButton *btnGetLocation;
+    QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer;
+    QVBoxLayout *verticalLayout;
     QFrame *mapContainer;
+    QPushButton *btnGetLocation;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *verticalSpacer;
+    QTableWidget *tbLocationHistory;
 
     void setupUi(QWidget *MapInfoDlg)
     {
         if (MapInfoDlg->objectName().isEmpty())
             MapInfoDlg->setObjectName(QString::fromUtf8("MapInfoDlg"));
         MapInfoDlg->resize(970, 587);
+        MapInfoDlg->setStyleSheet(QString::fromUtf8("QFrame#MapInfoDlg\n"
+"{\n"
+"	background-color:#cccccc;\n"
+"}"));
         horizontalLayout = new QHBoxLayout(MapInfoDlg);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -58,26 +59,108 @@ public:
         map->setObjectName(QString::fromUtf8("map"));
         map->setStyleSheet(QString::fromUtf8("QFrame#map\n"
 "{	\n"
-" background-color:white;\n"
+" background-color:#cccccc;\n"
 "border:1px solid #aaaaaa;\n"
 " border-top-width:0px;\n"
 "}"));
         map->setFrameShape(QFrame::StyledPanel);
         map->setFrameShadow(QFrame::Raised);
-        horizontalLayout_11 = new QHBoxLayout(map);
-        horizontalLayout_11->setSpacing(0);
-        horizontalLayout_11->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
-        spltMap = new QSplitter(map);
-        spltMap->setObjectName(QString::fromUtf8("spltMap"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        verticalLayout_2 = new QVBoxLayout(map);
+        verticalLayout_2->setSpacing(0);
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_21 = new QVBoxLayout();
+        verticalLayout_21->setSpacing(0);
+        verticalLayout_21->setObjectName(QString::fromUtf8("verticalLayout_21"));
+        verticalSpacer_2 = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_21->addItem(verticalSpacer_2);
+
+
+        verticalLayout_2->addLayout(verticalLayout_21);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalSpacer = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        mapContainer = new QFrame(map);
+        mapContainer->setObjectName(QString::fromUtf8("mapContainer"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(spltMap->sizePolicy().hasHeightForWidth());
-        spltMap->setSizePolicy(sizePolicy);
-        spltMap->setOrientation(Qt::Horizontal);
-        spltMap->setHandleWidth(1);
-        tbLocationHistory = new QTableWidget(spltMap);
+        sizePolicy.setHeightForWidth(mapContainer->sizePolicy().hasHeightForWidth());
+        mapContainer->setSizePolicy(sizePolicy);
+        mapContainer->setMinimumSize(QSize(500, 300));
+        mapContainer->setStyleSheet(QString::fromUtf8("QFrame#mapContainer\n"
+"{\n"
+"	padding:-10px;\n"
+"	border:1px solid white;\n"
+"	background-color:white;\n"
+"}"));
+        mapContainer->setFrameShape(QFrame::StyledPanel);
+        mapContainer->setFrameShadow(QFrame::Raised);
+
+        verticalLayout->addWidget(mapContainer);
+
+        btnGetLocation = new QPushButton(map);
+        btnGetLocation->setObjectName(QString::fromUtf8("btnGetLocation"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(btnGetLocation->sizePolicy().hasHeightForWidth());
+        btnGetLocation->setSizePolicy(sizePolicy1);
+        btnGetLocation->setMinimumSize(QSize(101, 38));
+        btnGetLocation->setMaximumSize(QSize(9999, 38));
+        btnGetLocation->setStyleSheet(QString::fromUtf8("QPushButton\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"	font-size:13px;\n"
+"	border:0px solid #aaaaaa;\n"
+"	color:white;\n"
+"	padding-left:5px;\n"
+"	background-color:transparent;\n"
+"	text-align:center;\n"
+"	background-color:rgb(46,52,52);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"	background-color:rgb(128,188,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed\n"
+"{\n"
+"	background-color:rgb(128,188,255);\n"
+"	margin:1px;\n"
+"}"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/location.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnGetLocation->setIcon(icon);
+        btnGetLocation->setIconSize(QSize(24, 24));
+
+        verticalLayout->addWidget(btnGetLocation);
+
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
+        horizontalSpacer_2 = new QSpacerItem(100, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
+
+        verticalSpacer = new QSpacerItem(10, 10, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        verticalLayout_2->addItem(verticalSpacer);
+
+        tbLocationHistory = new QTableWidget(map);
         if (tbLocationHistory->columnCount() < 2)
             tbLocationHistory->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -85,11 +168,11 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tbLocationHistory->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         tbLocationHistory->setObjectName(QString::fromUtf8("tbLocationHistory"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(tbLocationHistory->sizePolicy().hasHeightForWidth());
-        tbLocationHistory->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(tbLocationHistory->sizePolicy().hasHeightForWidth());
+        tbLocationHistory->setSizePolicy(sizePolicy2);
         tbLocationHistory->setMinimumSize(QSize(270, 0));
         tbLocationHistory->setMaximumSize(QSize(9999, 16777215));
         tbLocationHistory->setStyleSheet(QString::fromUtf8("\n"
@@ -114,9 +197,9 @@ public:
 "}\n"
 "\n"
 "QFrame#tbLocationHistory{\n"
-"	border:1px solid #aaaaaa;\n"
-"	border-bottom-width:0px;\n"
-"	border-top-width:0px;\n"
+"	border:0px solid #cccccc;\n"
+"	border-bottom-width:1px;\n"
+"	border-top-width:1px;\n"
 "}\n"
 "\n"
 " QHeaderView::down-arrow {\n"
@@ -153,7 +236,6 @@ public:
         tbLocationHistory->setSelectionMode(QAbstractItemView::SingleSelection);
         tbLocationHistory->setSelectionBehavior(QAbstractItemView::SelectRows);
         tbLocationHistory->setShowGrid(false);
-        spltMap->addWidget(tbLocationHistory);
         tbLocationHistory->horizontalHeader()->setDefaultSectionSize(130);
         tbLocationHistory->horizontalHeader()->setHighlightSections(false);
         tbLocationHistory->horizontalHeader()->setMinimumSectionSize(130);
@@ -162,110 +244,8 @@ public:
         tbLocationHistory->verticalHeader()->setDefaultSectionSize(20);
         tbLocationHistory->verticalHeader()->setHighlightSections(false);
         tbLocationHistory->verticalHeader()->setMinimumSectionSize(20);
-        layoutWidget = new QWidget(spltMap);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        verticalLayout_21 = new QVBoxLayout(layoutWidget);
-        verticalLayout_21->setSpacing(0);
-        verticalLayout_21->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_21->setObjectName(QString::fromUtf8("verticalLayout_21"));
-        verticalLayout_21->setContentsMargins(0, 0, 0, 0);
-        frame_getlocation = new QFrame(layoutWidget);
-        frame_getlocation->setObjectName(QString::fromUtf8("frame_getlocation"));
-        frame_getlocation->setStyleSheet(QString::fromUtf8("QFrame#frame_getlocation\n"
-"{\n"
-"	background-color:rgb(240,240,240);\n"
-"}\n"
-"\n"
-"QFrame#frame_getlocation\n"
-"{\n"
-"	border:0px solid #aaaaaa;\n"
-"	border-bottom-width:1px;\n"
-"}"));
-        horizontalLayout_8 = new QHBoxLayout(frame_getlocation);
-        horizontalLayout_8->setSpacing(6);
-        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        horizontalLayout_8->setContentsMargins(-1, 6, 6, 6);
-        label_15 = new QLabel(frame_getlocation);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setMaximumSize(QSize(24, 24));
-        label_15->setPixmap(QPixmap(QString::fromUtf8(":/image/location.png")));
-        label_15->setScaledContents(true);
 
-        horizontalLayout_8->addWidget(label_15);
-
-        label_14 = new QLabel(frame_getlocation);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"}"));
-
-        horizontalLayout_8->addWidget(label_14);
-
-        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_8->addItem(horizontalSpacer_12);
-
-        btnGetLocation = new QToolButton(frame_getlocation);
-        btnGetLocation->setObjectName(QString::fromUtf8("btnGetLocation"));
-        btnGetLocation->setMinimumSize(QSize(101, 38));
-        btnGetLocation->setMaximumSize(QSize(101, 38));
-        btnGetLocation->setStyleSheet(QString::fromUtf8("QToolButton\n"
-"{\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"}\n"
-"QToolButton\n"
-"{\n"
-"	font-family:\"Microsoft Yahei\";\n"
-"	border:1px solid #bbbbbb;\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:1 #cccccc);\n"
-"}\n"
-"\n"
-"QToolButton:hover\n"
-"{\n"
-"	background-color:#d5d5d5;\n"
-"}\n"
-"\n"
-"QToolButton:pressed\n"
-"{\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #cccccc, stop:1 #eeeeee);\n"
-"}\n"
-"\n"
-"QToolButton:disabled\n"
-"{\n"
-"	background-color:transparent;\n"
-"}"));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/location.png"), QSize(), QIcon::Normal, QIcon::Off);
-        btnGetLocation->setIcon(icon);
-        btnGetLocation->setIconSize(QSize(24, 24));
-        btnGetLocation->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-
-        horizontalLayout_8->addWidget(btnGetLocation);
-
-
-        verticalLayout_21->addWidget(frame_getlocation);
-
-        mapContainer = new QFrame(layoutWidget);
-        mapContainer->setObjectName(QString::fromUtf8("mapContainer"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(mapContainer->sizePolicy().hasHeightForWidth());
-        mapContainer->setSizePolicy(sizePolicy2);
-        mapContainer->setStyleSheet(QString::fromUtf8("QFrame#mapContainer\n"
-"{\n"
-"	padding:-10px;\n"
-"}"));
-        mapContainer->setFrameShape(QFrame::StyledPanel);
-        mapContainer->setFrameShadow(QFrame::Raised);
-
-        verticalLayout_21->addWidget(mapContainer);
-
-        spltMap->addWidget(layoutWidget);
-
-        horizontalLayout_11->addWidget(spltMap);
+        verticalLayout_2->addWidget(tbLocationHistory);
 
 
         horizontalLayout->addWidget(map);
@@ -279,13 +259,11 @@ public:
     void retranslateUi(QWidget *MapInfoDlg)
     {
         MapInfoDlg->setWindowTitle(QApplication::translate("MapInfoDlg", "MapInfoDlg", 0, QApplication::UnicodeUTF8));
+        btnGetLocation->setText(QApplication::translate("MapInfoDlg", "\350\216\267\345\217\226\344\275\215\347\275\256", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tbLocationHistory->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MapInfoDlg", "\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tbLocationHistory->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QApplication::translate("MapInfoDlg", "\346\211\200\345\234\250\345\234\260", 0, QApplication::UnicodeUTF8));
-        label_15->setText(QString());
-        label_14->setText(QApplication::translate("MapInfoDlg", "  \345\234\260\345\233\276\350\257\246\347\273\206\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        btnGetLocation->setText(QApplication::translate("MapInfoDlg", "\350\216\267\345\217\226\344\275\215\347\275\256", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

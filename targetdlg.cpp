@@ -129,6 +129,10 @@ TargetDlg::TargetDlg(Target* target)
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));
+
+	ui.lbMissionStatus->hide();
+
+	this->resize(900, this->height());
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

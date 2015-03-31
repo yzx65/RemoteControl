@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1069</width>
+    <width>952</width>
     <height>579</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
     <widget class="QFrame" name="frame_63">
      <property name="maximumSize">
       <size>
-       <width>250</width>
+       <width>200</width>
        <height>16777215</height>
       </size>
      </property>
@@ -36,7 +36,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="frame_setting">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
           <horstretch>0</horstretch>
@@ -47,6 +47,12 @@
          <size>
           <width>0</width>
           <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -285,16 +291,33 @@ QToolButton:disabled
       </item>
       <item>
        <widget class="QTreeWidget" name="trScreenshot">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="styleSheet">
-         <string notr="true">QFrame#trScreenshot
-{
+         <string notr="true"> QWidget
+ {
 	border:0px solid #cccccc;
-	border-top-width:1px;
 	border-right-width:1px;
-}</string>
+	border-bottom-width:1px;
+	border-left-width:1px;
+	background-color:rgb(240,240,240);
+ }</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
         </property>
         <property name="iconSize">
          <size>
@@ -318,7 +341,7 @@ QToolButton:disabled
         </column>
         <item>
          <property name="text">
-          <string>本地屏幕数据目录</string>
+          <string>根目录</string>
          </property>
         </item>
        </widget>
@@ -327,8 +350,14 @@ QToolButton:disabled
        <widget class="QTableWidget" name="tbScreenshot">
         <property name="minimumSize">
          <size>
-          <width>270</width>
+          <width>200</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">

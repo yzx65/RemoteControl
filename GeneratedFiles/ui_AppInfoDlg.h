@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'AppInfoDlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Tue Mar 31 14:26:28 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -73,7 +74,7 @@ public:
     QWidget *tab_2;
     QVBoxLayout *verticalLayout_3;
     QSplitter *splitter_3;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_4;
     QTreeWidget *trQQTroops;
     QFrame *frame_2;
@@ -549,9 +550,8 @@ public:
 "}"));
         verticalLayout = new QVBoxLayout(framexxx);
         verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setContentsMargins(9, 9, 9, 9);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(6, 0, 6, 6);
         frame = new QFrame(framexxx);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setStyleSheet(QString::fromUtf8("QWidget\n"
@@ -667,7 +667,7 @@ public:
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, -1, 0, 0);
+        verticalLayout_2->setContentsMargins(0, 9, 0, 0);
         splitter_2 = new QSplitter(tab);
         splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
         splitter_2->setStyleSheet(QString::fromUtf8("QWidget\n"
@@ -831,14 +831,14 @@ public:
 "	background-color:white;\n"
 "}"));
         splitter_3->setOrientation(Qt::Vertical);
-        widget = new QWidget(splitter_3);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        horizontalLayout_4 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(splitter_3);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        trQQTroops = new QTreeWidget(widget);
+        trQQTroops = new QTreeWidget(layoutWidget);
         trQQTroops->setObjectName(QString::fromUtf8("trQQTroops"));
         trQQTroops->setMaximumSize(QSize(9999, 16777215));
         trQQTroops->setStyleSheet(QString::fromUtf8("\n"
@@ -930,7 +930,7 @@ public:
 
         horizontalLayout_4->addWidget(trQQTroops);
 
-        frame_2 = new QFrame(widget);
+        frame_2 = new QFrame(layoutWidget);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
@@ -968,7 +968,7 @@ public:
 
         horizontalLayout_4->addWidget(frame_2);
 
-        splitter_3->addWidget(widget);
+        splitter_3->addWidget(layoutWidget);
         edtQQTroopHistory = new QTextBrowser(splitter_3);
         edtQQTroopHistory->setObjectName(QString::fromUtf8("edtQQTroopHistory"));
         edtQQTroopHistory->setStyleSheet(QString::fromUtf8("QWidget\n"

@@ -204,34 +204,6 @@ QTreeWidget::item {
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="lbMissionStatus">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLabel
-{	
-	font-family:&quot;Microsoft Yahei&quot;;
-	background-color: #dddddd;
-	color:#333333;
-	padding-left:20px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <property name="text">
-             <string>文件传输指令</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QFrame" name="toolbar">
             <property name="styleSheet">
              <string notr="true">QFrame#toolbar
@@ -244,8 +216,17 @@ QTreeWidget::item {
              <property name="spacing">
               <number>10</number>
              </property>
-             <property name="margin">
+             <property name="leftMargin">
               <number>9</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>9</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
              </property>
              <item>
               <widget class="QToolButton" name="btnContinue">
@@ -254,7 +235,7 @@ QTreeWidget::item {
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>30</width>
                  <height>30</height>
                 </size>
                </property>
@@ -283,7 +264,7 @@ QToolButton:disabled
 }</string>
                </property>
                <property name="text">
-                <string>  继续</string>
+                <string/>
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
@@ -310,7 +291,7 @@ QToolButton:disabled
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>30</width>
                  <height>30</height>
                 </size>
                </property>
@@ -339,7 +320,7 @@ QToolButton:disabled
 }</string>
                </property>
                <property name="text">
-                <string>  暂停</string>
+                <string/>
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
@@ -366,7 +347,7 @@ QToolButton:disabled
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>80</width>
+                 <width>30</width>
                  <height>30</height>
                 </size>
                </property>
@@ -398,7 +379,7 @@ QToolButton:disabled
 }</string>
                </property>
                <property name="text">
-                <string>  取消</string>
+                <string/>
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
@@ -435,6 +416,34 @@ QToolButton:disabled
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="lbMissionStatus">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLabel
+{	
+	font-family:&quot;Microsoft Yahei&quot;;
+	background-color: #dddddd;
+	color:#333333;
+	padding-left:20px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="text">
+             <string>文件传输指令</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QStackedWidget" name="stkMissionStatus">
             <property name="styleSheet">
              <string notr="true">QWidget#stkMissionStatus
@@ -450,10 +459,10 @@ QToolButton:disabled
             <widget class="QWidget" name="page_11">
              <layout class="QVBoxLayout" name="verticalLayout_40">
               <property name="spacing">
-               <number>9</number>
+               <number>0</number>
               </property>
               <property name="margin">
-               <number>9</number>
+               <number>0</number>
               </property>
               <item>
                <widget class="QTableWidget" name="tbUploadFileList">
@@ -481,7 +490,7 @@ QTableWidget:item
 }
 
 QFrame#tbUploadFileList{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 }
 
  QHeaderView::down-arrow {
@@ -512,6 +521,9 @@ QFrame#tbUploadFileList{
 	border:none;
 	background:transparent;
  }</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <property name="editTriggers">
                  <set>QAbstractItemView::NoEditTriggers</set>
@@ -607,10 +619,10 @@ QFrame#tbUploadFileList{
             <widget class="QWidget" name="page_12">
              <layout class="QVBoxLayout" name="verticalLayout_41">
               <property name="spacing">
-               <number>9</number>
+               <number>0</number>
               </property>
               <property name="margin">
-               <number>9</number>
+               <number>0</number>
               </property>
               <item>
                <widget class="QTableWidget" name="tbDownloadFileList">
@@ -640,7 +652,7 @@ QTableWidget:item
 }
 
 QFrame#tbDownloadFileList{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 }
 
  QHeaderView::down-arrow {
@@ -762,66 +774,42 @@ QFrame#tbDownloadFileList{
              </layout>
             </widget>
             <widget class="QWidget" name="page_13">
-             <layout class="QVBoxLayout" name="verticalLayout_43">
-              <property name="spacing">
-               <number>9</number>
-              </property>
-              <property name="leftMargin">
-               <number>9</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>9</number>
-              </property>
-              <property name="bottomMargin">
-               <number>9</number>
-              </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <widget class="QSplitter" name="splitter_5">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <property name="spacing">
+                 <number>0</number>
                 </property>
-                <widget class="QWidget" name="layoutWidget_8">
-                 <layout class="QVBoxLayout" name="verticalLayout_38">
-                  <property name="spacing">
-                   <number>1</number>
+                <item>
+                 <widget class="QLabel" name="label_38">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
                   </property>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_64">
-                    <property name="topMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>5</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="label_38">
-                      <property name="styleSheet">
-                       <string notr="true">QLabel
+                  <property name="styleSheet">
+                   <string notr="true">QLabel
 {
 	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:rgb(247,249,255);;
+	color:black;
+	min-height:30px;
+	padding-left:10px;
+	border:1px solid #cccccc;
+	border-bottom-width:1px;
 }</string>
-                      </property>
-                      <property name="text">
-                       <string> 目录指令</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_39">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QTableWidget" name="tbDirCommand">
-                    <property name="styleSheet">
-                     <string notr="true">
+                  </property>
+                  <property name="text">
+                   <string>目录</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tbDirCommand">
+                  <property name="styleSheet">
+                   <string notr="true">
 QHeaderView::section {
 	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);
 	border:none;
@@ -844,6 +832,7 @@ QTableWidget:item
 
 QFrame#tbDirCommand{
 	border:1px solid #cccccc;
+	border-top-width:0px;
 }
 
  QHeaderView::down-arrow {
@@ -874,142 +863,142 @@ QFrame#tbDirCommand{
 	border:none;
 	background:transparent;
  }</string>
-                    </property>
-                    <property name="editTriggers">
-                     <set>QAbstractItemView::NoEditTriggers</set>
-                    </property>
-                    <property name="selectionMode">
-                     <enum>QAbstractItemView::SingleSelection</enum>
-                    </property>
-                    <property name="selectionBehavior">
-                     <enum>QAbstractItemView::SelectRows</enum>
-                    </property>
-                    <property name="verticalScrollMode">
-                     <enum>QAbstractItemView::ScrollPerPixel</enum>
-                    </property>
-                    <property name="horizontalScrollMode">
-                     <enum>QAbstractItemView::ScrollPerPixel</enum>
-                    </property>
-                    <property name="showGrid">
-                     <bool>false</bool>
-                    </property>
-                    <property name="gridStyle">
-                     <enum>Qt::NoPen</enum>
-                    </property>
-                    <property name="sortingEnabled">
-                     <bool>false</bool>
-                    </property>
-                    <attribute name="horizontalHeaderHighlightSections">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="horizontalHeaderMinimumSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <attribute name="horizontalHeaderStretchLastSection">
-                     <bool>true</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderVisible">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderDefaultSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <attribute name="verticalHeaderMinimumSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <column>
-                     <property name="text">
-                      <string>状态</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>指令ID</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>目标端目录</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>目录层数</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>进行</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>暂停</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>完成</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>取消</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>出错</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>备注</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="layoutWidget_9">
-                 <layout class="QVBoxLayout" name="verticalLayout_42">
-                  <property name="spacing">
-                   <number>1</number>
                   </property>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_65">
-                    <property name="topMargin">
-                     <number>5</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>5</number>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="label_40">
-                      <property name="styleSheet">
-                       <string notr="true">QLabel
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="verticalScrollMode">
+                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                  </property>
+                  <property name="horizontalScrollMode">
+                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                  </property>
+                  <property name="showGrid">
+                   <bool>false</bool>
+                  </property>
+                  <property name="gridStyle">
+                   <enum>Qt::NoPen</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>false</bool>
+                  </property>
+                  <attribute name="horizontalHeaderHighlightSections">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderMinimumSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderDefaultSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <attribute name="verticalHeaderMinimumSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>状态</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>指令ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>目标端目录</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>目录层数</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>进行</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>暂停</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>完成</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>取消</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>出错</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>备注</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="label_40">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel
 {
 	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:rgb(247,249,255);;
+	color:black;
+	min-height:30px;
+	padding-left:10px;
+	border:1px solid #cccccc;
+	border-bottom-width:1px;
+	border-left-width:1px;
 }</string>
-                      </property>
-                      <property name="text">
-                       <string> 包含的文件指令</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_41">
-                      <property name="text">
-                       <string/>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QTableWidget" name="tbFileCommand">
-                    <property name="styleSheet">
-                     <string notr="true">
+                  </property>
+                  <property name="text">
+                   <string>目录中的文件</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTableWidget" name="tbFileCommand">
+                  <property name="styleSheet">
+                   <string notr="true">
 QHeaderView::section {
 	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);
 	border:none;
@@ -1032,6 +1021,7 @@ QTableWidget:item
 
 QFrame#tbFileCommand{
 	border:1px solid #cccccc;
+	border-top-width:0px;
 }
 
  QHeaderView::down-arrow {
@@ -1062,107 +1052,108 @@ QFrame#tbFileCommand{
 	border:none;
 	background:transparent;
  }</string>
-                    </property>
-                    <property name="editTriggers">
-                     <set>QAbstractItemView::NoEditTriggers</set>
-                    </property>
-                    <property name="selectionMode">
-                     <enum>QAbstractItemView::SingleSelection</enum>
-                    </property>
-                    <property name="selectionBehavior">
-                     <enum>QAbstractItemView::SelectRows</enum>
-                    </property>
-                    <property name="verticalScrollMode">
-                     <enum>QAbstractItemView::ScrollPerPixel</enum>
-                    </property>
-                    <property name="horizontalScrollMode">
-                     <enum>QAbstractItemView::ScrollPerPixel</enum>
-                    </property>
-                    <property name="showGrid">
-                     <bool>false</bool>
-                    </property>
-                    <property name="gridStyle">
-                     <enum>Qt::NoPen</enum>
-                    </property>
-                    <property name="sortingEnabled">
-                     <bool>false</bool>
-                    </property>
-                    <attribute name="horizontalHeaderHighlightSections">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="horizontalHeaderMinimumSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <attribute name="horizontalHeaderStretchLastSection">
-                     <bool>true</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderVisible">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderDefaultSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <attribute name="verticalHeaderHighlightSections">
-                     <bool>false</bool>
-                    </attribute>
-                    <attribute name="verticalHeaderMinimumSectionSize">
-                     <number>20</number>
-                    </attribute>
-                    <column>
-                     <property name="text">
-                      <string>状态</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>指令ID</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>目标端路径</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>本地路径</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>总长度</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>中转缓存</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>已完成</string>
-                     </property>
-                    </column>
-                    <column>
-                     <property name="text">
-                      <string>备注</string>
-                     </property>
-                    </column>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </widget>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::SingleSelection</enum>
+                  </property>
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="verticalScrollMode">
+                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                  </property>
+                  <property name="horizontalScrollMode">
+                   <enum>QAbstractItemView::ScrollPerPixel</enum>
+                  </property>
+                  <property name="showGrid">
+                   <bool>false</bool>
+                  </property>
+                  <property name="gridStyle">
+                   <enum>Qt::NoPen</enum>
+                  </property>
+                  <property name="sortingEnabled">
+                   <bool>false</bool>
+                  </property>
+                  <attribute name="horizontalHeaderHighlightSections">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="horizontalHeaderMinimumSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderVisible">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderDefaultSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <attribute name="verticalHeaderHighlightSections">
+                   <bool>false</bool>
+                  </attribute>
+                  <attribute name="verticalHeaderMinimumSectionSize">
+                   <number>20</number>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>状态</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>指令ID</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>目标端路径</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>本地路径</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>总长度</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>中转缓存</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>已完成</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>备注</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="page_14">
              <layout class="QVBoxLayout" name="verticalLayout_39">
               <property name="spacing">
-               <number>9</number>
+               <number>0</number>
               </property>
-              <property name="topMargin">
-               <number>9</number>
+              <property name="margin">
+               <number>0</number>
               </property>
               <item>
                <widget class="QTableWidget" name="tbDirInfoList">
@@ -1189,7 +1180,7 @@ QTableWidget:item
 }
 
 QFrame#tbDirInfoList{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 }
 
  QHeaderView::down-arrow {
@@ -1313,10 +1304,10 @@ QFrame#tbDirInfoList{
             <widget class="QWidget" name="page_17">
              <layout class="QVBoxLayout" name="verticalLayout_30">
               <property name="spacing">
-               <number>9</number>
+               <number>0</number>
               </property>
               <property name="margin">
-               <number>9</number>
+               <number>0</number>
               </property>
               <item>
                <widget class="QTableWidget" name="tbUploadPluginList">
@@ -1343,7 +1334,7 @@ QTableWidget:item
 }
 
 QFrame#tbUploadPluginList{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 }
 
  QHeaderView::down-arrow {
@@ -1461,8 +1452,11 @@ QFrame#tbUploadPluginList{
             </widget>
             <widget class="QWidget" name="page_10">
              <layout class="QVBoxLayout" name="verticalLayout_10">
-              <property name="topMargin">
-               <number>9</number>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="margin">
+               <number>0</number>
               </property>
               <item>
                <widget class="QTableWidget" name="tbPluginData">
@@ -1489,7 +1483,7 @@ QTableWidget:item
 }
 
 QFrame#tbPluginData{
-	border:1px solid #cccccc;
+	border:0px solid #cccccc;
 }
 
  QHeaderView::down-arrow {

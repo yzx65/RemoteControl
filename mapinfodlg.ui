@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>MapInfoDlg</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame#MapInfoDlg
+{
+	background-color:#cccccc;
+}</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
     <number>0</number>
@@ -25,7 +31,7 @@
      <property name="styleSheet">
       <string notr="true">QFrame#map
 {	
- background-color:white;
+ background-color:#cccccc;
 border:1px solid #aaaaaa;
  border-top-width:0px;
 }</string>
@@ -36,7 +42,7 @@ border:1px solid #aaaaaa;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -44,40 +50,198 @@ border:1px solid #aaaaaa;
        <number>0</number>
       </property>
       <item>
-       <widget class="QSplitter" name="spltMap">
+       <layout class="QVBoxLayout" name="verticalLayout_21">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="mapContainer">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QFrame#mapContainer
+{
+	padding:-10px;
+	border:1px solid white;
+	background-color:white;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnGetLocation">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>101</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>9999</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border:0px solid #aaaaaa;
+	color:white;
+	padding-left:5px;
+	background-color:transparent;
+	text-align:center;
+	background-color:rgb(46,52,52);
+}
+
+QPushButton:hover
+{
+	background-color:rgb(128,188,255);
+}
+
+QPushButton:pressed
+{
+	background-color:rgb(128,188,255);
+	margin:1px;
+}</string>
+            </property>
+            <property name="text">
+             <string>获取位置</string>
+            </property>
+            <property name="icon">
+             <iconset resource="maindlg.qrc">
+              <normaloff>:/image/location.png</normaloff>:/image/location.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tbLocationHistory">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+        <property name="minimumSize">
+         <size>
+          <width>270</width>
+          <height>0</height>
+         </size>
         </property>
-        <property name="handleWidth">
-         <number>1</number>
+        <property name="maximumSize">
+         <size>
+          <width>9999</width>
+          <height>16777215</height>
+         </size>
         </property>
-        <widget class="QTableWidget" name="tbLocationHistory">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>270</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>9999</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
+        <property name="styleSheet">
+         <string notr="true">
 QHeaderView::section {
 	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);
 	border:none;
@@ -99,9 +263,9 @@ QTableWidget:item
 }
 
 QFrame#tbLocationHistory{
-	border:1px solid #aaaaaa;
-	border-bottom-width:0px;
-	border-top-width:0px;
+	border:0px solid #cccccc;
+	border-bottom-width:1px;
+	border-top-width:1px;
 }
 
  QHeaderView::down-arrow {
@@ -132,217 +296,56 @@ QScrollBar:vertical {
 	border:none;
 	background:transparent;
  }</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="showGrid">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>130</number>
+        </attribute>
+        <attribute name="horizontalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderMinimumSectionSize">
+         <number>130</number>
+        </attribute>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>20</number>
+        </attribute>
+        <attribute name="verticalHeaderHighlightSections">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="verticalHeaderMinimumSectionSize">
+         <number>20</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>时间</string>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+        </column>
+        <column>
+         <property name="text">
+          <string>所在地</string>
          </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <property name="selectionMode">
-          <enum>QAbstractItemView::SingleSelection</enum>
-         </property>
-         <property name="selectionBehavior">
-          <enum>QAbstractItemView::SelectRows</enum>
-         </property>
-         <property name="showGrid">
-          <bool>false</bool>
-         </property>
-         <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>130</number>
-         </attribute>
-         <attribute name="horizontalHeaderHighlightSections">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderMinimumSectionSize">
-          <number>130</number>
-         </attribute>
-         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="horizontalHeaderStretchLastSection">
-          <bool>true</bool>
-         </attribute>
-         <attribute name="verticalHeaderDefaultSectionSize">
-          <number>20</number>
-         </attribute>
-         <attribute name="verticalHeaderHighlightSections">
-          <bool>false</bool>
-         </attribute>
-         <attribute name="verticalHeaderMinimumSectionSize">
-          <number>20</number>
-         </attribute>
-         <column>
-          <property name="text">
-           <string>时间</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>所在地</string>
-          </property>
-         </column>
-        </widget>
-        <widget class="QWidget" name="layoutWidget">
-         <layout class="QVBoxLayout" name="verticalLayout_21">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QFrame" name="frame_getlocation">
-            <property name="styleSheet">
-             <string notr="true">QFrame#frame_getlocation
-{
-	background-color:rgb(240,240,240);
-}
-
-QFrame#frame_getlocation
-{
-	border:0px solid #aaaaaa;
-	border-bottom-width:1px;
-}</string>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
-             <property name="topMargin">
-              <number>6</number>
-             </property>
-             <property name="rightMargin">
-              <number>6</number>
-             </property>
-             <property name="bottomMargin">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="maximumSize">
-                <size>
-                 <width>24</width>
-                 <height>24</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap resource="maindlg.qrc">:/image/location.png</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_14">
-               <property name="styleSheet">
-                <string notr="true">QLabel
-{
-	font-family:&quot;Microsoft Yahei&quot;;
-}</string>
-               </property>
-               <property name="text">
-                <string>  地图详细信息</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_12">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QToolButton" name="btnGetLocation">
-               <property name="minimumSize">
-                <size>
-                 <width>101</width>
-                 <height>38</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>101</width>
-                 <height>38</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QToolButton
-{
-	font-family:&quot;Microsoft Yahei&quot;;
-}
-QToolButton
-{
-	font-family:&quot;Microsoft Yahei&quot;;
-	border:1px solid #bbbbbb;
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:1 #cccccc);
-}
-
-QToolButton:hover
-{
-	background-color:#d5d5d5;
-}
-
-QToolButton:pressed
-{
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #cccccc, stop:1 #eeeeee);
-}
-
-QToolButton:disabled
-{
-	background-color:transparent;
-}</string>
-               </property>
-               <property name="text">
-                <string>获取位置</string>
-               </property>
-               <property name="icon">
-                <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/location.png</normaloff>:/image/location.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>24</width>
-                 <height>24</height>
-                </size>
-               </property>
-               <property name="toolButtonStyle">
-                <enum>Qt::ToolButtonTextBesideIcon</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="mapContainer">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QFrame#mapContainer
-{
-	padding:-10px;
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+        </column>
        </widget>
       </item>
      </layout>
