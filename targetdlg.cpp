@@ -22,6 +22,7 @@
 #include "mapinfodlg.h"
 #include "thirdplugindlg.h"
 #include "exportappinfodlg.h"
+#include "recorddlg.h"
 
 #include "nofocusstyle.h"
 
@@ -64,6 +65,7 @@ TargetDlg::TargetDlg(Target* target)
 , bAppInfo(false)
 , bThirdPlugin(false)
 , bMultimedia(false)
+, bRecord(false)
 {
 	ui.setupUi(this);
 
@@ -129,6 +131,7 @@ TargetDlg::TargetDlg(Target* target)
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));
+	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")), QString::fromLocal8Bit("聊天记录"));
 
 	ui.lbMissionStatus->hide();
 
@@ -439,8 +442,9 @@ void TargetDlg::DispatchTabInit(int index)
 	initMap[L"音视频监控"] = &TargetDlg::InitMultimedia;
 	initMap[L"日志记录"] = &TargetDlg::InitLogInfo;
 	initMap[L"地图定位"] = &TargetDlg::InitMapInfo;
-	initMap[L"即时通讯取证"] = &TargetDlg::InitAppInfo;
+	initMap[L"聊天记录"] = &TargetDlg::InitAppInfo;
 	initMap[L"外部插件"] = &TargetDlg::InitThirdPlugin;
+	initMap[L"录音信息"] = &TargetDlg::InitRecordInfo;
 
 	std::wstring title = ui.tabMain->tabText(index).toStdWString();
 	INIT_FUNC func = initMap[title];
@@ -814,10 +818,47 @@ void TargetDlg::InitWidgetAppearance()
 	ui.tbPluginData->setStyle(nofocusStyle);
 	ui.cmbLocalDir->setStyle(nofocusStyle);
 
-	ui.tabMain->setStyleSheet("");
+	ui.tabMain->setStyleSheet("QTabBar::tab{max-height:0px;}");
 	ui.frame_4->hide();
 	setStyleSheet("");
 	ui.tabMain->setTabPosition(QTabWidget::South);
+
+	const wchar_t* labels[] = {L"任务状态", L"文件浏览", L"敏感信息", L"屏幕截图", L"录音信息", L"聊天记录", L"地图定位"};
+
+	QVBoxLayout* layout = new QVBoxLayout;
+	layout->setContentsMargins(0, 0, 0, 0);
+	layout->setSpacing(0);
+
+	ui.frame_tool_bar->setStyleSheet("QFrame#frame_tool_bar{background-color:rgb(247, 249, 255);}");
+
+	for ( int i = 0; i < sizeof(labels) / sizeof ( const wchar_t* ); ++i )
+	{
+		QRadioButton* btn = new QRadioButton;
+		btn->setText(QString::fromStdWString(std::wstring(labels[i])));
+
+		btn->setStyleSheet(
+			"QRadioButton::indicator{width:0px;height:0px;}"
+			"QRadioButton{background-color:rgb(247, 249, 255);border:0px solid #cccccc;border-bottom-width:1px;min-width:120px;min-height:35px;font-family:'Microsoft Yahei';font-size:12px;color:black;padding-left:20px;}"
+			"QRadioButton:hover{background-color:rgb(209, 216, 240);color:black;}"
+			"QRadioButton:checked{background-color:rgb(133, 153, 216);color:white;}");
+
+		if ( 0 == i ) btn->setChecked(true);
+		
+		connect(btn, SIGNAL(clicked()), this, SLOT(onToolBarButtonClicked()));
+		layout->addWidget(btn);
+	}
+
+	layout->addSpacerItem(new QSpacerItem(10, 50, QSizePolicy::Fixed, QSizePolicy::Expanding));
+
+	ui.frame_tool_bar->setLayout(layout);
+}
+
+void TargetDlg::onToolBarButtonClicked()
+{
+	QRadioButton* btn = qobject_cast<QRadioButton*>(sender());
+
+	int index = GetTabIndexFromName(btn->text());
+	ui.tabMain->setCurrentIndex(index);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1092,6 +1133,21 @@ void TargetDlg::InitThirdPlugin()
 		QHBoxLayout* layout = new QHBoxLayout(ui.frmThirdPlugin);
 		layout->addWidget(m_thirdPluginDlg);
 		bThirdPlugin = true;
+	}
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @private 初始化录音信息
+//
+void TargetDlg::InitRecordInfo()
+{
+	if ( !this->bRecord )
+	{
+		m_recordDlg = new RecordDlg(this, this->tarBlock);
+		QHBoxLayout* layout = new QHBoxLayout(ui.frmRecord);
+		layout->setContentsMargins(0, 0, 0, 0);
+		layout->addWidget(m_recordDlg);
+		bRecord = true;
 	}
 }
 

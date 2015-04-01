@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1091</width>
+    <width>807</width>
     <height>605</height>
    </rect>
   </property>
@@ -19,13 +19,146 @@
 	background:rgb(88,115,201);
 }</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
     <number>0</number>
    </property>
    <property name="margin">
     <number>0</number>
    </property>
+   <item>
+    <widget class="QFrame" name="frame_tool_bar">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_4">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#frame_4
+{
+	background-color:rgb(240,240,240);
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lbStatusBar">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+}</string>
+        </property>
+        <property name="text">
+         <string>  准备就绪</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="cmbLocalDir">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>191</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+     border: 0px solid gray;
+     padding: 1px 18px 1px 3px;
+     min-width: 170px;
+	background-color:rgba(200, 200, 200, 80);
+	font-family:&quot;Microsoft Yahei&quot;;
+ }
+
+QComboBox:hover{
+	background-color:rgba(100, 100, 255, 80);
+}
+
+ QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+     border-width: 0px;
+ }</string>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>New Item</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item>
     <widget class="QTabWidget" name="tabMain">
      <property name="minimumSize">
@@ -1793,6 +1926,29 @@ QFrame#tbPluginData{
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>录音信息</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="frmRecord">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="icon">
        <iconset resource="maindlg.qrc">
@@ -1956,117 +2112,6 @@ QFrame#tbPluginData{
        </item>
       </layout>
      </widget>
-    </widget>
-   </item>
-   <item>
-    <widget class="QFrame" name="frame_4">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QFrame#frame_4
-{
-	background-color:rgb(240,240,240);
-}</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="lineWidth">
-      <number>0</number>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="margin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="lbStatusBar">
-        <property name="minimumSize">
-         <size>
-          <width>900</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel
-{
-	font-family:&quot;Microsoft Yahei&quot;;
-}</string>
-        </property>
-        <property name="text">
-         <string>  准备就绪</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="cmbLocalDir">
-        <property name="minimumSize">
-         <size>
-          <width>191</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>191</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QComboBox {
-     border: 0px solid gray;
-     padding: 1px 18px 1px 3px;
-     min-width: 170px;
-	background-color:rgba(200, 200, 200, 80);
-	font-family:&quot;Microsoft Yahei&quot;;
- }
-
-QComboBox:hover{
-	background-color:rgba(100, 100, 255, 80);
-}
-
- QComboBox::drop-down {
-     subcontrol-origin: padding;
-     subcontrol-position: top right;
-     width: 15px;
-     border-width: 0px;
- }</string>
-        </property>
-        <property name="frame">
-         <bool>true</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>New Item</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>New Item</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>New Item</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>New Item</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
     </widget>
    </item>
   </layout>

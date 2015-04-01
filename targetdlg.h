@@ -98,6 +98,7 @@ class AdvanceMonitorDlg;
 class MapInfoDlg;
 class ThirdPluginDlg;
 class AppInfoDlg;
+class RecordDlg;
 
 class TargetDlg : public QWidget
 {
@@ -161,6 +162,9 @@ private slots:
 
 	// 进入本地数据目录
 	void onCmbLocalDirIndexChanged(int index);
+
+	// 点击工具栏按钮
+	void onToolBarButtonClicked();
 
 	///////////////////////////////////////////////
 
@@ -234,6 +238,9 @@ private:
 
 	// 初始化第三方插件管理
 	void InitThirdPlugin();
+
+	// 初始化设备录音
+	void InitRecordInfo();
 
 	////////////////////////////////////////
 
@@ -426,6 +433,7 @@ private:
 	bool			bAppInfo;
 	bool			bThirdPlugin;
 	bool			bMultimedia;
+	bool			bRecord;
 
 	// 监控的文件类型
 	std::wstring	m_curMonitorType;
@@ -440,6 +448,7 @@ private:
 	AdvanceMonitorDlg* m_advanceMonitorDlg;
 	MapInfoDlg* m_mapInfoDlg;
 	ThirdPluginDlg* m_thirdPluginDlg;
+	RecordDlg* m_recordDlg;
 };
 
 #endif // TARGETDLG_H

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'targetdlg.h'
 **
-** Created: Tue Mar 31 13:00:16 2015
+** Created: Wed Apr 1 11:01:54 2015
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_TargetDlg[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -41,11 +41,12 @@ static const uint qt_meta_data_TargetDlg[] = {
      125,   10,   10,   10, 0x0a,
      153,  147,   10,   10, 0x08,
      174,  147,   10,   10, 0x08,
-     217,  205,   10,   10, 0x08,
-     268,   10,   10,   10, 0x08,
-     292,   10,   10,   10, 0x08,
-     312,   10,   10,   10, 0x08,
-     338,  333,   10,   10, 0x08,
+     205,   10,   10,   10, 0x08,
+     242,  230,   10,   10, 0x08,
+     293,   10,   10,   10, 0x08,
+     317,   10,   10,   10, 0x08,
+     337,   10,   10,   10, 0x08,
+     363,  358,   10,   10, 0x08,
 
        0        // eod
 };
@@ -58,7 +59,7 @@ static const char qt_meta_stringdata_TargetDlg[] = {
     "ModifyCapturePolicy()\0index\0"
     "DispatchTabInit(int)\0"
     "onCmbLocalDirIndexChanged(int)\0"
-    "item,column\0"
+    "onToolBarButtonClicked()\0item,column\0"
     "onTrMissionStatusItemClicked(QTreeWidgetItem*,int)\0"
     "onBtnCountinueClicked()\0onBtnPauseClicked()\0"
     "onBtnCancelClicked()\0item\0"
@@ -79,11 +80,12 @@ void TargetDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 5: _t->ModifyCapturePolicy(); break;
         case 6: _t->DispatchTabInit((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->onCmbLocalDirIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 8: _t->onTrMissionStatusItemClicked((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 9: _t->onBtnCountinueClicked(); break;
-        case 10: _t->onBtnPauseClicked(); break;
-        case 11: _t->onBtnCancelClicked(); break;
-        case 12: _t->onDirDownloadItemClicked((*reinterpret_cast< QTableWidgetItem*(*)>(_a[1]))); break;
+        case 8: _t->onToolBarButtonClicked(); break;
+        case 9: _t->onTrMissionStatusItemClicked((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 10: _t->onBtnCountinueClicked(); break;
+        case 11: _t->onBtnPauseClicked(); break;
+        case 12: _t->onBtnCancelClicked(); break;
+        case 13: _t->onDirDownloadItemClicked((*reinterpret_cast< QTableWidgetItem*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -121,9 +123,9 @@ int TargetDlg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }
