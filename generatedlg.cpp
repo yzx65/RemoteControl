@@ -20,6 +20,7 @@
 
 #include <Ws2tcpip.h>
 
+
 class GenerateThread : public QThread
 {
 public:
