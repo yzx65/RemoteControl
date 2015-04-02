@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'recorddlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Thu Apr 2 16:13:20 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -20,6 +21,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtGui/QSpacerItem>
+#include <QtGui/QSpinBox>
 #include <QtGui/QTreeWidget>
 #include <QtGui/QVBoxLayout>
 
@@ -38,6 +40,9 @@ public:
     QLabel *label_2;
     QSpacerItem *horizontalSpacer;
     QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QSpinBox *spinBox;
+    QLabel *label_3;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
 
@@ -113,6 +118,23 @@ public:
 
         horizontalLayout->addWidget(checkBox);
 
+        checkBox_2 = new QCheckBox(bottom_bar);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        checkBox_2->setChecked(true);
+
+        horizontalLayout->addWidget(checkBox_2);
+
+        spinBox = new QSpinBox(bottom_bar);
+        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        spinBox->setValue(10);
+
+        horizontalLayout->addWidget(spinBox);
+
+        label_3 = new QLabel(bottom_bar);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout->addWidget(label_3);
+
         pushButton = new QPushButton(bottom_bar);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
@@ -142,6 +164,8 @@ public:
         ___qtreewidgetitem->setText(0, QApplication::translate("RecordDlg", "\346\227\266\351\227\264", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("RecordDlg", "\346\255\243\345\234\250\346\222\255\346\224\276\345\275\225\351\237\263 ...", 0, QApplication::UnicodeUTF8));
         checkBox->setText(QApplication::translate("RecordDlg", "\345\256\236\346\227\266\346\222\255\346\224\276", 0, QApplication::UnicodeUTF8));
+        checkBox_2->setText(QString());
+        label_3->setText(QApplication::translate("RecordDlg", "\345\210\206\351\222\237\345\220\216\350\207\252\345\212\250\345\201\234\346\255\242\345\275\225\351\237\263", 0, QApplication::UnicodeUTF8));
         pushButton->setText(QApplication::translate("RecordDlg", "\345\274\200\345\247\213\345\275\225\351\237\263", 0, QApplication::UnicodeUTF8));
         pushButton_2->setText(QApplication::translate("RecordDlg", "\345\201\234\346\255\242\345\275\225\351\237\263", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
