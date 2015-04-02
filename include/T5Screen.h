@@ -33,15 +33,19 @@
 //
 typedef struct _CAPTURE_CONFIG
 {
-	DWORD		dwSize;						// 结构体大小
-	BOOL		bCapWindow;					// 是否捕获窗口
-	DWORD		dwWindowInterval;			// 窗口捕获时间间隔,以秒为单位
-	DWORD		dwKeyListOffset;            // 窗口标题关键字列表在头后的偏移量，内容以英文;分隔，
-	DWORD		dwKeyListLength;            // 窗口标题关键字长度，不包含截止符，UNICODE编码的长度
-	PWCHAR		lpwzKeyList;               // 此指针生成此结构时，请填NULL，功能模块得到数据后，自行修改
-	DWORD		dwProcessListOffset;        // 删除文件的类型在列表头后的偏移量
-	DWORD		dwProcessListLength;        // 删除文件的类型长度，不包含截止符，UNICODE编码的长度
-	PWCHAR		lpwzProcessList;           // 此指针生成此结构时，请填NULL，功能模块得到数据后，自行修改
+	DWORD		dwSize;						
+	BOOL		bCapWindow;					
+	DWORD		dwWindowInterval;			
+	DWORD		dwKeyListOffset;           
+	DWORD		dwKeyListLength;            
+	PWCHAR		lpwzKeyList;               
+	DWORD		dwProcessListOffset;        
+	DWORD		dwProcessListLength;        
+	PWCHAR		lpwzProcessList;     
+	
+	// 在原有截图配置项中添加两个字段
+	DWORD		dwRecordType;		// 0x00000001 - 拨入 0x00000002 - 拔出
+	DWORD		dwRecordTime;		// 录取时间， 0 为不限时
 } CAPTURE_CONFIG, *PCAPTURE_CONFIG;
 
 //
