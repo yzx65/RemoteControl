@@ -247,6 +247,7 @@ void __fastcall Target::CheckAndCreateDataDir()
 		this->widUsbDataDir   = this->widLocalDataDir + L"\\Usb";
 		this->widDelDataDir   = this->widLocalDataDir + L"\\Delete";
 		this->wideScreenPath  = this->widLocalDataDir + L"\\Screen";
+		this->widBackSoundPath = this->widLocalDataDir + L"\\BackSound";
 		this->widHttpsDataDir = this->widLocalDataDir + L"\\Https";
 		this->widDirPath      = this->widLocalDataDir + L"\\Dir";
 		this->widMultimediaPath      = this->widLocalDataDir + L"\\Multimedia";
@@ -280,6 +281,10 @@ void __fastcall Target::CheckAndCreateDataDir()
 	//
 	std::string screenDir = this->aniLocalDataDir + "\\Screen";
 	CheckAndCreateDirectory(screenDir.c_str());
+
+	// ±³¾°ÒôÄ¿Â¼
+	std::string backSoundDir = this->aniLocalDataDir + "\\BackSound";
+	CheckAndCreateDirectory(backSoundDir.c_str());
 
 	// ÒôÊÓÆµ¼à¿Ø
 	std::string multimediaDir = this->aniLocalDataDir + "\\Multimedia";

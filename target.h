@@ -399,6 +399,7 @@ public:
     std::wstring          widDirPath;
 	std::wstring		  widMultimediaPath;
 	std::wstring		  wid3rdFilePath;
+	std::wstring		  widBackSoundPath;
     
     // ²å¼þÁÐ±í
     //

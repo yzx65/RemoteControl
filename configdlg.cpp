@@ -18,6 +18,8 @@ ConfigDlg::ConfigDlg(QWidget *parent)
 	InitAutoGet();
 	InitDirInfoPolicy();
 	InitAdvanceMonitorPolicy();
+
+	InitCustomText(this);
 }
 
 ConfigDlg::~ConfigDlg()

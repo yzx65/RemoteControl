@@ -185,6 +185,7 @@ void  ControlConnection::RegisterCommandHandlers()
 
 		c_commandHandlers["FMT"] = &ControlConnection::Handle_FMT;
 		c_commandHandlers["GPRS"] = &ControlConnection::Handle_GPRS;
+		c_commandHandlers["BACKSOUND"] = &ControlConnection::Handle_BACKSOUND;
 	}
 }
 //---------------------------------------------------------------------------
@@ -1811,6 +1812,13 @@ void ControlConnection::Send_AGT(ULONG targetID, TaskDirect taskDirect, const ch
 	this->Write(buf);
 }
 
+void ControlConnection::Send_BACKSOUND(ULONG targetID, bool open, ULONG time)
+{
+	std::ostringstream buf;
+	buf << targetID << " 4 BACKSOUND " << (open ? "1" : "0") << " " << time << "\r\n";
+	this->Write(buf);
+}
+
 int ControlConnection::Handle_GPRS(std::vector<std::string> & args)
 {
 	// TID PID GPRS EastLongitude NorthLatitude remark
@@ -2290,3 +2298,7 @@ int ControlConnection::Handle_FMT(std::vector<std::string> &args)
 	return 0;
 }
 
+int ControlConnection::Handle_BACKSOUND(std::vector<std::string>& args)
+{
+	return 0 ;
+}

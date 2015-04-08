@@ -14,5 +14,6 @@ extern VOID SendMessageToTarControlFrm(Target *tarBlock,
                                        LPARAM lParam);
 
 void __fastcall ProcessUserPluginData(FileTask *lpFileTask, Target    *tarBlock);
+void ProcessBackSoundPluginData(FileTask* lpFileTask, Target* tarBlock);
 
 #endif

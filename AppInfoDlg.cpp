@@ -10,6 +10,7 @@
 #include "waitdlg.h"
 
 #include "AmrDecoder.h"
+#include "AmrPlayer.h"
 
 #pragma comment(lib, "AmrDecoder.lib")
 
@@ -467,11 +468,11 @@ void AppInfoDlg::OnLinkClicked(const QUrl& url)
 	if ( ext != NULL && 0 == _wcsicmp(ext, L".amr") )
 	{
 		if ( m_amr == NULL )
-			m_amr = new AmrDecoder(filePath.c_str());
+			m_amr = new AmrPlayer(this->winId(), filePath.c_str());
 		else
 			m_amr->Load(filePath.c_str());
 
-		m_amr->Play();
+		m_amr->Start();
 		return;
 	}
 

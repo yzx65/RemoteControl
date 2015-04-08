@@ -1,4 +1,5 @@
 #include "downloaddirdlg.h"
+#include "Utility.h"
 
 // ////////////////////////////////////////////////////////////////////////////////
 // ¹¹Ôìº¯Êý
@@ -13,6 +14,8 @@ DownloadDirDlg::DownloadDirDlg(QWidget *parent, QString dir)
 
 	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnOk()));
 	connect(ui.chkAllLevel, SIGNAL(clicked()), this, SLOT(OnChkAllLevelClicked()));
+
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

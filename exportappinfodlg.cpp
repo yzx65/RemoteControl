@@ -22,6 +22,8 @@ ExportAppInfoDlg::ExportAppInfoDlg(QString path, int targetId)
 	connect(DM, SIGNAL(emitAppExportCanceled()), this, SLOT(ExportCanceled()));
 
 	emitStart(path, targetId);
+
+	InitCustomText(this);
 }
 
 ExportAppInfoDlg::~ExportAppInfoDlg()

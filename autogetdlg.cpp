@@ -32,6 +32,8 @@ AutoGetDlg::AutoGetDlg(Target* tar)
 	connect(ui.chkAutoGet, SIGNAL(clicked()), this, SLOT(OnChkAutoGetClicked()));
 	connect(ui.btnOK, SIGNAL(clicked()), this,SLOT(OnOK()));
 	OnChkAutoGetClicked();
+
+	InitCustomText(this);
 }
 
 AutoGetDlg::~AutoGetDlg()

@@ -79,6 +79,8 @@
 #define GET_DIR_INFO_FIRST				0xFFFFFFFF
 #define GET_DIR_INFO_AGAIN				0xEEEEEEEE
 
+#define WM_NEW_BACKSOUND				(WM_APP + 1024)
+
 typedef struct _CHG_INFO
 {
 	std::wstring remark;
@@ -379,6 +381,9 @@ private:
 
 	// 新的第三方插件数据
 	void on_WM_NEW_THIRD_PLUGIN_FILE(MSG* msg);
+
+	// 新的录音
+	void on_WM_NEW_BACKSOUND(MSG* msg);
 
 	// 应用取证获取完毕
 	void on_WM_APP_INFO_FINISHED(MSG* msg);

@@ -2,6 +2,7 @@
 #include "maindlg.h"
 
 #include "include/T5.h"
+#include "Utility.h"
 
 QueryDaemonAddressDlg::QueryDaemonAddressDlg(QWidget *parent, Target* tar)
 	: QDialog(parent)
@@ -13,6 +14,8 @@ QueryDaemonAddressDlg::QueryDaemonAddressDlg(QWidget *parent, Target* tar)
 	connect(ui.btnQuery, SIGNAL(clicked()), this, SLOT(OnBtnQueryClicked()));
 
 	ui.edtTargetId->setText(QString("%1").arg(tar->dwTargetID));
+
+	InitCustomText(this);
 }
 
 QueryDaemonAddressDlg::~QueryDaemonAddressDlg()

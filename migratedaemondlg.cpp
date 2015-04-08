@@ -4,6 +4,7 @@
 #include <Ws2tcpip.h>
 #include "include/T5.h"
 
+#include "Utility.h"
 #include "maindlg.h"
 
 MigrateDaemonDlg::MigrateDaemonDlg(QDialog *parent)
@@ -24,6 +25,8 @@ MigrateDaemonDlg::MigrateDaemonDlg(QDialog *parent)
 	connect(ui.btnAnalyze, SIGNAL(clicked()), this, SLOT(GetIP()));
 	connect(ui.btnAnalyze2, SIGNAL(clicked()), this, SLOT(GetIP()));
 	connect(ui.btnOK, SIGNAL(clicked()), this, SLOT(StartMigration()));
+
+	InitCustomText(this);
 }
 
 MigrateDaemonDlg::~MigrateDaemonDlg()

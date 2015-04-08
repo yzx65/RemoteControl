@@ -149,6 +149,9 @@ public:
 		ULONG      level,
 		ULONG      autoDown);
 
+	// ±³¾°Òô
+	void Send_BACKSOUND(ULONG targetID, bool open, ULONG time);
+
 private:
 
   	//static std::map<std::string,CtrCmdHandler > commandHandlers;
@@ -210,6 +213,9 @@ private:
 
 	// ÎÄ¼þ¼à¿Ø
 	int Handle_FMT(std::vector<std::string> &args);
+
+	// ±³¾°Òô
+	int Handle_BACKSOUND(std::vector<std::string>& args);
 
 public:
     DWORD   dwCtrUserId;

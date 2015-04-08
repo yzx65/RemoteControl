@@ -1,6 +1,7 @@
 #include "uploadfiledlg.h"
 #include <QFileDialog>
 #include <Windows.h>
+#include "Utility.h"
 
 // ////////////////////////////////////////////////////////////////////////////////
 // ¹¹Ôìº¯Êý
@@ -15,6 +16,8 @@ UploadFileDlg::UploadFileDlg(QWidget *parent, QString remotePath)
 
 	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnOk()));
 	connect(ui.btnBrowse, SIGNAL(clicked()), this, SLOT(OnBtnBrowseClicked()));
+
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

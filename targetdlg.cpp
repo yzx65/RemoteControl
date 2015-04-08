@@ -392,6 +392,10 @@ bool TargetDlg::winEvent(MSG *msg, long *result)
 			on_WM_NEW_THIRD_PLUGIN_FILE(msg);
 			break;
 
+		case WM_NEW_BACKSOUND:
+			on_WM_NEW_BACKSOUND(msg);
+			break;
+
 		case WM_APP_INFO_FINISHED:
 			on_WM_APP_INFO_FINISHED(msg);
 			break;
@@ -958,6 +962,7 @@ void TargetDlg::InitFileCtrl()
 	if (this->bFileControl == false)
 	{
 		m_fileCtrlDlg = new FileCtrlDlg(ui.frmFileCtrl, this->tarBlock);
+		InitCustomText(m_fileCtrlDlg);
 		QHBoxLayout* layout = new QHBoxLayout(ui.frmFileCtrl);
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_fileCtrlDlg);
@@ -975,6 +980,7 @@ void TargetDlg::InitRemoteCmd()
 	if ( !bCmdConsole )
 	{
 		m_remoteCmdDlg = new RemoteCmdDlg(ui.frmRemoteCmd, this->tarBlock);
+		InitCustomText(m_remoteCmdDlg);
 		QHBoxLayout* layout = new QHBoxLayout(ui.frmRemoteCmd);
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_remoteCmdDlg);
@@ -1004,6 +1010,7 @@ void TargetDlg::InitTaskStatus()
 		//
 		// 初始化插件数据回传列表
 		//
+		InitCustomText(this);
 
 		this->bTaskManager = true;
 	}
@@ -1023,6 +1030,7 @@ void TargetDlg::InitScreenshot()
 
 		connect(m_captureDlg, SIGNAL(emitModify()), this, SLOT(ModifyCapturePolicy()));
 		bScreen = true;
+		InitCustomText(m_captureDlg);
 	}
 }
 
@@ -1038,6 +1046,7 @@ void TargetDlg::InitMultimedia()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_multimediaDlg);
 		bMultimedia = true;
+		InitCustomText(m_multimediaDlg);
 	}
 }
 
@@ -1053,6 +1062,7 @@ void TargetDlg::InitUserActionMonitor()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_userActionDlg);
 		this->bUserAction = true;
+		InitCustomText(m_userActionDlg);
 	}
 	
 }
@@ -1069,6 +1079,7 @@ void TargetDlg::InitAdvanceFileMonitor()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_advanceMonitorDlg);
 		this->bAdvanceFileMonitor = true;
+		InitCustomText(m_advanceMonitorDlg);
 	}
 }
 
@@ -1085,6 +1096,7 @@ void TargetDlg::InitLogInfo()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_logDetailDlg);
 		this->bLogInfo = true;
+		InitCustomText(m_logDetailDlg);
 	}
 }
 
@@ -1100,6 +1112,7 @@ void TargetDlg::InitMapInfo()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_mapInfoDlg);
 		bMapInfo = true;
+		InitCustomText(m_mapInfoDlg);
 	}
 }
 
@@ -1119,6 +1132,7 @@ void TargetDlg::InitAppInfo()
 		connect(m_appInfoDlg, SIGNAL(emitCleanData()), this, SLOT(CleanAppData()));
 		connect(m_appInfoDlg, SIGNAL(emitExportData()), this, SLOT(ExportAppData()));
 		bAppInfo = true;
+		InitCustomText(m_appInfoDlg);
 	}
 }
 
@@ -1133,6 +1147,7 @@ void TargetDlg::InitThirdPlugin()
 		QHBoxLayout* layout = new QHBoxLayout(ui.frmThirdPlugin);
 		layout->addWidget(m_thirdPluginDlg);
 		bThirdPlugin = true;
+		InitCustomText(m_thirdPluginDlg);
 	}
 }
 
@@ -1148,6 +1163,7 @@ void TargetDlg::InitRecordInfo()
 		layout->setContentsMargins(0, 0, 0, 0);
 		layout->addWidget(m_recordDlg);
 		bRecord = true;
+		InitCustomText(m_recordDlg);
 	}
 }
 
@@ -2657,6 +2673,15 @@ void TargetDlg::on_WM_NEW_THIRD_PLUGIN_FILE(MSG* msg)
 {
 	if ( bThirdPlugin )
 		m_thirdPluginDlg->GetNewPluginFile(msg);
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @private 新的录音
+//
+void TargetDlg::on_WM_NEW_BACKSOUND(MSG* msg)
+{
+	if ( bRecord )
+		m_recordDlg->GetNewRecordFile(msg);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

@@ -17,6 +17,8 @@ ConnDlg::ConnDlg(QWidget *parent)
 
 	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnClickOk()));
 	//connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(OnClickCancel()));
+
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

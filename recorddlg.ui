@@ -57,15 +57,13 @@
        </widget>
       </item>
       <item>
-       <widget class="QTreeWidget" name="treeWidget_2">
+       <widget class="QTreeWidget" name="trRecordList">
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
-        <column>
-         <property name="text">
-          <string>时间</string>
-         </property>
-        </column>
+        <property name="indentation">
+         <number>0</number>
+        </property>
         <column>
          <property name="text">
           <string>文件名</string>
@@ -76,6 +74,62 @@
           <string>大小</string>
          </property>
         </column>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QCheckBox" name="chkOpen">
+           <property name="text">
+            <string>打开环境音监控功能</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spnStopInterval">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>分钟后自动停止录音</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSetting">
+           <property name="text">
+            <string>发送指令</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
@@ -96,7 +150,7 @@
        <number>9</number>
       </property>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="lbStatus">
         <property name="text">
          <string>正在播放录音 ...</string>
         </property>
@@ -116,47 +170,9 @@
        </spacer>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QPushButton" name="btnStopRecord">
         <property name="text">
-         <string>实时播放</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_2">
-        <property name="text">
-         <string/>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="value">
-         <number>10</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>分钟后自动停止录音</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>开始录音</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
-         <string>停止录音</string>
+         <string>停止播放</string>
         </property>
        </widget>
       </item>

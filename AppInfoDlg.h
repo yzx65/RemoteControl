@@ -17,7 +17,7 @@ class QTreeWidget;
 class QTreeWidgetItem;
 class WaitDlg;
 
-class AmrDecoder;
+class AmrPlayer;
 
 class AppInfoThread : public QObject
 {
@@ -142,7 +142,7 @@ private:
 	int m_system;
 	WaitDlg* m_waitDlg;
 
-	AmrDecoder* m_amr;
+	AmrPlayer * m_amr;
 };
 
 #endif // APPINFODLG_H

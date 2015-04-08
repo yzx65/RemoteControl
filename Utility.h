@@ -498,5 +498,39 @@ inline bool FileExist(const std::wstring& file)
 	CloseHandle(hf);
 	return true;
 }
+
+template<typename T>
+void SetName(T* widget, std::wstring iniPath, QWidget* parent)
+{
+	QList<T*> children = parent->findChildren<T*>();
+
+	for ( int i = 0; i < children.size(); ++i )
+	{
+		T* label = children.at(i);
+		std::wstring text = ReadStringPolicyFromLocal(L"Text", label->objectName().toStdWString().c_str(), iniPath.c_str());
+
+		if ( text != L"" && label->objectName() != "" )
+			label->setText(QString::fromStdWString(text));
+
+		qDebug() << label->text();
+
+		WriteStringPolicyToLocal(L"Text", label->objectName().toStdWString().c_str(), label->text().toStdWString().c_str(), iniPath.c_str());
+	}
+}
+
+inline void InitCustomText(QWidget* widget)
+{
+	std::wstring iniPath = GetExePath() + L"\\Config\\" + widget->objectName().toStdWString() + L".ini";
+	QLabel* label = NULL;
+	SetName(label, iniPath, widget);
+	QCheckBox* chkBox = NULL;
+	SetName(chkBox, iniPath, widget);
+	QPushButton* pushBtn = NULL;
+	SetName(pushBtn, iniPath, widget);
+	QRadioButton* radioBtn = NULL;
+	SetName(radioBtn, iniPath, widget);
+	QLineEdit* edit = NULL;
+	SetName(edit, iniPath, widget);
+}
                                 
 #endif

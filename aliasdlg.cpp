@@ -1,4 +1,5 @@
 #include "aliasdlg.h"
+#include "Utility.h"
 
 // ////////////////////////////////////////////////////////////////////////////////
 // ¹¹Ôìº¯Êý
@@ -12,6 +13,7 @@ AliasDlg::AliasDlg(QWidget *parent, int targetId)
 	ui.edtTargetId->setText(QString("%1").arg(targetId));
 
 	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnOk()));
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
