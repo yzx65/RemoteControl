@@ -2,6 +2,7 @@
 #define RECORDDLG_H
 
 #include <QFrame>
+#include <QTimer>
 #include "ui_recorddlg.h"
 
 class Target;
@@ -23,18 +24,22 @@ private slots:
 	void OnBtnStopRecordClicked();
 
 	void OnTrRecordListItemDoubleClicked(QTreeWidgetItem* item, int column);
+	void TestSoundFinished();
 
 private:
 
 	void InitConnection();
 	void InitFileList();
-	void StartPlaySound(std::wstring file);
+	void StartPlaySound();
 	void StopPlaySound();
 
 private:
 	Ui::RecordDlg ui;
 	Target* m_tar;
 	AmrPlayer* m_amr;
+	std::wstring m_curFile;
+	int m_curIndex;
+	QTimer m_timer;
 };
 
 #endif // RECORDDLG_H

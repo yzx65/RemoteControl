@@ -10,7 +10,7 @@
 #include "Utility.h"
 
 RecordDlg::RecordDlg(QWidget *parent, Target* tar)
-	: QFrame(parent), m_tar(tar), m_amr(NULL)
+	: QFrame(parent), m_tar(tar), m_amr(NULL), m_curIndex(0)
 {
 	ui.setupUi(this);
 
@@ -31,16 +31,21 @@ RecordDlg::~RecordDlg()
 
 void RecordDlg::GetNewRecordFile( MSG* msg )
 {
-	std::wstring fileName = (PWCHAR)(msg->wParam);
+	std::wstring name = (PWCHAR)(msg->wParam);
+	std::wstring startTime = name.substr(0, name.rfind(L'@'));
+
+	if ( ui.trRecordList->findItems(QString::fromStdWString(startTime), Qt::MatchExactly).count() != 0 )
+		return;
+
 	QTreeWidgetItem* item = new QTreeWidgetItem;
-	item->setText(0, QString::fromStdWString(fileName.substr(fileName.rfind('\\'), fileName.length()-fileName.rfind('\\'))));
-	item->setData(0, Qt::UserRole, QString::fromStdWString(fileName));
+	item->setText(0, QString::fromStdWString(startTime.substr(startTime.rfind('\\'), startTime.length()-startTime.rfind('\\'))));
+	item->setData(0, Qt::UserRole, QString::fromStdWString(startTime));
 
-	HANDLE hf = CreateFileW(fileName.c_str(), FILE_GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-	DWORD size = GetFileSize(hf, NULL);
-	CloseHandle(hf);
+	//HANDLE hf = CreateFileW(fileName.c_str(), FILE_GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	//DWORD size = GetFileSize(hf, NULL);
+	//CloseHandle(hf);
 
-	item->setText(1, QString("%1 KB").arg(size / 1024));
+	//item->setText(1, QString("%1 KB").arg(size / 1024));
 	ui.trRecordList->addTopLevelItem(item);
 }
 
@@ -59,7 +64,12 @@ void RecordDlg::OnBtnStopRecordClicked()
 void RecordDlg::OnTrRecordListItemDoubleClicked(QTreeWidgetItem* item, int column)
 {
 	std::wstring filePath = item->data(0, Qt::UserRole).toString().toStdWString();
-	StartPlaySound(filePath);
+	m_curFile = filePath;
+	m_curIndex = 0;
+
+	m_timer.stop();
+
+	StartPlaySound();
 }
 
 void RecordDlg::InitConnection()
@@ -67,6 +77,7 @@ void RecordDlg::InitConnection()
 	connect(ui.btnSetting, SIGNAL(clicked()), this, SLOT(OnBtnSettingClicked()));
 	connect(ui.btnStopRecord, SIGNAL(clicked()), this, SLOT(OnBtnStopRecordClicked()));
 	connect(ui.trRecordList, SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), this, SLOT(OnTrRecordListItemDoubleClicked(QTreeWidgetItem*, int)));
+	connect(&m_timer, SIGNAL(timeout()), this, SLOT(TestSoundFinished()));
 }
 
 void RecordDlg::InitFileList()
@@ -83,16 +94,22 @@ void RecordDlg::InitFileList()
 
 	do 
 	{
+		std::wstring name = fd.cFileName;
+		std::wstring startTime = name.substr(0, name.rfind(L'@'));
+
+		if ( ui.trRecordList->findItems(QString::fromStdWString(startTime), Qt::MatchExactly).count() != 0 )
+			continue;
+
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setText(0, QString::fromStdWString(std::wstring(fd.cFileName)));
-		item->setData(0, Qt::UserRole, QString::fromStdWString(localDir + L"\\" + fd.cFileName));
+		item->setText(0, QString::fromStdWString(startTime));
+		item->setData(0, Qt::UserRole, QString::fromStdWString(localDir + L"\\" + startTime));
 
-		std::wstring filePath = localDir + L"\\" + fd.cFileName;
-		HANDLE hf = CreateFileW(filePath.c_str(), FILE_GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-		DWORD size = GetFileSize(hf, NULL);
-		CloseHandle(hf);
+		//std::wstring filePath = localDir + L"\\" + fd.cFileName;
+		//HANDLE hf = CreateFileW(filePath.c_str(), FILE_GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+		//DWORD size = GetFileSize(hf, NULL);
+		//CloseHandle(hf);
 
-		item->setText(1, QString("%1 KB").arg(size / 1024));
+		//item->setText(1, QString("%1 KB").arg(size / 1024));
 
 		ui.trRecordList->addTopLevelItem(item);
 
@@ -101,22 +118,41 @@ void RecordDlg::InitFileList()
 	FindClose(hf);
 }
 
-void RecordDlg::StartPlaySound(std::wstring file)
+void RecordDlg::StartPlaySound()
 {
+	wchar_t file[1024] = {0};
+	wsprintfW(file, L"%s@%d.amr", m_curFile.c_str(), m_curIndex);
+
+	if ( !FileExist(file) )
+		m_timer.stop();
+
 	if ( m_amr == NULL )
-		m_amr = new AmrPlayer(this->winId(), file.c_str());
+		m_amr = new AmrPlayer(this->winId(), file);
 	else
-		m_amr->Load(file.c_str());
+		m_amr->Load(file);
 
 	m_amr->Start();
 
 	WCHAR text[1024] = {0};
-	wsprintfW(text, L"正在播放录音 : %s ...", file.substr(file.rfind('\\'), file.length()-file.rfind('\\')).c_str());
+	wsprintfW(text, L"正在播放录音 : %s - %d ...", m_curFile.substr(m_curFile.rfind('\\'), m_curFile.length()-m_curFile.rfind('\\')).c_str(), m_curIndex);
 	ui.lbStatus->setText(QString::fromStdWString(std::wstring(text)));
+	++m_curIndex;
+	m_timer.start(100);
 }
 
 void RecordDlg::StopPlaySound()
 {
 	m_amr->Stop();
 	ui.lbStatus->setText(QString::fromLocal8Bit("停止播放录音"));
+}
+
+void RecordDlg::TestSoundFinished()
+{
+	qDebug() << m_amr->GetCurrentPosition() << " " << m_amr->GetDuration();
+	
+	double pos = m_amr->GetCurrentPosition();
+	int duration = m_amr->GetDuration();
+
+	if (  std::abs(pos - duration) < 1 )
+		StartPlaySound();
 }

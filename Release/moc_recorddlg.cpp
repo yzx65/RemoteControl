@@ -22,7 +22,7 @@ static const uint qt_meta_data_RecordDlg[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,6 +33,7 @@ static const uint qt_meta_data_RecordDlg[] = {
       11,   10,   10,   10, 0x08,
       33,   10,   10,   10, 0x08,
       70,   58,   10,   10, 0x08,
+     124,   10,   10,   10, 0x08,
 
        0        // eod
 };
@@ -41,6 +42,7 @@ static const char qt_meta_stringdata_RecordDlg[] = {
     "RecordDlg\0\0OnBtnSettingClicked()\0"
     "OnBtnStopRecordClicked()\0item,column\0"
     "OnTrRecordListItemDoubleClicked(QTreeWidgetItem*,int)\0"
+    "TestSoundFinished()\0"
 };
 
 void RecordDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -52,6 +54,7 @@ void RecordDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->OnBtnSettingClicked(); break;
         case 1: _t->OnBtnStopRecordClicked(); break;
         case 2: _t->OnTrRecordListItemDoubleClicked((*reinterpret_cast< QTreeWidgetItem*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 3: _t->TestSoundFinished(); break;
         default: ;
         }
     }
@@ -89,9 +92,9 @@ int RecordDlg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

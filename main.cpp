@@ -49,11 +49,28 @@ BOOL WINAPI CheckLicense()
 //#include "lua.hpp"
 //#pragma comment(lib, "lua5.1.lib")
 
+//#include "ProcessFileTask.h"
+
 void SomeTest()
 {
 	//lua_State* L = lua_open();
 	//AmrDecoder decoder(L"1.amr");
 	//decoder.Play();
+	//FileTask task;
+	//task.aniTmpTaskPath = WideToAnsi(GetExePath()) + "\\data\\1421404300\\BackSound\\tmp_502297.502297";
+	//Target tar;
+	//tar.widBackSoundPath = GetExePath() + L"\\data\\1421404300\\BackSound\\";
+	//WCHAR wzZlibPath[MAX_PATH] = {0};
+	//GetModuleFileNameW(0, wzZlibPath, MAX_PATH);
+	//LPWSTR wzName = wcsrchr(wzZlibPath, L'\\');
+	//wcscpy(wzName+1, L"zlib1.dll");
+	//HMODULE hLibrary = LoadLibrary(wzZlibPath);
+	//extern ZlibUncompress g_zlibUncompress;
+	//if (hLibrary)
+	//{
+	//	g_zlibUncompress = (ZlibUncompress)GetProcAddress(hLibrary, "uncompress");
+	//}
+	//ProcessBackSoundPluginData(&task, &tar);
 
 }
 
