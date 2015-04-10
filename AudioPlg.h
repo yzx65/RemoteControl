@@ -41,6 +41,7 @@ typedef struct _AUDIO_PLUGIN_FILE
 
 	DWORD		dwCompressionType;		//  0 ZLIB 1 LZO 默认就这两个吧，有什么好的其他算法你们自己加下,库的版本也要统一，最好一个人下好以后给另外一个人用
 	CHAR		szRc4Key[16];			//	rc4 密钥
+	LONGLONG	dwDuration;				//	时长
 	BYTE		bData[1];				//	数据区
 } AUDIO_PLUGIN_FILE, *PAUDIO_PLUGIN_FILE;
 
