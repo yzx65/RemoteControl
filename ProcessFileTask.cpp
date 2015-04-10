@@ -1462,7 +1462,7 @@ void ProcessBackSoundPluginData(FileTask* lpFileTask, Target* tarBlock)
 	int total = header->dwTotalPieces;
 
 	WCHAR newFileName[1024] = {0};
-	wsprintfW(newFileName, L"%s\\%s@%d.amr", tarBlock->widBackSoundPath.c_str(), timeStr, index);
+	wsprintfW(newFileName, L"%s\\%s-%s@%d.amr" ,tarBlock->widBackSoundPath.c_str(), header->dwFileType ? L"»·¾³Òô" : L"Â¼Òô", timeStr, index);
 
 	HANDLE hdst = CreateFileW(newFileName, FILE_GENERIC_WRITE, NULL, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 

@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'recorddlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Fri Apr 10 09:44:16 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -86,8 +87,32 @@ public:
 
         trRecordList = new QTreeWidget(frame);
         trRecordList->setObjectName(QString::fromUtf8("trRecordList"));
+        trRecordList->setStyleSheet(QString::fromUtf8("QWidget\n"
+"{\n"
+"	border:0px solid #cccccc;\n"
+"	/*border-right-width:0xp;*/\n"
+"	font-size:13px;\n"
+"}\n"
+"\n"
+"QTreeWidget::item\n"
+"{\n"
+"	min-height:30px;\n"
+"	padding-left:10px;\n"
+"	background-color:transparent;\n"
+"}\n"
+"\n"
+" QTreeWidget::item:hover {\n"
+"	background-color:rgba(100,100,100, 50);\n"
+" }\n"
+"\n"
+"  QTreeWidget::item:selected {\n"
+"	background-color:#cccccc;\n"
+"	color:black;\n"
+" }"));
         trRecordList->setFrameShape(QFrame::NoFrame);
         trRecordList->setIndentation(0);
+        trRecordList->header()->setVisible(false);
+        trRecordList->header()->setDefaultSectionSize(250);
 
         verticalLayout->addWidget(trRecordList);
 
@@ -171,7 +196,6 @@ public:
         RecordDlg->setWindowTitle(QApplication::translate("RecordDlg", "RecordDlg", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("RecordDlg", "\345\275\225\351\237\263\346\226\207\344\273\266\345\210\227\350\241\250\357\274\214\345\217\214\345\207\273\346\222\255\346\224\276", 0, QApplication::UnicodeUTF8));
         QTreeWidgetItem *___qtreewidgetitem = trRecordList->headerItem();
-        ___qtreewidgetitem->setText(1, QApplication::translate("RecordDlg", "\345\244\247\345\260\217", 0, QApplication::UnicodeUTF8));
         ___qtreewidgetitem->setText(0, QApplication::translate("RecordDlg", "\346\226\207\344\273\266\345\220\215", 0, QApplication::UnicodeUTF8));
         chkOpen->setText(QApplication::translate("RecordDlg", "\346\211\223\345\274\200\347\216\257\345\242\203\351\237\263\347\233\221\346\216\247\345\212\237\350\203\275", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("RecordDlg", "\345\210\206\351\222\237\345\220\216\350\207\252\345\212\250\345\201\234\346\255\242\345\275\225\351\237\263", 0, QApplication::UnicodeUTF8));

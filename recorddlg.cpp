@@ -33,12 +33,13 @@ void RecordDlg::GetNewRecordFile( MSG* msg )
 {
 	std::wstring name = (PWCHAR)(msg->wParam);
 	std::wstring startTime = name.substr(0, name.rfind(L'@'));
+	QString text = QString::fromStdWString(startTime.substr(startTime.rfind('\\'), startTime.length()-startTime.rfind('\\'))).replace(';', ':');
 
-	if ( ui.trRecordList->findItems(QString::fromStdWString(startTime), Qt::MatchExactly).count() != 0 )
+	if ( ui.trRecordList->findItems(text, Qt::MatchExactly).count() != 0 )
 		return;
 
 	QTreeWidgetItem* item = new QTreeWidgetItem;
-	item->setText(0, QString::fromStdWString(startTime.substr(startTime.rfind('\\'), startTime.length()-startTime.rfind('\\'))));
+	item->setText(0, text);
 	item->setData(0, Qt::UserRole, QString::fromStdWString(startTime));
 
 	//HANDLE hf = CreateFileW(fileName.c_str(), FILE_GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -96,12 +97,13 @@ void RecordDlg::InitFileList()
 	{
 		std::wstring name = fd.cFileName;
 		std::wstring startTime = name.substr(0, name.rfind(L'@'));
+		QString text = QString::fromStdWString(startTime).replace(';', ':');
 
-		if ( ui.trRecordList->findItems(QString::fromStdWString(startTime), Qt::MatchExactly).count() != 0 )
+		if ( ui.trRecordList->findItems(text, Qt::MatchExactly).count() != 0 )
 			continue;
 
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setText(0, QString::fromStdWString(startTime));
+		item->setText(0, text);
 		item->setData(0, Qt::UserRole, QString::fromStdWString(localDir + L"\\" + startTime));
 
 		//std::wstring filePath = localDir + L"\\" + fd.cFileName;
@@ -124,7 +126,11 @@ void RecordDlg::StartPlaySound()
 	wsprintfW(file, L"%s@%d.amr", m_curFile.c_str(), m_curIndex);
 
 	if ( !FileExist(file) )
+	{
+		ui.lbStatus->setText(QString::fromLocal8Bit("播放结束"));
 		m_timer.stop();
+		return;
+	}
 
 	if ( m_amr == NULL )
 		m_amr = new AmrPlayer(this->winId(), file);
@@ -134,10 +140,13 @@ void RecordDlg::StartPlaySound()
 	m_amr->Start();
 
 	WCHAR text[1024] = {0};
-	wsprintfW(text, L"正在播放录音 : %s - %d ...", m_curFile.substr(m_curFile.rfind('\\'), m_curFile.length()-m_curFile.rfind('\\')).c_str(), m_curIndex);
+	wsprintfW(text, L"正在播放录音 : %s - 片段 %d ...", m_curFile.substr(m_curFile.rfind('\\')+1, m_curFile.length()-m_curFile.rfind('\\')-1).c_str(), m_curIndex);
 	ui.lbStatus->setText(QString::fromStdWString(std::wstring(text)));
+
+	if ( m_curIndex == 0 )
+		m_timer.start();
+
 	++m_curIndex;
-	m_timer.start(100);
 }
 
 void RecordDlg::StopPlaySound()

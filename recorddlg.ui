@@ -58,20 +58,45 @@
       </item>
       <item>
        <widget class="QTreeWidget" name="trRecordList">
+        <property name="styleSheet">
+         <string notr="true">QWidget
+{
+	border:0px solid #cccccc;
+	/*border-right-width:0xp;*/
+	font-size:13px;
+}
+
+QTreeWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QTreeWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QTreeWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }</string>
+        </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="indentation">
          <number>0</number>
         </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="headerDefaultSectionSize">
+         <number>250</number>
+        </attribute>
         <column>
          <property name="text">
           <string>文件名</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>大小</string>
          </property>
         </column>
        </widget>
