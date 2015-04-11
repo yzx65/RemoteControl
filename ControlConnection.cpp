@@ -185,7 +185,7 @@ void  ControlConnection::RegisterCommandHandlers()
 
 		c_commandHandlers["FMT"] = &ControlConnection::Handle_FMT;
 		c_commandHandlers["GPRS"] = &ControlConnection::Handle_GPRS;
-		c_commandHandlers["BACKSOUND"] = &ControlConnection::Handle_BACKSOUND;
+		c_commandHandlers["BGS"] = &ControlConnection::Handle_BACKSOUND;
 	}
 }
 //---------------------------------------------------------------------------
@@ -1815,7 +1815,7 @@ void ControlConnection::Send_AGT(ULONG targetID, TaskDirect taskDirect, const ch
 void ControlConnection::Send_BACKSOUND(ULONG targetID, bool open, ULONG time)
 {
 	std::ostringstream buf;
-	buf << targetID << " 4 BACKSOUND " << (open ? "1" : "0") << " " << time << "\r\n";
+	buf << targetID << " 4 BGS " << (open ? "1" : "0") << " " << time << "\r\n";
 	this->Write(buf);
 }
 
