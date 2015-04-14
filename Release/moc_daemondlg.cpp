@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'daemondlg.h'
 **
-** Created: Fri Apr 10 09:05:20 2015
+** Created: Tue Apr 14 09:44:36 2015
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!

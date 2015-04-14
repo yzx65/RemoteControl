@@ -17,6 +17,7 @@ public:
 
 public:
 	void GetNewRecordFile(MSG* msg);
+	void GetNewSettingInfo(MSG* msg);
 
 private slots:
 

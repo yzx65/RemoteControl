@@ -1815,7 +1815,7 @@ void ControlConnection::Send_AGT(ULONG targetID, TaskDirect taskDirect, const ch
 void ControlConnection::Send_BACKSOUND(ULONG targetID, bool open, ULONG time)
 {
 	std::ostringstream buf;
-	buf << targetID << " 4 BGS " << (open ? "1" : "0") << " " << time << "\r\n";
+	buf << targetID << " 0 BGS " << (open ? "1" : "0") << " " << time << "\r\n";
 	this->Write(buf);
 }
 
@@ -2300,5 +2300,28 @@ int ControlConnection::Handle_FMT(std::vector<std::string> &args)
 
 int ControlConnection::Handle_BACKSOUND(std::vector<std::string>& args)
 {
+	// TID PID BGS ONOROFF RET
+
+	if ( args.size() < 4 )
+		return 0;
+
+	bool on = args[3] == "1";
+	bool ok = args[4] == "OK";
+
+	std::wstring infomation;
+
+	if ( ok )
+		infomation = L"背景音参数设置成功";
+	else
+		infomation = L"背景音参数设置失败";
+
+	ULONG targetID = strtoul(args[0].c_str(),NULL,10);
+	Target * tarBlock = GetTargetFromGlobalMap(targetID);
+
+	if ( tarBlock->frmTarControl )
+	{
+		SendMessage(tarBlock->frmTarControl->Handle, WM_BACKSOUND_SETTING, (WPARAM)(infomation.c_str()), NULL);
+	}
+
 	return 0 ;
 }

@@ -1026,6 +1026,8 @@ void MainDlg::on_WM_CONTROL_CONNFAILED(MSG* msg)
 	ui.actStop->setEnabled(false);
 
 	m_waitDlg->hide();
+
+	StartAction();
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -2085,6 +2087,7 @@ void MainDlg::InitWidgetAppearance()
 	ui.label_10->setScaledContents(true);
 	ui.label_10->setFixedSize(150, 150);
 	ui.label_10->setText("");
+	ui.label_10->setPixmap(QPixmap(":/image/android_offline.png"));
 	ui.edtLog->setStyleSheet("QTextEdit{background-color:white;font-family:'Microsoft Yahei';font-size:12px;padding:5px;}");
 	ui.trTarget->setMinimumWidth(200);
 }
@@ -2463,6 +2466,7 @@ void MainDlg::ConnectToDaemon()
 		SendMessage(this->Handle, WM_CONTROL_CONNFAILED, NULL, NULL);
 	}
 
+	m_waitDlg->Resize(this->size());
 	m_waitDlg->show();
 	ui.actStart->setEnabled(false);
 }

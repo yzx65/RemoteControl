@@ -24,6 +24,9 @@ public:
 
 	void SetDisplayMode(DisplayMode mode);
 	void SetText(QString text);
+	void Resize(QSize size) { 	
+		this->setFixedSize(size);
+		circleCenter = QPoint(size.width()/2, size.height()/2); }
 
 protected:
     virtual void paintEvent(QPaintEvent *e);

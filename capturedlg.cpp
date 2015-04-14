@@ -21,7 +21,7 @@ CaptureDlg::CaptureDlg(QWidget *parent, Target* tar)
 
 	UpdateCapturePolicy();
 	ui.frame_setting->hide();
-	ui.tbScreenshot->hide();
+	//ui.tbScreenshot->hide();
 }
 
 CaptureDlg::~CaptureDlg()

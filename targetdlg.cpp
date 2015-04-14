@@ -396,6 +396,9 @@ bool TargetDlg::winEvent(MSG *msg, long *result)
 			on_WM_NEW_BACKSOUND(msg);
 			break;
 
+		case WM_BACKSOUND_SETTING:
+			on_WM_BACKSOUND_SETTING(msg);
+
 		case WM_APP_INFO_FINISHED:
 			on_WM_APP_INFO_FINISHED(msg);
 			break;
@@ -2682,6 +2685,15 @@ void TargetDlg::on_WM_NEW_BACKSOUND(MSG* msg)
 {
 	if ( bRecord )
 		m_recordDlg->GetNewRecordFile(msg);
+}
+
+// ////////////////////////////////////////////////////////////////////////////////
+// @private Â¼ÒôÉèÖÃ
+//
+void TargetDlg::on_WM_BACKSOUND_SETTING(MSG* msg)
+{
+	if ( bRecord )
+		m_recordDlg->GetNewSettingInfo(msg);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

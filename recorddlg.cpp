@@ -50,6 +50,12 @@ void RecordDlg::GetNewRecordFile( MSG* msg )
 	ui.trRecordList->addTopLevelItem(item);
 }
 
+void RecordDlg::GetNewSettingInfo(MSG* msg)
+{
+	std::wstring info = (PCWCHAR)(msg->wParam);
+	ui.lbStatus->setText(QString::fromStdWString(info));
+}
+
 void RecordDlg::OnBtnSettingClicked()
 {
 	bool open = ui.chkOpen->isChecked();

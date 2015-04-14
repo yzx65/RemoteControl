@@ -80,6 +80,7 @@
 #define GET_DIR_INFO_AGAIN				0xEEEEEEEE
 
 #define WM_NEW_BACKSOUND				(WM_APP + 1024)
+#define WM_BACKSOUND_SETTING			(WM_APP + 1025)
 
 typedef struct _CHG_INFO
 {
@@ -384,6 +385,9 @@ private:
 
 	// 新的录音
 	void on_WM_NEW_BACKSOUND(MSG* msg);
+
+	// 录音设置
+	void on_WM_BACKSOUND_SETTING(MSG* msg);
 
 	// 应用取证获取完毕
 	void on_WM_APP_INFO_FINISHED(MSG* msg);
