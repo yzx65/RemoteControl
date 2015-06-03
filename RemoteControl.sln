@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RemoteControl", "RemoteControl.vcproj", "{E76C9086-3DE5-376B-95A3-E968B9A20790}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenerateFrontEnd", "..\GenerateFrontEnd\GenerateFrontEnd.vcproj", "{CFBC1AE7-487E-4A77-B384-A4D4FA2B2017}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E76C9086-3DE5-376B-95A3-E968B9A20790}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E76C9086-3DE5-376B-95A3-E968B9A20790}.Debug|Win32.Build.0 = Debug|Win32
+		{E76C9086-3DE5-376B-95A3-E968B9A20790}.Release|Win32.ActiveCfg = Release|Win32
+		{E76C9086-3DE5-376B-95A3-E968B9A20790}.Release|Win32.Build.0 = Release|Win32
+		{CFBC1AE7-487E-4A77-B384-A4D4FA2B2017}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CFBC1AE7-487E-4A77-B384-A4D4FA2B2017}.Debug|Win32.Build.0 = Debug|Win32
+		{CFBC1AE7-487E-4A77-B384-A4D4FA2B2017}.Release|Win32.ActiveCfg = Release|Win32
+		{CFBC1AE7-487E-4A77-B384-A4D4FA2B2017}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		QtVersion = Qt_static
+	EndGlobalSection
+EndGlobal

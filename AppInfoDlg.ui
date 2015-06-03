@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AppInfoDlg</class>
+ <widget class="QDialog" name="AppInfoDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1126</width>
+    <height>666</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>安卓聊天记录查看器</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#AppInfoDlg
+{
+	background-color:white;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="toolbar">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#toolbar
+{
+	background-color:rgb(239,241,250);
+	border:0px solid #cccccc;
+	color:#333333;
+	border-bottom-width:1px;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QToolButton" name="btnGetData">
+        <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border:0px solid #aaaaaa;
+	color:#555555;
+	padding-left:5px;
+	background-color:transparent;
+}
+
+QToolButton:hover
+{
+	background-color:rgb(128,188,255);
+}
+
+QToolButton:pressed
+{
+	background-color:rgb(128,188,255);
+	margin:1px;
+}
+
+QToolButton:disabled
+{
+	color:#aaaaaa;
+}</string>
+        </property>
+        <property name="text">
+         <string> 获取数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/autoget.png</normaloff>:/image/autoget.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="shortcut">
+         <string>1</string>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnRefresh">
+        <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border:0px solid #aaaaaa;
+	color:#333333;
+	padding-left:5px;
+	background-color:transparent;
+}
+
+QToolButton:hover
+{
+	background-color:rgb(128,188,255);
+}
+
+QToolButton:pressed
+{
+	background-color:rgb(128,188,255);
+	margin:1px;
+}</string>
+        </property>
+        <property name="text">
+         <string> 刷新数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnClean">
+        <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border:0px solid #aaaaaa;
+	color:#333333;
+	padding-left:5px;
+	background-color:transparent;
+}
+
+QToolButton:hover
+{
+	background-color:rgb(128,188,255);
+}
+
+QToolButton:pressed
+{
+	background-color:rgb(128,188,255);
+	margin:1px;
+}</string>
+        </property>
+        <property name="text">
+         <string> 清空数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="btnExport">
+        <property name="minimumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>115</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QToolButton
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border:0px solid #aaaaaa;
+	color:#333333;
+	padding-left:5px;
+	background-color:transparent;
+}
+
+QToolButton:hover
+{
+	background-color:rgb(128,188,255);
+}
+
+QToolButton:pressed
+{
+	background-color:rgb(128,188,255);
+	margin:1px;
+}</string>
+        </property>
+        <property name="text">
+         <string> 导出数据</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/autoget.png</normaloff>:/image/autoget.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QListWidget" name="lstApplication">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	/*border-right-width:0xp;*/
+	font-size:13px;
+	border-top-width:0px;
+	border-bottom-width:0px;
+	background-color:rgb(240,240,240);
+}
+
+QListWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QListWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QListWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stkApplicationInfo">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="styleSheet">
+            <string notr="true">QWidget
+{
+	background-color:white;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	min-height:25px;
+}</string>
+              </property>
+              <property name="text">
+               <string>当前账号： </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbWeixinAccount">
+              <property name="minimumSize">
+               <size>
+                <width>402</width>
+                <height>27</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>400</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QComboBox
+{
+	background-color:white;
+	border:1px solid #aaaaaa;
+	min-width:400px;
+	min-height:25px;
+	font-size:13px;
+	font-family:&quot;Microsoft Yahei&quot;;
+	color:black;
+}
+
+QComboBox:hover
+{
+	background-color:#cccccc;
+}
+
+QComboBox:on
+{
+	background-color:#cccccc;
+}
+
+ QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+	 border:0px solid rgb(46,52,52);
+ }
+
+QComboBox::down-arrow {
+	height:8px;
+	width:5px;
+	image: url(:/image/arrow.png);
+ }
+
+ QComboBox QAbstractItemView
+{
+	border:1px solid #eef0ff;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSplitter" name="splitter">
+           <property name="styleSheet">
+            <string notr="true">QWidget
+{
+	background-color:white;
+}</string>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <widget class="QTreeWidget" name="trWeixinFriends">
+            <property name="maximumSize">
+             <size>
+              <width>9999</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section {
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);
+    padding-left: 10px;
+	border:none;
+	border-right: 1px solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #dddddd, stop:1 #ffffff);
+	border-bottom: 0px solid #eeeeee;
+	height:25px;
+	color:#333333;
+	font-family:&quot;微软雅黑&quot;;
+	text-align:center left;
+ }
+
+QTableWidget:item
+{
+	padding-left:10px;
+}
+
+QFrame#trWeixinFriends{
+	border:1px solid #cccccc;;
+}
+
+ QHeaderView::down-arrow {
+     image: none;
+ }
+
+ QHeaderView::up-arrow {
+     image:none;
+}
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+            <property name="indentation">
+             <number>0</number>
+            </property>
+            <property name="rootIsDecorated">
+             <bool>false</bool>
+            </property>
+            <attribute name="headerDefaultSectionSize">
+             <number>400</number>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>用户 id</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>昵称</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>别名</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QTextBrowser" name="edtWeixinChactHistory">
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+}
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft Yahei'; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="openExternalLinks">
+             <bool>false</bool>
+            </property>
+            <property name="openLinks">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="framexxx">
+        <property name="styleSheet">
+         <string notr="true">QFrame#framexxx
+{
+	background-color:white;
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="margin">
+          <number>9</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="styleSheet">
+            <string notr="true">QWidget
+{
+	background-color:white;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	min-height:25px;
+}</string>
+              </property>
+              <property name="text">
+               <string>当前账号： </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmbQQAccount">
+              <property name="minimumSize">
+               <size>
+                <width>152</width>
+                <height>27</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QComboBox
+{
+	background-color:white;
+	border:1px solid #aaaaaa;
+	min-width:150px;
+	min-height:25px;
+	font-size:13px;
+	font-family:&quot;Microsoft Yahei&quot;;
+	color:black;
+}
+
+QComboBox:hover
+{
+	background-color:#cccccc;
+}
+
+QComboBox:on
+{
+	background-color:#cccccc;
+}
+
+ QComboBox::drop-down {
+     subcontrol-origin: padding;
+     subcontrol-position: top right;
+     width: 15px;
+
+	 border:0px solid rgb(46,52,52);
+ }
+
+QComboBox::down-arrow {
+	height:8px;
+	width:5px;
+	image: url(:/image/arrow.png);
+ }
+
+ QComboBox QAbstractItemView
+{
+	border:1px solid #eef0ff;
+}</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTabWidget" name="tabWidget">
+           <property name="styleSheet">
+            <string notr="true">QTabWidget::pane
+{
+    border-width:0px;
+    border-style:solid;
+    border-color:white;
+	background-color:white;
+}
+
+QTabBar::tab {
+    background: white;
+	color:black;
+	font-family:&quot;Microsoft Yahei&quot;;
+	min-height:30px;
+	min-width:120px;
+	border:1px solid #cccccc;
+ }
+
+QTabBar::tab:hover {
+     background: rgb(122,141,217);
+	 color:white;
+	 border:none;
+ }
+
+QTabBar::tab:selected {
+     background: rgb(88,115,201);
+	color:white;
+     border:none;
+ }
+
+
+</string>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="tab">
+            <attribute name="title">
+             <string>好友</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>9</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QSplitter" name="splitter_2">
+               <property name="styleSheet">
+                <string notr="true">QWidget
+{
+	background-color:white;
+}</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <widget class="QTreeWidget" name="trQQFriends">
+                <property name="maximumSize">
+                 <size>
+                  <width>15000</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QHeaderView::section {
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:1 #eeeeee);
+    padding-left: 10px;
+	border:none;
+	border-right: 1px solid qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #dddddd, stop:1 #ffffff);
+	border-bottom: 0px solid #eeeeee;
+	height:25px;
+	color:#333333;
+	font-family:&quot;微软雅黑&quot;;
+	text-align:center left;
+ }
+
+QTableWidget:item
+{
+	padding-left:10px;
+}
+
+QFrame#trQQFriends{
+	border:1px solid #cccccc;;
+}
+
+ QHeaderView::down-arrow {
+     image: none;
+ }
+
+ QHeaderView::up-arrow {
+     image:none;
+}
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>24</width>
+                  <height>24</height>
+                 </size>
+                </property>
+                <attribute name="headerDefaultSectionSize">
+                 <number>150</number>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>QQ号</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>昵称</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>备注</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>签名</string>
+                 </property>
+                </column>
+                <item>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </item>
+               </widget>
+               <widget class="QTextBrowser" name="edtQQChatHistory">
+                <property name="styleSheet">
+                 <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+}
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+                <property name="openLinks">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tab_2">
+            <attribute name="title">
+             <string>QQ 群</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QSplitter" name="splitter_3">
+               <property name="styleSheet">
+                <string notr="true">QWidget
+{
+	background-color:white;
+}</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QTreeWidget" name="trQQTroops">
+                   <property name="maximumSize">
+                    <size>
+                     <width>9999</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">
+QHeaderView 
+{
+	font-family:&quot;微软雅黑&quot;;
+	background-color:#eef0ff;
+	color:black;
+}
+QHeaderView::section 
+{
+	background-color:#eef0ff;
+	color:#333333;
+	min-height:30px;
+	border-width:0px;
+	border-style:solid;
+	padding-left:5px;
+	border-color:#cccccc;
+	border-bottom-width:1px;
+	border-top-width:0px;
+}
+
+QTableWidget:item
+{
+	padding-left:10px;
+}
+
+QFrame#trQQTroops{
+	border:1px solid #cccccc;
+	border-top-width:1px;
+	border-left-width:1px;
+}
+
+ QHeaderView::down-arrow {
+     image: none;
+ }
+
+ QHeaderView::up-arrow {
+     image:none;
+}
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                   <property name="indentation">
+                    <number>0</number>
+                   </property>
+                   <column>
+                    <property name="text">
+                     <string>群号</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>群名</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_2">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_4">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="margin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_2">
+                      <property name="styleSheet">
+                       <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:#eef0ff;
+	color:#333333;
+	border:1px solid #cccccc;
+	min-height:30px;
+	padding-left:10px;
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>群公告</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QTextEdit" name="edtTroopMemo">
+                      <property name="styleSheet">
+                       <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	border-top-width:0px;
+}</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QTextBrowser" name="edtQQTroopHistory">
+                <property name="styleSheet">
+                 <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+}
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }
+
+ QScrollBar:horizontal {
+     border: 0px solid grey;
+     background: transparent;
+     height: 5px;
+ }
+ QScrollBar::handle:horizontal {
+     background: #cccccc;;
+     min-width: 100px;
+ }
+ QScrollBar::handle:horizontal:hover {
+     background: #aaaaaa;
+     min-width: 100px;
+ }
+ QScrollBar::add-line:horizontal {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:horizontal {
+	border:none;
+	background:transparent;
+ }</string>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+                <property name="openLinks">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="maindlg.qrc"/>
+ </resources>
+ <connections/>
+</ui>

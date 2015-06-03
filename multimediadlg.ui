@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MultimediaDlg</class>
+ <widget class="QWidget" name="MultimediaDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>868</width>
+    <height>529</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MultimediaDlg</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#MultimediaDlg
+{
+	background-color:rgb(240,240,240);
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_24">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_17">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:white;
+	color:#333333;
+	min-height:30px;
+	border: 1px solid #cccccc;
+	border-top: 3px solid rgb(108,168,255);
+	border-bottom-width:0px;
+	padding-left:10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>通信软件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="lstMonitorApp">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	/*border-right-width:0xp;*/
+	font-size:13px;
+}
+
+QListWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QListWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QListWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <item>
+        <property name="text">
+         <string>Skype</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/skype.png</normaloff>:/image/skype.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_25">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_18">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:white;
+	color:#333333;
+	min-height:30px;
+	border: 1px solid #cccccc;
+	border-top: 3px solid rgb(108,168,255);
+	border-bottom-width:0px;
+	padding-left:10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>获取日期</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="lstSaveTime">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	/*border-right-width:0xp;*/
+	font-size:13px;
+}
+
+QListWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QListWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QListWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>2013-02-14 13:00:00</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/time.png</normaloff>:/image/time.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_26">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_19">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:white;
+	color:#333333;
+	min-height:30px;
+	border: 1px solid #cccccc;
+	border-top: 3px solid rgb(108,168,255);
+	border-bottom-width:0px;
+	padding-left:10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>文件类型</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="lstFileType">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+	/*border-right-width:0xp;*/
+	font-size:13px;
+}
+
+QListWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QListWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QListWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+ }</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>通话录音</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/audio.png</normaloff>:/image/audio.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>视频截图</string>
+        </property>
+        <property name="icon">
+         <iconset resource="maindlg.qrc">
+          <normaloff>:/image/album.png</normaloff>:/image/album.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_27">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_20">
+       <property name="styleSheet">
+        <string notr="true">QLabel
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+	font-size:13px;
+	background-color:white;
+	color:#333333;
+	min-height:30px;
+	border: 1px solid #cccccc;
+	border-top: 3px solid rgb(108,168,255);
+	border-bottom-width:0px;
+	padding-left:10px;
+}</string>
+       </property>
+       <property name="text">
+        <string>文件列表</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="lstFileList">
+       <property name="styleSheet">
+        <string notr="true">QWidget
+{
+	border:1px solid #cccccc;
+}
+
+QListWidget::item
+{
+	min-height:30px;
+	padding-left:10px;
+	background-color:transparent;
+}
+
+ QListWidget::item:hover {
+	background-color:rgba(100,100,100, 50);
+ }
+
+  QListWidget::item:selected {
+	background-color:#cccccc;
+	color:black;
+ }
+
+ QScrollBar:vertical {
+     border: 0px solid grey;
+     background: transparent;
+     width: 10px;
+ }
+ QScrollBar::handle:vertical {
+     background: #cccccc;;
+     min-height: 100px;
+ }
+ QScrollBar::handle:vertical:hover {
+     background: #aaaaaa;
+     min-heiht: 100px;
+ }
+ QScrollBar::add-line:vertical {
+	border:none;
+	background:transparent;
+ }
+ QScrollBar::sub-line:vertical {
+	border:none;
+	background:transparent;
+}</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="maindlg.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,117 @@
+/**************************************************************
+ * Module:
+ *      common.h
+ *
+ * Author:
+ *      DING ZAHOKUN(dzkad@hotmail.com)
+ *
+ * Time:
+ *		2009-10-05,Nanjing
+ *
+ * Notes:
+ *		Common Struct For T4000(T5000)
+ *
+ */
+
+#ifndef __COMMON_H__
+#define __COMMON_H__
+
+#include <winsock2.h>
+#include <cstdio>
+#include <map>
+#include <vector>
+#include <string>
+using namespace std;
+
+// 每次读取文件的块长度
+//
+#define FILE_BLOCK_LENGTH			(1024*4)
+
+// 编译区别OEM版本
+//
+//#define T5000_OEM
+
+// 编译区别单用户版和多用户版
+//
+#define MULTIUSER_CONTROL
+
+#define OS_WIN2K					(2195)
+#define OS_WINXP					(2600)
+#define OS_WIN2003					(3790)				// XP 64位也是3790
+#define OS_WINVISTA					(6000)
+#define OS_WIN2008					(6001)
+#define OS_WINVISTASP2				(6002)
+#define OS_WIN7PRO					(7600)				// 2008 R2也是7600
+#define OS_WIN7SP1					(7601)				// SP1
+
+// 连接区别码 (用于使用同一端口进行通信时对不同类型的连接进行区别)
+//
+
+#define TARGET_CONN_IDENTITY				"0 0 IDE TARG\r\n"
+#define CONTROL_CONN_IDENTITY				"0 0 IDE CONT\r\n"
+#define CONTROL_FILECONN_IDENTITY			"0 0 IDE COFI\r\n"
+
+#define DAEMON_DEFPORT_FORTARGET			(8080)
+#define DAEMON_DEFCTRPORT_FORCONTROL		(8088)
+#define DAEMON_DEFDATAPORT_FORCONTROL		(8089)
+
+//
+// 目标相关属性
+//
+
+typedef enum _TargetStatus
+{
+	TAROFFLINE=0,
+	TARONLINE
+
+} TargetStatus;
+
+ //
+ // 中转服务器配置参数
+ //
+
+typedef struct _DAEMON_PARAM
+{
+	BYTE	    byShowWindow;
+	BYTE	    byLogFile;
+    USHORT      usPortForTarget;
+	USHORT		usCtrPortForControl;
+	USHORT		usDataPortForControl;
+	USHORT		usPortForManager;
+
+	BYTE		byPassHash[16];
+
+} DAEMON_PARAM,
+* PDAEMON_PARAM;
+
+//
+// 插件相关变量及结构
+//
+
+#define MAX_PLG_COUNT		(32)
+
+// Load type
+//
+#define AUTO_LOAD			0
+#define COMMAND_LOAD		1
+
+// UpdateType
+//
+#define DEFAULT_UPDATE		0
+#define DEFAULT_NO_UPDATE	1
+
+/**************************************************************
+ *	GetIPStrFromInt32 @@ADK
+ * 
+ */
+__inline
+PCHAR GetIPStrFromInt32(int nIp)
+{
+    in_addr     inAddrIp;
+
+    inAddrIp.S_un.S_addr = nIp;
+
+	return inet_ntoa(inAddrIp);
+}
+
+#endif // __COMMON_H__
