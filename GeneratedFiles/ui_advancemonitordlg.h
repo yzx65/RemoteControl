@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'advancemonitordlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:07 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -63,15 +63,15 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         trAdvanceFileMonitor = new QTreeWidget(AdvanceMonitorDlg);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/usbplugrecord.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/usbplugrecord.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/downsearchfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/downsearchfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/usbmonitor.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/usbmonitor.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/interception.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/interception.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/userfileaction.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("image/userfileaction.png"), QSize(), QIcon::Normal, QIcon::Off);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(trAdvanceFileMonitor);
         __qtreewidgetitem->setIcon(0, icon);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(__qtreewidgetitem);
@@ -465,7 +465,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/destroy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8("image/destroy.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnCleanMonitorRecord->setIcon(icon5);
         btnCleanMonitorRecord->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
@@ -497,7 +497,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8("image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnCancelMonitor->setIcon(icon6);
         btnCancelMonitor->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 

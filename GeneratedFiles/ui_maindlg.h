@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maindlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:06 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -148,103 +148,103 @@ public:
         actStart = new QAction(MainDlgClass);
         actStart->setObjectName(QString::fromUtf8("actStart"));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/toolbar/start.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon.addFile(QString::fromUtf8(":/image/toolbar/start_disabled.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/toolbar/start.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/toolbar/start_disabled.png"), QSize(), QIcon::Disabled, QIcon::Off);
         actStart->setIcon(icon);
         actStop = new QAction(MainDlgClass);
         actStop->setObjectName(QString::fromUtf8("actStop"));
         actStop->setEnabled(false);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/toolbar/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon1.addFile(QString::fromUtf8(":/image/toolbar/stop_disable.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/toolbar/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/toolbar/stop_disable.png"), QSize(), QIcon::Disabled, QIcon::Off);
         actStop->setIcon(icon1);
         actExit = new QAction(MainDlgClass);
         actExit->setObjectName(QString::fromUtf8("actExit"));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
         actExit->setIcon(icon2);
         actConfig = new QAction(MainDlgClass);
         actConfig->setObjectName(QString::fromUtf8("actConfig"));
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/toolbar/config.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/toolbar/config.png"), QSize(), QIcon::Normal, QIcon::Off);
         actConfig->setIcon(icon3);
         actScreenMon = new QAction(MainDlgClass);
         actScreenMon->setObjectName(QString::fromUtf8("actScreenMon"));
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/pcname.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("image/pcname.png"), QSize(), QIcon::Normal, QIcon::Off);
         actScreenMon->setIcon(icon4);
         actLog = new QAction(MainDlgClass);
         actLog->setObjectName(QString::fromUtf8("actLog"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/updownlog.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8("image/updownlog.png"), QSize(), QIcon::Normal, QIcon::Off);
         actLog->setIcon(icon5);
         actAlias = new QAction(MainDlgClass);
         actAlias->setObjectName(QString::fromUtf8("actAlias"));
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/toolbar/alias.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8("image/toolbar/alias.png"), QSize(), QIcon::Normal, QIcon::Off);
         actAlias->setIcon(icon6);
         actDelSelf = new QAction(MainDlgClass);
         actDelSelf->setObjectName(QString::fromUtf8("actDelSelf"));
         QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/destroy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8("image/destroy.png"), QSize(), QIcon::Normal, QIcon::Off);
         actDelSelf->setIcon(icon7);
         actClean = new QAction(MainDlgClass);
         actClean->setObjectName(QString::fromUtf8("actClean"));
         QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8("image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         actClean->setIcon(icon8);
         actCreate = new QAction(MainDlgClass);
         actCreate->setObjectName(QString::fromUtf8("actCreate"));
         QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/toolbar/target.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8("image/toolbar/target.png"), QSize(), QIcon::Normal, QIcon::Off);
         actCreate->setIcon(icon9);
         actHelp = new QAction(MainDlgClass);
         actHelp->setObjectName(QString::fromUtf8("actHelp"));
         QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/image/unknown.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QString::fromUtf8("image/unknown.png"), QSize(), QIcon::Normal, QIcon::Off);
         actHelp->setIcon(icon10);
         actAbout = new QAction(MainDlgClass);
         actAbout->setObjectName(QString::fromUtf8("actAbout"));
         actUserActionMonitor = new QAction(MainDlgClass);
         actUserActionMonitor->setObjectName(QString::fromUtf8("actUserActionMonitor"));
         QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/image/useraction.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon11.addFile(QString::fromUtf8("image/useraction.png"), QSize(), QIcon::Normal, QIcon::Off);
         actUserActionMonitor->setIcon(icon11);
         actUsbMonitor = new QAction(MainDlgClass);
         actUsbMonitor->setObjectName(QString::fromUtf8("actUsbMonitor"));
         QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/image/usbplugrecord.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon12.addFile(QString::fromUtf8("image/usbplugrecord.png"), QSize(), QIcon::Normal, QIcon::Off);
         actUsbMonitor->setIcon(icon12);
         actCleanDatabase = new QAction(MainDlgClass);
         actCleanDatabase->setObjectName(QString::fromUtf8("actCleanDatabase"));
         QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/image/toolbar/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon13.addFile(QString::fromUtf8("image/toolbar/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         actCleanDatabase->setIcon(icon13);
         actCreateDaemon = new QAction(MainDlgClass);
         actCreateDaemon->setObjectName(QString::fromUtf8("actCreateDaemon"));
         QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/image/toolbar/daemon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon14.addFile(QString::fromUtf8("image/toolbar/daemon.png"), QSize(), QIcon::Normal, QIcon::Off);
         actCreateDaemon->setIcon(icon14);
         actPolicy = new QAction(MainDlgClass);
         actPolicy->setObjectName(QString::fromUtf8("actPolicy"));
         QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/image/toolbar/policy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon15.addFile(QString::fromUtf8("image/toolbar/policy.png"), QSize(), QIcon::Normal, QIcon::Off);
         actPolicy->setIcon(icon15);
         actMigrateDaemon = new QAction(MainDlgClass);
         actMigrateDaemon->setObjectName(QString::fromUtf8("actMigrateDaemon"));
         QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/image/toolbar/migrate.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon16.addFile(QString::fromUtf8("image/toolbar/migrate.png"), QSize(), QIcon::Normal, QIcon::Off);
         actMigrateDaemon->setIcon(icon16);
         actFlowControl = new QAction(MainDlgClass);
         actFlowControl->setObjectName(QString::fromUtf8("actFlowControl"));
         QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/image/toolbar/flow.png"), QSize(), QIcon::Normal, QIcon::Off);
-        icon17.addFile(QString::fromUtf8(":/image/toolbar/flow_disable.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        icon17.addFile(QString::fromUtf8("image/toolbar/flow.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon17.addFile(QString::fromUtf8("image/toolbar/flow_disable.png"), QSize(), QIcon::Disabled, QIcon::Off);
         actFlowControl->setIcon(icon17);
         actFavorite = new QAction(MainDlgClass);
         actFavorite->setObjectName(QString::fromUtf8("actFavorite"));
         QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/image/toolbar/star.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon18.addFile(QString::fromUtf8("image/toolbar/star.png"), QSize(), QIcon::Normal, QIcon::Off);
         actFavorite->setIcon(icon18);
         actQueryDaemonAddress = new QAction(MainDlgClass);
         actQueryDaemonAddress->setObjectName(QString::fromUtf8("actQueryDaemonAddress"));
@@ -842,12 +842,12 @@ public:
 
         cmbDisplayMode = new QComboBox(displayMode);
         QIcon icon19;
-        icon19.addFile(QString::fromUtf8(":/image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon19.addFile(QString::fromUtf8("image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         cmbDisplayMode->addItem(icon19, QString());
         cmbDisplayMode->addItem(icon19, QString());
         cmbDisplayMode->addItem(icon19, QString());
         QIcon icon20;
-        icon20.addFile(QString::fromUtf8(":/image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon20.addFile(QString::fromUtf8("image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
         cmbDisplayMode->addItem(icon20, QString());
         cmbDisplayMode->setObjectName(QString::fromUtf8("cmbDisplayMode"));
         cmbDisplayMode->setMinimumSize(QSize(150, 25));
@@ -880,7 +880,7 @@ public:
 "QComboBox::down-arrow {\n"
 "	height:8px;\n"
 "	width:8px;\n"
-"	image: url(:/image/arrow.png);\n"
+"	image: url(image/arrow.png);\n"
 " }\n"
 "\n"
 " QComboBox QAbstractItemView\n"
@@ -906,13 +906,13 @@ public:
 
         cmbCategory = new QComboBox(displayMode);
         QIcon icon21;
-        icon21.addFile(QString::fromUtf8(":/image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon21.addFile(QString::fromUtf8("image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
         cmbCategory->addItem(icon21, QString());
         QIcon icon22;
-        icon22.addFile(QString::fromUtf8(":/image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon22.addFile(QString::fromUtf8("image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         cmbCategory->addItem(icon22, QString());
         QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/image/home.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon23.addFile(QString::fromUtf8("image/home.png"), QSize(), QIcon::Normal, QIcon::Off);
         cmbCategory->addItem(icon23, QString());
         cmbCategory->setObjectName(QString::fromUtf8("cmbCategory"));
         cmbCategory->setMinimumSize(QSize(150, 25));
@@ -945,7 +945,7 @@ public:
 "QComboBox::down-arrow {\n"
 "	height:8px;\n"
 "	width:8px;\n"
-"	image: url(:/image/arrow.png);\n"
+"	image: url(image/arrow.png);\n"
 " }\n"
 "\n"
 " QComboBox QAbstractItemView\n"

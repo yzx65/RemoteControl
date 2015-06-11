@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'multimediadlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:07 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -76,7 +76,7 @@ public:
 
         lstMonitorApp = new QListWidget(MultimediaDlg);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/skype.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/skype.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(lstMonitorApp);
         __qlistwidgetitem->setIcon(icon);
         lstMonitorApp->setObjectName(QString::fromUtf8("lstMonitorApp"));
@@ -133,7 +133,7 @@ public:
 
         lstSaveTime = new QListWidget(MultimediaDlg);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/time.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/time.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem1 = new QListWidgetItem(lstSaveTime);
         __qlistwidgetitem1->setIcon(icon1);
         lstSaveTime->setObjectName(QString::fromUtf8("lstSaveTime"));
@@ -211,11 +211,11 @@ public:
 
         lstFileType = new QListWidget(MultimediaDlg);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/audio.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/audio.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem2 = new QListWidgetItem(lstFileType);
         __qlistwidgetitem2->setIcon(icon2);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/album.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/album.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem3 = new QListWidgetItem(lstFileType);
         __qlistwidgetitem3->setIcon(icon3);
         lstFileType->setObjectName(QString::fromUtf8("lstFileType"));

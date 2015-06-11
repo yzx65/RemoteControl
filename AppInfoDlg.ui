@@ -99,7 +99,7 @@ QToolButton:disabled
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/autoget.png</normaloff>:/image/autoget.png</iconset>
+          <normaloff>image/autoget.png</normaloff>image/autoget.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -156,7 +156,7 @@ QToolButton:pressed
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
+          <normaloff>image/refresh.png</normaloff>image/refresh.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -210,7 +210,7 @@ QToolButton:pressed
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
+          <normaloff>image/delete.png</normaloff>image/delete.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -264,7 +264,7 @@ QToolButton:pressed
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/autoget.png</normaloff>:/image/autoget.png</iconset>
+          <normaloff>image/autoget.png</normaloff>image/autoget.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -453,7 +453,7 @@ QComboBox:on
 QComboBox::down-arrow {
 	height:8px;
 	width:5px;
-	image: url(:/image/arrow.png);
+	image: url(image/arrow.png);
  }
 
  QComboBox QAbstractItemView
@@ -763,7 +763,7 @@ QComboBox:on
 QComboBox::down-arrow {
 	height:8px;
 	width:5px;
-	image: url(:/image/arrow.png);
+	image: url(image/arrow.png);
  }
 
  QComboBox QAbstractItemView

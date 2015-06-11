@@ -174,7 +174,7 @@ QPushButton:pressed
             </property>
             <property name="icon">
              <iconset resource="maindlg.qrc">
-              <normaloff>:/image/location.png</normaloff>:/image/location.png</iconset>
+              <normaloff>image/location.png</normaloff>image/location.png</iconset>
             </property>
             <property name="iconSize">
              <size>

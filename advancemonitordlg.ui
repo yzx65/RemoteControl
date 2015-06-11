@@ -91,7 +91,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/usbplugrecord.png</normaloff>:/image/usbplugrecord.png</iconset>
+        <normaloff>image/usbplugrecord.png</normaloff>image/usbplugrecord.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -99,7 +99,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/downsearchfile.png</normaloff>:/image/downsearchfile.png</iconset>
+         <normaloff>image/downsearchfile.png</normaloff>image/downsearchfile.png</iconset>
        </property>
       </item>
       <item>
@@ -108,7 +108,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/usbmonitor.png</normaloff>:/image/usbmonitor.png</iconset>
+         <normaloff>image/usbmonitor.png</normaloff>image/usbmonitor.png</iconset>
        </property>
       </item>
      </item>
@@ -118,7 +118,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/interception.png</normaloff>:/image/interception.png</iconset>
+        <normaloff>image/interception.png</normaloff>image/interception.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -126,7 +126,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/userfileaction.png</normaloff>:/image/userfileaction.png</iconset>
+         <normaloff>image/userfileaction.png</normaloff>image/userfileaction.png</iconset>
        </property>
       </item>
      </item>
@@ -637,7 +637,7 @@ QToolButton:disabled
               </property>
               <property name="icon">
                <iconset resource="maindlg.qrc">
-                <normaloff>:/image/destroy.png</normaloff>:/image/destroy.png</iconset>
+                <normaloff>image/destroy.png</normaloff>image/destroy.png</iconset>
               </property>
               <property name="toolButtonStyle">
                <enum>Qt::ToolButtonTextBesideIcon</enum>
@@ -686,7 +686,7 @@ QToolButton:disabled
               </property>
               <property name="icon">
                <iconset resource="maindlg.qrc">
-                <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
+                <normaloff>image/delete.png</normaloff>image/delete.png</iconset>
               </property>
               <property name="toolButtonStyle">
                <enum>Qt::ToolButtonTextBesideIcon</enum>

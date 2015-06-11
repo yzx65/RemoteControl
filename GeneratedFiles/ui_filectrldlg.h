@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'filectrldlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:07 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -136,7 +136,7 @@ public:
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         trFileCtrl = new CustomTree(FileCtrlDlg);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/disklist.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/disklist.png"), QSize(), QIcon::Normal, QIcon::Off);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(trFileCtrl);
         __qtreewidgetitem->setIcon(0, icon);
         trFileCtrl->setObjectName(QString::fromUtf8("trFileCtrl"));
@@ -325,7 +325,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/star.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnFavorite->setIcon(icon1);
         btnFavorite->setIconSize(QSize(24, 24));
         btnFavorite->setAutoRaise(true);
@@ -356,7 +356,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnUp->setIcon(icon2);
         btnUp->setIconSize(QSize(24, 24));
         btnUp->setAutoRaise(true);
@@ -387,7 +387,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRefresh->setIcon(icon3);
         btnRefresh->setIconSize(QSize(24, 24));
         btnRefresh->setAutoRaise(true);
@@ -419,7 +419,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDelete->setIcon(icon4);
         btnDelete->setIconSize(QSize(24, 24));
         btnDelete->setAutoRaise(true);
@@ -450,7 +450,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/run.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8("image/run.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRun->setIcon(icon5);
         btnRun->setIconSize(QSize(24, 24));
         btnRun->setAutoRaise(true);
@@ -481,7 +481,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/analysis.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8("image/analysis.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnAnalysis->setIcon(icon6);
         btnAnalysis->setIconSize(QSize(24, 24));
         btnAnalysis->setAutoRaise(true);
@@ -512,7 +512,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/monitor.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8("image/monitor.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnMonitor->setIcon(icon7);
         btnMonitor->setIconSize(QSize(24, 24));
         btnMonitor->setAutoRaise(true);
@@ -543,7 +543,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/search.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8("image/search.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnSearch->setIcon(icon8);
         btnSearch->setIconSize(QSize(24, 24));
         btnSearch->setAutoRaise(true);
@@ -678,7 +678,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8("image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnUpload->setIcon(icon9);
 
         horizontalLayout_2->addWidget(btnUpload);
@@ -709,7 +709,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QString::fromUtf8("image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDownload->setIcon(icon10);
 
         horizontalLayout_2->addWidget(btnDownload);
@@ -739,7 +739,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon11.addFile(QString::fromUtf8("image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDownloadDir->setIcon(icon11);
 
         horizontalLayout_2->addWidget(btnDownloadDir);
@@ -769,7 +769,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon12.addFile(QString::fromUtf8("image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnGetDirList->setIcon(icon12);
 
         horizontalLayout_2->addWidget(btnGetDirList);

@@ -96,7 +96,7 @@ QListWidget::item
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/skype.png</normaloff>:/image/skype.png</iconset>
+          <normaloff>image/skype.png</normaloff>image/skype.png</iconset>
         </property>
        </item>
       </widget>
@@ -195,7 +195,7 @@ QListWidget::item
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/time.png</normaloff>:/image/time.png</iconset>
+          <normaloff>image/time.png</normaloff>image/time.png</iconset>
         </property>
        </item>
       </widget>
@@ -294,7 +294,7 @@ QListWidget::item
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/audio.png</normaloff>:/image/audio.png</iconset>
+          <normaloff>image/audio.png</normaloff>image/audio.png</iconset>
         </property>
        </item>
        <item>
@@ -303,7 +303,7 @@ QListWidget::item
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/album.png</normaloff>:/image/album.png</iconset>
+          <normaloff>image/album.png</normaloff>image/album.png</iconset>
         </property>
        </item>
       </widget>

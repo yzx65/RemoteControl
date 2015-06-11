@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutdlg.ui'
 **
-** Created: Sun Jun 7 19:02:08 2015
+** Created: Thu Jun 11 22:12:08 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -101,7 +101,7 @@ public:
         label_3 = new QLabel(title);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMaximumSize(QSize(32, 32));
-        label_3->setPixmap(QPixmap(QString::fromUtf8(":/image/icon.png")));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("image/icon.png")));
         label_3->setScaledContents(true);
 
         horizontalLayout_2->addWidget(label_3);
@@ -171,7 +171,7 @@ public:
         verticalLayout->addWidget(trWindows);
 
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabwideget->addTab(tab, icon, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -185,7 +185,7 @@ public:
         verticalLayout_3->addWidget(trMac);
 
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/mac_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/mac_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabwideget->addTab(tab_2, icon1, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -199,7 +199,7 @@ public:
         verticalLayout_4->addWidget(trIOS);
 
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/iphone_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/iphone_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabwideget->addTab(tab_3, icon2, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
@@ -213,7 +213,7 @@ public:
         verticalLayout_5->addWidget(trAndroid);
 
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/android_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/android_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabwideget->addTab(tab_4, icon3, QString());
 
         verticalLayout_7->addWidget(tabwideget);

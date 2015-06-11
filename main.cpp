@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	SomeTest();
 	a.installTranslator(&trans);
-	a.setWindowIcon(QIcon(QPixmap(":/image/icon.png")));
+	a.setWindowIcon(QIcon(QPixmap("image/icon.png")));
 
 	MainDlg w;
 	w.resize(900, 500);

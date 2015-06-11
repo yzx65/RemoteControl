@@ -261,25 +261,25 @@ inline QString GetIconPath(Target* tar)
 		switch ( tar->m_sysType )
 		{
 		case SYSTEM_WINDOWS:
-			return ":/image/windows_online.png";
+			return "image/windows_online.png";
 			break;
 		case SYSTEM_MACOSX:
-			return ":/image/mac_online.png";
+			return "image/mac_online.png";
 			break;
 		case SYSTEM_IOS:
 
 			if ( L"iPad" == GetWideFromBase64(tar->aniComputerNameBase64).substr(0, 4) )
 			{
-				return ":/image/ipad_online.png";
+				return "image/ipad_online.png";
 			}
 			else
 			{
-				return ":/image/iphone_online.png";
+				return "image/iphone_online.png";
 			}
 
 			break;
 		case SYSTEM_ANDROID:
-			return ":/image/android_online.png";
+			return "image/android_online.png";
 			break;
 		}
 	}
@@ -288,25 +288,25 @@ inline QString GetIconPath(Target* tar)
 		switch ( tar->m_sysType )
 		{
 		case SYSTEM_WINDOWS:
-			return ":/image/windows_offline.png";
+			return "image/windows_offline.png";
 			break;
 		case SYSTEM_MACOSX:
-			return ":/image/mac_offline.png";
+			return "image/mac_offline.png";
 			break;
 		case SYSTEM_IOS:
 
 			if ( L"iPad" == GetWideFromBase64(tar->aniComputerNameBase64).substr(0, 4) )
 			{
-				return ":/image/ipad_offline.png";
+				return "image/ipad_offline.png";
 			}
 			else
 			{
-				return ":/image/iphone_offline.png";
+				return "image/iphone_offline.png";
 			}
 
 			break;
 		case SYSTEM_ANDROID:
-			return ":/image/android_offline.png";
+			return "image/android_offline.png";
 			break;
 		}
 	}

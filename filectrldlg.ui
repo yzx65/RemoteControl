@@ -128,7 +128,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/disklist.png</normaloff>:/image/disklist.png</iconset>
+        <normaloff>image/disklist.png</normaloff>image/disklist.png</iconset>
       </property>
      </item>
     </widget>
@@ -316,7 +316,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/star.png</normaloff>:/image/star.png</iconset>
+                 <normaloff>image/star.png</normaloff>image/star.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -367,7 +367,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/up.png</normaloff>:/image/up.png</iconset>
+                 <normaloff>image/up.png</normaloff>image/up.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -418,7 +418,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
+                 <normaloff>image/refresh.png</normaloff>image/refresh.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -472,7 +472,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/delete.png</normaloff>:/image/delete.png</iconset>
+                 <normaloff>image/delete.png</normaloff>image/delete.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -523,7 +523,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/run.png</normaloff>:/image/run.png</iconset>
+                 <normaloff>image/run.png</normaloff>image/run.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -574,7 +574,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/analysis.png</normaloff>:/image/analysis.png</iconset>
+                 <normaloff>image/analysis.png</normaloff>image/analysis.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -625,7 +625,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/monitor.png</normaloff>:/image/monitor.png</iconset>
+                 <normaloff>image/monitor.png</normaloff>image/monitor.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -676,7 +676,7 @@ QToolButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/search.png</normaloff>:/image/search.png</iconset>
+                 <normaloff>image/search.png</normaloff>image/search.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -884,7 +884,7 @@ QPushButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/uploadfile.png</normaloff>:/image/uploadfile.png</iconset>
+                 <normaloff>image/uploadfile.png</normaloff>image/uploadfile.png</iconset>
                </property>
               </widget>
              </item>
@@ -927,7 +927,7 @@ QPushButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/downfile.png</normaloff>:/image/downfile.png</iconset>
+                 <normaloff>image/downfile.png</normaloff>image/downfile.png</iconset>
                </property>
               </widget>
              </item>
@@ -967,7 +967,7 @@ QPushButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/dirdown.png</normaloff>:/image/dirdown.png</iconset>
+                 <normaloff>image/dirdown.png</normaloff>image/dirdown.png</iconset>
                </property>
               </widget>
              </item>
@@ -1007,7 +1007,7 @@ QPushButton:disabled
                </property>
                <property name="icon">
                 <iconset resource="maindlg.qrc">
-                 <normaloff>:/image/dirfilelist.png</normaloff>:/image/dirfilelist.png</iconset>
+                 <normaloff>image/dirfilelist.png</normaloff>image/dirfilelist.png</iconset>
                </property>
               </widget>
              </item>

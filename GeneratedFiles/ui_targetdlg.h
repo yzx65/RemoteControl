@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'targetdlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:06 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -203,15 +203,15 @@ public:
         horizontalLayout_71->setObjectName(QString::fromUtf8("horizontalLayout_71"));
         trMissionStatus = new QTreeWidget(widget);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/uploadfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/downfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/dirdown.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/dirfilelist.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("image/up.png"), QSize(), QIcon::Normal, QIcon::Off);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(trMissionStatus);
         __qtreewidgetitem->setIcon(0, icon);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(trMissionStatus);
@@ -321,7 +321,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/continue.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8("image/continue.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnContinue->setIcon(icon5);
         btnContinue->setIconSize(QSize(16, 16));
         btnContinue->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -356,7 +356,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8("image/pause.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnPause->setIcon(icon6);
         btnPause->setIconSize(QSize(16, 16));
         btnPause->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -391,7 +391,7 @@ public:
 "	background-color:transparent;\n"
 "}"));
         QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8("image/cancel.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnCancel->setIcon(icon7);
         btnCancel->setIconSize(QSize(16, 16));
         btnCancel->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -1186,7 +1186,7 @@ public:
         horizontalLayout_71->addWidget(frame_7);
 
         QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/FORWARD 2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8("image/FORWARD 2.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(widget, icon8, QString());
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
@@ -1202,7 +1202,7 @@ public:
         horizontalLayout_16->addWidget(frmFileCtrl);
 
         QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/EMPTY BLANK.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8("image/EMPTY BLANK.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab, icon9, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QString::fromUtf8("tab_8"));
@@ -1233,7 +1233,7 @@ public:
         horizontalLayout_28->addWidget(frmRemoteCmd);
 
         QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/image/cmd.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QString::fromUtf8("image/cmd.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_8, icon10, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QString::fromUtf8("tab_5"));
@@ -1249,7 +1249,7 @@ public:
         horizontalLayout_19->addWidget(frmAdvanceMonitor);
 
         QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/image/MINIMIZE.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon11.addFile(QString::fromUtf8("image/MINIMIZE.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_5, icon11, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -1265,7 +1265,7 @@ public:
         horizontalLayout_78->addWidget(frmUserAction);
 
         QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/image/CURSOR.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon12.addFile(QString::fromUtf8("image/CURSOR.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_2, icon12, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -1286,7 +1286,7 @@ public:
         horizontalLayout_223->addWidget(frmCapture);
 
         QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/image/camera.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon13.addFile(QString::fromUtf8("image/camera.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_3, icon13, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QString::fromUtf8("tab_6"));
@@ -1321,7 +1321,7 @@ public:
         horizontalLayout_20->addWidget(frmMultiMedia);
 
         QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/image/VIDEO CAMERA.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon14.addFile(QString::fromUtf8("image/VIDEO CAMERA.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_9, icon14, QString());
         tab_11 = new QWidget();
         tab_11->setObjectName(QString::fromUtf8("tab_11"));
@@ -1342,7 +1342,7 @@ public:
         horizontalLayout_34->addWidget(frmAppInfo);
 
         QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/image/CHAT.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon15.addFile(QString::fromUtf8("image/CHAT.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_11, icon15, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
@@ -1358,7 +1358,7 @@ public:
         verticalLayout_20->addWidget(frmMapInfo);
 
         QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/image/map.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon16.addFile(QString::fromUtf8("image/map.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_7, icon16, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName(QString::fromUtf8("tab_10"));
@@ -1385,7 +1385,7 @@ public:
         horizontalLayout_33->addLayout(verticalLayout_28);
 
         QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/image/SETTINGS.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon17.addFile(QString::fromUtf8("image/SETTINGS.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_10, icon17, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QString::fromUtf8("tab_4"));
@@ -1401,7 +1401,7 @@ public:
         horizontalLayout_23->addWidget(frmLog);
 
         QIcon icon18;
-        icon18.addFile(QString::fromUtf8(":/image/STATISTICS.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon18.addFile(QString::fromUtf8("image/STATISTICS.png"), QSize(), QIcon::Normal, QIcon::Off);
         tabMain->addTab(tab_4, icon18, QString());
 
         horizontalLayout->addWidget(tabMain);

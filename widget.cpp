@@ -4,7 +4,7 @@
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
-	m_shadow(":/image/window_shadow.png")
+	m_shadow("image/window_shadow.png")
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowSystemMenuHint | Qt::WindowMinimizeButtonHint);
     setAttribute(Qt::WA_TranslucentBackground);

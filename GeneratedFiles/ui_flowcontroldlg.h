@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'flowcontroldlg.ui'
 **
-** Created: Sun Jun 7 19:02:08 2015
+** Created: Thu Jun 11 22:12:08 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -109,11 +109,11 @@ public:
 " }\n"
 "\n"
 " QCheckBox::indicator:unchecked {\n"
-"	image: url(:/image/btncheckoff.png);\n"
+"	image: url(image/btncheckoff.png);\n"
 " }\n"
 "\n"
 " QCheckBox::indicator:checked {\n"
-"	image: url(:/image/btncheckon.png);\n"
+"	image: url(image/btncheckon.png);\n"
 " }"));
 
         horizontalLayout_3->addWidget(chkPlg1);
@@ -146,11 +146,11 @@ public:
 " }\n"
 "\n"
 " QCheckBox::indicator:unchecked {\n"
-"	image: url(:/image/btncheckoff.png);\n"
+"	image: url(image/btncheckoff.png);\n"
 " }\n"
 "\n"
 " QCheckBox::indicator:checked {\n"
-"	image: url(:/image/btncheckon.png);\n"
+"	image: url(image/btncheckon.png);\n"
 " }"));
 
         horizontalLayout_4->addWidget(chkPlg2);
@@ -183,11 +183,11 @@ public:
 " }\n"
 "\n"
 " QCheckBox::indicator:unchecked {\n"
-"	image: url(:/image/btncheckoff.png);\n"
+"	image: url(image/btncheckoff.png);\n"
 " }\n"
 "\n"
 " QCheckBox::indicator:checked {\n"
-"	image: url(:/image/btncheckon.png);\n"
+"	image: url(image/btncheckon.png);\n"
 " }"));
 
         horizontalLayout_5->addWidget(chkPlg4);

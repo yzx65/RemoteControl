@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'AppInfoDlg.ui'
 **
-** Created: Sun Jun 7 19:02:08 2015
+** Created: Thu Jun 11 22:12:08 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -142,7 +142,7 @@ public:
 "	color:#aaaaaa;\n"
 "}"));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/autoget.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/autoget.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnGetData->setIcon(icon);
         btnGetData->setIconSize(QSize(16, 16));
         btnGetData->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -174,7 +174,7 @@ public:
 "	margin:1px;\n"
 "}"));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRefresh->setIcon(icon1);
         btnRefresh->setIconSize(QSize(16, 16));
         btnRefresh->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -206,7 +206,7 @@ public:
 "	margin:1px;\n"
 "}"));
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnClean->setIcon(icon2);
         btnClean->setIconSize(QSize(16, 16));
         btnClean->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
@@ -376,7 +376,7 @@ public:
 "QComboBox::down-arrow {\n"
 "	height:8px;\n"
 "	width:5px;\n"
-"	image: url(:/image/arrow.png);\n"
+"	image: url(image/arrow.png);\n"
 " }\n"
 "\n"
 " QComboBox QAbstractItemView\n"
@@ -611,7 +611,7 @@ public:
 "QComboBox::down-arrow {\n"
 "	height:8px;\n"
 "	width:5px;\n"
-"	image: url(:/image/arrow.png);\n"
+"	image: url(image/arrow.png);\n"
 " }\n"
 "\n"
 " QComboBox QAbstractItemView\n"

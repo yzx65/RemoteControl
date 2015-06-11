@@ -89,7 +89,7 @@ AppInfoDlg::~AppInfoDlg()
 void AppInfoDlg::InitApplicationList()
 {
 	const std::wstring appNames[] = {L"н╒пе", L"QQ"};
-	const char* appIcons[] = {":/image/weixin.png", ":/image/qq.png"};
+	const char* appIcons[] = {"image/weixin.png", "image/qq.png"};
 
 	for ( int i = 0; i < sizeof(appNames) / sizeof(std::wstring); ++i )
 	{
@@ -213,7 +213,7 @@ void AppInfoDlg::OnCmbWeixinAccountCurrentIndexChanged(int index)
 		++it )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/wuser.png")));
+		item->setIcon(0, QIcon(QPixmap("image/wuser.png")));
 		item->setText(0, QString::fromStdWString(it->userName));
 		item->setText(1, QString::fromStdWString(it->nickName));
 		item->setText(2, QString::fromStdWString(it->alias));
@@ -261,7 +261,7 @@ void AppInfoDlg::InitQQFriends(const std::wstring& account)
 		++it )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/qq.png")));
+		item->setIcon(0, QIcon(QPixmap("image/qq.png")));
 		item->setText(0, QString::fromStdWString(it->account));
 		item->setText(1, QString::fromStdWString(it->nickName));
 		item->setText(2, QString::fromStdWString(it->remark));
@@ -283,7 +283,7 @@ void AppInfoDlg::InitQQTroops(const std::wstring& account)
 		  ++it )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/troop.png")));
+		item->setIcon(0, QIcon(QPixmap("image/troop.png")));
 		item->setText(0, QString::fromStdWString(it->troopNumber));
 		item->setText(1, QString::fromStdWString(it->troopName));
 		item->setData(0, Qt::UserRole, QString::fromStdWString(it->troopMemo));
@@ -318,7 +318,7 @@ QTreeWidgetItem* AppInfoDlg::FindQQGroup(QTreeWidget* widget, int groupId, const
 	{
 		parent = new QTreeWidgetItem;
 		QQParser::GroupInfo info = m_qq->GetGroupInfo(account, groupId);
-		//parent->setIcon(0, QIcon(QPixmap(":/image/group.png")));
+		//parent->setIcon(0, QIcon(QPixmap("image/group.png")));
 
 		parent->setText(0, QString::fromStdWString(grpName));
 
@@ -553,7 +553,7 @@ void AppInfoDlg::InsertQQFriend(
 	if ( ui->cmbQQAccount->currentText().toStdWString() == owner )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/qq.png")));
+		item->setIcon(0, QIcon(QPixmap("image/qq.png")));
 		item->setText(0, QString::fromStdWString(number));
 		item->setText(1, QString::fromStdWString(nickName));
 		item->setText(2, QString::fromStdWString(remark));
@@ -573,7 +573,7 @@ void AppInfoDlg::InsertQQTroop(
 	if ( ui->cmbQQAccount->currentText().toStdWString() == owner )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/troop.png")));
+		item->setIcon(0, QIcon(QPixmap("image/troop.png")));
 		item->setText(0, QString::fromStdWString(number));
 		item->setText(1, QString::fromStdWString(troopName));
 		item->setData(0, Qt::UserRole, QString::fromStdWString(troopMemo));
@@ -612,7 +612,7 @@ void AppInfoDlg::InsertWeixinFrineds(
 	if ( ui->cmbWeixinAccount->currentText().toStdWString() == weixinId )
 	{
 		QTreeWidgetItem* item = new QTreeWidgetItem;
-		item->setIcon(0, QIcon(QPixmap(":/image/wuser.png")));
+		item->setIcon(0, QIcon(QPixmap("image/wuser.png")));
 		item->setText(0, QString::fromStdWString(friendId));
 		item->setText(1, QString::fromStdWString(nickName));
 		item->setData(0, Qt::UserRole, QString::fromStdWString(friendId));

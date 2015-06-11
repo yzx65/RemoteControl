@@ -207,7 +207,7 @@ void AdvanceMonitorDlg::AddUpLink()
 
 	QTableWidgetItem* item = new QTableWidgetItem;
 	item->setText(QString::fromLocal8Bit("ÉÏÒ»²ãÄ¿Â¼"));
-	item->setIcon(QIcon(QPixmap(":/image/uploadfile.png")));
+	item->setIcon(QIcon(QPixmap("image/uploadfile.png")));
 
 	ui.tbUsbDir->setItem(0, 0, item);
 

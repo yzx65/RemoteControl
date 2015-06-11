@@ -93,7 +93,7 @@ QWidget
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/windows_online.png</normaloff>:/image/windows_online.png</iconset>
+          <normaloff>image/windows_online.png</normaloff>image/windows_online.png</iconset>
         </property>
        </item>
        <item>
@@ -102,7 +102,7 @@ QWidget
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/mac_online.png</normaloff>:/image/mac_online.png</iconset>
+          <normaloff>image/mac_online.png</normaloff>image/mac_online.png</iconset>
         </property>
        </item>
        <item>
@@ -111,7 +111,7 @@ QWidget
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/ipad_iphone.png</normaloff>:/image/ipad_iphone.png</iconset>
+          <normaloff>image/ipad_iphone.png</normaloff>image/ipad_iphone.png</iconset>
         </property>
        </item>
        <item>
@@ -120,7 +120,7 @@ QWidget
         </property>
         <property name="icon">
          <iconset resource="maindlg.qrc">
-          <normaloff>:/image/android_online.png</normaloff>:/image/android_online.png</iconset>
+          <normaloff>image/android_online.png</normaloff>image/android_online.png</iconset>
         </property>
        </item>
       </widget>
@@ -361,7 +361,7 @@ QWidget
      height: 14px;
  }
 QCheckBox::indicator:checked:disabled {
-     image: url(:/image/radio.png);
+     image: url(image/radio.png);
 }</string>
                   </property>
                   <property name="text">
@@ -388,7 +388,7 @@ QCheckBox::indicator:checked:disabled {
      height: 14px;
  }
 QCheckBox::indicator:checked:disabled {
-     image: url(:/image/radio.png);
+     image: url(image/radio.png);
 }</string>
                   </property>
                   <property name="text">
@@ -412,7 +412,7 @@ QCheckBox::indicator:checked:disabled {
      height: 14px;
  }
 QCheckBox::indicator:checked:disabled {
-     image: url(:/image/radio.png);
+     image: url(image/radio.png);
 }</string>
                   </property>
                   <property name="text">
@@ -445,7 +445,7 @@ QCheckBox::indicator:checked:disabled {
      height: 14px;
  }
 QCheckBox::indicator:checked:disabled {
-     image: url(:/image/radio.png);
+     image: url(image/radio.png);
 }</string>
                   </property>
                   <property name="text">

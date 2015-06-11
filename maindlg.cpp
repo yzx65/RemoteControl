@@ -652,7 +652,7 @@ void MainDlg::FavoriteAction()
 		if ( ui.actFavorite->text() == QString::fromLocal8Bit("收藏目标") )
 		{
 			tarBlock->m_favorite = true;
-			item->setIcon(11, QIcon(QPixmap(":/image/star.png")));
+			item->setIcon(11, QIcon(QPixmap("image/star.png")));
 			ui.actFavorite->setText(QString::fromLocal8Bit("取消收藏"));
 		}
 		else
@@ -1463,13 +1463,13 @@ void MainDlg::on_WM_TARGET_EXINFO_UPDATED(MSG* msg)
 	if ( treeNode->isSelected() )
 	{
 		ui.tbBasicInfo->setItem(0, 0, new QTableWidgetItem(
-			QIcon(":/image/unknown.png"), QString::fromLocal8Bit("状态")));
+			QIcon("image/unknown.png"), QString::fromLocal8Bit("状态")));
 		ui.tbBasicInfo->setItem(1, 0, new QTableWidgetItem(
-			QIcon(":/image/disklist.png"), QString::fromLocal8Bit("主机名")));
+			QIcon("image/disklist.png"), QString::fromLocal8Bit("主机名")));
 		ui.tbBasicInfo->setItem(2, 0, new QTableWidgetItem(
-			QIcon(":/image/group.png"), QString::fromLocal8Bit("登录用户")));
+			QIcon("image/group.png"), QString::fromLocal8Bit("登录用户")));
 		ui.tbBasicInfo->setItem(3, 0, new QTableWidgetItem(
-			QIcon(":/image/run.png"), QString::fromLocal8Bit("上线进程")));
+			QIcon("image/run.png"), QString::fromLocal8Bit("上线进程")));
 
 		ui.tbBasicInfo->setItem(0, 1, new QTableWidgetItem(
 			tar->tarStatus == TARONLINE
@@ -1681,11 +1681,11 @@ void MainDlg::CurrentTargetChanged(QTreeWidgetItem* item, int column)
 
 	//		if ( lpPluginCxt->dwPluginVer == 0 )
 	//		{
-	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module_disable.png"));
+	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon("image/module_disable.png"));
 	//		}
 	//		else
 	//		{
-	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon(":/image/module.png"));
+	//			ui.tbPluginStatus->item(plgCount, 0)->setIcon(QIcon("image/module.png"));
 	//		}
 
 	//		plgCount++;
@@ -1694,15 +1694,15 @@ void MainDlg::CurrentTargetChanged(QTreeWidgetItem* item, int column)
 	//	// 调整基本信息
 	//	//
 	//	ui.tbBasicInfo->setItem(0, 0, new QTableWidgetItem(
-	//		QIcon(":/image/unknown.png"), QString::fromLocal8Bit("状态")));
+	//		QIcon("image/unknown.png"), QString::fromLocal8Bit("状态")));
 	//	ui.tbBasicInfo->setItem(1, 0, new QTableWidgetItem(
-	//		QIcon(":/image/disklist.png"), QString::fromLocal8Bit("主机名")));
+	//		QIcon("image/disklist.png"), QString::fromLocal8Bit("主机名")));
 	//	ui.tbBasicInfo->setItem(2, 0, new QTableWidgetItem(
-	//		QIcon(":/image/group.png"), QString::fromLocal8Bit("登录用户")));
+	//		QIcon("image/group.png"), QString::fromLocal8Bit("登录用户")));
 	//	ui.tbBasicInfo->setItem(3, 0, new QTableWidgetItem(
-	//		QIcon(":/image/run.png"), QString::fromLocal8Bit("上线进程")));
+	//		QIcon("image/run.png"), QString::fromLocal8Bit("上线进程")));
 	//	ui.tbBasicInfo->setItem(4, 0, new QTableWidgetItem(
-	//		QIcon(":/image/error.png"), QString::fromLocal8Bit("杀毒软件")));
+	//		QIcon("image/error.png"), QString::fromLocal8Bit("杀毒软件")));
 
 
 
@@ -1830,7 +1830,7 @@ void MainDlg::AddItemByGroup(QTreeWidgetItem* item)
 	if ( parent == NULL )
 	{
 		parent = new QTreeWidgetItem;
-		parent->setIcon(0, QIcon(QPixmap(":/image/group.png")));
+		parent->setIcon(0, QIcon(QPixmap("image/group.png")));
 		parent->setText(0, groupText);
 		ui.trTarget->addTopLevelItem(parent);
 	}
@@ -1849,10 +1849,10 @@ void MainDlg::AddItemByPlatform(QTreeWidgetItem* item)
 	Target* tar = (Target*)item->data(0, Qt::UserRole).toUInt();
 	const char* caption[] = {"Windows", "Mac OS X", "IOS", "Android"};
 	const char* icon[] = {
-		":/image/windows_online.png",
-		":/image/mac_online.png",
-		":/image/iphone_online.png",
-		":/image/android_online.png"
+		"image/windows_online.png",
+		"image/mac_online.png",
+		"image/iphone_online.png",
+		"image/android_online.png"
 	};
 
 	if ( tar == NULL )
@@ -1912,7 +1912,7 @@ void MainDlg::AddItemByIP(QTreeWidgetItem* item)
 	if ( parent == NULL )
 	{
 		parent = new QTreeWidgetItem;
-		parent->setIcon(0, QIcon(QPixmap(":/image/home.png")));
+		parent->setIcon(0, QIcon(QPixmap("image/home.png")));
 		parent->setText(0, ipText);
 		ui.trTarget->addTopLevelItem(parent);
 	}
@@ -2094,7 +2094,7 @@ void MainDlg::InitWidgetAppearance()
 	ui.label_10->setScaledContents(true);
 	ui.label_10->setFixedSize(150, 150);
 	ui.label_10->setText("");
-	ui.label_10->setPixmap(QPixmap(":/image/android_offline.png"));
+	ui.label_10->setPixmap(QPixmap("image/android_offline.png"));
 	ui.edtLog->setStyleSheet("QTextEdit{background-color:white;font-family:'Microsoft Yahei';font-size:12px;padding:5px;}");
 	ui.trTarget->setMinimumWidth(200);
 }
@@ -2582,7 +2582,7 @@ void MainDlg::AddTargetNode(Target* tar)
 {
 	// 添加节点
 	QTreeWidgetItem* targetItem = new QTreeWidgetItem;
-	//targetItem->setIcon(0, QIcon(QPixmap(":/image/outline.png")));
+	//targetItem->setIcon(0, QIcon(QPixmap("image/outline.png")));
 	targetItem->setText(0, QString("%1").arg(tar->dwTargetID));
 	targetItem->setText(1, QString::fromLocal8Bit(tar->aniTargetName.c_str()));
 	targetItem->setText(2, QString::fromLocal8Bit("离线"));
@@ -2641,7 +2641,7 @@ void MainDlg::AddTargetNode(Target* tar)
 	tar->treeNode = targetItem;
 
 	if ( tar->m_favorite )
-		targetItem->setIcon(11, QIcon(QPixmap(":/image/star.png")));
+		targetItem->setIcon(11, QIcon(QPixmap("image/star.png")));
 
 	m_itemList.push_back(targetItem);
 
@@ -2658,10 +2658,10 @@ void MainDlg::AddStatusInfo(STATUS_LEVEL sl, const wchar_t* lpwzInfo)
 	//ui.tbLog->setRowCount(ui.tbLog->rowCount()+1);
 
 	//char* pixmap[] = {
-	//	":/image/info.png", 
-	//	":/image/info.png",
-	//	":/image/error.png",
-	//	":/image/error.png"};
+	//	"image/info.png", 
+	//	"image/info.png",
+	//	"image/error.png",
+	//	"image/error.png"};
 
 	//QString icoPath = QString(pixmap[sl]);
 	//QIcon icon(icoPath);

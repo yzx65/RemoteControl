@@ -97,7 +97,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/userfileaction.png</normaloff>:/image/userfileaction.png</iconset>
+        <normaloff>image/userfileaction.png</normaloff>image/userfileaction.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -105,7 +105,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/allfile.png</normaloff>:/image/allfile.png</iconset>
+         <normaloff>image/allfile.png</normaloff>image/allfile.png</iconset>
        </property>
       </item>
       <item>
@@ -114,7 +114,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
       <item>
@@ -123,7 +123,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
       <item>
@@ -132,7 +132,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
       <item>
@@ -141,7 +141,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
       <item>
@@ -150,7 +150,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
       <item>
@@ -159,7 +159,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/point.png</normaloff>:/image/point.png</iconset>
+         <normaloff>image/point.png</normaloff>image/point.png</iconset>
        </property>
       </item>
      </item>
@@ -169,7 +169,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/sensitiveinfo.png</normaloff>:/image/sensitiveinfo.png</iconset>
+        <normaloff>image/sensitiveinfo.png</normaloff>image/sensitiveinfo.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -177,7 +177,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/useraction.png</normaloff>:/image/useraction.png</iconset>
+         <normaloff>image/useraction.png</normaloff>image/useraction.png</iconset>
        </property>
       </item>
       <item>
@@ -186,7 +186,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/secretwindow.png</normaloff>:/image/secretwindow.png</iconset>
+         <normaloff>image/secretwindow.png</normaloff>image/secretwindow.png</iconset>
        </property>
       </item>
       <item>
@@ -195,7 +195,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/clipboard.png</normaloff>:/image/clipboard.png</iconset>
+         <normaloff>image/clipboard.png</normaloff>image/clipboard.png</iconset>
        </property>
       </item>
      </item>
@@ -205,7 +205,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/processmonitor.png</normaloff>:/image/processmonitor.png</iconset>
+        <normaloff>image/processmonitor.png</normaloff>image/processmonitor.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -213,7 +213,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/userfileaction.png</normaloff>:/image/userfileaction.png</iconset>
+         <normaloff>image/userfileaction.png</normaloff>image/userfileaction.png</iconset>
        </property>
       </item>
       <item>
@@ -222,7 +222,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/run.png</normaloff>:/image/run.png</iconset>
+         <normaloff>image/run.png</normaloff>image/run.png</iconset>
        </property>
       </item>
      </item>
@@ -232,7 +232,7 @@ QTreeWidget::item {
       </property>
       <property name="icon">
        <iconset resource="maindlg.qrc">
-        <normaloff>:/image/ios_online.png</normaloff>:/image/ios_online.png</iconset>
+        <normaloff>image/ios_online.png</normaloff>image/ios_online.png</iconset>
       </property>
       <item>
        <property name="text">
@@ -240,7 +240,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/message.png</normaloff>:/image/message.png</iconset>
+         <normaloff>image/message.png</normaloff>image/message.png</iconset>
        </property>
       </item>
       <item>
@@ -249,7 +249,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/call.png</normaloff>:/image/call.png</iconset>
+         <normaloff>image/call.png</normaloff>image/call.png</iconset>
        </property>
       </item>
       <item>
@@ -258,7 +258,7 @@ QTreeWidget::item {
        </property>
        <property name="icon">
         <iconset resource="maindlg.qrc">
-         <normaloff>:/image/group.png</normaloff>:/image/group.png</iconset>
+         <normaloff>image/group.png</normaloff>image/group.png</iconset>
        </property>
       </item>
      </item>
@@ -334,7 +334,7 @@ QTreeWidget::item {
            </property>
            <property name="icon">
             <iconset resource="maindlg.qrc">
-             <normaloff>:/image/refresh.png</normaloff>:/image/refresh.png</iconset>
+             <normaloff>image/refresh.png</normaloff>image/refresh.png</iconset>
            </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonTextBesideIcon</enum>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'useractiondlg.ui'
 **
-** Created: Sun Jun 7 19:02:07 2015
+** Created: Thu Jun 11 22:12:06 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -88,31 +88,31 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         trUserAction = new QTreeWidget(UserActionDlg);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/userfileaction.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/userfileaction.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/allfile.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/point.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/point.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/sensitiveinfo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/sensitiveinfo.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/image/useraction.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8("image/useraction.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/image/secretwindow.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QString::fromUtf8("image/secretwindow.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/image/clipboard.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon6.addFile(QString::fromUtf8("image/clipboard.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/image/processmonitor.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon7.addFile(QString::fromUtf8("image/processmonitor.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/image/run.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QString::fromUtf8("image/run.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/image/ios_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon9.addFile(QString::fromUtf8("image/ios_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/image/message.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon10.addFile(QString::fromUtf8("image/message.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon11;
-        icon11.addFile(QString::fromUtf8(":/image/call.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon11.addFile(QString::fromUtf8("image/call.png"), QSize(), QIcon::Normal, QIcon::Off);
         QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon12.addFile(QString::fromUtf8("image/group.png"), QSize(), QIcon::Normal, QIcon::Off);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(trUserAction);
         __qtreewidgetitem->setIcon(0, icon);
         QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem(__qtreewidgetitem);
@@ -235,7 +235,7 @@ public:
 "	font-family:\"Microsoft Yahei\";\n"
 "}"));
         QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon13.addFile(QString::fromUtf8("image/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRefreshData->setIcon(icon13);
         btnRefreshData->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnRefreshData->setAutoRaise(true);

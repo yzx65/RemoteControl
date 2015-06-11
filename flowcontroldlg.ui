@@ -123,11 +123,11 @@
  }
 
  QCheckBox::indicator:unchecked {
-	image: url(:/image/btncheckoff.png);
+	image: url(image/btncheckoff.png);
  }
 
  QCheckBox::indicator:checked {
-	image: url(:/image/btncheckon.png);
+	image: url(image/btncheckon.png);
  }</string>
        </property>
        <property name="text">
@@ -198,11 +198,11 @@
  }
 
  QCheckBox::indicator:unchecked {
-	image: url(:/image/btncheckoff.png);
+	image: url(image/btncheckoff.png);
  }
 
  QCheckBox::indicator:checked {
-	image: url(:/image/btncheckon.png);
+	image: url(image/btncheckon.png);
  }</string>
        </property>
        <property name="text">
@@ -273,11 +273,11 @@
  }
 
  QCheckBox::indicator:unchecked {
-	image: url(:/image/btncheckoff.png);
+	image: url(image/btncheckoff.png);
  }
 
  QCheckBox::indicator:checked {
-	image: url(:/image/btncheckon.png);
+	image: url(image/btncheckon.png);
  }</string>
        </property>
        <property name="text">

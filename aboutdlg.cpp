@@ -71,14 +71,14 @@ void AboutDlg::InitCustomGui()
 
 
 	if ( Exist(GetExePath() + L"\\components\\WINDOWS") )
-		ui.tabwideget->addTab(windows, QIcon(QPixmap(":/image/windows_online.png")), "Windows");
+		ui.tabwideget->addTab(windows, QIcon(QPixmap("image/windows_online.png")), "Windows");
 
 	if ( Exist(GetExePath() + L"\\components\\MACOSX") )
-		ui.tabwideget->addTab(mac, QIcon(QPixmap(":/image/mac_online.png")), "Mac");
+		ui.tabwideget->addTab(mac, QIcon(QPixmap("image/mac_online.png")), "Mac");
 
 	if ( Exist(GetExePath() + L"\\components\\IOS") )
-		ui.tabwideget->addTab(ios, QIcon(QPixmap(":/image/iphone_online.png")), "IOS");
+		ui.tabwideget->addTab(ios, QIcon(QPixmap("image/iphone_online.png")), "IOS");
 
 	if ( Exist(GetExePath() + L"\\components\\ANDROID") )
-		ui.tabwideget->addTab(android, QIcon(QPixmap(":/image/android_online.png")), "Android");
+		ui.tabwideget->addTab(android, QIcon(QPixmap("image/android_online.png")), "Android");
 }

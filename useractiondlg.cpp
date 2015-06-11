@@ -704,7 +704,7 @@ void UserActionDlg::InsertCONTACTData(
 	locationItem->setText(QString::fromStdWString(location));
 	networkItem->setText(QString::fromStdWString(netService));
 
-	nameItem->setIcon(QIcon(QPixmap(":/image/group.png")));
+	nameItem->setIcon(QIcon(QPixmap("image/group.png")));
 
 	table->insertRow(0);
 	table->setItem(0, 0, nameItem);

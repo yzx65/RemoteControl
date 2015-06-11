@@ -175,26 +175,26 @@ void FileCtrlDlg::InitShortcut()
 		AddShortcut(L"文件系统", L"/", icon.icon(QFileIconProvider::Folder));
 	}
 	else
-		AddShortcut(L"磁盘列表", L"", QIcon(QPixmap(":/image/allfile.png")));
+		AddShortcut(L"磁盘列表", L"", QIcon(QPixmap("image/allfile.png")));
 
 	if ( SYSTEM_ANDROID == GetSystemType(m_tar->dwOsBuildNumber) )
 	{
 		QTreeWidgetItem* item = ui.trFileCtrl->topLevelItem(0);
-		AddShortcut(L"音乐", L"/sdcard/Music", QIcon(QPixmap(":/image/music.png")), item);
-		AddShortcut(L"照片", L"/sdcard/DCIM", QIcon(QPixmap(":/image/album.png")), item);
-		AddShortcut(L"应用程序列表", L"/data/app", QIcon(QPixmap(":/image/app.png")), item);
-		AddShortcut(L"存储卡", L"/sdcard", QIcon(QPixmap(":/image/sdcard.png")), item);
+		AddShortcut(L"音乐", L"/sdcard/Music", QIcon(QPixmap("image/music.png")), item);
+		AddShortcut(L"照片", L"/sdcard/DCIM", QIcon(QPixmap("image/album.png")), item);
+		AddShortcut(L"应用程序列表", L"/data/app", QIcon(QPixmap("image/app.png")), item);
+		AddShortcut(L"存储卡", L"/sdcard", QIcon(QPixmap("image/sdcard.png")), item);
 	}
 	else if ( SYSTEM_IOS == m_tar->m_sysType )
 	{
 		QTreeWidgetItem* item = ui.trFileCtrl->topLevelItem(0);
-		AddShortcut(L"录音文件", L"/private/var/mobile/Media/Recordings", QIcon(QPixmap(":/image/music.png")), item);
-		AddShortcut(L"照片", L"/private/var/mobile/Media/DCIM", QIcon(QPixmap(":/image/album.png")), item);
+		AddShortcut(L"录音文件", L"/private/var/mobile/Media/Recordings", QIcon(QPixmap("image/music.png")), item);
+		AddShortcut(L"照片", L"/private/var/mobile/Media/DCIM", QIcon(QPixmap("image/album.png")), item);
 
 		if ( m_tar->dwOsBuildNumber == IOS_VERSION_8)
-			AddShortcut(L"应用程序列表", L"/var/mobile/Containers/Data/Application", QIcon(QPixmap(":/image/app.png")), item);
+			AddShortcut(L"应用程序列表", L"/var/mobile/Containers/Data/Application", QIcon(QPixmap("image/app.png")), item);
 		else
-			AddShortcut(L"应用程序列表", L"/private/var/mobile/Applications", QIcon(QPixmap(":/image/app.png")), item);
+			AddShortcut(L"应用程序列表", L"/private/var/mobile/Applications", QIcon(QPixmap("image/app.png")), item);
 	}
 
 	AddCustomShortcut();
@@ -212,7 +212,7 @@ void FileCtrlDlg::AddCustomShortcut()
 
 	QTreeWidgetItem* favorite = new QTreeWidgetItem;
 	favorite->setText(0, QString::fromLocal8Bit("收藏夹"));
-	favorite->setIcon(0, QIcon(QPixmap(":/image/star.png")));
+	favorite->setIcon(0, QIcon(QPixmap("image/star.png")));
 	ui.trFileCtrl->addTopLevelItem(favorite);
 	
 	for ( FavoriteParser::FavoriteList::const_iterator it = favorList.begin();
@@ -463,12 +463,12 @@ void FileCtrlDlg::onTbFileListItemClick(QTableWidgetItem* item)
 		if ( IsMonitored(item) )
 		{
 			ui.btnMonitor->setToolTip(QString::fromLocal8Bit("取消监视"));
-			ui.btnMonitor->setIcon(QIcon(QPixmap(":/image/cancelmonitor.png")));
+			ui.btnMonitor->setIcon(QIcon(QPixmap("image/cancelmonitor.png")));
 		}
 		else
 		{
 			ui.btnMonitor->setToolTip(QString::fromLocal8Bit("添加监视"));
-			ui.btnMonitor->setIcon(QIcon(QPixmap(":/image/monitor.png")));
+			ui.btnMonitor->setIcon(QIcon(QPixmap("image/monitor.png")));
 		}
 	}
 }
@@ -570,7 +570,7 @@ void FileCtrlDlg::AddFavorite(std::wstring path)
 		{
 			favorite = new QTreeWidgetItem;
 			favorite->setText(0, QString::fromLocal8Bit("收藏夹"));
-			favorite->setIcon(0, QIcon(QPixmap(":/image/star.png")));
+			favorite->setIcon(0, QIcon(QPixmap("image/star.png")));
 			ui.trFileCtrl->addTopLevelItem(favorite);
 		}
 
@@ -1224,12 +1224,12 @@ void FileCtrlDlg::onBtnMonitorClicked()
 	if ( add == 1 )
 	{
 		ui.btnMonitor->setToolTip(QString::fromLocal8Bit("取消监视"));
-		ui.btnMonitor->setIcon(QIcon(QPixmap(":/image/cancelmonitor.png")));
+		ui.btnMonitor->setIcon(QIcon(QPixmap("image/cancelmonitor.png")));
 	}
 	else
 	{
 		ui.btnMonitor->setToolTip(QString::fromLocal8Bit("添加监视"));
-		ui.btnMonitor->setIcon(QIcon(QPixmap(":/image/monitor.png")));
+		ui.btnMonitor->setIcon(QIcon(QPixmap("image/monitor.png")));
 	}
 }
 
@@ -1635,15 +1635,15 @@ void FileCtrlDlg::ShowDiskLogicDriver()
 			{
 			case DRIVE_FIXED:
 				if ( driverVolume == 'c' || driverVolume == 'C' )
-					child->setIcon(QIcon(QPixmap(":/image/diskc.png")));
+					child->setIcon(QIcon(QPixmap("image/diskc.png")));
 				else
-					child->setIcon(QIcon(QPixmap(":/image/disk.png")));
+					child->setIcon(QIcon(QPixmap("image/disk.png")));
 				break;
 			case DRIVE_CDROM:
-				child->setIcon(QIcon(QPixmap(":/image/cd.png")));
+				child->setIcon(QIcon(QPixmap("image/cd.png")));
 				break;
 			case DRIVE_REMOVABLE:
-				child->setIcon(QIcon(QPixmap(":/image/usbmonitor.png")));
+				child->setIcon(QIcon(QPixmap("image/usbmonitor.png")));
 				break;
 			}
 
@@ -2014,15 +2014,15 @@ void FileCtrlDlg::UpdateLirInfo()
 			{
 			case DRIVE_FIXED:
 				if ( driverVolume == 'c' || driverVolume == 'C' )
-					child->setIcon(0, QIcon(QPixmap(":/image/diskc.png")));
+					child->setIcon(0, QIcon(QPixmap("image/diskc.png")));
 				else
-					child->setIcon(0, QIcon(QPixmap(":/image/disk.png")));
+					child->setIcon(0, QIcon(QPixmap("image/disk.png")));
 				break;
 			case DRIVE_CDROM:
-				child->setIcon(0, QIcon(QPixmap(":/image/cd.png")));
+				child->setIcon(0, QIcon(QPixmap("image/cd.png")));
 				break;
 			case DRIVE_REMOVABLE:
-				child->setIcon(0, QIcon(QPixmap(":/image/usbmonitor.png")));
+				child->setIcon(0, QIcon(QPixmap("image/usbmonitor.png")));
 				break;
 			}
 

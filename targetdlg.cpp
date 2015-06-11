@@ -921,39 +921,39 @@ void TargetDlg::InitLocalDataDirList()
 	ui.cmbLocalDir->clear();
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("点击进入本地数据目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("磁盘文件仿真目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("USB 盘文件仿真目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("删除文件仿真目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("目录变动数据目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("HTTPS 数据目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("屏幕监控文件目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("音视频监控文件目录"));
 
 	ui.cmbLocalDir->addItem(
-		QIcon(QPixmap(":/image/dirfilelist.png")), 
+		QIcon(QPixmap("image/dirfilelist.png")), 
 		QString::fromLocal8Bit("第三方插件数据目录"));
 }
 

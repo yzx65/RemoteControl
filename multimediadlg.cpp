@@ -65,7 +65,7 @@ void MultimediaDlg::onLstMonitorAppItemClicked(QListWidgetItem* item)
 		QListWidgetItem* item = new QListWidgetItem;
 		item->setData(Qt::UserRole, QString::fromStdWString(dirPath));
 		item->setText(QString::fromWCharArray(fd.cFileName).replace(';', ':'));
-		item->setIcon(QIcon(QPixmap(":/image/time.png")));
+		item->setIcon(QIcon(QPixmap("image/time.png")));
 		ui.lstSaveTime->addItem(item);
 
 	} while (FindNextFileW(findHandle, &fd));

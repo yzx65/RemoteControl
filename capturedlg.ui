@@ -542,7 +542,7 @@ QPushButton:pressed
           </property>
           <property name="icon">
            <iconset resource="maindlg.qrc">
-            <normaloff>:/image/capture.png</normaloff>:/image/capture.png</iconset>
+            <normaloff>image/capture.png</normaloff>image/capture.png</iconset>
           </property>
           <property name="iconSize">
            <size>

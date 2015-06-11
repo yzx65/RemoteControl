@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'generatedlg.ui'
 **
-** Created: Sun Jun 7 19:02:08 2015
+** Created: Thu Jun 11 22:12:08 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -167,19 +167,19 @@ public:
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         lstPlatform = new QListWidget(GenerateDlg);
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("image/windows_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(lstPlatform);
         __qlistwidgetitem->setIcon(icon);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/image/mac_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8("image/mac_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem1 = new QListWidgetItem(lstPlatform);
         __qlistwidgetitem1->setIcon(icon1);
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/image/ipad_iphone.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QString::fromUtf8("image/ipad_iphone.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem2 = new QListWidgetItem(lstPlatform);
         __qlistwidgetitem2->setIcon(icon2);
         QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/image/android_online.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon3.addFile(QString::fromUtf8("image/android_online.png"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem3 = new QListWidgetItem(lstPlatform);
         __qlistwidgetitem3->setIcon(icon3);
         lstPlatform->setObjectName(QString::fromUtf8("lstPlatform"));
@@ -381,7 +381,7 @@ public:
 "     height: 14px;\n"
 " }\n"
 "QCheckBox::indicator:checked:disabled {\n"
-"     image: url(:/image/radio.png);\n"
+"     image: url(image/radio.png);\n"
 "}"));
         chkPlg3->setChecked(true);
 
@@ -400,7 +400,7 @@ public:
 "     height: 14px;\n"
 " }\n"
 "QCheckBox::indicator:checked:disabled {\n"
-"     image: url(:/image/radio.png);\n"
+"     image: url(image/radio.png);\n"
 "}"));
         checkBox->setChecked(true);
 
@@ -418,7 +418,7 @@ public:
 "     height: 14px;\n"
 " }\n"
 "QCheckBox::indicator:checked:disabled {\n"
-"     image: url(:/image/radio.png);\n"
+"     image: url(image/radio.png);\n"
 "}"));
         chkPlg2->setCheckable(true);
         chkPlg2->setChecked(true);
@@ -438,7 +438,7 @@ public:
 "     height: 14px;\n"
 " }\n"
 "QCheckBox::indicator:checked:disabled {\n"
-"     image: url(:/image/radio.png);\n"
+"     image: url(image/radio.png);\n"
 "}"));
         chkPlg4->setChecked(true);
 

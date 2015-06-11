@@ -18,9 +18,9 @@ CustomLabel::CustomLabel(QWidget* parent)
 	setMouseTracking(true);
 	InitCloseButton();
 
-	m_pic[0] = QPixmap(":/image/function_normal.png");
-	m_pic[1] = QPixmap(":/image/function_hovered.png");
-	m_pic[2] = QPixmap(":/image/function_selected.png");
+	m_pic[0] = QPixmap("image/function_normal.png");
+	m_pic[1] = QPixmap("image/function_hovered.png");
+	m_pic[2] = QPixmap("image/function_selected.png");
 
 	m_brush[0] = QBrush(QColor(88,115,201));
 	m_brush[1] = QBrush(QColor(108, 125, 217));
@@ -36,11 +36,11 @@ void CustomLabel::InitCloseButton()
 	m_closeBtn->setStyleSheet(
 		"QPushButton{"
 		"border:0px solid black;"
-		"border-image:url(:/image/close_normal.png);}"
+		"border-image:url(image/close_normal.png);}"
 		"QPushButton:hover{"
-		"border-image:url(:/image/close_hover.png);}"
+		"border-image:url(image/close_hover.png);}"
 		"QPushButton:pressed{"
-		"border-image:url(:/image/close_pressed.png);}");
+		"border-image:url(image/close_pressed.png);}");
 
 	m_closeBtn->hide();
 }
@@ -178,7 +178,7 @@ void DlgContainer::InitLayout()
 
 	QToolButton* back = new QToolButton(this);
 	back->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Maximum);
-	back->setIcon(QIcon(QPixmap(":/image/EXIT.png")));
+	back->setIcon(QIcon(QPixmap("image/EXIT.png")));
 	back->setStyleSheet(GetStylesheetFromFile(L"backbtn"));
 
 	back->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
