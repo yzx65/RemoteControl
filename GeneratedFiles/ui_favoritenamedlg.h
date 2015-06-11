@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'favoritenamedlg.ui'
 **
-** Created: Wed May 20 21:08:16 2015
+** Created: Sun Jun 7 19:02:08 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

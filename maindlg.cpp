@@ -768,19 +768,19 @@ void MainDlg::FlowControlAction()
 //
 void MainDlg::CleanAction()
 {
-	if ( 0 == ui.trTarget->selectedItems().count() )
-	{
-		QMessageBox::critical(
-			this,
-			QString::fromLocal8Bit("提示"),
-			QString::fromLocal8Bit("请选择一个目标"));
-		return;
-	}
+	//if ( 0 == ui.trTarget->selectedItems().count() )
+	//{
+	//	QMessageBox::critical(
+	//		this,
+	//		QString::fromLocal8Bit("提示"),
+	//		QString::fromLocal8Bit("请选择一个目标"));
+	//	return;
+	//}
 
 	QTreeWidgetItem * item = ui.trTarget->selectedItems()[0];
 
-	if ( item->parent() != NULL )
-	{
+	//if ( item->parent() != NULL )
+	//{
 		Target* tarBlock = (Target*)item->data(0, Qt::UserRole).toUInt();
 
 		if (ctrOnlineFlag == false)
@@ -789,25 +789,26 @@ void MainDlg::CleanAction()
 			WCHAR dataDir[MAX_PATH] = {0};
 			wsprintf(dataDir, L"%s\\Data\\%d", GetExePath().c_str(), tarBlock->dwTargetID);
 			SHDel(dataDir);
-			QTreeWidgetItem* parent = item->parent();
-			parent->takeChild(parent->indexOfChild(item));
+			//QTreeWidgetItem* parent = item->parent();
+			//parent->takeChild(parent->indexOfChild(item));
 
-			for ( std::list<QTreeWidgetItem*>::iterator it = m_itemList.begin();
-				it != m_itemList.end();
-				 )
-			{
-				if ( *it == item )
-					it = m_itemList.erase(it);
-				else
-					++it;
-			}
+			//for ( std::list<QTreeWidgetItem*>::iterator it = m_itemList.begin();
+			//	it != m_itemList.end();
+			//	 )
+			//{
+			//	if ( *it == item )
+			//		it = m_itemList.erase(it);
+			//	else
+			//		++it;
+			//}
 
-			RemoveTargetFromGlobalMap(tarBlock->dwTargetID);
+			//RemoveTargetFromGlobalMap(tarBlock->dwTargetID);
 
-			if ( 0 == parent->childCount() )
-				ui.trTarget->takeTopLevelItem(ui.trTarget->indexOfTopLevelItem(parent));
+			//if ( 0 == parent->childCount() )
+			//	ui.trTarget->takeTopLevelItem(ui.trTarget->indexOfTopLevelItem(parent));
 
-			UpateTargetCount();
+			//UpateTargetCount();
+			ui.trTarget->takeTopLevelItem(ui.trTarget->indexOfTopLevelItem(item));
 
 			return;
 		}
@@ -840,7 +841,7 @@ void MainDlg::CleanAction()
 			//
 			this->ctrConn->Send_ERA(tarBlock->dwTargetID);
 		}
-	}
+	//}
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1731,6 +1732,7 @@ void MainDlg::onTrTargetContextMenuActived(QPoint point)
 
 	menu.addAction(ui.actPolicy);
 	menu.addAction(ui.actAlias);
+	menu.addAction(ui.actClean);
 
 	QPoint realPos = ui.trTarget->viewport()->mapToGlobal(point);
 	menu.exec(realPos);
