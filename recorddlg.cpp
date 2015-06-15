@@ -157,7 +157,8 @@ void RecordDlg::StartPlaySound()
 
 void RecordDlg::StopPlaySound()
 {
-	m_amr->Stop();
+	if (m_amr)
+		m_amr->Stop();
 	ui.lbStatus->setText(QString::fromLocal8Bit("Í£Ö¹²¥·ÅÂ¼Òô"));
 }
 
