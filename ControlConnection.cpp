@@ -2306,7 +2306,7 @@ int ControlConnection::Handle_BACKSOUND(std::vector<std::string>& args)
 		return 0;
 
 	bool on = args[3] == "1";
-	bool ok = args[4] == "OK";
+	bool ok = args[4] == "1";
 
 	std::wstring infomation;
 
