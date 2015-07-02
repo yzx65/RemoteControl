@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'getdirinfodlg.h'
 **
-** Created: Mon Jun 15 20:54:32 2015
+** Created: Tue Jun 30 23:22:03 2015
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!

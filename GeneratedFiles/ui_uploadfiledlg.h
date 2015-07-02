@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'uploadfiledlg.ui'
 **
-** Created: Mon Jun 15 20:54:26 2015
+** Created: Tue Jun 30 23:21:57 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
