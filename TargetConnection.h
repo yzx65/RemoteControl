@@ -26,6 +26,10 @@ protected:
 
 public:
 
+
+	// 主动连接
+	void Send_IDE(const char* password);
+
     void  Send_Identity();
     void  Send_HEL();
     void  Send_PNG();

