@@ -1957,7 +1957,7 @@ void FileCtrlDlg::StartGetOnlineDirInfo(std::wstring wPath)
 	//xASSERT((FrmMain->ctrConn));
 
 	std::string base64Path = GetBase64FromWide(wPath);
-	FrmMain->ctrConn->Send_DIR(this->m_tar->dwTargetID,  base64Path.c_str());
+	m_tar->tarConn->Send_DIR(this->m_tar->dwTargetID,  base64Path.c_str());
 
 	SetTarStatusInfoExW(STATUS_INFO, this->m_tar, L"[目标%s(ID:%u)] 远程获取目录\"%s\"的文件列表.  请稍候!",
 		this->m_tar->widTargetName.c_str(),

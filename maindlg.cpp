@@ -995,7 +995,7 @@ void MainDlg::on_WM_SET_STATUSINFO_W(MSG* msg)
 //
 void MainDlg::on_WM_CONTROL_CONNCOMPLETED(MSG* msg)
 {
-	this->ctrConn = (ControlConnection *)msg->wParam;
+	this->ctrConn = (TargetConnection *)msg->wParam;
 	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接中转服务器"));
 	AddStatusInfo(STATUS_INFO, L"成功连接中转服务器");
 	ui.actStop->setEnabled(true);
@@ -2476,7 +2476,7 @@ void MainDlg::ConnectToDaemon()
 		SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
 	}
 
-	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, false, targetId);
+	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, false, targetID);
 
 	if (bRet == false)
 	{

@@ -1,5 +1,6 @@
 #include "querydaemonaddressdlg.h"
 #include "maindlg.h"
+#include "TargetConnection.h"
 
 #include "include/T5.h"
 #include "Utility.h"

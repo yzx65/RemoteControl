@@ -13,6 +13,7 @@
 #include <QSystemTrayIcon>
 #include <string>
 #include "ControlConnection.h"
+#include "TargetConnection.h"
 #include "processdatathread.h"
 #include "ui_maindlg.h"
 #include "conndlg.h"

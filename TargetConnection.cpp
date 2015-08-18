@@ -267,6 +267,9 @@ int   TargetConnection::Handle_HEL(std::vector<std::string> & args)
 			targetID, ip.c_str(), flag);
 	}
 
+	ownerTarget->tarConn = this;
+	ownerTarget->TargetDataConnOnline();
+
 	return 0;
 }
 //---------------------------------------------------------------------------

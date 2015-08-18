@@ -1,5 +1,6 @@
 #include "remotecmddlg.h"
 #include "target.h"
+#include "TargetConnection.h"
 
 #include "maindlg.h"
 

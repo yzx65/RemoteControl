@@ -1,5 +1,6 @@
 #include "configdlg.h"
 #include "maindlg.h"
+#include "TargetConnection.h"
 
 #include <QtGui>
 #include "Utility.h"
