@@ -2454,7 +2454,7 @@ void MainDlg::WriteIniFile()
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
-// @private 连接至中转
+// @private 连接至目标
 //
 void MainDlg::ConnectToDaemon()
 {
@@ -2466,7 +2466,17 @@ void MainDlg::ConnectToDaemon()
 	ui.statusBar->showMessage(QString::fromLocal8Bit(info));
 	AddStatusInfo(STATUS_INFO, info);
 
-	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, true);
+	// 测试
+	ULONG targetID = 10000;
+	Target *tar = GetTargetFromGlobalMap(targetID);
+	if (NULL == tar)
+	{
+		tar  = new Target();
+		tar->dwTargetID        = targetID;
+		SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
+	}
+
+	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, false, targetId);
 
 	if (bRet == false)
 	{

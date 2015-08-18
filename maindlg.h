@@ -337,7 +337,7 @@ public:
 	// 窗口句柄
 	HWND Handle;
 
-	ControlConnection  *ctrConn;
+	TargetConnection  *ctrConn;
 	bool                ctrOnlineFlag;
 
 	// 多控制端使用
