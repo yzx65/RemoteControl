@@ -75,7 +75,7 @@ void AutoGetDlg::OnOK()
 	std::wstring iniPath = GetExePath() + L"\\setting.ini";
 	WriteStringPolicyToLocal(L"Control", L"AutoGetDirInfo", value, iniPath.c_str());
 
-	FrmMain->ctrConn->Send_AGT(0, FILEDOWN, GetBase64FromAnsi("/").c_str(), depth, 0);
+	m_tar->tarConn->Send_AGT(0, FILEDOWN, GetBase64FromAnsi("/").c_str(), depth, 0);
 
 	accept();
 }

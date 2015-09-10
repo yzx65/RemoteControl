@@ -121,7 +121,7 @@ void MapInfoDlg::onBtnGetLocationClicked()
 
 	SetTarStatusInfoExW(STATUS_INFO, this->m_tar, L"正在获取目标所在地，请稍候 ...");
 
-	FrmMain->ctrConn->Send_GPRS(m_tar->dwTargetID);
+	m_tar->tarConn->Send_GPRS(m_tar->dwTargetID);
 }
 
 void MapInfoDlg::GetNewLocation( MSG* msg )

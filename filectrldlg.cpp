@@ -752,11 +752,12 @@ void FileCtrlDlg::DownloadFile(std::wstring path)
 		{
 			SetTarStatusInfoExW(STATUS_INFO, this->m_tar, 
 				L"添加任务 : 下载 \"%s\"", tarPathW.c_str());
-			this->m_tar->tarConn->Send_AFT(m_tar->dwTargetID,
-				FILEDOWN,
-				GetBase64FromWide(ctrPathW).c_str(),
-				GetBase64FromWide(tarPathW).c_str(),
-				(ULONG)fileBlock->Size);
+			//this->m_tar->tarConn->Send_AFT(m_tar->dwTargetID,
+			//	FILEDOWN,
+			//	GetBase64FromWide(ctrPathW).c_str(),
+			//	GetBase64FromWide(tarPathW).c_str(),
+			//	(ULONG)fileBlock->Size);
+			m_tar->tarConn->Send_DOW(200000, 0, GetBase64FromWide(tarPathW));
 		}
 	}
 }
@@ -942,7 +943,7 @@ void FileCtrlDlg::onBtnRefreshClicked()
 	{
 		if (this->bShowDiskList && !UnixLike(m_tar))
 		{
-			FrmMain->ctrConn->Send_LIR(m_tar->dwTargetID);
+			m_tar->tarConn->Send_LIR(m_tar->dwTargetID);
 		}
 		else
 		{
@@ -987,7 +988,7 @@ void FileCtrlDlg::onBtnDeleteClicked()
 		return;
 	}
 
-	if (FrmMain->ctrConn)
+	if (m_tar->tarConn)
 	{
 		QList<QTableWidgetItem*> selectedItems = ui.tbFileList->selectedItems();
 
@@ -1000,7 +1001,7 @@ void FileCtrlDlg::onBtnDeleteClicked()
 			wPath = UnixLike(m_tar) ? PathMergeMac(curFilePathW, item->text().toStdWString())
 				: PathMergeW(curFilePathW, item->text().toStdWString());
 
-			FrmMain->ctrConn->Send_FDL(m_tar->dwTargetID,
+			m_tar->tarConn->Send_FDL(m_tar->dwTargetID,
 				GetBase64FromWide(wPath).c_str());
 
 			SetTarStatusInfoExW(STATUS_INFO, this->m_tar, L"[目标%s(ID:%u)] 远程删除文件\"%s\". 请稍候!",
@@ -1022,7 +1023,7 @@ void FileCtrlDlg::onBtnRunClicked()
 		return;
 	}
 
-	if (FrmMain->ctrConn == NULL)
+	if (m_tar->tarConn == NULL)
 	{
 		QMessageBox::information(
 			this,
@@ -1060,7 +1061,7 @@ void FileCtrlDlg::onBtnRunClicked()
 
 		wPath = std::wstring(L"\"") + wPath + std::wstring(L"\"");
 
-		FrmMain->ctrConn->Send_CRP(this->m_tar, wPath, false);
+		m_tar->tarConn->Send_CRP(this->m_tar, wPath, false);
 
 	}
 }
@@ -1208,17 +1209,17 @@ void FileCtrlDlg::onBtnMonitorClicked()
 			if ( QDialog::Accepted == dlg.exec() )
 			{
 				std::wstring ext = dlg.GetFileMonType().toStdWString();
-				FrmMain->ctrConn->Send_FMT(m_tar->dwTargetID, path, add, ext);
+				m_tar->tarConn->Send_FMT(m_tar->dwTargetID, path, add, ext);
 			}
 		}
 		else
 		{
-			FrmMain->ctrConn->Send_FMT(m_tar->dwTargetID, path, add, L"*.*");
+			m_tar->tarConn->Send_FMT(m_tar->dwTargetID, path, add, L"*.*");
 		}
 	}
 	else
 	{
-		FrmMain->ctrConn->Send_FMT(m_tar->dwTargetID, path, add, L"*.*");
+		m_tar->tarConn->Send_FMT(m_tar->dwTargetID, path, add, L"*.*");
 	}
 
 	if ( add == 1 )
@@ -1274,7 +1275,7 @@ void FileCtrlDlg::onBtnStartSearchClicked()
 
 	if ( ui.btnStartSearch->text() == QString::fromLocal8Bit("取消搜索") )
 	{
-		FrmMain->ctrConn->Send_OSF(m_tar->dwTargetID, this->dwOnlineSearchId);
+		m_tar->tarConn->Send_OSF(m_tar->dwTargetID, this->dwOnlineSearchId);
 		return;
 	}
 
@@ -1515,7 +1516,7 @@ void FileCtrlDlg::onBtnStartSearchClicked()
 	this->bSearching = true;
 	this->dwOnlineSearchId = GetTickCount();
 
-	FrmMain->ctrConn->Send_OSC(m_tar->dwTargetID,
+	m_tar->tarConn->Send_OSC(m_tar->dwTargetID,
 		this->dwOnlineSearchId,
 		GetBase64FromWide(tarPathW).c_str(),
 		lpSearchFilter->dwLevel,

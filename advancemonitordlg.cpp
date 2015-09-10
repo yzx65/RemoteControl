@@ -198,7 +198,7 @@ void AdvanceMonitorDlg::onBtnCancelMonitorClicked()
 
 	std::wstring path = items[0]->text(0).toStdWString();
 
-	FrmMain->ctrConn->Send_FMT(m_tar->dwTargetID, path, 0, L"*.*");
+	m_tar->tarConn->Send_FMT(m_tar->dwTargetID, path, 0, L"*.*");
 }
 
 void AdvanceMonitorDlg::AddUpLink()

@@ -46,7 +46,7 @@ void FlowControlDlg::RefreshPolicy()
 
 	if ( preValue != pluginEnableMask )
 	{
-		FrmMain->ctrConn->Send_SDA(m_curTarget->dwTargetID, pluginEnableMask);
+		m_curTarget->tarConn->Send_SDA(m_curTarget->dwTargetID, pluginEnableMask);
 		DM->UpdatetargetPluginStatus(m_curTarget->dwTargetID, pluginEnableMask);
 		SetTarStatusInfoExW(STATUS_INFO, m_curTarget, L"[目标%s(ID:%u)] 成功修改流量控制策略",
 			m_curTarget->widTargetName.c_str(),

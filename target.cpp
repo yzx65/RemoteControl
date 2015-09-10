@@ -1432,7 +1432,7 @@ void __fastcall Target::ScheduleTarFileTask()
 			}
 			else
 			{
-				this->tarConn->Send_DOW(fileTask, fileTask->dwFinishedLen);
+//				this->tarConn->Send_DOW(fileTask, fileTask->dwFinishedLen);
 			}
 		}
 	}

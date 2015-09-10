@@ -121,7 +121,7 @@ void CaptureDlg::onBtnCaptureScreenClicked()
 		return;
 	}
 
-	FrmMain->ctrConn->Send_SCP(m_tar->dwTargetID);
+	m_tar->tarConn->Send_SCP(m_tar->dwTargetID);
 }
 
 void CaptureDlg::onTrScreenshotItemClicked( QTreeWidgetItem* item, int column )

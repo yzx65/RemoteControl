@@ -152,7 +152,7 @@ public:
     //
     void  Start_UPL(FileTask *fileTask);
     void  Send_UPL(FileTask *fileTask, std::string flag, ULONG dataLen);
-    void  Send_DOW(FileTask *fileTask, int startPos);
+    void  Send_DOW(DWORD dwTaskId, int startPos, std::string pathBase64);
     void  Send_ERR(FileTask *fileTask);
     
 private:
@@ -162,7 +162,7 @@ private:
     int   DispatchCommand(std::vector<std::string> & args);
     void  RegisterCommandHandlers();
 
-    int   Handle_HEL(std::vector<std::string> & args);
+    //int   Handle_HEL(std::vector<std::string> & args);
     int   Handle_QNG(std::vector<std::string> & args);
 
     // FileTask相关指令解释函数
