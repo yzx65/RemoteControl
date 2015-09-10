@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 	CenterWindow(w);
 	w.show();
 
-	if ( !w.bAutoLogin )
+	//if ( !w.bAutoLogin )
 		w.StartAction();
 	return a.exec();
 

@@ -3120,7 +3120,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath="image\delete.png"
+					RelativePath=".\image\toolbar\delete.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -3140,7 +3140,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath=".\image\toolbar\delete.png"
+					RelativePath="image\delete.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -4306,7 +4306,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath=".\image\migrate.png"
+					RelativePath=".\image\toolbar\migrate.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -4326,7 +4326,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath=".\image\toolbar\migrate.png"
+					RelativePath=".\image\migrate.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -4666,7 +4666,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath=".\image\toolbar\policy.png"
+					RelativePath=".\image\policy.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -4686,7 +4686,7 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath=".\image\policy.png"
+					RelativePath=".\image\toolbar\policy.png"
 					>
 					<FileConfiguration
 						Name="Release|Win32"
@@ -7385,7 +7385,7 @@
 	<Globals>
 		<Global
 			Name="QtVersion Win32"
-			Value="qt-everywhere-opensource-src-4.8.6"
+			Value="$(DefaultQtVersion)"
 		/>
 		<Global
 			Name="RccDir"

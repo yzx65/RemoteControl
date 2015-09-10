@@ -189,10 +189,10 @@ MainDlg::MainDlg(QWidget *parent, Qt::WFlags flags)
 	//ui.mainToolBar->removeAction(ui.actStop);
 
 	// ×Ô¶¯µÇÂ¼
-	if ( this->bAutoLogin )
-	{
-		ConnectToDaemon();
-	}
+	//if ( this->bAutoLogin )
+	//{
+	//	ConnectToDaemon();
+	//}
 
 	// ¼ì²âÓÃ
 	ui.trTarget->hideColumn(8);
