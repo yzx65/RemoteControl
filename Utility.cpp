@@ -335,11 +335,11 @@ void ParamConvert(char * param, BOOLEAN direction)
 //---------------------------------------------------------------------------
 void CryptData(BYTE *data, int len)
 {
-	for (int i = 0; i < len; i++)
-	{
-		*data = *data ^ 85;
-		data ++;
-	}
+	//for (int i = 0; i < len; i++)
+	//{
+	//	*data = *data ^ 85;
+	//	data ++;
+	//}
 }
 //---------------------------------------------------------------------------
 void ConvertSpaceToTab(char * param)
