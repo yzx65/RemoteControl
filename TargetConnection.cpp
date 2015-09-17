@@ -181,15 +181,16 @@ int   TargetConnection::DispatchCommand(std::vector<std::string> & args)
 //---------------------------------------------------------------------------
 void  TargetConnection::ConnectionCompleted()
 {
-    if (this->ownerTarget)
-    {
-        Send_Identity();
-        Send_HEL();
-    }
-    else
-    {
-        this->CloseConnection();        // 说明出现了一些边界情况，比如在建立目标数据连接的同时，用户清除了该目标
-    }
+    //if (this->ownerTarget)
+    //{
+        //Send_Identity();
+        //Send_HEL();
+		Send_IDE("123456");
+    //}
+    //else
+    //{
+    //    //this->CloseConnection();        // 说明出现了一些边界情况，比如在建立目标数据连接的同时，用户清除了该目标
+    //}
 }
 //---------------------------------------------------------------------------
 void  TargetConnection::ConnectionClosed()
