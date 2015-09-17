@@ -94,56 +94,58 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="minimumSize">
-        <size>
-         <width>50</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>50</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>控制端口</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>10</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="edtCtrlPort">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>25</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QFrame" name="frmCtrlPort">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>控制端口</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>10</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="edtCtrlPort">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">

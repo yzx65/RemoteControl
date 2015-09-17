@@ -19,6 +19,7 @@ ConnDlg::ConnDlg(QWidget *parent)
 	//connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(OnClickCancel()));
 
 	InitCustomText(this);
+	ui.frmCtrlPort->hide();
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

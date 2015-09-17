@@ -426,6 +426,8 @@ bool  ConnectToServer(const char *ipAddr, USHORT port, bool bCtrConnFlag, DWORD 
 		}
     }
 
+	connect(sock, (struct sockaddr *)&sin, sizeof sin);
+
     return true;
 }
 //---------------------------------------------------------------------------

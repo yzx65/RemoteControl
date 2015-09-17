@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'conndlg.ui'
 **
-** Created: Thu Sep 10 21:18:36 2015
-**      by: Qt User Interface Compiler version 4.8.4
+** Created by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -36,6 +35,7 @@ public:
     QLabel *label;
     QSpacerItem *horizontalSpacer;
     QComboBox *edtIP;
+    QFrame *frmCtrlPort;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
@@ -100,10 +100,13 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        horizontalLayout_2 = new QHBoxLayout();
+        frmCtrlPort = new QFrame(ConnDlg);
+        frmCtrlPort->setObjectName(QString::fromUtf8("frmCtrlPort"));
+        horizontalLayout_2 = new QHBoxLayout(frmCtrlPort);
         horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(ConnDlg);
+        label_2 = new QLabel(frmCtrlPort);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMinimumSize(QSize(50, 25));
         label_2->setMaximumSize(QSize(50, 16777215));
@@ -115,14 +118,14 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        edtCtrlPort = new QLineEdit(ConnDlg);
+        edtCtrlPort = new QLineEdit(frmCtrlPort);
         edtCtrlPort->setObjectName(QString::fromUtf8("edtCtrlPort"));
         edtCtrlPort->setMinimumSize(QSize(0, 25));
 
         horizontalLayout_2->addWidget(edtCtrlPort);
 
 
-        verticalLayout->addLayout(horizontalLayout_2);
+        verticalLayout->addWidget(frmCtrlPort);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);

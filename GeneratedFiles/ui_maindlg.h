@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maindlg.ui'
 **
-** Created: Thu Sep 10 21:18:35 2015
-**      by: Qt User Interface Compiler version 4.8.4
+** Created by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -1084,14 +1083,8 @@ public:
 
         mainToolBar->addAction(actStart);
         mainToolBar->addAction(actStop);
-        mainToolBar->addAction(actConfig);
         mainToolBar->addAction(actPolicy);
         mainToolBar->addAction(actAlias);
-        mainToolBar->addAction(actFavorite);
-        mainToolBar->addAction(actFlowControl);
-        mainToolBar->addAction(actMigrateDaemon);
-        mainToolBar->addAction(actCleanDatabase);
-        mainToolBar->addAction(actCreateDaemon);
         mainToolBar->addAction(actCreate);
         menuBar->addAction(menu_F->menuAction());
         menuBar->addAction(menu_T->menuAction());

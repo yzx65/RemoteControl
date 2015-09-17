@@ -2063,8 +2063,9 @@ void MainDlg::InitWidgetAppearance()
 	ui.cmbDisplayMode->setStyle(nofocusStyle);
 	ui.menuBar->setStyle(nofocusStyle);
 
+	ui.actStart->setText(QString::fromLocal8Bit("连接目标"));
+	//ui.mainToolBar->hide();
 	ui.menuBar->hide();
-	ui.mainToolBar->hide();
 	ui.statusBar->hide();
 
 	ui.frame_target_info->hide();
