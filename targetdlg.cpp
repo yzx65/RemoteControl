@@ -827,39 +827,39 @@ void TargetDlg::InitWidgetAppearance()
 	ui.tbPluginData->setStyle(nofocusStyle);
 	ui.cmbLocalDir->setStyle(nofocusStyle);
 
-	ui.tabMain->setStyleSheet("QTabBar::tab{max-height:0px;}");
-	ui.frame_4->hide();
-	setStyleSheet("");
-	ui.tabMain->setTabPosition(QTabWidget::South);
+	//ui.tabMain->setStyleSheet("QTabBar::tab{max-height:0px;}");
+	//ui.frame_4->hide();
+	//setStyleSheet("");
+	//ui.tabMain->setTabPosition(QTabWidget::South);
 
-	const wchar_t* labels[] = {L"任务状态", L"文件浏览", L"敏感信息", L"屏幕截图", L"录音信息", L"聊天记录", L"地图定位"};
+	//const wchar_t* labels[] = {L"任务状态", L"文件浏览", L"敏感信息", L"屏幕截图", L"录音信息", L"聊天记录", L"地图定位"};
 
-	QVBoxLayout* layout = new QVBoxLayout;
-	layout->setContentsMargins(0, 0, 0, 0);
-	layout->setSpacing(0);
+	//QVBoxLayout* layout = new QVBoxLayout;
+	//layout->setContentsMargins(0, 0, 0, 0);
+	//layout->setSpacing(0);
 
-	ui.frame_tool_bar->setStyleSheet("QFrame#frame_tool_bar{background-color:rgb(247, 249, 255);}");
+	//ui.frame_tool_bar->setStyleSheet("QFrame#frame_tool_bar{background-color:rgb(247, 249, 255);}");
 
-	for ( int i = 0; i < sizeof(labels) / sizeof ( const wchar_t* ); ++i )
-	{
-		QRadioButton* btn = new QRadioButton;
-		btn->setText(QString::fromStdWString(std::wstring(labels[i])));
+	//for ( int i = 0; i < sizeof(labels) / sizeof ( const wchar_t* ); ++i )
+	//{
+	//	QRadioButton* btn = new QRadioButton;
+	//	btn->setText(QString::fromStdWString(std::wstring(labels[i])));
 
-		btn->setStyleSheet(
-			"QRadioButton::indicator{width:0px;height:0px;}"
-			"QRadioButton{background-color:rgb(247, 249, 255);border:0px solid #cccccc;border-bottom-width:1px;min-width:120px;min-height:35px;font-family:'Microsoft Yahei';font-size:12px;color:black;padding-left:20px;}"
-			"QRadioButton:hover{background-color:rgb(209, 216, 240);color:black;}"
-			"QRadioButton:checked{background-color:rgb(133, 153, 216);color:white;}");
+	//	btn->setStyleSheet(
+	//		"QRadioButton::indicator{width:0px;height:0px;}"
+	//		"QRadioButton{background-color:rgb(247, 249, 255);border:0px solid #cccccc;border-bottom-width:1px;min-width:120px;min-height:35px;font-family:'Microsoft Yahei';font-size:12px;color:black;padding-left:20px;}"
+	//		"QRadioButton:hover{background-color:rgb(209, 216, 240);color:black;}"
+	//		"QRadioButton:checked{background-color:rgb(133, 153, 216);color:white;}");
 
-		if ( 0 == i ) btn->setChecked(true);
-		
-		connect(btn, SIGNAL(clicked()), this, SLOT(onToolBarButtonClicked()));
-		layout->addWidget(btn);
-	}
+	//	if ( 0 == i ) btn->setChecked(true);
+	//	
+	//	connect(btn, SIGNAL(clicked()), this, SLOT(onToolBarButtonClicked()));
+	//	layout->addWidget(btn);
+	//}
 
-	layout->addSpacerItem(new QSpacerItem(10, 50, QSizePolicy::Fixed, QSizePolicy::Expanding));
+	//layout->addSpacerItem(new QSpacerItem(10, 50, QSizePolicy::Fixed, QSizePolicy::Expanding));
 
-	ui.frame_tool_bar->setLayout(layout);
+	//ui.frame_tool_bar->setLayout(layout);
 }
 
 void TargetDlg::onToolBarButtonClicked()

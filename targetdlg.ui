@@ -50,6 +50,12 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>0</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">QFrame#frame_4
 {
@@ -101,7 +107,7 @@
        <widget class="QComboBox" name="cmbLocalDir">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>191</width>
           <height>0</height>
          </size>
         </property>
@@ -181,7 +187,7 @@ QComboBox:hover{
      </property>
      <widget class="QWidget" name="widget">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/FORWARD 2.png</normaloff>image/FORWARD 2.png</iconset>
       </attribute>
       <attribute name="title">
@@ -270,7 +276,7 @@ QTreeWidget::item {
            <string>文件上传</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/uploadfile.png</normaloff>image/uploadfile.png</iconset>
           </property>
          </item>
@@ -279,7 +285,7 @@ QTreeWidget::item {
            <string>文件下载</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/downfile.png</normaloff>image/downfile.png</iconset>
           </property>
          </item>
@@ -288,7 +294,7 @@ QTreeWidget::item {
            <string>目录下载</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/dirdown.png</normaloff>image/dirdown.png</iconset>
           </property>
          </item>
@@ -297,7 +303,7 @@ QTreeWidget::item {
            <string>多层目录信息</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/dirfilelist.png</normaloff>image/dirfilelist.png</iconset>
           </property>
          </item>
@@ -306,7 +312,7 @@ QTreeWidget::item {
            <string>插件升级上传</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/uploadfile.png</normaloff>image/uploadfile.png</iconset>
           </property>
          </item>
@@ -315,7 +321,7 @@ QTreeWidget::item {
            <string>插件数据回传</string>
           </property>
           <property name="icon">
-           <iconset resource="maindlg.qrc">
+           <iconset>
             <normaloff>image/up.png</normaloff>image/up.png</iconset>
           </property>
          </item>
@@ -400,7 +406,7 @@ QToolButton:disabled
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="maindlg.qrc">
+                <iconset>
                  <normaloff>image/continue.png</normaloff>image/continue.png</iconset>
                </property>
                <property name="iconSize">
@@ -456,7 +462,7 @@ QToolButton:disabled
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="maindlg.qrc">
+                <iconset>
                  <normaloff>image/pause.png</normaloff>image/pause.png</iconset>
                </property>
                <property name="iconSize">
@@ -515,7 +521,7 @@ QToolButton:disabled
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="maindlg.qrc">
+                <iconset>
                  <normaloff>image/cancel.png</normaloff>image/cancel.png</iconset>
                </property>
                <property name="iconSize">
@@ -1754,7 +1760,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/EMPTY BLANK.png</normaloff>image/EMPTY BLANK.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1789,7 +1795,7 @@ QFrame#tbPluginData{
 }</string>
       </property>
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/cmd.png</normaloff>image/cmd.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1832,7 +1838,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/MINIMIZE.png</normaloff>image/MINIMIZE.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1859,7 +1865,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/CURSOR.png</normaloff>image/CURSOR.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1892,7 +1898,7 @@ QFrame#tbPluginData{
 }</string>
       </property>
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/camera.png</normaloff>image/camera.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1951,7 +1957,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/VIDEO CAMERA.png</normaloff>image/VIDEO CAMERA.png</iconset>
       </attribute>
       <attribute name="title">
@@ -1985,7 +1991,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_11">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/CHAT.png</normaloff>image/CHAT.png</iconset>
       </attribute>
       <attribute name="title">
@@ -2019,7 +2025,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_7">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/map.png</normaloff>image/map.png</iconset>
       </attribute>
       <attribute name="title">
@@ -2046,7 +2052,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_10">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/SETTINGS.png</normaloff>image/SETTINGS.png</iconset>
       </attribute>
       <attribute name="title">
@@ -2087,7 +2093,7 @@ QFrame#tbPluginData{
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="icon">
-       <iconset resource="maindlg.qrc">
+       <iconset>
         <normaloff>image/STATISTICS.png</normaloff>image/STATISTICS.png</iconset>
       </attribute>
       <attribute name="title">

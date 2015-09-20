@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'targetdlg.ui'
 **
-** Created: Sun Sep 20 11:18:01 2015
+** Created: Sun Sep 20 15:25:47 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -139,6 +139,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(frame_4->sizePolicy().hasHeightForWidth());
         frame_4->setSizePolicy(sizePolicy);
+        frame_4->setMaximumSize(QSize(0, 16777215));
         frame_4->setStyleSheet(QString::fromUtf8("QFrame#frame_4\n"
 "{\n"
 "	background-color:rgb(240,240,240);\n"
@@ -163,7 +164,7 @@ public:
 
         cmbLocalDir = new QComboBox(frame_4);
         cmbLocalDir->setObjectName(QString::fromUtf8("cmbLocalDir"));
-        cmbLocalDir->setMinimumSize(QSize(0, 0));
+        cmbLocalDir->setMinimumSize(QSize(191, 0));
         cmbLocalDir->setMaximumSize(QSize(191, 16777215));
         cmbLocalDir->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "     border: 0px solid gray;\n"

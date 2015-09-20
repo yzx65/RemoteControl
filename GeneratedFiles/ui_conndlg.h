@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'conndlg.ui'
 **
-** Created: Sun Sep 20 11:18:01 2015
+** Created: Sun Sep 20 15:23:23 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -41,6 +41,7 @@ public:
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
     QLineEdit *edtCtrlPort;
+    QFrame *frmPort;
     QHBoxLayout *horizontalLayout;
     QLabel *label_3;
     QSpacerItem *horizontalSpacer_3;
@@ -60,7 +61,7 @@ public:
     {
         if (ConnDlg->objectName().isEmpty())
             ConnDlg->setObjectName(QString::fromUtf8("ConnDlg"));
-        ConnDlg->resize(309, 214);
+        ConnDlg->resize(309, 215);
         ConnDlg->setStyleSheet(QString::fromUtf8("QWidget\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
@@ -107,6 +108,7 @@ public:
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, -1, 0, -1);
         label_2 = new QLabel(frmCtrlPort);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setMinimumSize(QSize(50, 25));
@@ -128,10 +130,13 @@ public:
 
         verticalLayout->addWidget(frmCtrlPort);
 
-        horizontalLayout = new QHBoxLayout();
+        frmPort = new QFrame(ConnDlg);
+        frmPort->setObjectName(QString::fromUtf8("frmPort"));
+        horizontalLayout = new QHBoxLayout(frmPort);
         horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label_3 = new QLabel(ConnDlg);
+        label_3 = new QLabel(frmPort);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setMinimumSize(QSize(50, 25));
         label_3->setMaximumSize(QSize(50, 16777215));
@@ -143,14 +148,14 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        edtTargetPort = new QLineEdit(ConnDlg);
+        edtTargetPort = new QLineEdit(frmPort);
         edtTargetPort->setObjectName(QString::fromUtf8("edtTargetPort"));
         edtTargetPort->setMinimumSize(QSize(0, 25));
 
         horizontalLayout->addWidget(edtTargetPort);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout->addWidget(frmPort);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
@@ -217,7 +222,7 @@ public:
 
     void retranslateUi(QWidget *ConnDlg)
     {
-        ConnDlg->setWindowTitle(QApplication::translate("ConnDlg", "\350\277\236\346\216\245\344\270\255\350\275\254\346\234\215\345\212\241\345\231\250", 0, QApplication::UnicodeUTF8));
+        ConnDlg->setWindowTitle(QApplication::translate("ConnDlg", "\350\277\236\346\216\245\347\233\256\346\240\207", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("ConnDlg", "IP \345\234\260\345\235\200", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("ConnDlg", "\346\216\247\345\210\266\347\253\257\345\217\243", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("ConnDlg", "\346\225\260\346\215\256\347\253\257\345\217\243", 0, QApplication::UnicodeUTF8));

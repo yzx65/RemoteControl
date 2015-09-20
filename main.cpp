@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 	w.show();
 
 	//if ( !w.bAutoLogin )
-		w.StartAction();
+	//w.StartAction();
 	return a.exec();
 
 	return 1;
