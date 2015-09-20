@@ -408,6 +408,8 @@ public:
 	WaitDlg* m_waitDlg;
 
 	QueryDaemonAddressDlg* m_qdaDlg;
+	std::string aniPass;
+	DWORD targetID;
 };
 
 extern MainDlg* FrmMain;

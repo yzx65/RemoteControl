@@ -26,6 +26,7 @@
 #include "autogetdlg.h"
 #include "configdlg.h"
 #include "querydaemonaddressdlg.h"
+#include "generatetardlg.h"
 
 #include "nofocusstyle.h"
 
@@ -479,6 +480,7 @@ void MainDlg::StartAction()
 
 		// 生成验证码的MD5值
 		std::string aniPass = m_connDlg.GetPass().toStdString();
+		this->aniPass = m_connDlg.GetPass().toStdString();
 
 		char* buffer = new char[aniPass.length()];
 		memcpy(buffer, aniPass.c_str(), aniPass.length());
@@ -843,7 +845,9 @@ void MainDlg::CleanAction()
 //
 void MainDlg::CreateTargetAction()
 {
-	GenerateDlg dlg;
+	//GenerateDlg dlg;
+	//dlg.exec();
+	GenerateTarDlg dlg;
 	dlg.exec();
 }
 
@@ -989,6 +993,7 @@ void MainDlg::on_WM_SET_STATUSINFO_W(MSG* msg)
 //
 void MainDlg::on_WM_CONTROL_CONNCOMPLETED(MSG* msg)
 {
+
 	//this->ctrConn = (TargetConnection *)msg->wParam;
 	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接目标"));
 	AddStatusInfo(STATUS_INFO, L"成功连接目标");
@@ -2467,7 +2472,7 @@ void MainDlg::ConnectToDaemon()
 	AddStatusInfo(STATUS_INFO, info);
 
 	// 测试
-	ULONG targetID = 10000;
+	this->targetID = 10000;
 	//Target *tar = GetTargetFromGlobalMap(targetID);
 	//if (NULL == tar)
 	//{
@@ -2476,7 +2481,7 @@ void MainDlg::ConnectToDaemon()
 	//	SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
 	//}
 
-	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, false, targetID);
+	bool bRet = ConnectToServer(this->aniDaemonIpAddr.c_str(),this->nCtrPortForControl, true, targetID);
 
 	if (bRet == false)
 	{

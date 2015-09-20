@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'maindlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Sun Sep 20 11:18:01 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

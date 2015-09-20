@@ -293,11 +293,14 @@ unsigned int WINAPI ConnSelectThread(LPVOID lpParam)
                     {
                         if (pThread->bCtrConnFlag)
                         {
-                            lpConn = new ControlConnection(pThread->sockArray[index]);
+							lpConn = new TargetConnection(pThread->sockArray[index], pThread->targetIdArray[index]);
+							((TargetConnection*)lpConn)->Send_IDE(FrmMain->aniPass.c_str());
+							ConnectToServer(FrmMain->aniDaemonIpAddr.c_str(),FrmMain->nCtrPortForControl, false, FrmMain->targetID);
                         }
                         else
                         {
                             lpConn = new TargetConnection(pThread->sockArray[index], pThread->targetIdArray[index]);
+							SendMessage(FrmMain->Handle, WM_CONTROL_CONNCOMPLETED, 0, 0);
                         }
 
                         pThread->connArray[index] = lpConn;
@@ -425,8 +428,6 @@ bool  ConnectToServer(const char *ipAddr, USHORT port, bool bCtrConnFlag, DWORD 
             return false;               
 		}
     }
-
-	connect(sock, (struct sockaddr *)&sin, sizeof sin);
 
     return true;
 }

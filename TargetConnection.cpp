@@ -185,7 +185,7 @@ void  TargetConnection::ConnectionCompleted()
     //{
         //Send_Identity();
         //Send_HEL();
-		Send_IDE("123456");
+		//Send_IDE(FrmMain->aniPass.c_str());
     //}
     //else
     //{

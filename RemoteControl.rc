@@ -55,10 +55,21 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDI_ICON1               ICON                    "RemoteControl.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+
 #endif    // 中文(中华人民共和国) resources
 /////////////////////////////////////////////////////////////////////////////
 
-
+#define IDS_ENCRYPTED_PASSWORD 3
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ENCRYPTED_PASSWORD  "00000000000000000000000000000000"
+END
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////

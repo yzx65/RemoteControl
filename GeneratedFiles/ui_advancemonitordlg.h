@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'advancemonitordlg.ui'
 **
-** Created: Thu Sep 10 21:18:36 2015
+** Created: Sun Sep 20 11:18:02 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
