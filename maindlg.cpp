@@ -993,7 +993,7 @@ void MainDlg::on_WM_SET_STATUSINFO_W(MSG* msg)
 //
 void MainDlg::on_WM_CONTROL_CONNCOMPLETED(MSG* msg)
 {
-
+	m_waitDlg->hide();
 	//this->ctrConn = (TargetConnection *)msg->wParam;
 	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接目标"));
 	AddStatusInfo(STATUS_INFO, L"成功连接目标");

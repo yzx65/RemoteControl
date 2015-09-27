@@ -11,7 +11,7 @@ ConnDlg::ConnDlg(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint);
-
+	//this->setFixedHeight(150);
 	QValidator* ipMask = new QRegExpValidator(QRegExp("[0-9,\\.]+"));
 	ui.edtIP->setValidator(ipMask);
 
@@ -19,7 +19,7 @@ ConnDlg::ConnDlg(QWidget *parent)
 	//connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(OnClickCancel()));
 
 	InitCustomText(this);
-	ui.frmPort->hide();
+	//ui.frmPort->hide();
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -44,6 +44,7 @@ QString ConnDlg::GetIpAddress()
 QString ConnDlg::GetCtrlPort()
 {
 	return ui.edtCtrlPort->text();
+	return "";
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +52,8 @@ QString ConnDlg::GetCtrlPort()
 //
 QString ConnDlg::GetTargetPort()
 {
-	return ui.edtTargetPort->text();
+	//return ui.edtTargetPort->text();
+	return "";
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -91,7 +93,7 @@ void ConnDlg::SetCtrlPort(QString port)
 //
 void ConnDlg::SetTargetPort(QString port)
 {
-	ui.edtTargetPort->setText(port);
+	//ui.edtTargetPort->setText(port);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

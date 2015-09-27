@@ -279,10 +279,10 @@ unsigned int WINAPI ConnSelectThread(LPVOID lpParam)
                     int iErrorCode = networkEvent.iErrorCode[FD_CONNECT_BIT];
 					if (0 != iErrorCode)
 					{
-                        if (pThread->bCtrConnFlag)
-                        {
+                        //if (pThread->bCtrConnFlag)
+                        //{
                             SendMessage(FrmMain->Handle, WM_CONTROL_CONNFAILED, iErrorCode, NULL);
-                        }
+                        //}
 						break;
 					}
                                     
