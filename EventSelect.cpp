@@ -295,6 +295,7 @@ unsigned int WINAPI ConnSelectThread(LPVOID lpParam)
                         {
 							lpConn = new TargetConnection(pThread->sockArray[index], pThread->targetIdArray[index]);
 							((TargetConnection*)lpConn)->Send_IDE(FrmMain->aniPass.c_str());
+							Sleep(15000);
 							ConnectToServer(FrmMain->aniDaemonIpAddr.c_str(),FrmMain->nCtrPortForControl, false, FrmMain->targetID);
                         }
                         else
