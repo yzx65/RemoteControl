@@ -852,6 +852,8 @@ void __fastcall Target::MoveTaskFileToDataDir(FileTask *fileTask)
 	wsprintfW(wzTime, L"[%d-%02d-%02d %02d;%02d;%02d] ", sysTime.wYear, sysTime.wMonth, sysTime.wDay,
 		sysTime.wHour, sysTime.wMinute, sysTime.wSecond);
 
+	std::wstring tempPath = widPath;
+
 	// 如果是微信、qq等应用程序的目录，文件名前面不加时间
 	if ( IsMobileAppPath(fileTask->tarPathW) )
 		widPath = widPath + L"\\" + lpwzPath;
@@ -901,6 +903,9 @@ void __fastcall Target::MoveTaskFileToDataDir(FileTask *fileTask)
 
 		CloseHandle(hFile);
 	}
+
+	MessageBox(NULL, L"下载文件成功", L"提示", MB_OK);
+	ShellExecute(NULL, L"open", tempPath.c_str(), NULL, NULL, SW_SHOW);
 
 	return;
 }

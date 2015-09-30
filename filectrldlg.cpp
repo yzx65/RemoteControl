@@ -1236,11 +1236,15 @@ void FileCtrlDlg::onBtnMonitorClicked()
 
 void FileCtrlDlg::onBtnSearchClicked()
 {
-	ui.stkFileCtrl->setCurrentIndex(1);
-	std::wstring path = ui.cmbAddress->currentText().toStdWString();
-	ui.edtSearchPath->clear();
-	if ( path != L"磁盘列表" )
-		ui.edtSearchPath->setText(QString::fromStdWString(path));
+	//ui.stkFileCtrl->setCurrentIndex(1);
+	//std::wstring path = ui.cmbAddress->currentText().toStdWString();
+	//ui.edtSearchPath->clear();
+	//if ( path != L"磁盘列表" )
+	//	ui.edtSearchPath->setText(QString::fromStdWString(path));
+	if (this->m_tar->tarStatus == TARONLINE)
+	{
+		m_tar->tarConn->Send_DOW(200000, 0, GetBase64FromWide(ui.cmbAddress->currentText().toStdWString()));
+	}
 }
 
 void FileCtrlDlg::onBtnStartSearchClicked()

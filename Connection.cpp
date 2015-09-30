@@ -45,9 +45,9 @@ void  Connection::DataArrivedOnSocket()
 	{
 		// @Note : there may have some binary data in string
 		//
-		FlowStatistics(amountRead);
+		//FlowStatistics(amountRead);
 
-        CryptData((BYTE*)tempReadBuffer,amountRead);
+        //CryptData((BYTE*)tempReadBuffer,amountRead);
         readBuffer += string(tempReadBuffer, amountRead);
 
         HandleIncomingData();

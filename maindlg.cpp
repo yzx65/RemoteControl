@@ -994,6 +994,7 @@ void MainDlg::on_WM_SET_STATUSINFO_W(MSG* msg)
 void MainDlg::on_WM_CONTROL_CONNCOMPLETED(MSG* msg)
 {
 	m_waitDlg->hide();
+	ctrOnlineFlag = true;
 	//this->ctrConn = (TargetConnection *)msg->wParam;
 	ui.statusBar->showMessage(QString::fromLocal8Bit("成功连接目标"));
 	AddStatusInfo(STATUS_INFO, L"成功连接目标");
@@ -1011,12 +1012,12 @@ void MainDlg::on_WM_CONTROL_CONNFAILED(MSG* msg)
 	switch(iErrorCode)
 	{
 	case WSAECONNREFUSED:
-		ui.statusBar->showMessage(QString::fromLocal8Bit("不能连接中转服务器!  连接被拒绝"));
-		AddStatusInfo(STATUS_ERROR, L"不能连接中转服务器!  连接被拒绝");
+		ui.statusBar->showMessage(QString::fromLocal8Bit("不能连接目标!  连接被拒绝"));
+		AddStatusInfo(STATUS_ERROR, L"不能连接目标!  连接被拒绝");
 		break;
 	default:
-		ui.statusBar->showMessage(QString::fromLocal8Bit("不能连接中转服务器!  请确认中转服务器是否正常运行"));
-		AddStatusInfo(STATUS_ERROR, L"不能连接中转服务器!  请确认中转服务器是否正常运行");
+		ui.statusBar->showMessage(QString::fromLocal8Bit("不能连接目标!  请确认中转服务器是否正常运行"));
+		AddStatusInfo(STATUS_ERROR, L"不能连接目标!  请确认中转服务器是否正常运行");
 		break;
 	}
 	
@@ -2070,7 +2071,7 @@ void MainDlg::InitWidgetAppearance()
 
 	ui.actStart->setText(QString::fromLocal8Bit("连接目标"));
 	//ui.mainToolBar->hide();
-	ui.menuBar->hide();
+	//ui.menuBar->hide();
 	ui.statusBar->hide();
 
 	ui.frame_target_info->hide();
@@ -2466,7 +2467,7 @@ void MainDlg::ConnectToDaemon()
 	assert(this->ctrConn == NULL);
 
 	char info[MAX_PATH] = {0};
-	sprintf(info, "正在连接中转服务器 %s:%d ...", aniDaemonIpAddr.c_str(), nCtrPortForControl);
+	sprintf(info, "正在连接目标 %s:%d ...", aniDaemonIpAddr.c_str(), nCtrPortForControl);
 
 	ui.statusBar->showMessage(QString::fromLocal8Bit(info));
 	AddStatusInfo(STATUS_INFO, info);
